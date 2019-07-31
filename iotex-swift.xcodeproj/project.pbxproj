@@ -19,6 +19,11 @@
 		362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DF22F1C3E700864BEB /* HexEncoding.swift */; };
 		362175E222F1C41C00864BEB /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175E122F1C41C00864BEB /* Secp256k1.swift */; };
 		3654181C22F1D2EA004382B1 /* Bech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654181B22F1D2EA004382B1 /* Bech32.swift */; };
+		3654182222F1F41E004382B1 /* BytesConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654182122F1F41E004382B1 /* BytesConvertible.swift */; };
+		3654182422F1F473004382B1 /* Bytes+SecureRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654182322F1F473004382B1 /* Bytes+SecureRandom.swift */; };
+		3654182622F1F4B5004382B1 /* Bytes+UInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654182522F1F4B5004382B1 /* Bytes+UInt.swift */; };
+		3654182822F1F5A9004382B1 /* Bytes+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654182722F1F5A9004382B1 /* Bytes+HexString.swift */; };
+		3654182A22F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654182922F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,11 @@
 		362175DF22F1C3E700864BEB /* HexEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexEncoding.swift; sourceTree = "<group>"; };
 		362175E122F1C41C00864BEB /* Secp256k1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1.swift; sourceTree = "<group>"; };
 		3654181B22F1D2EA004382B1 /* Bech32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bech32.swift; sourceTree = "<group>"; };
+		3654182122F1F41E004382B1 /* BytesConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BytesConvertible.swift; sourceTree = "<group>"; };
+		3654182322F1F473004382B1 /* Bytes+SecureRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bytes+SecureRandom.swift"; sourceTree = "<group>"; };
+		3654182522F1F4B5004382B1 /* Bytes+UInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bytes+UInt.swift"; sourceTree = "<group>"; };
+		3654182722F1F5A9004382B1 /* Bytes+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bytes+HexString.swift"; sourceTree = "<group>"; };
+		3654182922F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bytes+TrimLeadingZeros.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +161,11 @@
 			isa = PBXGroup;
 			children = (
 				362175DF22F1C3E700864BEB /* HexEncoding.swift */,
+				3654182122F1F41E004382B1 /* BytesConvertible.swift */,
+				3654182322F1F473004382B1 /* Bytes+SecureRandom.swift */,
+				3654182522F1F4B5004382B1 /* Bytes+UInt.swift */,
+				3654182722F1F5A9004382B1 /* Bytes+HexString.swift */,
+				3654182922F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -289,9 +304,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3654182622F1F4B5004382B1 /* Bytes+UInt.swift in Sources */,
 				362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */,
+				3654182222F1F41E004382B1 /* BytesConvertible.swift in Sources */,
 				362175DC22F1C39300864BEB /* Account.swift in Sources */,
+				3654182422F1F473004382B1 /* Bytes+SecureRandom.swift in Sources */,
+				3654182A22F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift in Sources */,
 				3654181C22F1D2EA004382B1 /* Bech32.swift in Sources */,
+				3654182822F1F5A9004382B1 /* Bytes+HexString.swift in Sources */,
 				362175E222F1C41C00864BEB /* Secp256k1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
