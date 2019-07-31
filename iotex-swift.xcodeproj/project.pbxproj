@@ -8,8 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3621757522F1AACD00864BEB /* iotex_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621756B22F1AACD00864BEB /* iotex_swift.framework */; };
-		3621757A22F1AACD00864BEB /* iotex_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621757922F1AACD00864BEB /* iotex_swiftTests.swift */; };
-		3621757C22F1AACD00864BEB /* iotex_swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 3621756E22F1AACD00864BEB /* iotex_swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3621757A22F1AACD00864BEB /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621757922F1AACD00864BEB /* AccountTests.swift */; };
+		3621758B22F1AECF00864BEB /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 3621758922F1AECF00864BEB /* Cartfile */; };
+		3621758C22F1AECF00864BEB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3621758A22F1AECF00864BEB /* README.md */; };
+		3621759022F1B01300864BEB /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621758E22F1B01300864BEB /* secp256k1.framework */; };
+		3621759122F1B01300864BEB /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621758F22F1B01300864BEB /* CryptoSwift.framework */; };
+		3621759522F1B02500864BEB /* Utils in Resources */ = {isa = PBXBuildFile; fileRef = 3621759222F1B02500864BEB /* Utils */; };
+		3621759622F1B02500864BEB /* Account in Resources */ = {isa = PBXBuildFile; fileRef = 3621759322F1B02500864BEB /* Account */; };
+		3621759722F1B02500864BEB /* Crypto in Resources */ = {isa = PBXBuildFile; fileRef = 3621759422F1B02500864BEB /* Crypto */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +30,18 @@
 
 /* Begin PBXFileReference section */
 		3621756B22F1AACD00864BEB /* iotex_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iotex_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3621756E22F1AACD00864BEB /* iotex_swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iotex_swift.h; sourceTree = "<group>"; };
 		3621756F22F1AACD00864BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3621757422F1AACD00864BEB /* iotex-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iotex-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3621757922F1AACD00864BEB /* iotex_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iotex_swiftTests.swift; sourceTree = "<group>"; };
+		3621757922F1AACD00864BEB /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		3621757B22F1AACD00864BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3621758922F1AECF00864BEB /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		3621758A22F1AECF00864BEB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3621758E22F1B01300864BEB /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = secp256k1.framework; path = Carthage/Build/iOS/secp256k1.framework; sourceTree = "<group>"; };
+		3621758F22F1B01300864BEB /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		3621759222F1B02500864BEB /* Utils */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Utils; sourceTree = "<group>"; };
+		3621759322F1B02500864BEB /* Account */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Account; sourceTree = "<group>"; };
+		3621759422F1B02500864BEB /* Crypto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Crypto; sourceTree = "<group>"; };
+		3621759D22F1B21600864BEB /* IoTeX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IoTeX.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3621759022F1B01300864BEB /* secp256k1.framework in Frameworks */,
+				3621759122F1B01300864BEB /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,9 +68,12 @@
 		3621756122F1AACD00864BEB = {
 			isa = PBXGroup;
 			children = (
-				3621756D22F1AACD00864BEB /* iotex-swift */,
-				3621757822F1AACD00864BEB /* iotex-swiftTests */,
+				3621758922F1AECF00864BEB /* Cartfile */,
+				3621758A22F1AECF00864BEB /* README.md */,
+				3621756D22F1AACD00864BEB /* Sources */,
+				3621757822F1AACD00864BEB /* Tests */,
 				3621756C22F1AACD00864BEB /* Products */,
+				3621758D22F1B01200864BEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,22 +86,42 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3621756D22F1AACD00864BEB /* iotex-swift */ = {
+		3621756D22F1AACD00864BEB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				3621756E22F1AACD00864BEB /* iotex_swift.h */,
+				3621759322F1B02500864BEB /* Account */,
+				3621759422F1B02500864BEB /* Crypto */,
+				3621759222F1B02500864BEB /* Utils */,
 				3621756F22F1AACD00864BEB /* Info.plist */,
+				3621759D22F1B21600864BEB /* IoTeX.h */,
 			);
-			path = "iotex-swift";
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		3621757822F1AACD00864BEB /* iotex-swiftTests */ = {
+		3621757822F1AACD00864BEB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				3621757922F1AACD00864BEB /* iotex_swiftTests.swift */,
+				3621758722F1ADFF00864BEB /* AccountTests */,
 				3621757B22F1AACD00864BEB /* Info.plist */,
 			);
-			path = "iotex-swiftTests";
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		3621758722F1ADFF00864BEB /* AccountTests */ = {
+			isa = PBXGroup;
+			children = (
+				3621757922F1AACD00864BEB /* AccountTests.swift */,
+			);
+			path = AccountTests;
+			sourceTree = "<group>";
+		};
+		3621758D22F1B01200864BEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3621758F22F1B01300864BEB /* CryptoSwift.framework */,
+				3621758E22F1B01300864BEB /* secp256k1.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,7 +131,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3621757C22F1AACD00864BEB /* iotex_swift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +185,7 @@
 				TargetAttributes = {
 					3621756A22F1AACD00864BEB = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 					3621757322F1AACD00864BEB = {
 						CreatedOnToolsVersion = 10.3;
@@ -177,6 +215,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3621759722F1B02500864BEB /* Crypto in Resources */,
+				3621759622F1B02500864BEB /* Account in Resources */,
+				3621759522F1B02500864BEB /* Utils in Resources */,
+				3621758C22F1AECF00864BEB /* README.md in Resources */,
+				3621758B22F1AECF00864BEB /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3621757A22F1AACD00864BEB /* iotex_swiftTests.swift in Sources */,
+				3621757A22F1AACD00864BEB /* AccountTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,13 +384,18 @@
 		3621758022F1AACD00864BEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "iotex-swift/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -357,6 +405,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.iotex.iotex-swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,13 +414,18 @@
 		3621758122F1AACD00864BEB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "iotex-swift/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -390,7 +444,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "iotex-swiftTests/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -407,7 +465,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "iotex-swiftTests/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

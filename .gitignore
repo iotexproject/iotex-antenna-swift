@@ -1,0 +1,7 @@
+.DS_Store
+/Carthage
+/Packages
+/Package.pins
+/Package.resolved
+/.build
+xcuserdata
