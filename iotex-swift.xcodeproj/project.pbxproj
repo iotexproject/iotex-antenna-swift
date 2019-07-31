@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3621757522F1AACD00864BEB /* iotex_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621756B22F1AACD00864BEB /* iotex_swift.framework */; };
 		3621757A22F1AACD00864BEB /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621757922F1AACD00864BEB /* AccountTests.swift */; };
 		3621758B22F1AECF00864BEB /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 3621758922F1AECF00864BEB /* Cartfile */; };
 		3621758C22F1AECF00864BEB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3621758A22F1AECF00864BEB /* README.md */; };
 		3621759022F1B01300864BEB /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621758E22F1B01300864BEB /* secp256k1.framework */; };
 		3621759122F1B01300864BEB /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621758F22F1B01300864BEB /* CryptoSwift.framework */; };
-		3621759522F1B02500864BEB /* Utils in Resources */ = {isa = PBXBuildFile; fileRef = 3621759222F1B02500864BEB /* Utils */; };
-		3621759622F1B02500864BEB /* Account in Resources */ = {isa = PBXBuildFile; fileRef = 3621759322F1B02500864BEB /* Account */; };
-		3621759722F1B02500864BEB /* Crypto in Resources */ = {isa = PBXBuildFile; fileRef = 3621759422F1B02500864BEB /* Crypto */; };
+		362175CD22F1BF7B00864BEB /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621758F22F1B01300864BEB /* CryptoSwift.framework */; };
+		362175D822F1C22C00864BEB /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621758E22F1B01300864BEB /* secp256k1.framework */; };
+		362175D922F1C23900864BEB /* iotex_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621756B22F1AACD00864BEB /* iotex_swift.framework */; };
+		362175DC22F1C39300864BEB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DB22F1C39300864BEB /* Account.swift */; };
+		362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DF22F1C3E700864BEB /* HexEncoding.swift */; };
+		362175E222F1C41C00864BEB /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175E122F1C41C00864BEB /* Secp256k1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +40,10 @@
 		3621758A22F1AECF00864BEB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3621758E22F1B01300864BEB /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = secp256k1.framework; path = Carthage/Build/iOS/secp256k1.framework; sourceTree = "<group>"; };
 		3621758F22F1B01300864BEB /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
-		3621759222F1B02500864BEB /* Utils */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Utils; sourceTree = "<group>"; };
-		3621759322F1B02500864BEB /* Account */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Account; sourceTree = "<group>"; };
-		3621759422F1B02500864BEB /* Crypto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Crypto; sourceTree = "<group>"; };
 		3621759D22F1B21600864BEB /* IoTeX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IoTeX.h; sourceTree = "<group>"; };
+		362175DB22F1C39300864BEB /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		362175DF22F1C3E700864BEB /* HexEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexEncoding.swift; sourceTree = "<group>"; };
+		362175E122F1C41C00864BEB /* Secp256k1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3621757522F1AACD00864BEB /* iotex_swift.framework in Frameworks */,
+				362175D922F1C23900864BEB /* iotex_swift.framework in Frameworks */,
+				362175CD22F1BF7B00864BEB /* CryptoSwift.framework in Frameworks */,
+				362175D822F1C22C00864BEB /* secp256k1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,9 +93,9 @@
 		3621756D22F1AACD00864BEB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				3621759322F1B02500864BEB /* Account */,
-				3621759422F1B02500864BEB /* Crypto */,
-				3621759222F1B02500864BEB /* Utils */,
+				362175DE22F1C3CB00864BEB /* Utils */,
+				362175DD22F1C3A200864BEB /* Crypto */,
+				362175DA22F1C38100864BEB /* Account */,
 				3621756F22F1AACD00864BEB /* Info.plist */,
 				3621759D22F1B21600864BEB /* IoTeX.h */,
 			);
@@ -122,6 +126,30 @@
 				3621758E22F1B01300864BEB /* secp256k1.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		362175DA22F1C38100864BEB /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				362175DB22F1C39300864BEB /* Account.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		362175DD22F1C3A200864BEB /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				362175E122F1C41C00864BEB /* Secp256k1.swift */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		362175DE22F1C3CB00864BEB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				362175DF22F1C3E700864BEB /* HexEncoding.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +243,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3621759722F1B02500864BEB /* Crypto in Resources */,
-				3621759622F1B02500864BEB /* Account in Resources */,
-				3621759522F1B02500864BEB /* Utils in Resources */,
 				3621758C22F1AECF00864BEB /* README.md in Resources */,
 				3621758B22F1AECF00864BEB /* Cartfile in Resources */,
 			);
@@ -237,6 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */,
+				362175DC22F1C39300864BEB /* Account.swift in Sources */,
+				362175E222F1C41C00864BEB /* Secp256k1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +471,7 @@
 		3621758322F1AACD00864BEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -464,6 +493,7 @@
 		3621758422F1AACD00864BEB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

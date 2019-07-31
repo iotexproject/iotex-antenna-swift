@@ -1,6 +1,6 @@
 //
 //  HexEncoding.swift
-//  IoTex.swift
+//  iotex-swift
 //
 //  Created by ququzone on 2019/7/31.
 //  Copyright © 2019 IoTeX. All rights reserved.
@@ -12,7 +12,7 @@ extension Data {
     public func hexEncodedString() -> String {
         return map { String(format: "%02hhx", $0) }.joined()
     }
-    
+
     public init?(fromHexEncodedString string: String) {
         // Convert 0 ... 9, a ... f, A ...F to their decimal value,
         // return nil for all other input characters
@@ -28,9 +28,9 @@ extension Data {
                 return nil
             }
         }
-        
+
         self.init(capacity: string.utf16.count / 2)
-        
+
         var even = true
         var byte: UInt8 = 0
         for c in string.utf16 {
