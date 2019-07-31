@@ -18,6 +18,7 @@
 		362175DC22F1C39300864BEB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DB22F1C39300864BEB /* Account.swift */; };
 		362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DF22F1C3E700864BEB /* HexEncoding.swift */; };
 		362175E222F1C41C00864BEB /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175E122F1C41C00864BEB /* Secp256k1.swift */; };
+		3654181C22F1D2EA004382B1 /* Bech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654181B22F1D2EA004382B1 /* Bech32.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		362175DB22F1C39300864BEB /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		362175DF22F1C3E700864BEB /* HexEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexEncoding.swift; sourceTree = "<group>"; };
 		362175E122F1C41C00864BEB /* Secp256k1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1.swift; sourceTree = "<group>"; };
+		3654181B22F1D2EA004382B1 /* Bech32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bech32.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		362175DD22F1C3A200864BEB /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				3654181B22F1D2EA004382B1 /* Bech32.swift */,
 				362175E122F1C41C00864BEB /* Secp256k1.swift */,
 			);
 			path = Crypto;
@@ -288,6 +291,7 @@
 			files = (
 				362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */,
 				362175DC22F1C39300864BEB /* Account.swift in Sources */,
+				3654181C22F1D2EA004382B1 /* Bech32.swift in Sources */,
 				362175E222F1C41C00864BEB /* Secp256k1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
