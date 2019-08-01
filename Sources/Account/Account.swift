@@ -28,12 +28,16 @@ public class Account {
         return try Account(privateKey: bytesHash.hexString())
     }
 
+    public class func create(privateKey: String) throws -> Account {
+        return try Account(privateKey: privateKey)
+    }
+
     public init(privateKey: String) throws {
         self.privateKey = privateKey;
-        var publicKeyData = Secp256k1.createPublicKey(from: Data(fromHexEncodedString: privateKey)!)
-        self.publicKey = publicKeyData.hexEncodedString()
-        publicKeyData.removeFirst()
-        var pubHash = SHA3(variant: .keccak256).calculate(for: Array(publicKeyData))
+        var publicKey = Secp256k1.createPublicKey(from: try self.privateKey.hexBytes())
+        self.publicKey = publicKey.hexString()
+        publicKey.removeFirst()
+        var pubHash = SHA3(variant: .keccak256).calculate(for:publicKey)
         guard pubHash.count == 32 else {
             throw Error.internalError
         }
@@ -47,5 +51,26 @@ public class Account {
         case internalError
         case keyMalformed
         case signatureMalformed
+    }
+    
+    public func sign(message: Bytes) throws -> Bytes {
+        let preambleTemp = "IoTeX Signed Message:\n%d"
+        let preamble = String(format: preambleTemp, message.count)
+        
+        var bytes = Bytes()
+        bytes.append(22)
+        bytes.append(contentsOf: preamble.bytes)
+        bytes.append(contentsOf: message)
+        
+        let hash = SHA3(variant: .keccak256).calculate(for: bytes)
+        guard hash.count == 32 else {
+            throw Error.internalError
+        }
+        var (data, rid) = Secp256k1.sign(message: hash, seckey: try self.privateKey.hexBytes())
+        if (data == nil) {
+            throw Error.signatureMalformed
+        }
+        data!.append(UInt8(rid))
+        return data!
     }
 }

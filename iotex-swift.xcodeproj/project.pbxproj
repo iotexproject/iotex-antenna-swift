@@ -24,6 +24,7 @@
 		3654182622F1F4B5004382B1 /* Bytes+UInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654182522F1F4B5004382B1 /* Bytes+UInt.swift */; };
 		3654182822F1F5A9004382B1 /* Bytes+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654182722F1F5A9004382B1 /* Bytes+HexString.swift */; };
 		3654182A22F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654182922F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift */; };
+		3654182C22F277E5004382B1 /* String+HexBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654182B22F277E5004382B1 /* String+HexBytes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		3654182522F1F4B5004382B1 /* Bytes+UInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bytes+UInt.swift"; sourceTree = "<group>"; };
 		3654182722F1F5A9004382B1 /* Bytes+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bytes+HexString.swift"; sourceTree = "<group>"; };
 		3654182922F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bytes+TrimLeadingZeros.swift"; sourceTree = "<group>"; };
+		3654182B22F277E5004382B1 /* String+HexBytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HexBytes.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				3654182522F1F4B5004382B1 /* Bytes+UInt.swift */,
 				3654182722F1F5A9004382B1 /* Bytes+HexString.swift */,
 				3654182922F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift */,
+				3654182B22F277E5004382B1 /* String+HexBytes.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3654182C22F277E5004382B1 /* String+HexBytes.swift in Sources */,
 				3654182622F1F4B5004382B1 /* Bytes+UInt.swift in Sources */,
 				362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */,
 				3654182222F1F41E004382B1 /* BytesConvertible.swift in Sources */,
