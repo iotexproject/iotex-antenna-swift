@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3621756A22F1AACD00864BEB"
-               BuildableName = "iotex_swift.framework"
-               BlueprintName = "iotex-swift"
-               ReferencedContainer = "container:iotex-swift.xcodeproj">
+               BuildableName = "iotex_antenna_swift.framework"
+               BlueprintName = "iotex-antenna-swift"
+               ReferencedContainer = "container:iotex-antenna-swift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3621757322F1AACD00864BEB"
-               BuildableName = "iotex-swiftTests.xctest"
-               BlueprintName = "iotex-swiftTests"
-               ReferencedContainer = "container:iotex-swift.xcodeproj">
+               BuildableName = "iotex-antenna-swiftTests.xctest"
+               BlueprintName = "iotex-antenna-swiftTests"
+               ReferencedContainer = "container:iotex-antenna-swift.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3621756A22F1AACD00864BEB"
-            BuildableName = "iotex_swift.framework"
-            BlueprintName = "iotex-swift"
-            ReferencedContainer = "container:iotex-swift.xcodeproj">
+            BuildableName = "iotex_antenna_swift.framework"
+            BlueprintName = "iotex-antenna-swift"
+            ReferencedContainer = "container:iotex-antenna-swift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3621756A22F1AACD00864BEB"
-            BuildableName = "iotex_swift.framework"
-            BlueprintName = "iotex-swift"
-            ReferencedContainer = "container:iotex-swift.xcodeproj">
+            BuildableName = "iotex_antenna_swift.framework"
+            BlueprintName = "iotex-antenna-swift"
+            ReferencedContainer = "container:iotex-antenna-swift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3621756A22F1AACD00864BEB"
-            BuildableName = "iotex_swift.framework"
-            BlueprintName = "iotex-swift"
-            ReferencedContainer = "container:iotex-swift.xcodeproj">
+            BuildableName = "iotex_antenna_swift.framework"
+            BlueprintName = "iotex-antenna-swift"
+            ReferencedContainer = "container:iotex-antenna-swift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

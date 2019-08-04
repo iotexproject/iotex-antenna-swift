@@ -17,7 +17,7 @@
 		3621759122F1B01300864BEB /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621758F22F1B01300864BEB /* CryptoSwift.framework */; };
 		362175CD22F1BF7B00864BEB /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621758F22F1B01300864BEB /* CryptoSwift.framework */; };
 		362175D822F1C22C00864BEB /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621758E22F1B01300864BEB /* secp256k1.framework */; };
-		362175D922F1C23900864BEB /* iotex_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621756B22F1AACD00864BEB /* iotex_swift.framework */; };
+		362175D922F1C23900864BEB /* iotex_antenna_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621756B22F1AACD00864BEB /* iotex_antenna_swift.framework */; };
 		362175DC22F1C39300864BEB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DB22F1C39300864BEB /* Account.swift */; };
 		362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DF22F1C3E700864BEB /* HexEncoding.swift */; };
 		362175E222F1C41C00864BEB /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175E122F1C41C00864BEB /* Secp256k1.swift */; };
@@ -46,9 +46,9 @@
 		361020D122F2A71300645057 /* Keystore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keystore.swift; sourceTree = "<group>"; };
 		361020D322F2A76D00645057 /* KeystoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreFactory.swift; sourceTree = "<group>"; };
 		361020D522F2AA4F00645057 /* KeystoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreTests.swift; sourceTree = "<group>"; };
-		3621756B22F1AACD00864BEB /* iotex_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iotex_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3621756B22F1AACD00864BEB /* iotex_antenna_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iotex_antenna_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3621756F22F1AACD00864BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3621757422F1AACD00864BEB /* iotex-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iotex-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3621757422F1AACD00864BEB /* iotex-antenna-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iotex-antenna-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3621757922F1AACD00864BEB /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		3621757B22F1AACD00864BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3621758922F1AECF00864BEB /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				362175D922F1C23900864BEB /* iotex_swift.framework in Frameworks */,
+				362175D922F1C23900864BEB /* iotex_antenna_swift.framework in Frameworks */,
 				362175CD22F1BF7B00864BEB /* CryptoSwift.framework in Frameworks */,
 				362175D822F1C22C00864BEB /* secp256k1.framework in Frameworks */,
 			);
@@ -108,8 +108,8 @@
 		3621756C22F1AACD00864BEB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3621756B22F1AACD00864BEB /* iotex_swift.framework */,
-				3621757422F1AACD00864BEB /* iotex-swiftTests.xctest */,
+				3621756B22F1AACD00864BEB /* iotex_antenna_swift.framework */,
+				3621757422F1AACD00864BEB /* iotex-antenna-swiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,9 +201,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3621756A22F1AACD00864BEB /* iotex-swift */ = {
+		3621756A22F1AACD00864BEB /* iotex-antenna-swift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3621757F22F1AACD00864BEB /* Build configuration list for PBXNativeTarget "iotex-swift" */;
+			buildConfigurationList = 3621757F22F1AACD00864BEB /* Build configuration list for PBXNativeTarget "iotex-antenna-swift" */;
 			buildPhases = (
 				3621756622F1AACD00864BEB /* Headers */,
 				3621756722F1AACD00864BEB /* Sources */,
@@ -214,14 +214,14 @@
 			);
 			dependencies = (
 			);
-			name = "iotex-swift";
+			name = "iotex-antenna-swift";
 			productName = "iotex-swift";
-			productReference = 3621756B22F1AACD00864BEB /* iotex_swift.framework */;
+			productReference = 3621756B22F1AACD00864BEB /* iotex_antenna_swift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3621757322F1AACD00864BEB /* iotex-swiftTests */ = {
+		3621757322F1AACD00864BEB /* iotex-antenna-swiftTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3621758222F1AACD00864BEB /* Build configuration list for PBXNativeTarget "iotex-swiftTests" */;
+			buildConfigurationList = 3621758222F1AACD00864BEB /* Build configuration list for PBXNativeTarget "iotex-antenna-swiftTests" */;
 			buildPhases = (
 				3621757022F1AACD00864BEB /* Sources */,
 				3621757122F1AACD00864BEB /* Frameworks */,
@@ -233,9 +233,9 @@
 			dependencies = (
 				3621757722F1AACD00864BEB /* PBXTargetDependency */,
 			);
-			name = "iotex-swiftTests";
+			name = "iotex-antenna-swiftTests";
 			productName = "iotex-swiftTests";
-			productReference = 3621757422F1AACD00864BEB /* iotex-swiftTests.xctest */;
+			productReference = 3621757422F1AACD00864BEB /* iotex-antenna-swiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -257,7 +257,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3621756522F1AACD00864BEB /* Build configuration list for PBXProject "iotex-swift" */;
+			buildConfigurationList = 3621756522F1AACD00864BEB /* Build configuration list for PBXProject "iotex-antenna-swift" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -269,8 +269,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3621756A22F1AACD00864BEB /* iotex-swift */,
-				3621757322F1AACD00864BEB /* iotex-swiftTests */,
+				3621756A22F1AACD00864BEB /* iotex-antenna-swift */,
+				3621757322F1AACD00864BEB /* iotex-antenna-swiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -353,7 +353,7 @@
 /* Begin PBXTargetDependency section */
 		3621757722F1AACD00864BEB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3621756A22F1AACD00864BEB /* iotex-swift */;
+			target = 3621756A22F1AACD00864BEB /* iotex-antenna-swift */;
 			targetProxy = 3621757622F1AACD00864BEB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -588,7 +588,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3621756522F1AACD00864BEB /* Build configuration list for PBXProject "iotex-swift" */ = {
+		3621756522F1AACD00864BEB /* Build configuration list for PBXProject "iotex-antenna-swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3621757D22F1AACD00864BEB /* Debug */,
@@ -597,7 +597,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3621757F22F1AACD00864BEB /* Build configuration list for PBXNativeTarget "iotex-swift" */ = {
+		3621757F22F1AACD00864BEB /* Build configuration list for PBXNativeTarget "iotex-antenna-swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3621758022F1AACD00864BEB /* Debug */,
@@ -606,7 +606,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3621758222F1AACD00864BEB /* Build configuration list for PBXNativeTarget "iotex-swiftTests" */ = {
+		3621758222F1AACD00864BEB /* Build configuration list for PBXNativeTarget "iotex-antenna-swiftTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3621758322F1AACD00864BEB /* Debug */,

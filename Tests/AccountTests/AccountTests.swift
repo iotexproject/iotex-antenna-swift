@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import iotex_swift
+@testable import iotex_antenna_swift
 
 class AccountTests: XCTestCase {
     func testLoadAccount() throws {
