@@ -8,6 +8,10 @@
 
 import Foundation
 
+public struct GetAccountRequest {
+    var address: String
+}
+
 public struct GetAccountResponse {
     var accountMeta: AccountMeta
     

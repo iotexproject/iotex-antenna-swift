@@ -15,11 +15,10 @@ public class RPCMethod {
         self.client = Iotexapi_APIServiceServiceClient(address: providor, secure: true)
     }
     
-    public func getAccount(address: String) throws -> GetAccountResponse {
-        var request = Iotexapi_GetAccountRequest.with {
-            $0.address = address
-        }
-        let response = try self.client.getAccount(request)
+    public func getAccount(_ request: GetAccountRequest) throws -> GetAccountResponse {
+        let response = try self.client.getAccount(Iotexapi_GetAccountRequest.with {
+            $0.address = request.address
+        })
         return GetAccountResponse(accountMeta: GetAccountResponse.AccountMeta(
             address: response.accountMeta.address,
             balance: response.accountMeta.balance,
