@@ -12,9 +12,10 @@ import XCTest
 class RPCMethodTests: XCTestCase {
 
     func testGetAccount() throws {
-        let rpc = try RPCMethod(providor: "api.testnet.iotex.one:80")
+        let rpc = try RPCMethod(providor: "api.testnet.iotex.one:443")
         let response = try rpc.getAccount(address: "io126xcrjhtp27end76ac9nmx6px2072c3vgz6suw")
         XCTAssert(response.accountMeta.address == "io126xcrjhtp27end76ac9nmx6px2072c3vgz6suw")
+        print(response)
     }
 
 }

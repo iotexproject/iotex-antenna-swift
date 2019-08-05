@@ -12,7 +12,7 @@ public class RPCMethod {
     private let client: Iotexapi_APIServiceServiceClient
     
     public init(providor: String) throws {
-        self.client = Iotexapi_APIServiceServiceClient(address: providor, secure: false)
+        self.client = Iotexapi_APIServiceServiceClient(address: providor, secure: true)
     }
     
     public func getAccount(address: String) throws -> GetAccountResponse {
@@ -22,7 +22,7 @@ public class RPCMethod {
         let response = try self.client.getAccount(request)
         return GetAccountResponse(accountMeta: GetAccountResponse.AccountMeta(
             address: response.accountMeta.address,
-            balance: response.accountMeta.address,
+            balance: response.accountMeta.balance,
             nonce: response.accountMeta.nonce,
             pendingNonce: response.accountMeta.pendingNonce,
             numActions: response.accountMeta.numActions
