@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,9 +12,6 @@
 		361020D622F2AA4F00645057 /* KeystoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361020D522F2AA4F00645057 /* KeystoreTests.swift */; };
 		3621757A22F1AACD00864BEB /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621757922F1AACD00864BEB /* AccountTests.swift */; };
 		3621758C22F1AECF00864BEB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3621758A22F1AECF00864BEB /* README.md */; };
-		362175CD22F1BF7B00864BEB /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621758F22F1B01300864BEB /* CryptoSwift.framework */; };
-		362175D822F1C22C00864BEB /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621758E22F1B01300864BEB /* secp256k1.framework */; };
-		362175D922F1C23900864BEB /* iotex_antenna_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3621756B22F1AACD00864BEB /* iotex_antenna_swift.framework */; };
 		362175DC22F1C39300864BEB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DB22F1C39300864BEB /* Account.swift */; };
 		362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DF22F1C3E700864BEB /* HexEncoding.swift */; };
 		362175E222F1C41C00864BEB /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175E122F1C41C00864BEB /* Secp256k1.swift */; };
@@ -28,8 +25,8 @@
 		3654182C22F277E5004382B1 /* String+HexBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654182B22F277E5004382B1 /* String+HexBytes.swift */; };
 		366A345A22F2A5D20076923E /* Scrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A345922F2A5D20076923E /* Scrypt.swift */; };
 		36DF24F522F2A6100065EDF7 /* ScryptParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF24F422F2A6100065EDF7 /* ScryptParams.swift */; };
-		640993DA085C105FFB21A145 /* Pods_iotex_antenna_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC9DAF5E8862EF1C258D21D /* Pods_iotex_antenna_swift.framework */; };
-		EA4456CF58BEC131A2ED36BA /* Pods_iotex_antenna_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E655E8E063255BC16E68C483 /* Pods_iotex_antenna_swiftTests.framework */; };
+		41463CB4C7D3E2DDE7E70875 /* Pods_Shows_iotex_antenna_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2E1782B40A80C8C6CD8AEE /* Pods_Shows_iotex_antenna_swiftTests.framework */; };
+		D4FD7C5CFF5C896444AC23A2 /* Pods_Shows_iotex_antenna_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B048B4B2E57880C6C4150D4F /* Pods_Shows_iotex_antenna_swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17CB0827BE27ECC484F3F02E /* Pods-iotex-antenna-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iotex-antenna-swift.release.xcconfig"; path = "Target Support Files/Pods-iotex-antenna-swift/Pods-iotex-antenna-swift.release.xcconfig"; sourceTree = "<group>"; };
-		32B4521B59B5657827489558 /* Pods-iotex-antenna-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iotex-antenna-swift.debug.xcconfig"; path = "Target Support Files/Pods-iotex-antenna-swift/Pods-iotex-antenna-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		361020D122F2A71300645057 /* Keystore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keystore.swift; sourceTree = "<group>"; };
 		361020D322F2A76D00645057 /* KeystoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreFactory.swift; sourceTree = "<group>"; };
 		361020D522F2AA4F00645057 /* KeystoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreTests.swift; sourceTree = "<group>"; };
@@ -71,10 +66,14 @@
 		3654182B22F277E5004382B1 /* String+HexBytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HexBytes.swift"; sourceTree = "<group>"; };
 		366A345922F2A5D20076923E /* Scrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scrypt.swift; sourceTree = "<group>"; };
 		36DF24F422F2A6100065EDF7 /* ScryptParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScryptParams.swift; sourceTree = "<group>"; };
-		6358DA5C3AA2DA4091319F63 /* Pods-iotex-antenna-swiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iotex-antenna-swiftTests.release.xcconfig"; path = "Target Support Files/Pods-iotex-antenna-swiftTests/Pods-iotex-antenna-swiftTests.release.xcconfig"; sourceTree = "<group>"; };
-		A2F4BBCC29E7AEB5DE255427 /* Pods-iotex-antenna-swiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iotex-antenna-swiftTests.debug.xcconfig"; path = "Target Support Files/Pods-iotex-antenna-swiftTests/Pods-iotex-antenna-swiftTests.debug.xcconfig"; sourceTree = "<group>"; };
-		CBC9DAF5E8862EF1C258D21D /* Pods_iotex_antenna_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iotex_antenna_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E655E8E063255BC16E68C483 /* Pods_iotex_antenna_swiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iotex_antenna_swiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4709B21853638EAB2FBD3C /* Pods-Shows-iotex-antenna-swiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shows-iotex-antenna-swiftTests.release.xcconfig"; path = "Target Support Files/Pods-Shows-iotex-antenna-swiftTests/Pods-Shows-iotex-antenna-swiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		55B7E61548CFE19186EC2885 /* Pods-Shows-iotex-antenna-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shows-iotex-antenna-swift.debug.xcconfig"; path = "Target Support Files/Pods-Shows-iotex-antenna-swift/Pods-Shows-iotex-antenna-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		970A632D22F80F7F00635F3E /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		970A632F22F80F8300635F3E /* secp256k1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = secp256k1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B1FC21C50FAE2DB8C520BC /* Pods-Shows-iotex-antenna-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shows-iotex-antenna-swift.release.xcconfig"; path = "Target Support Files/Pods-Shows-iotex-antenna-swift/Pods-Shows-iotex-antenna-swift.release.xcconfig"; sourceTree = "<group>"; };
+		B048B4B2E57880C6C4150D4F /* Pods_Shows_iotex_antenna_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shows_iotex_antenna_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF86CD6DA4C9A710143D292E /* Pods-Shows-iotex-antenna-swiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shows-iotex-antenna-swiftTests.debug.xcconfig"; path = "Target Support Files/Pods-Shows-iotex-antenna-swiftTests/Pods-Shows-iotex-antenna-swiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FE2E1782B40A80C8C6CD8AEE /* Pods_Shows_iotex_antenna_swiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shows_iotex_antenna_swiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				640993DA085C105FFB21A145 /* Pods_iotex_antenna_swift.framework in Frameworks */,
+				D4FD7C5CFF5C896444AC23A2 /* Pods_Shows_iotex_antenna_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,10 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				362175D922F1C23900864BEB /* iotex_antenna_swift.framework in Frameworks */,
-				362175CD22F1BF7B00864BEB /* CryptoSwift.framework in Frameworks */,
-				362175D822F1C22C00864BEB /* secp256k1.framework in Frameworks */,
-				EA4456CF58BEC131A2ED36BA /* Pods_iotex_antenna_swiftTests.framework in Frameworks */,
+				41463CB4C7D3E2DDE7E70875 /* Pods_Shows_iotex_antenna_swiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,10 +99,10 @@
 		17AE27E50B3823AA8C8A2F4E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				32B4521B59B5657827489558 /* Pods-iotex-antenna-swift.debug.xcconfig */,
-				17CB0827BE27ECC484F3F02E /* Pods-iotex-antenna-swift.release.xcconfig */,
-				A2F4BBCC29E7AEB5DE255427 /* Pods-iotex-antenna-swiftTests.debug.xcconfig */,
-				6358DA5C3AA2DA4091319F63 /* Pods-iotex-antenna-swiftTests.release.xcconfig */,
+				55B7E61548CFE19186EC2885 /* Pods-Shows-iotex-antenna-swift.debug.xcconfig */,
+				A2B1FC21C50FAE2DB8C520BC /* Pods-Shows-iotex-antenna-swift.release.xcconfig */,
+				BF86CD6DA4C9A710143D292E /* Pods-Shows-iotex-antenna-swiftTests.debug.xcconfig */,
+				3B4709B21853638EAB2FBD3C /* Pods-Shows-iotex-antenna-swiftTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -167,10 +163,12 @@
 		3621758D22F1B01200864BEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				970A632F22F80F8300635F3E /* secp256k1.framework */,
+				970A632D22F80F7F00635F3E /* CryptoSwift.framework */,
 				3621758F22F1B01300864BEB /* CryptoSwift.framework */,
 				3621758E22F1B01300864BEB /* secp256k1.framework */,
-				CBC9DAF5E8862EF1C258D21D /* Pods_iotex_antenna_swift.framework */,
-				E655E8E063255BC16E68C483 /* Pods_iotex_antenna_swiftTests.framework */,
+				B048B4B2E57880C6C4150D4F /* Pods_Shows_iotex_antenna_swift.framework */,
+				FE2E1782B40A80C8C6CD8AEE /* Pods_Shows_iotex_antenna_swiftTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -250,7 +248,7 @@
 				3621757022F1AACD00864BEB /* Sources */,
 				3621757122F1AACD00864BEB /* Frameworks */,
 				3621757222F1AACD00864BEB /* Resources */,
-				362175E322F1C73000864BEB /* Run Script */,
+				5D910E000327201517B6099B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -319,25 +317,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		362175E322F1C73000864BEB /* Run Script */ = {
+		5D910E000327201517B6099B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Shows-iotex-antenna-swiftTests/Pods-Shows-iotex-antenna-swiftTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/secp256k1.framework",
-			);
-			name = "Run Script";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Shows-iotex-antenna-swiftTests/Pods-Shows-iotex-antenna-swiftTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shows-iotex-antenna-swiftTests/Pods-Shows-iotex-antenna-swiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		BF122D7AA79DE461C9AFD0BA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -354,7 +349,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iotex-antenna-swift-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Shows-iotex-antenna-swift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -376,7 +371,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iotex-antenna-swiftTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Shows-iotex-antenna-swiftTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -552,7 +547,7 @@
 		};
 		3621758022F1AACD00864BEB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32B4521B59B5657827489558 /* Pods-iotex-antenna-swift.debug.xcconfig */;
+			baseConfigurationReference = 55B7E61548CFE19186EC2885 /* Pods-Shows-iotex-antenna-swift.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -583,7 +578,7 @@
 		};
 		3621758122F1AACD00864BEB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17CB0827BE27ECC484F3F02E /* Pods-iotex-antenna-swift.release.xcconfig */;
+			baseConfigurationReference = A2B1FC21C50FAE2DB8C520BC /* Pods-Shows-iotex-antenna-swift.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -613,14 +608,11 @@
 		};
 		3621758322F1AACD00864BEB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A2F4BBCC29E7AEB5DE255427 /* Pods-iotex-antenna-swiftTests.debug.xcconfig */;
+			baseConfigurationReference = BF86CD6DA4C9A710143D292E /* Pods-Shows-iotex-antenna-swiftTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -636,14 +628,11 @@
 		};
 		3621758422F1AACD00864BEB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6358DA5C3AA2DA4091319F63 /* Pods-iotex-antenna-swiftTests.release.xcconfig */;
+			baseConfigurationReference = 3B4709B21853638EAB2FBD3C /* Pods-Shows-iotex-antenna-swiftTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
