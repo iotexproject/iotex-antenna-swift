@@ -25,104 +25,104 @@ import Foundation
 import SwiftGRPC
 import SwiftProtobuf
 
-internal protocol Iotexapi_APIServiceGetAccountCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceGetAccountCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceGetAccountCallBase: ClientCallUnaryBase<Iotexapi_GetAccountRequest, Iotexapi_GetAccountResponse>, Iotexapi_APIServiceGetAccountCall {
   override class var method: String { return "/iotexapi.APIService/GetAccount" }
 }
 
-internal protocol Iotexapi_APIServiceGetActionsCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceGetActionsCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceGetActionsCallBase: ClientCallUnaryBase<Iotexapi_GetActionsRequest, Iotexapi_GetActionsResponse>, Iotexapi_APIServiceGetActionsCall {
   override class var method: String { return "/iotexapi.APIService/GetActions" }
 }
 
-internal protocol Iotexapi_APIServiceGetBlockMetasCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceGetBlockMetasCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceGetBlockMetasCallBase: ClientCallUnaryBase<Iotexapi_GetBlockMetasRequest, Iotexapi_GetBlockMetasResponse>, Iotexapi_APIServiceGetBlockMetasCall {
   override class var method: String { return "/iotexapi.APIService/GetBlockMetas" }
 }
 
-internal protocol Iotexapi_APIServiceGetChainMetaCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceGetChainMetaCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceGetChainMetaCallBase: ClientCallUnaryBase<Iotexapi_GetChainMetaRequest, Iotexapi_GetChainMetaResponse>, Iotexapi_APIServiceGetChainMetaCall {
   override class var method: String { return "/iotexapi.APIService/GetChainMeta" }
 }
 
-internal protocol Iotexapi_APIServiceGetServerMetaCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceGetServerMetaCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceGetServerMetaCallBase: ClientCallUnaryBase<Iotexapi_GetServerMetaRequest, Iotexapi_GetServerMetaResponse>, Iotexapi_APIServiceGetServerMetaCall {
   override class var method: String { return "/iotexapi.APIService/GetServerMeta" }
 }
 
-internal protocol Iotexapi_APIServiceSendActionCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceSendActionCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceSendActionCallBase: ClientCallUnaryBase<Iotexapi_SendActionRequest, Iotexapi_SendActionResponse>, Iotexapi_APIServiceSendActionCall {
   override class var method: String { return "/iotexapi.APIService/SendAction" }
 }
 
-internal protocol Iotexapi_APIServiceGetReceiptByActionCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceGetReceiptByActionCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceGetReceiptByActionCallBase: ClientCallUnaryBase<Iotexapi_GetReceiptByActionRequest, Iotexapi_GetReceiptByActionResponse>, Iotexapi_APIServiceGetReceiptByActionCall {
   override class var method: String { return "/iotexapi.APIService/GetReceiptByAction" }
 }
 
-internal protocol Iotexapi_APIServiceReadContractCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceReadContractCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceReadContractCallBase: ClientCallUnaryBase<Iotexapi_ReadContractRequest, Iotexapi_ReadContractResponse>, Iotexapi_APIServiceReadContractCall {
   override class var method: String { return "/iotexapi.APIService/ReadContract" }
 }
 
-internal protocol Iotexapi_APIServiceSuggestGasPriceCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceSuggestGasPriceCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceSuggestGasPriceCallBase: ClientCallUnaryBase<Iotexapi_SuggestGasPriceRequest, Iotexapi_SuggestGasPriceResponse>, Iotexapi_APIServiceSuggestGasPriceCall {
   override class var method: String { return "/iotexapi.APIService/SuggestGasPrice" }
 }
 
-internal protocol Iotexapi_APIServiceEstimateGasForActionCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceEstimateGasForActionCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceEstimateGasForActionCallBase: ClientCallUnaryBase<Iotexapi_EstimateGasForActionRequest, Iotexapi_EstimateGasForActionResponse>, Iotexapi_APIServiceEstimateGasForActionCall {
   override class var method: String { return "/iotexapi.APIService/EstimateGasForAction" }
 }
 
-internal protocol Iotexapi_APIServiceEstimateActionGasConsumptionCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceEstimateActionGasConsumptionCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceEstimateActionGasConsumptionCallBase: ClientCallUnaryBase<Iotexapi_EstimateActionGasConsumptionRequest, Iotexapi_EstimateActionGasConsumptionResponse>, Iotexapi_APIServiceEstimateActionGasConsumptionCall {
   override class var method: String { return "/iotexapi.APIService/EstimateActionGasConsumption" }
 }
 
-internal protocol Iotexapi_APIServiceReadStateCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceReadStateCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceReadStateCallBase: ClientCallUnaryBase<Iotexapi_ReadStateRequest, Iotexapi_ReadStateResponse>, Iotexapi_APIServiceReadStateCall {
   override class var method: String { return "/iotexapi.APIService/ReadState" }
 }
 
-internal protocol Iotexapi_APIServiceGetEpochMetaCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceGetEpochMetaCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceGetEpochMetaCallBase: ClientCallUnaryBase<Iotexapi_GetEpochMetaRequest, Iotexapi_GetEpochMetaResponse>, Iotexapi_APIServiceGetEpochMetaCall {
   override class var method: String { return "/iotexapi.APIService/GetEpochMeta" }
 }
 
-internal protocol Iotexapi_APIServiceGetRawBlocksCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceGetRawBlocksCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceGetRawBlocksCallBase: ClientCallUnaryBase<Iotexapi_GetRawBlocksRequest, Iotexapi_GetRawBlocksResponse>, Iotexapi_APIServiceGetRawBlocksCall {
   override class var method: String { return "/iotexapi.APIService/GetRawBlocks" }
 }
 
-internal protocol Iotexapi_APIServiceGetLogsCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceGetLogsCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceGetLogsCallBase: ClientCallUnaryBase<Iotexapi_GetLogsRequest, Iotexapi_GetLogsResponse>, Iotexapi_APIServiceGetLogsCall {
   override class var method: String { return "/iotexapi.APIService/GetLogs" }
 }
 
-internal protocol Iotexapi_APIServiceStreamBlocksCall: ClientCallServerStreaming {
+public protocol Iotexapi_APIServiceStreamBlocksCall: ClientCallServerStreaming {
   /// Do not call this directly, call `receive()` in the protocol extension below instead.
   func _receive(timeout: DispatchTime) throws -> Iotexapi_StreamBlocksResponse?
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Iotexapi_StreamBlocksResponse?>) -> Void) throws
 }
 
-internal extension Iotexapi_APIServiceStreamBlocksCall {
+public extension Iotexapi_APIServiceStreamBlocksCall {
   /// Call this to wait for a result. Blocking.
   func receive(timeout: DispatchTime = .distantFuture) throws -> Iotexapi_StreamBlocksResponse? { return try self._receive(timeout: timeout) }
 }
@@ -131,14 +131,14 @@ fileprivate final class Iotexapi_APIServiceStreamBlocksCallBase: ClientCallServe
   override class var method: String { return "/iotexapi.APIService/StreamBlocks" }
 }
 
-internal protocol Iotexapi_APIServiceStreamLogsCall: ClientCallServerStreaming {
+public protocol Iotexapi_APIServiceStreamLogsCall: ClientCallServerStreaming {
   /// Do not call this directly, call `receive()` in the protocol extension below instead.
   func _receive(timeout: DispatchTime) throws -> Iotexapi_StreamLogsResponse?
   /// Call this to wait for a result. Nonblocking.
   func receive(completion: @escaping (ResultOrRPCError<Iotexapi_StreamLogsResponse?>) -> Void) throws
 }
 
-internal extension Iotexapi_APIServiceStreamLogsCall {
+public extension Iotexapi_APIServiceStreamLogsCall {
   /// Call this to wait for a result. Blocking.
   func receive(timeout: DispatchTime = .distantFuture) throws -> Iotexapi_StreamLogsResponse? { return try self._receive(timeout: timeout) }
 }
@@ -149,7 +149,7 @@ fileprivate final class Iotexapi_APIServiceStreamLogsCallBase: ClientCallServerS
 
 
 /// Instantiate Iotexapi_APIServiceServiceClient, then call methods of this protocol to make API calls.
-internal protocol Iotexapi_APIServiceService: ServiceClient {
+public protocol Iotexapi_APIServiceService: ServiceClient {
   /// Synchronous. Unary.
   func getAccount(_ request: Iotexapi_GetAccountRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetAccountResponse
   /// Asynchronous. Unary.
@@ -252,7 +252,7 @@ internal protocol Iotexapi_APIServiceService: ServiceClient {
 
 }
 
-internal extension Iotexapi_APIServiceService {
+public extension Iotexapi_APIServiceService {
   /// Synchronous. Unary.
   func getAccount(_ request: Iotexapi_GetAccountRequest) throws -> Iotexapi_GetAccountResponse {
     return try self.getAccount(request, metadata: self.metadata)
@@ -415,183 +415,183 @@ internal extension Iotexapi_APIServiceService {
 
 }
 
-internal final class Iotexapi_APIServiceServiceClient: ServiceClientBase, Iotexapi_APIServiceService {
+public final class Iotexapi_APIServiceServiceClient: ServiceClientBase, Iotexapi_APIServiceService {
   /// Synchronous. Unary.
-  internal func getAccount(_ request: Iotexapi_GetAccountRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetAccountResponse {
+  public func getAccount(_ request: Iotexapi_GetAccountRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetAccountResponse {
     return try Iotexapi_APIServiceGetAccountCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func getAccount(_ request: Iotexapi_GetAccountRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetAccountResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetAccountCall {
+  public func getAccount(_ request: Iotexapi_GetAccountRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetAccountResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetAccountCall {
     return try Iotexapi_APIServiceGetAccountCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func getActions(_ request: Iotexapi_GetActionsRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetActionsResponse {
+  public func getActions(_ request: Iotexapi_GetActionsRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetActionsResponse {
     return try Iotexapi_APIServiceGetActionsCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func getActions(_ request: Iotexapi_GetActionsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetActionsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetActionsCall {
+  public func getActions(_ request: Iotexapi_GetActionsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetActionsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetActionsCall {
     return try Iotexapi_APIServiceGetActionsCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func getBlockMetas(_ request: Iotexapi_GetBlockMetasRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetBlockMetasResponse {
+  public func getBlockMetas(_ request: Iotexapi_GetBlockMetasRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetBlockMetasResponse {
     return try Iotexapi_APIServiceGetBlockMetasCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func getBlockMetas(_ request: Iotexapi_GetBlockMetasRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetBlockMetasResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetBlockMetasCall {
+  public func getBlockMetas(_ request: Iotexapi_GetBlockMetasRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetBlockMetasResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetBlockMetasCall {
     return try Iotexapi_APIServiceGetBlockMetasCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func getChainMeta(_ request: Iotexapi_GetChainMetaRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetChainMetaResponse {
+  public func getChainMeta(_ request: Iotexapi_GetChainMetaRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetChainMetaResponse {
     return try Iotexapi_APIServiceGetChainMetaCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func getChainMeta(_ request: Iotexapi_GetChainMetaRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetChainMetaResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetChainMetaCall {
+  public func getChainMeta(_ request: Iotexapi_GetChainMetaRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetChainMetaResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetChainMetaCall {
     return try Iotexapi_APIServiceGetChainMetaCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func getServerMeta(_ request: Iotexapi_GetServerMetaRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetServerMetaResponse {
+  public func getServerMeta(_ request: Iotexapi_GetServerMetaRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetServerMetaResponse {
     return try Iotexapi_APIServiceGetServerMetaCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func getServerMeta(_ request: Iotexapi_GetServerMetaRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetServerMetaResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetServerMetaCall {
+  public func getServerMeta(_ request: Iotexapi_GetServerMetaRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetServerMetaResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetServerMetaCall {
     return try Iotexapi_APIServiceGetServerMetaCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func sendAction(_ request: Iotexapi_SendActionRequest, metadata customMetadata: Metadata) throws -> Iotexapi_SendActionResponse {
+  public func sendAction(_ request: Iotexapi_SendActionRequest, metadata customMetadata: Metadata) throws -> Iotexapi_SendActionResponse {
     return try Iotexapi_APIServiceSendActionCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func sendAction(_ request: Iotexapi_SendActionRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_SendActionResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceSendActionCall {
+  public func sendAction(_ request: Iotexapi_SendActionRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_SendActionResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceSendActionCall {
     return try Iotexapi_APIServiceSendActionCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func getReceiptByAction(_ request: Iotexapi_GetReceiptByActionRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetReceiptByActionResponse {
+  public func getReceiptByAction(_ request: Iotexapi_GetReceiptByActionRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetReceiptByActionResponse {
     return try Iotexapi_APIServiceGetReceiptByActionCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func getReceiptByAction(_ request: Iotexapi_GetReceiptByActionRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetReceiptByActionResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetReceiptByActionCall {
+  public func getReceiptByAction(_ request: Iotexapi_GetReceiptByActionRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetReceiptByActionResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetReceiptByActionCall {
     return try Iotexapi_APIServiceGetReceiptByActionCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func readContract(_ request: Iotexapi_ReadContractRequest, metadata customMetadata: Metadata) throws -> Iotexapi_ReadContractResponse {
+  public func readContract(_ request: Iotexapi_ReadContractRequest, metadata customMetadata: Metadata) throws -> Iotexapi_ReadContractResponse {
     return try Iotexapi_APIServiceReadContractCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func readContract(_ request: Iotexapi_ReadContractRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_ReadContractResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceReadContractCall {
+  public func readContract(_ request: Iotexapi_ReadContractRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_ReadContractResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceReadContractCall {
     return try Iotexapi_APIServiceReadContractCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func suggestGasPrice(_ request: Iotexapi_SuggestGasPriceRequest, metadata customMetadata: Metadata) throws -> Iotexapi_SuggestGasPriceResponse {
+  public func suggestGasPrice(_ request: Iotexapi_SuggestGasPriceRequest, metadata customMetadata: Metadata) throws -> Iotexapi_SuggestGasPriceResponse {
     return try Iotexapi_APIServiceSuggestGasPriceCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func suggestGasPrice(_ request: Iotexapi_SuggestGasPriceRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_SuggestGasPriceResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceSuggestGasPriceCall {
+  public func suggestGasPrice(_ request: Iotexapi_SuggestGasPriceRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_SuggestGasPriceResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceSuggestGasPriceCall {
     return try Iotexapi_APIServiceSuggestGasPriceCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func estimateGasForAction(_ request: Iotexapi_EstimateGasForActionRequest, metadata customMetadata: Metadata) throws -> Iotexapi_EstimateGasForActionResponse {
+  public func estimateGasForAction(_ request: Iotexapi_EstimateGasForActionRequest, metadata customMetadata: Metadata) throws -> Iotexapi_EstimateGasForActionResponse {
     return try Iotexapi_APIServiceEstimateGasForActionCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func estimateGasForAction(_ request: Iotexapi_EstimateGasForActionRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_EstimateGasForActionResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceEstimateGasForActionCall {
+  public func estimateGasForAction(_ request: Iotexapi_EstimateGasForActionRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_EstimateGasForActionResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceEstimateGasForActionCall {
     return try Iotexapi_APIServiceEstimateGasForActionCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func estimateActionGasConsumption(_ request: Iotexapi_EstimateActionGasConsumptionRequest, metadata customMetadata: Metadata) throws -> Iotexapi_EstimateActionGasConsumptionResponse {
+  public func estimateActionGasConsumption(_ request: Iotexapi_EstimateActionGasConsumptionRequest, metadata customMetadata: Metadata) throws -> Iotexapi_EstimateActionGasConsumptionResponse {
     return try Iotexapi_APIServiceEstimateActionGasConsumptionCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func estimateActionGasConsumption(_ request: Iotexapi_EstimateActionGasConsumptionRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_EstimateActionGasConsumptionResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceEstimateActionGasConsumptionCall {
+  public func estimateActionGasConsumption(_ request: Iotexapi_EstimateActionGasConsumptionRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_EstimateActionGasConsumptionResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceEstimateActionGasConsumptionCall {
     return try Iotexapi_APIServiceEstimateActionGasConsumptionCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func readState(_ request: Iotexapi_ReadStateRequest, metadata customMetadata: Metadata) throws -> Iotexapi_ReadStateResponse {
+  public func readState(_ request: Iotexapi_ReadStateRequest, metadata customMetadata: Metadata) throws -> Iotexapi_ReadStateResponse {
     return try Iotexapi_APIServiceReadStateCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func readState(_ request: Iotexapi_ReadStateRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_ReadStateResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceReadStateCall {
+  public func readState(_ request: Iotexapi_ReadStateRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_ReadStateResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceReadStateCall {
     return try Iotexapi_APIServiceReadStateCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func getEpochMeta(_ request: Iotexapi_GetEpochMetaRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetEpochMetaResponse {
+  public func getEpochMeta(_ request: Iotexapi_GetEpochMetaRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetEpochMetaResponse {
     return try Iotexapi_APIServiceGetEpochMetaCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func getEpochMeta(_ request: Iotexapi_GetEpochMetaRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetEpochMetaResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetEpochMetaCall {
+  public func getEpochMeta(_ request: Iotexapi_GetEpochMetaRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetEpochMetaResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetEpochMetaCall {
     return try Iotexapi_APIServiceGetEpochMetaCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func getRawBlocks(_ request: Iotexapi_GetRawBlocksRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetRawBlocksResponse {
+  public func getRawBlocks(_ request: Iotexapi_GetRawBlocksRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetRawBlocksResponse {
     return try Iotexapi_APIServiceGetRawBlocksCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func getRawBlocks(_ request: Iotexapi_GetRawBlocksRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetRawBlocksResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetRawBlocksCall {
+  public func getRawBlocks(_ request: Iotexapi_GetRawBlocksRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetRawBlocksResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetRawBlocksCall {
     return try Iotexapi_APIServiceGetRawBlocksCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
   /// Synchronous. Unary.
-  internal func getLogs(_ request: Iotexapi_GetLogsRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetLogsResponse {
+  public func getLogs(_ request: Iotexapi_GetLogsRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetLogsResponse {
     return try Iotexapi_APIServiceGetLogsCallBase(channel)
       .run(request: request, metadata: customMetadata)
   }
   /// Asynchronous. Unary.
   @discardableResult
-  internal func getLogs(_ request: Iotexapi_GetLogsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetLogsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetLogsCall {
+  public func getLogs(_ request: Iotexapi_GetLogsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetLogsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetLogsCall {
     return try Iotexapi_APIServiceGetLogsCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
@@ -599,7 +599,7 @@ internal final class Iotexapi_APIServiceServiceClient: ServiceClientBase, Iotexa
   /// Asynchronous. Server-streaming.
   /// Send the initial message.
   /// Use methods on the returned object to get streamed responses.
-  internal func streamBlocks(_ request: Iotexapi_StreamBlocksRequest, metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamBlocksCall {
+  public func streamBlocks(_ request: Iotexapi_StreamBlocksRequest, metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamBlocksCall {
     return try Iotexapi_APIServiceStreamBlocksCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
@@ -607,7 +607,7 @@ internal final class Iotexapi_APIServiceServiceClient: ServiceClientBase, Iotexa
   /// Asynchronous. Server-streaming.
   /// Send the initial message.
   /// Use methods on the returned object to get streamed responses.
-  internal func streamLogs(_ request: Iotexapi_StreamLogsRequest, metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamLogsCall {
+  public func streamLogs(_ request: Iotexapi_StreamLogsRequest, metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamLogsCall {
     return try Iotexapi_APIServiceStreamLogsCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }

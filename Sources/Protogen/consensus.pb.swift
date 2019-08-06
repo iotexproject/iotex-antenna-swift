@@ -28,55 +28,55 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Iotextypes_BlockProposal {
+public struct Iotextypes_BlockProposal {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var block: Iotextypes_Block {
+  public var block: Iotextypes_Block {
     get {return _storage._block ?? Iotextypes_Block()}
     set {_uniqueStorage()._block = newValue}
   }
   /// Returns true if `block` has been explicitly set.
-  var hasBlock: Bool {return _storage._block != nil}
+  public var hasBlock: Bool {return _storage._block != nil}
   /// Clears the value of `block`. Subsequent reads from it will return its default value.
-  mutating func clearBlock() {_uniqueStorage()._block = nil}
+  public mutating func clearBlock() {_uniqueStorage()._block = nil}
 
-  var endorsements: [Iotextypes_Endorsement] {
+  public var endorsements: [Iotextypes_Endorsement] {
     get {return _storage._endorsements}
     set {_uniqueStorage()._endorsements = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Iotextypes_ConsensusVote {
+public struct Iotextypes_ConsensusVote {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var blockHash: Data = SwiftProtobuf.Internal.emptyData
+  public var blockHash: Data = SwiftProtobuf.Internal.emptyData
 
-  var topic: Iotextypes_ConsensusVote.Topic = .proposal
+  public var topic: Iotextypes_ConsensusVote.Topic = .proposal
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Topic: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Topic: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case proposal // = 0
     case lock // = 1
     case commit // = 2
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .proposal
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .proposal
       case 1: self = .lock
@@ -85,7 +85,7 @@ struct Iotextypes_ConsensusVote {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .proposal: return 0
       case .lock: return 1
@@ -96,14 +96,14 @@ struct Iotextypes_ConsensusVote {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
 
 extension Iotextypes_ConsensusVote.Topic: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [Iotextypes_ConsensusVote.Topic] = [
+  public static var allCases: [Iotextypes_ConsensusVote.Topic] = [
     .proposal,
     .lock,
     .commit,
@@ -112,31 +112,31 @@ extension Iotextypes_ConsensusVote.Topic: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-struct Iotextypes_ConsensusMessage {
+public struct Iotextypes_ConsensusMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var height: UInt64 {
+  public var height: UInt64 {
     get {return _storage._height}
     set {_uniqueStorage()._height = newValue}
   }
 
-  var endorsement: Iotextypes_Endorsement {
+  public var endorsement: Iotextypes_Endorsement {
     get {return _storage._endorsement ?? Iotextypes_Endorsement()}
     set {_uniqueStorage()._endorsement = newValue}
   }
   /// Returns true if `endorsement` has been explicitly set.
-  var hasEndorsement: Bool {return _storage._endorsement != nil}
+  public var hasEndorsement: Bool {return _storage._endorsement != nil}
   /// Clears the value of `endorsement`. Subsequent reads from it will return its default value.
-  mutating func clearEndorsement() {_uniqueStorage()._endorsement = nil}
+  public mutating func clearEndorsement() {_uniqueStorage()._endorsement = nil}
 
-  var msg: OneOf_Msg? {
+  public var msg: OneOf_Msg? {
     get {return _storage._msg}
     set {_uniqueStorage()._msg = newValue}
   }
 
-  var blockProposal: Iotextypes_BlockProposal {
+  public var blockProposal: Iotextypes_BlockProposal {
     get {
       if case .blockProposal(let v)? = _storage._msg {return v}
       return Iotextypes_BlockProposal()
@@ -144,7 +144,7 @@ struct Iotextypes_ConsensusMessage {
     set {_uniqueStorage()._msg = .blockProposal(newValue)}
   }
 
-  var vote: Iotextypes_ConsensusVote {
+  public var vote: Iotextypes_ConsensusVote {
     get {
       if case .vote(let v)? = _storage._msg {return v}
       return Iotextypes_ConsensusVote()
@@ -152,14 +152,14 @@ struct Iotextypes_ConsensusMessage {
     set {_uniqueStorage()._msg = .vote(newValue)}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Msg: Equatable {
+  public enum OneOf_Msg: Equatable {
     case blockProposal(Iotextypes_BlockProposal)
     case vote(Iotextypes_ConsensusVote)
 
   #if !swift(>=4.1)
-    static func ==(lhs: Iotextypes_ConsensusMessage.OneOf_Msg, rhs: Iotextypes_ConsensusMessage.OneOf_Msg) -> Bool {
+    public static func ==(lhs: Iotextypes_ConsensusMessage.OneOf_Msg, rhs: Iotextypes_ConsensusMessage.OneOf_Msg) -> Bool {
       switch (lhs, rhs) {
       case (.blockProposal(let l), .blockProposal(let r)): return l == r
       case (.vote(let l), .vote(let r)): return l == r
@@ -169,7 +169,7 @@ struct Iotextypes_ConsensusMessage {
   #endif
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -179,8 +179,8 @@ struct Iotextypes_ConsensusMessage {
 fileprivate let _protobuf_package = "iotextypes"
 
 extension Iotextypes_BlockProposal: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".BlockProposal"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".BlockProposal"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "block"),
     2: .same(proto: "endorsements"),
   ]
@@ -206,7 +206,7 @@ extension Iotextypes_BlockProposal: SwiftProtobuf.Message, SwiftProtobuf._Messag
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -219,7 +219,7 @@ extension Iotextypes_BlockProposal: SwiftProtobuf.Message, SwiftProtobuf._Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._block {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -231,7 +231,7 @@ extension Iotextypes_BlockProposal: SwiftProtobuf.Message, SwiftProtobuf._Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_BlockProposal, rhs: Iotextypes_BlockProposal) -> Bool {
+  public static func ==(lhs: Iotextypes_BlockProposal, rhs: Iotextypes_BlockProposal) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -248,13 +248,13 @@ extension Iotextypes_BlockProposal: SwiftProtobuf.Message, SwiftProtobuf._Messag
 }
 
 extension Iotextypes_ConsensusVote: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ConsensusVote"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ConsensusVote"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "blockHash"),
     2: .same(proto: "topic"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBytesField(value: &self.blockHash)
@@ -264,7 +264,7 @@ extension Iotextypes_ConsensusVote: SwiftProtobuf.Message, SwiftProtobuf._Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.blockHash.isEmpty {
       try visitor.visitSingularBytesField(value: self.blockHash, fieldNumber: 1)
     }
@@ -274,7 +274,7 @@ extension Iotextypes_ConsensusVote: SwiftProtobuf.Message, SwiftProtobuf._Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_ConsensusVote, rhs: Iotextypes_ConsensusVote) -> Bool {
+  public static func ==(lhs: Iotextypes_ConsensusVote, rhs: Iotextypes_ConsensusVote) -> Bool {
     if lhs.blockHash != rhs.blockHash {return false}
     if lhs.topic != rhs.topic {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -283,7 +283,7 @@ extension Iotextypes_ConsensusVote: SwiftProtobuf.Message, SwiftProtobuf._Messag
 }
 
 extension Iotextypes_ConsensusVote.Topic: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "PROPOSAL"),
     1: .same(proto: "LOCK"),
     2: .same(proto: "COMMIT"),
@@ -291,8 +291,8 @@ extension Iotextypes_ConsensusVote.Topic: SwiftProtobuf._ProtoNameProviding {
 }
 
 extension Iotextypes_ConsensusMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ConsensusMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ConsensusMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "height"),
     2: .same(proto: "endorsement"),
     100: .same(proto: "blockProposal"),
@@ -322,7 +322,7 @@ extension Iotextypes_ConsensusMessage: SwiftProtobuf.Message, SwiftProtobuf._Mes
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -351,7 +351,7 @@ extension Iotextypes_ConsensusMessage: SwiftProtobuf.Message, SwiftProtobuf._Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._height != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._height, fieldNumber: 1)
@@ -370,7 +370,7 @@ extension Iotextypes_ConsensusMessage: SwiftProtobuf.Message, SwiftProtobuf._Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_ConsensusMessage, rhs: Iotextypes_ConsensusMessage) -> Bool {
+  public static func ==(lhs: Iotextypes_ConsensusMessage, rhs: Iotextypes_ConsensusMessage) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

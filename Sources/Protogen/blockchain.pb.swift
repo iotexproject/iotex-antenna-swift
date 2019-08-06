@@ -29,326 +29,326 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// header of a block
-struct Iotextypes_BlockHeader {
+public struct Iotextypes_BlockHeader {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var core: Iotextypes_BlockHeaderCore {
+  public var core: Iotextypes_BlockHeaderCore {
     get {return _storage._core ?? Iotextypes_BlockHeaderCore()}
     set {_uniqueStorage()._core = newValue}
   }
   /// Returns true if `core` has been explicitly set.
-  var hasCore: Bool {return _storage._core != nil}
+  public var hasCore: Bool {return _storage._core != nil}
   /// Clears the value of `core`. Subsequent reads from it will return its default value.
-  mutating func clearCore() {_uniqueStorage()._core = nil}
+  public mutating func clearCore() {_uniqueStorage()._core = nil}
 
-  var producerPubkey: Data {
+  public var producerPubkey: Data {
     get {return _storage._producerPubkey}
     set {_uniqueStorage()._producerPubkey = newValue}
   }
 
-  var signature: Data {
+  public var signature: Data {
     get {return _storage._signature}
     set {_uniqueStorage()._signature = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Iotextypes_BlockHeaderCore {
+public struct Iotextypes_BlockHeaderCore {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var version: UInt32 {
+  public var version: UInt32 {
     get {return _storage._version}
     set {_uniqueStorage()._version = newValue}
   }
 
-  var height: UInt64 {
+  public var height: UInt64 {
     get {return _storage._height}
     set {_uniqueStorage()._height = newValue}
   }
 
-  var timestamp: SwiftProtobuf.Google_Protobuf_Timestamp {
+  public var timestamp: SwiftProtobuf.Google_Protobuf_Timestamp {
     get {return _storage._timestamp ?? SwiftProtobuf.Google_Protobuf_Timestamp()}
     set {_uniqueStorage()._timestamp = newValue}
   }
   /// Returns true if `timestamp` has been explicitly set.
-  var hasTimestamp: Bool {return _storage._timestamp != nil}
+  public var hasTimestamp: Bool {return _storage._timestamp != nil}
   /// Clears the value of `timestamp`. Subsequent reads from it will return its default value.
-  mutating func clearTimestamp() {_uniqueStorage()._timestamp = nil}
+  public mutating func clearTimestamp() {_uniqueStorage()._timestamp = nil}
 
-  var prevBlockHash: Data {
+  public var prevBlockHash: Data {
     get {return _storage._prevBlockHash}
     set {_uniqueStorage()._prevBlockHash = newValue}
   }
 
-  var txRoot: Data {
+  public var txRoot: Data {
     get {return _storage._txRoot}
     set {_uniqueStorage()._txRoot = newValue}
   }
 
-  var deltaStateDigest: Data {
+  public var deltaStateDigest: Data {
     get {return _storage._deltaStateDigest}
     set {_uniqueStorage()._deltaStateDigest = newValue}
   }
 
-  var receiptRoot: Data {
+  public var receiptRoot: Data {
     get {return _storage._receiptRoot}
     set {_uniqueStorage()._receiptRoot = newValue}
   }
 
-  var logsBloom: Data {
+  public var logsBloom: Data {
     get {return _storage._logsBloom}
     set {_uniqueStorage()._logsBloom = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// footer of a block
-struct Iotextypes_BlockFooter {
+public struct Iotextypes_BlockFooter {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var endorsements: [Iotextypes_Endorsement] {
+  public var endorsements: [Iotextypes_Endorsement] {
     get {return _storage._endorsements}
     set {_uniqueStorage()._endorsements = newValue}
   }
 
-  var timestamp: SwiftProtobuf.Google_Protobuf_Timestamp {
+  public var timestamp: SwiftProtobuf.Google_Protobuf_Timestamp {
     get {return _storage._timestamp ?? SwiftProtobuf.Google_Protobuf_Timestamp()}
     set {_uniqueStorage()._timestamp = newValue}
   }
   /// Returns true if `timestamp` has been explicitly set.
-  var hasTimestamp: Bool {return _storage._timestamp != nil}
+  public var hasTimestamp: Bool {return _storage._timestamp != nil}
   /// Clears the value of `timestamp`. Subsequent reads from it will return its default value.
-  mutating func clearTimestamp() {_uniqueStorage()._timestamp = nil}
+  public mutating func clearTimestamp() {_uniqueStorage()._timestamp = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// body of a block
-struct Iotextypes_BlockBody {
+public struct Iotextypes_BlockBody {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var actions: [Iotextypes_Action] = []
+  public var actions: [Iotextypes_Action] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 /// block consists of header followed by transactions
 /// hash of current block can be computed from header hence not stored
-struct Iotextypes_Block {
+public struct Iotextypes_Block {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var header: Iotextypes_BlockHeader {
+  public var header: Iotextypes_BlockHeader {
     get {return _storage._header ?? Iotextypes_BlockHeader()}
     set {_uniqueStorage()._header = newValue}
   }
   /// Returns true if `header` has been explicitly set.
-  var hasHeader: Bool {return _storage._header != nil}
+  public var hasHeader: Bool {return _storage._header != nil}
   /// Clears the value of `header`. Subsequent reads from it will return its default value.
-  mutating func clearHeader() {_uniqueStorage()._header = nil}
+  public mutating func clearHeader() {_uniqueStorage()._header = nil}
 
-  var body: Iotextypes_BlockBody {
+  public var body: Iotextypes_BlockBody {
     get {return _storage._body ?? Iotextypes_BlockBody()}
     set {_uniqueStorage()._body = newValue}
   }
   /// Returns true if `body` has been explicitly set.
-  var hasBody: Bool {return _storage._body != nil}
+  public var hasBody: Bool {return _storage._body != nil}
   /// Clears the value of `body`. Subsequent reads from it will return its default value.
-  mutating func clearBody() {_uniqueStorage()._body = nil}
+  public mutating func clearBody() {_uniqueStorage()._body = nil}
 
-  var footer: Iotextypes_BlockFooter {
+  public var footer: Iotextypes_BlockFooter {
     get {return _storage._footer ?? Iotextypes_BlockFooter()}
     set {_uniqueStorage()._footer = newValue}
   }
   /// Returns true if `footer` has been explicitly set.
-  var hasFooter: Bool {return _storage._footer != nil}
+  public var hasFooter: Bool {return _storage._footer != nil}
   /// Clears the value of `footer`. Subsequent reads from it will return its default value.
-  mutating func clearFooter() {_uniqueStorage()._footer = nil}
+  public mutating func clearFooter() {_uniqueStorage()._footer = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// Receipts consists of a collection of recepit
-struct Iotextypes_Receipts {
+public struct Iotextypes_Receipts {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var receipts: [Iotextypes_Receipt] = []
+  public var receipts: [Iotextypes_Receipt] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_EpochData {
+public struct Iotextypes_EpochData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var num: UInt64 = 0
+  public var num: UInt64 = 0
 
-  var height: UInt64 = 0
+  public var height: UInt64 = 0
 
-  var gravityChainStartHeight: UInt64 = 0
+  public var gravityChainStartHeight: UInt64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 /// Blockchain Metadata
-struct Iotextypes_ChainMeta {
+public struct Iotextypes_ChainMeta {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var height: UInt64 {
+  public var height: UInt64 {
     get {return _storage._height}
     set {_uniqueStorage()._height = newValue}
   }
 
-  var numActions: Int64 {
+  public var numActions: Int64 {
     get {return _storage._numActions}
     set {_uniqueStorage()._numActions = newValue}
   }
 
-  var tps: Int64 {
+  public var tps: Int64 {
     get {return _storage._tps}
     set {_uniqueStorage()._tps = newValue}
   }
 
-  var epoch: Iotextypes_EpochData {
+  public var epoch: Iotextypes_EpochData {
     get {return _storage._epoch ?? Iotextypes_EpochData()}
     set {_uniqueStorage()._epoch = newValue}
   }
   /// Returns true if `epoch` has been explicitly set.
-  var hasEpoch: Bool {return _storage._epoch != nil}
+  public var hasEpoch: Bool {return _storage._epoch != nil}
   /// Clears the value of `epoch`. Subsequent reads from it will return its default value.
-  mutating func clearEpoch() {_uniqueStorage()._epoch = nil}
+  public mutating func clearEpoch() {_uniqueStorage()._epoch = nil}
 
-  var tpsFloat: Float {
+  public var tpsFloat: Float {
     get {return _storage._tpsFloat}
     set {_uniqueStorage()._tpsFloat = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// Block Metadata
-struct Iotextypes_BlockMeta {
+public struct Iotextypes_BlockMeta {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var hash: String {
+  public var hash: String {
     get {return _storage._hash}
     set {_uniqueStorage()._hash = newValue}
   }
 
-  var height: UInt64 {
+  public var height: UInt64 {
     get {return _storage._height}
     set {_uniqueStorage()._height = newValue}
   }
 
-  var timestamp: SwiftProtobuf.Google_Protobuf_Timestamp {
+  public var timestamp: SwiftProtobuf.Google_Protobuf_Timestamp {
     get {return _storage._timestamp ?? SwiftProtobuf.Google_Protobuf_Timestamp()}
     set {_uniqueStorage()._timestamp = newValue}
   }
   /// Returns true if `timestamp` has been explicitly set.
-  var hasTimestamp: Bool {return _storage._timestamp != nil}
+  public var hasTimestamp: Bool {return _storage._timestamp != nil}
   /// Clears the value of `timestamp`. Subsequent reads from it will return its default value.
-  mutating func clearTimestamp() {_uniqueStorage()._timestamp = nil}
+  public mutating func clearTimestamp() {_uniqueStorage()._timestamp = nil}
 
-  var numActions: Int64 {
+  public var numActions: Int64 {
     get {return _storage._numActions}
     set {_uniqueStorage()._numActions = newValue}
   }
 
-  var producerAddress: String {
+  public var producerAddress: String {
     get {return _storage._producerAddress}
     set {_uniqueStorage()._producerAddress = newValue}
   }
 
-  var transferAmount: String {
+  public var transferAmount: String {
     get {return _storage._transferAmount}
     set {_uniqueStorage()._transferAmount = newValue}
   }
 
-  var txRoot: String {
+  public var txRoot: String {
     get {return _storage._txRoot}
     set {_uniqueStorage()._txRoot = newValue}
   }
 
-  var receiptRoot: String {
+  public var receiptRoot: String {
     get {return _storage._receiptRoot}
     set {_uniqueStorage()._receiptRoot = newValue}
   }
 
-  var deltaStateDigest: String {
+  public var deltaStateDigest: String {
     get {return _storage._deltaStateDigest}
     set {_uniqueStorage()._deltaStateDigest = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// Account Metadata
-struct Iotextypes_AccountMeta {
+public struct Iotextypes_AccountMeta {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var address: String = String()
+  public var address: String = String()
 
-  var balance: String = String()
+  public var balance: String = String()
 
-  var nonce: UInt64 = 0
+  public var nonce: UInt64 = 0
 
-  var pendingNonce: UInt64 = 0
+  public var pendingNonce: UInt64 = 0
 
-  var numActions: UInt64 = 0
+  public var numActions: UInt64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -356,8 +356,8 @@ struct Iotextypes_AccountMeta {
 fileprivate let _protobuf_package = "iotextypes"
 
 extension Iotextypes_BlockHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".BlockHeader"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".BlockHeader"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "core"),
     2: .same(proto: "producerPubkey"),
     3: .same(proto: "signature"),
@@ -386,7 +386,7 @@ extension Iotextypes_BlockHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -400,7 +400,7 @@ extension Iotextypes_BlockHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._core {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -415,7 +415,7 @@ extension Iotextypes_BlockHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_BlockHeader, rhs: Iotextypes_BlockHeader) -> Bool {
+  public static func ==(lhs: Iotextypes_BlockHeader, rhs: Iotextypes_BlockHeader) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -433,8 +433,8 @@ extension Iotextypes_BlockHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageI
 }
 
 extension Iotextypes_BlockHeaderCore: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".BlockHeaderCore"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".BlockHeaderCore"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "version"),
     2: .same(proto: "height"),
     3: .same(proto: "timestamp"),
@@ -478,7 +478,7 @@ extension Iotextypes_BlockHeaderCore: SwiftProtobuf.Message, SwiftProtobuf._Mess
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -497,7 +497,7 @@ extension Iotextypes_BlockHeaderCore: SwiftProtobuf.Message, SwiftProtobuf._Mess
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._version != 0 {
         try visitor.visitSingularUInt32Field(value: _storage._version, fieldNumber: 1)
@@ -527,7 +527,7 @@ extension Iotextypes_BlockHeaderCore: SwiftProtobuf.Message, SwiftProtobuf._Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_BlockHeaderCore, rhs: Iotextypes_BlockHeaderCore) -> Bool {
+  public static func ==(lhs: Iotextypes_BlockHeaderCore, rhs: Iotextypes_BlockHeaderCore) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -550,8 +550,8 @@ extension Iotextypes_BlockHeaderCore: SwiftProtobuf.Message, SwiftProtobuf._Mess
 }
 
 extension Iotextypes_BlockFooter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".BlockFooter"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".BlockFooter"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "endorsements"),
     2: .same(proto: "timestamp"),
   ]
@@ -577,7 +577,7 @@ extension Iotextypes_BlockFooter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -590,7 +590,7 @@ extension Iotextypes_BlockFooter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._endorsements.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._endorsements, fieldNumber: 1)
@@ -602,7 +602,7 @@ extension Iotextypes_BlockFooter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_BlockFooter, rhs: Iotextypes_BlockFooter) -> Bool {
+  public static func ==(lhs: Iotextypes_BlockFooter, rhs: Iotextypes_BlockFooter) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -619,12 +619,12 @@ extension Iotextypes_BlockFooter: SwiftProtobuf.Message, SwiftProtobuf._MessageI
 }
 
 extension Iotextypes_BlockBody: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".BlockBody"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".BlockBody"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "actions"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.actions)
@@ -633,14 +633,14 @@ extension Iotextypes_BlockBody: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.actions.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.actions, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_BlockBody, rhs: Iotextypes_BlockBody) -> Bool {
+  public static func ==(lhs: Iotextypes_BlockBody, rhs: Iotextypes_BlockBody) -> Bool {
     if lhs.actions != rhs.actions {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -648,8 +648,8 @@ extension Iotextypes_BlockBody: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
 }
 
 extension Iotextypes_Block: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Block"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Block"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "header"),
     2: .same(proto: "body"),
     3: .same(proto: "footer"),
@@ -678,7 +678,7 @@ extension Iotextypes_Block: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -692,7 +692,7 @@ extension Iotextypes_Block: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._header {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -707,7 +707,7 @@ extension Iotextypes_Block: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_Block, rhs: Iotextypes_Block) -> Bool {
+  public static func ==(lhs: Iotextypes_Block, rhs: Iotextypes_Block) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -725,12 +725,12 @@ extension Iotextypes_Block: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
 }
 
 extension Iotextypes_Receipts: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Receipts"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Receipts"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "receipts"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.receipts)
@@ -739,14 +739,14 @@ extension Iotextypes_Receipts: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.receipts.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.receipts, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_Receipts, rhs: Iotextypes_Receipts) -> Bool {
+  public static func ==(lhs: Iotextypes_Receipts, rhs: Iotextypes_Receipts) -> Bool {
     if lhs.receipts != rhs.receipts {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -754,14 +754,14 @@ extension Iotextypes_Receipts: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
 }
 
 extension Iotextypes_EpochData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EpochData"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".EpochData"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "num"),
     2: .same(proto: "height"),
     3: .same(proto: "gravityChainStartHeight"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt64Field(value: &self.num)
@@ -772,7 +772,7 @@ extension Iotextypes_EpochData: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.num != 0 {
       try visitor.visitSingularUInt64Field(value: self.num, fieldNumber: 1)
     }
@@ -785,7 +785,7 @@ extension Iotextypes_EpochData: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_EpochData, rhs: Iotextypes_EpochData) -> Bool {
+  public static func ==(lhs: Iotextypes_EpochData, rhs: Iotextypes_EpochData) -> Bool {
     if lhs.num != rhs.num {return false}
     if lhs.height != rhs.height {return false}
     if lhs.gravityChainStartHeight != rhs.gravityChainStartHeight {return false}
@@ -795,8 +795,8 @@ extension Iotextypes_EpochData: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
 }
 
 extension Iotextypes_ChainMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ChainMeta"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ChainMeta"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "height"),
     2: .same(proto: "numActions"),
     3: .same(proto: "tps"),
@@ -831,7 +831,7 @@ extension Iotextypes_ChainMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -847,7 +847,7 @@ extension Iotextypes_ChainMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._height != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._height, fieldNumber: 1)
@@ -868,7 +868,7 @@ extension Iotextypes_ChainMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_ChainMeta, rhs: Iotextypes_ChainMeta) -> Bool {
+  public static func ==(lhs: Iotextypes_ChainMeta, rhs: Iotextypes_ChainMeta) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -888,8 +888,8 @@ extension Iotextypes_ChainMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
 }
 
 extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".BlockMeta"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".BlockMeta"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "hash"),
     2: .same(proto: "height"),
     3: .same(proto: "timestamp"),
@@ -936,7 +936,7 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -956,7 +956,7 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._hash.isEmpty {
         try visitor.visitSingularStringField(value: _storage._hash, fieldNumber: 1)
@@ -989,7 +989,7 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_BlockMeta, rhs: Iotextypes_BlockMeta) -> Bool {
+  public static func ==(lhs: Iotextypes_BlockMeta, rhs: Iotextypes_BlockMeta) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -1013,8 +1013,8 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
 }
 
 extension Iotextypes_AccountMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".AccountMeta"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".AccountMeta"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "address"),
     2: .same(proto: "balance"),
     3: .same(proto: "nonce"),
@@ -1022,7 +1022,7 @@ extension Iotextypes_AccountMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     5: .same(proto: "numActions"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.address)
@@ -1035,7 +1035,7 @@ extension Iotextypes_AccountMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.address.isEmpty {
       try visitor.visitSingularStringField(value: self.address, fieldNumber: 1)
     }
@@ -1054,7 +1054,7 @@ extension Iotextypes_AccountMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_AccountMeta, rhs: Iotextypes_AccountMeta) -> Bool {
+  public static func ==(lhs: Iotextypes_AccountMeta, rhs: Iotextypes_AccountMeta) -> Bool {
     if lhs.address != rhs.address {return false}
     if lhs.balance != rhs.balance {return false}
     if lhs.nonce != rhs.nonce {return false}

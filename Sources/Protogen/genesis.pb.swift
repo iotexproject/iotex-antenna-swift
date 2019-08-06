@@ -28,162 +28,162 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Iotextypes_Genesis {
+public struct Iotextypes_Genesis {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var blockchain: Iotextypes_GenesisBlockchain {
+  public var blockchain: Iotextypes_GenesisBlockchain {
     get {return _storage._blockchain ?? Iotextypes_GenesisBlockchain()}
     set {_uniqueStorage()._blockchain = newValue}
   }
   /// Returns true if `blockchain` has been explicitly set.
-  var hasBlockchain: Bool {return _storage._blockchain != nil}
+  public var hasBlockchain: Bool {return _storage._blockchain != nil}
   /// Clears the value of `blockchain`. Subsequent reads from it will return its default value.
-  mutating func clearBlockchain() {_uniqueStorage()._blockchain = nil}
+  public mutating func clearBlockchain() {_uniqueStorage()._blockchain = nil}
 
-  var account: Iotextypes_GenesisAccount {
+  public var account: Iotextypes_GenesisAccount {
     get {return _storage._account ?? Iotextypes_GenesisAccount()}
     set {_uniqueStorage()._account = newValue}
   }
   /// Returns true if `account` has been explicitly set.
-  var hasAccount: Bool {return _storage._account != nil}
+  public var hasAccount: Bool {return _storage._account != nil}
   /// Clears the value of `account`. Subsequent reads from it will return its default value.
-  mutating func clearAccount() {_uniqueStorage()._account = nil}
+  public mutating func clearAccount() {_uniqueStorage()._account = nil}
 
-  var poll: Iotextypes_GenesisPoll {
+  public var poll: Iotextypes_GenesisPoll {
     get {return _storage._poll ?? Iotextypes_GenesisPoll()}
     set {_uniqueStorage()._poll = newValue}
   }
   /// Returns true if `poll` has been explicitly set.
-  var hasPoll: Bool {return _storage._poll != nil}
+  public var hasPoll: Bool {return _storage._poll != nil}
   /// Clears the value of `poll`. Subsequent reads from it will return its default value.
-  mutating func clearPoll() {_uniqueStorage()._poll = nil}
+  public mutating func clearPoll() {_uniqueStorage()._poll = nil}
 
-  var rewarding: Iotextypes_GenesisRewarding {
+  public var rewarding: Iotextypes_GenesisRewarding {
     get {return _storage._rewarding ?? Iotextypes_GenesisRewarding()}
     set {_uniqueStorage()._rewarding = newValue}
   }
   /// Returns true if `rewarding` has been explicitly set.
-  var hasRewarding: Bool {return _storage._rewarding != nil}
+  public var hasRewarding: Bool {return _storage._rewarding != nil}
   /// Clears the value of `rewarding`. Subsequent reads from it will return its default value.
-  mutating func clearRewarding() {_uniqueStorage()._rewarding = nil}
+  public mutating func clearRewarding() {_uniqueStorage()._rewarding = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Iotextypes_GenesisBlockchain {
+public struct Iotextypes_GenesisBlockchain {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var timestamp: Int64 = 0
+  public var timestamp: Int64 = 0
 
-  var blockGasLimit: UInt64 = 0
+  public var blockGasLimit: UInt64 = 0
 
-  var actionGasLimit: UInt64 = 0
+  public var actionGasLimit: UInt64 = 0
 
-  var blockInterval: Int64 = 0
+  public var blockInterval: Int64 = 0
 
-  var numSubEpochs: UInt64 = 0
+  public var numSubEpochs: UInt64 = 0
 
-  var numDelegates: UInt64 = 0
+  public var numDelegates: UInt64 = 0
 
-  var numCandidateDelegates: UInt64 = 0
+  public var numCandidateDelegates: UInt64 = 0
 
-  var timeBasedRotation: Bool = false
+  public var timeBasedRotation: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_GenesisAccount {
+public struct Iotextypes_GenesisAccount {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var initBalanceAddrs: [String] = []
+  public var initBalanceAddrs: [String] = []
 
-  var initBalances: [String] = []
+  public var initBalances: [String] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_GenesisPoll {
+public struct Iotextypes_GenesisPoll {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var enableGravityChainVoting: Bool = false
+  public var enableGravityChainVoting: Bool = false
 
-  var gravityChainStartHeight: UInt64 = 0
+  public var gravityChainStartHeight: UInt64 = 0
 
-  var registerContractAddress: String = String()
+  public var registerContractAddress: String = String()
 
-  var stakingContractAddress: String = String()
+  public var stakingContractAddress: String = String()
 
-  var voteThreshold: String = String()
+  public var voteThreshold: String = String()
 
-  var scoreThreshold: String = String()
+  public var scoreThreshold: String = String()
 
-  var selfStakingThreshold: String = String()
+  public var selfStakingThreshold: String = String()
 
-  var delegates: [Iotextypes_GenesisDelegate] = []
+  public var delegates: [Iotextypes_GenesisDelegate] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_GenesisDelegate {
+public struct Iotextypes_GenesisDelegate {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var operatorAddr: String = String()
+  public var operatorAddr: String = String()
 
-  var rewardAddr: String = String()
+  public var rewardAddr: String = String()
 
-  var votes: String = String()
+  public var votes: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_GenesisRewarding {
+public struct Iotextypes_GenesisRewarding {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var initAdminAddr: String = String()
+  public var initAdminAddr: String = String()
 
-  var initBalance: String = String()
+  public var initBalance: String = String()
 
-  var blockReward: String = String()
+  public var blockReward: String = String()
 
-  var epochReward: String = String()
+  public var epochReward: String = String()
 
-  var numDelegatesForEpochReward: UInt64 = 0
+  public var numDelegatesForEpochReward: UInt64 = 0
 
-  var foundationBonus: String = String()
+  public var foundationBonus: String = String()
 
-  var numDelegatesForFoundationBonus: UInt64 = 0
+  public var numDelegatesForFoundationBonus: UInt64 = 0
 
-  var foundationBonusLastEpoch: UInt64 = 0
+  public var foundationBonusLastEpoch: UInt64 = 0
 
-  var productivityThreshold: UInt64 = 0
+  public var productivityThreshold: UInt64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -191,8 +191,8 @@ struct Iotextypes_GenesisRewarding {
 fileprivate let _protobuf_package = "iotextypes"
 
 extension Iotextypes_Genesis: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Genesis"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Genesis"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "blockchain"),
     2: .same(proto: "account"),
     3: .same(proto: "poll"),
@@ -224,7 +224,7 @@ extension Iotextypes_Genesis: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -239,7 +239,7 @@ extension Iotextypes_Genesis: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._blockchain {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -257,7 +257,7 @@ extension Iotextypes_Genesis: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_Genesis, rhs: Iotextypes_Genesis) -> Bool {
+  public static func ==(lhs: Iotextypes_Genesis, rhs: Iotextypes_Genesis) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -276,8 +276,8 @@ extension Iotextypes_Genesis: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
 }
 
 extension Iotextypes_GenesisBlockchain: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GenesisBlockchain"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GenesisBlockchain"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "timestamp"),
     2: .same(proto: "blockGasLimit"),
     3: .same(proto: "actionGasLimit"),
@@ -288,7 +288,7 @@ extension Iotextypes_GenesisBlockchain: SwiftProtobuf.Message, SwiftProtobuf._Me
     8: .same(proto: "timeBasedRotation"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.timestamp)
@@ -304,7 +304,7 @@ extension Iotextypes_GenesisBlockchain: SwiftProtobuf.Message, SwiftProtobuf._Me
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.timestamp != 0 {
       try visitor.visitSingularInt64Field(value: self.timestamp, fieldNumber: 1)
     }
@@ -332,7 +332,7 @@ extension Iotextypes_GenesisBlockchain: SwiftProtobuf.Message, SwiftProtobuf._Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_GenesisBlockchain, rhs: Iotextypes_GenesisBlockchain) -> Bool {
+  public static func ==(lhs: Iotextypes_GenesisBlockchain, rhs: Iotextypes_GenesisBlockchain) -> Bool {
     if lhs.timestamp != rhs.timestamp {return false}
     if lhs.blockGasLimit != rhs.blockGasLimit {return false}
     if lhs.actionGasLimit != rhs.actionGasLimit {return false}
@@ -347,13 +347,13 @@ extension Iotextypes_GenesisBlockchain: SwiftProtobuf.Message, SwiftProtobuf._Me
 }
 
 extension Iotextypes_GenesisAccount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GenesisAccount"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GenesisAccount"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "initBalanceAddrs"),
     2: .same(proto: "initBalances"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedStringField(value: &self.initBalanceAddrs)
@@ -363,7 +363,7 @@ extension Iotextypes_GenesisAccount: SwiftProtobuf.Message, SwiftProtobuf._Messa
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.initBalanceAddrs.isEmpty {
       try visitor.visitRepeatedStringField(value: self.initBalanceAddrs, fieldNumber: 1)
     }
@@ -373,7 +373,7 @@ extension Iotextypes_GenesisAccount: SwiftProtobuf.Message, SwiftProtobuf._Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_GenesisAccount, rhs: Iotextypes_GenesisAccount) -> Bool {
+  public static func ==(lhs: Iotextypes_GenesisAccount, rhs: Iotextypes_GenesisAccount) -> Bool {
     if lhs.initBalanceAddrs != rhs.initBalanceAddrs {return false}
     if lhs.initBalances != rhs.initBalances {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -382,8 +382,8 @@ extension Iotextypes_GenesisAccount: SwiftProtobuf.Message, SwiftProtobuf._Messa
 }
 
 extension Iotextypes_GenesisPoll: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GenesisPoll"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GenesisPoll"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "enableGravityChainVoting"),
     2: .same(proto: "gravityChainStartHeight"),
     3: .same(proto: "registerContractAddress"),
@@ -394,7 +394,7 @@ extension Iotextypes_GenesisPoll: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     8: .same(proto: "delegates"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.enableGravityChainVoting)
@@ -410,7 +410,7 @@ extension Iotextypes_GenesisPoll: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.enableGravityChainVoting != false {
       try visitor.visitSingularBoolField(value: self.enableGravityChainVoting, fieldNumber: 1)
     }
@@ -438,7 +438,7 @@ extension Iotextypes_GenesisPoll: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_GenesisPoll, rhs: Iotextypes_GenesisPoll) -> Bool {
+  public static func ==(lhs: Iotextypes_GenesisPoll, rhs: Iotextypes_GenesisPoll) -> Bool {
     if lhs.enableGravityChainVoting != rhs.enableGravityChainVoting {return false}
     if lhs.gravityChainStartHeight != rhs.gravityChainStartHeight {return false}
     if lhs.registerContractAddress != rhs.registerContractAddress {return false}
@@ -453,14 +453,14 @@ extension Iotextypes_GenesisPoll: SwiftProtobuf.Message, SwiftProtobuf._MessageI
 }
 
 extension Iotextypes_GenesisDelegate: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GenesisDelegate"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GenesisDelegate"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "operatorAddr"),
     2: .same(proto: "rewardAddr"),
     3: .same(proto: "votes"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.operatorAddr)
@@ -471,7 +471,7 @@ extension Iotextypes_GenesisDelegate: SwiftProtobuf.Message, SwiftProtobuf._Mess
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.operatorAddr.isEmpty {
       try visitor.visitSingularStringField(value: self.operatorAddr, fieldNumber: 1)
     }
@@ -484,7 +484,7 @@ extension Iotextypes_GenesisDelegate: SwiftProtobuf.Message, SwiftProtobuf._Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_GenesisDelegate, rhs: Iotextypes_GenesisDelegate) -> Bool {
+  public static func ==(lhs: Iotextypes_GenesisDelegate, rhs: Iotextypes_GenesisDelegate) -> Bool {
     if lhs.operatorAddr != rhs.operatorAddr {return false}
     if lhs.rewardAddr != rhs.rewardAddr {return false}
     if lhs.votes != rhs.votes {return false}
@@ -494,8 +494,8 @@ extension Iotextypes_GenesisDelegate: SwiftProtobuf.Message, SwiftProtobuf._Mess
 }
 
 extension Iotextypes_GenesisRewarding: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GenesisRewarding"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GenesisRewarding"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "initAdminAddr"),
     2: .same(proto: "initBalance"),
     3: .same(proto: "blockReward"),
@@ -507,7 +507,7 @@ extension Iotextypes_GenesisRewarding: SwiftProtobuf.Message, SwiftProtobuf._Mes
     9: .same(proto: "productivityThreshold"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.initAdminAddr)
@@ -524,7 +524,7 @@ extension Iotextypes_GenesisRewarding: SwiftProtobuf.Message, SwiftProtobuf._Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.initAdminAddr.isEmpty {
       try visitor.visitSingularStringField(value: self.initAdminAddr, fieldNumber: 1)
     }
@@ -555,7 +555,7 @@ extension Iotextypes_GenesisRewarding: SwiftProtobuf.Message, SwiftProtobuf._Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_GenesisRewarding, rhs: Iotextypes_GenesisRewarding) -> Bool {
+  public static func ==(lhs: Iotextypes_GenesisRewarding, rhs: Iotextypes_GenesisRewarding) -> Bool {
     if lhs.initAdminAddr != rhs.initAdminAddr {return false}
     if lhs.initBalance != rhs.initBalance {return false}
     if lhs.blockReward != rhs.blockReward {return false}

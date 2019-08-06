@@ -27,7 +27,6 @@
 		364CC8D622F8144F0017FCCB /* blockchain.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364CC8CD22F8144F0017FCCB /* blockchain.pb.swift */; };
 		364CC8D922F815AA0017FCCB /* RPCMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364CC8D822F815AA0017FCCB /* RPCMethod.swift */; };
 		364CC8DC22F818320017FCCB /* RPCMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364CC8DB22F818320017FCCB /* RPCMethodTests.swift */; };
-		364CC8DE22F820490017FCCB /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364CC8DD22F820490017FCCB /* Types.swift */; };
 		3654181C22F1D2EA004382B1 /* Bech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654181B22F1D2EA004382B1 /* Bech32.swift */; };
 		3654182222F1F41E004382B1 /* BytesConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654182122F1F41E004382B1 /* BytesConvertible.swift */; };
 		3654182422F1F473004382B1 /* Bytes+SecureRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654182322F1F473004382B1 /* Bytes+SecureRandom.swift */; };
@@ -82,7 +81,6 @@
 		364CC8CD22F8144F0017FCCB /* blockchain.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = blockchain.pb.swift; sourceTree = "<group>"; };
 		364CC8D822F815AA0017FCCB /* RPCMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPCMethod.swift; sourceTree = "<group>"; };
 		364CC8DB22F818320017FCCB /* RPCMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPCMethodTests.swift; sourceTree = "<group>"; };
-		364CC8DD22F820490017FCCB /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		3654181B22F1D2EA004382B1 /* Bech32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bech32.swift; sourceTree = "<group>"; };
 		3654182122F1F41E004382B1 /* BytesConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BytesConvertible.swift; sourceTree = "<group>"; };
 		3654182322F1F473004382B1 /* Bytes+SecureRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bytes+SecureRandom.swift"; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 		364CC8D722F8155F0017FCCB /* Rpc */ = {
 			isa = PBXGroup;
 			children = (
-				364CC8DD22F820490017FCCB /* Types.swift */,
 				364CC8D822F815AA0017FCCB /* RPCMethod.swift */,
 			);
 			path = Rpc;
@@ -453,7 +450,6 @@
 				364CC8D122F8144F0017FCCB /* node.pb.swift in Sources */,
 				364CC8D022F8144F0017FCCB /* endorsement.pb.swift in Sources */,
 				364CC8D622F8144F0017FCCB /* blockchain.pb.swift in Sources */,
-				364CC8DE22F820490017FCCB /* Types.swift in Sources */,
 				364CC8D922F815AA0017FCCB /* RPCMethod.swift in Sources */,
 				361020D422F2A76D00645057 /* KeystoreFactory.swift in Sources */,
 				3654182222F1F41E004382B1 /* BytesConvertible.swift in Sources */,

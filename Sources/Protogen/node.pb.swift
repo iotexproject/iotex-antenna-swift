@@ -29,24 +29,24 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Server Metadata
-struct Iotextypes_ServerMeta {
+public struct Iotextypes_ServerMeta {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var packageVersion: String = String()
+  public var packageVersion: String = String()
 
-  var packageCommitID: String = String()
+  public var packageCommitID: String = String()
 
-  var gitStatus: String = String()
+  public var gitStatus: String = String()
 
-  var goVersion: String = String()
+  public var goVersion: String = String()
 
-  var buildTime: String = String()
+  public var buildTime: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -54,8 +54,8 @@ struct Iotextypes_ServerMeta {
 fileprivate let _protobuf_package = "iotextypes"
 
 extension Iotextypes_ServerMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ServerMeta"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ServerMeta"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "packageVersion"),
     2: .same(proto: "packageCommitID"),
     3: .same(proto: "gitStatus"),
@@ -63,7 +63,7 @@ extension Iotextypes_ServerMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     5: .same(proto: "buildTime"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.packageVersion)
@@ -76,7 +76,7 @@ extension Iotextypes_ServerMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.packageVersion.isEmpty {
       try visitor.visitSingularStringField(value: self.packageVersion, fieldNumber: 1)
     }
@@ -95,7 +95,7 @@ extension Iotextypes_ServerMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_ServerMeta, rhs: Iotextypes_ServerMeta) -> Bool {
+  public static func ==(lhs: Iotextypes_ServerMeta, rhs: Iotextypes_ServerMeta) -> Bool {
     if lhs.packageVersion != rhs.packageVersion {return false}
     if lhs.packageCommitID != rhs.packageCommitID {return false}
     if lhs.gitStatus != rhs.gitStatus {return false}

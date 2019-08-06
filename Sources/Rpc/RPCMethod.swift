@@ -11,19 +11,15 @@ import Foundation
 public class RPCMethod {
     private let client: Iotexapi_APIServiceServiceClient
     
-    public init(providor: String) throws {
-        self.client = Iotexapi_APIServiceServiceClient(address: providor, secure: true)
+    public init(providor: String, secure: Bool) throws {
+        self.client = Iotexapi_APIServiceServiceClient(address: providor, secure: secure)
     }
     
-    public func getAccount(_ request: GetAccountRequest) throws -> GetAccountResponse {
-        let response = try self.client.getAccount(Iotexapi_GetAccountRequest.with {
-            $0.address = request.address
-        })
-        return GetAccountResponse(accountMeta: response.accountMeta)
+    public func getAccount(_ request: Iotexapi_GetAccountRequest) throws -> Iotexapi_GetAccountResponse {
+        return try self.client.getAccount(request)
     }
     
-    public func getActions(_ request: GetActionsRequest) throws -> GetActionsResponse {
-        let response = try self.client.getActions(request.to())
-        return GetActionsResponse(total: response.total, actionInfo: response.actionInfo)
+    public func getActions(_ request: Iotexapi_GetActionsRequest) throws -> Iotexapi_GetActionsResponse {
+        return try self.client.getActions(request)
     }
 }

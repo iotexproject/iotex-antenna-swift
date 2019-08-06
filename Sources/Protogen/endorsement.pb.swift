@@ -28,33 +28,33 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct Iotextypes_Endorsement {
+public struct Iotextypes_Endorsement {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var timestamp: SwiftProtobuf.Google_Protobuf_Timestamp {
+  public var timestamp: SwiftProtobuf.Google_Protobuf_Timestamp {
     get {return _storage._timestamp ?? SwiftProtobuf.Google_Protobuf_Timestamp()}
     set {_uniqueStorage()._timestamp = newValue}
   }
   /// Returns true if `timestamp` has been explicitly set.
-  var hasTimestamp: Bool {return _storage._timestamp != nil}
+  public var hasTimestamp: Bool {return _storage._timestamp != nil}
   /// Clears the value of `timestamp`. Subsequent reads from it will return its default value.
-  mutating func clearTimestamp() {_uniqueStorage()._timestamp = nil}
+  public mutating func clearTimestamp() {_uniqueStorage()._timestamp = nil}
 
-  var endorser: Data {
+  public var endorser: Data {
     get {return _storage._endorser}
     set {_uniqueStorage()._endorser = newValue}
   }
 
-  var signature: Data {
+  public var signature: Data {
     get {return _storage._signature}
     set {_uniqueStorage()._signature = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -64,8 +64,8 @@ struct Iotextypes_Endorsement {
 fileprivate let _protobuf_package = "iotextypes"
 
 extension Iotextypes_Endorsement: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Endorsement"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Endorsement"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "timestamp"),
     2: .same(proto: "endorser"),
     3: .same(proto: "signature"),
@@ -94,7 +94,7 @@ extension Iotextypes_Endorsement: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -108,7 +108,7 @@ extension Iotextypes_Endorsement: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._timestamp {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -123,7 +123,7 @@ extension Iotextypes_Endorsement: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_Endorsement, rhs: Iotextypes_Endorsement) -> Bool {
+  public static func ==(lhs: Iotextypes_Endorsement, rhs: Iotextypes_Endorsement) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

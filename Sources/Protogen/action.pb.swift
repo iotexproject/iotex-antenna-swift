@@ -28,17 +28,17 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-enum Iotextypes_RewardType: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum Iotextypes_RewardType: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case blockReward // = 0
   case epochReward // = 1
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .blockReward
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .blockReward
     case 1: self = .epochReward
@@ -46,7 +46,7 @@ enum Iotextypes_RewardType: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .blockReward: return 0
     case .epochReward: return 1
@@ -60,7 +60,7 @@ enum Iotextypes_RewardType: SwiftProtobuf.Enum {
 
 extension Iotextypes_RewardType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [Iotextypes_RewardType] = [
+  public static var allCases: [Iotextypes_RewardType] = [
     .blockReward,
     .epochReward,
   ]
@@ -68,392 +68,392 @@ extension Iotextypes_RewardType: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-struct Iotextypes_Transfer {
+public struct Iotextypes_Transfer {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// used by state-based model
-  var amount: String = String()
+  public var amount: String = String()
 
-  var recipient: String = String()
+  public var recipient: String = String()
 
-  var payload: Data = SwiftProtobuf.Internal.emptyData
+  public var payload: Data = SwiftProtobuf.Internal.emptyData
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 /// Candidates and list of candidates
-struct Iotextypes_Candidate {
+public struct Iotextypes_Candidate {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var address: String = String()
+  public var address: String = String()
 
-  var votes: Data = SwiftProtobuf.Internal.emptyData
+  public var votes: Data = SwiftProtobuf.Internal.emptyData
 
-  var pubKey: Data = SwiftProtobuf.Internal.emptyData
+  public var pubKey: Data = SwiftProtobuf.Internal.emptyData
 
-  var rewardAddress: String = String()
+  public var rewardAddress: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_CandidateList {
+public struct Iotextypes_CandidateList {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var candidates: [Iotextypes_Candidate] = []
+  public var candidates: [Iotextypes_Candidate] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_PutPollResult {
+public struct Iotextypes_PutPollResult {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var height: UInt64 {
+  public var height: UInt64 {
     get {return _storage._height}
     set {_uniqueStorage()._height = newValue}
   }
 
-  var candidates: Iotextypes_CandidateList {
+  public var candidates: Iotextypes_CandidateList {
     get {return _storage._candidates ?? Iotextypes_CandidateList()}
     set {_uniqueStorage()._candidates = newValue}
   }
   /// Returns true if `candidates` has been explicitly set.
-  var hasCandidates: Bool {return _storage._candidates != nil}
+  public var hasCandidates: Bool {return _storage._candidates != nil}
   /// Clears the value of `candidates`. Subsequent reads from it will return its default value.
-  mutating func clearCandidates() {_uniqueStorage()._candidates = nil}
+  public mutating func clearCandidates() {_uniqueStorage()._candidates = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Iotextypes_Execution {
+public struct Iotextypes_Execution {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var amount: String = String()
+  public var amount: String = String()
 
-  var contract: String = String()
+  public var contract: String = String()
 
-  var data: Data = SwiftProtobuf.Internal.emptyData
+  public var data: Data = SwiftProtobuf.Internal.emptyData
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_StartSubChain {
+public struct Iotextypes_StartSubChain {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// TODO: chainID chould be assigned by system and returned via a receipt
-  var chainID: UInt32 = 0
+  public var chainID: UInt32 = 0
 
-  var securityDeposit: String = String()
+  public var securityDeposit: String = String()
 
-  var operationDeposit: String = String()
+  public var operationDeposit: String = String()
 
-  var startHeight: UInt64 = 0
+  public var startHeight: UInt64 = 0
 
-  var parentHeightOffset: UInt64 = 0
+  public var parentHeightOffset: UInt64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_StopSubChain {
+public struct Iotextypes_StopSubChain {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var chainID: UInt32 = 0
+  public var chainID: UInt32 = 0
 
-  var stopHeight: UInt64 = 0
+  public var stopHeight: UInt64 = 0
 
-  var subChainAddress: String = String()
+  public var subChainAddress: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_MerkleRoot {
+public struct Iotextypes_MerkleRoot {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var name: String = String()
+  public var name: String = String()
 
-  var value: Data = SwiftProtobuf.Internal.emptyData
+  public var value: Data = SwiftProtobuf.Internal.emptyData
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_PutBlock {
+public struct Iotextypes_PutBlock {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var subChainAddress: String = String()
+  public var subChainAddress: String = String()
 
-  var height: UInt64 = 0
+  public var height: UInt64 = 0
 
-  var roots: [Iotextypes_MerkleRoot] = []
+  public var roots: [Iotextypes_MerkleRoot] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_CreateDeposit {
+public struct Iotextypes_CreateDeposit {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var chainID: UInt32 = 0
+  public var chainID: UInt32 = 0
 
-  var amount: String = String()
+  public var amount: String = String()
 
-  var recipient: String = String()
+  public var recipient: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_SettleDeposit {
+public struct Iotextypes_SettleDeposit {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var amount: String = String()
+  public var amount: String = String()
 
-  var recipient: String = String()
+  public var recipient: String = String()
 
-  var index: UInt64 = 0
+  public var index: UInt64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 /// plum main chain APIs
-struct Iotextypes_CreatePlumChain {
+public struct Iotextypes_CreatePlumChain {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_TerminatePlumChain {
+public struct Iotextypes_TerminatePlumChain {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var subChainAddress: String = String()
+  public var subChainAddress: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_PlumPutBlock {
+public struct Iotextypes_PlumPutBlock {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var subChainAddress: String = String()
+  public var subChainAddress: String = String()
 
-  var height: UInt64 = 0
+  public var height: UInt64 = 0
 
-  var roots: Dictionary<String,Data> = [:]
+  public var roots: Dictionary<String,Data> = [:]
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_PlumCreateDeposit {
+public struct Iotextypes_PlumCreateDeposit {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var subChainAddress: String = String()
+  public var subChainAddress: String = String()
 
-  var amount: String = String()
+  public var amount: String = String()
 
-  var recipient: String = String()
+  public var recipient: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_PlumStartExit {
+public struct Iotextypes_PlumStartExit {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var subChainAddress: String = String()
+  public var subChainAddress: String = String()
 
-  var previousTransfer: Data = SwiftProtobuf.Internal.emptyData
+  public var previousTransfer: Data = SwiftProtobuf.Internal.emptyData
 
-  var previousTransferBlockProof: Data = SwiftProtobuf.Internal.emptyData
+  public var previousTransferBlockProof: Data = SwiftProtobuf.Internal.emptyData
 
-  var previousTransferBlockHeight: UInt64 = 0
+  public var previousTransferBlockHeight: UInt64 = 0
 
-  var exitTransfer: Data = SwiftProtobuf.Internal.emptyData
+  public var exitTransfer: Data = SwiftProtobuf.Internal.emptyData
 
-  var exitTransferBlockProof: Data = SwiftProtobuf.Internal.emptyData
+  public var exitTransferBlockProof: Data = SwiftProtobuf.Internal.emptyData
 
-  var exitTransferBlockHeight: UInt64 = 0
+  public var exitTransferBlockHeight: UInt64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_PlumChallengeExit {
+public struct Iotextypes_PlumChallengeExit {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var subChainAddress: String = String()
+  public var subChainAddress: String = String()
 
-  var coinID: UInt64 = 0
+  public var coinID: UInt64 = 0
 
-  var challengeTransfer: Data = SwiftProtobuf.Internal.emptyData
+  public var challengeTransfer: Data = SwiftProtobuf.Internal.emptyData
 
-  var challengeTransferBlockProof: Data = SwiftProtobuf.Internal.emptyData
+  public var challengeTransferBlockProof: Data = SwiftProtobuf.Internal.emptyData
 
-  var challengeTransferBlockHeight: UInt64 = 0
+  public var challengeTransferBlockHeight: UInt64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_PlumResponseChallengeExit {
+public struct Iotextypes_PlumResponseChallengeExit {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var subChainAddress: String = String()
+  public var subChainAddress: String = String()
 
-  var coinID: UInt64 = 0
+  public var coinID: UInt64 = 0
 
-  var challengeTransfer: Data = SwiftProtobuf.Internal.emptyData
+  public var challengeTransfer: Data = SwiftProtobuf.Internal.emptyData
 
-  var responseTransfer: Data = SwiftProtobuf.Internal.emptyData
+  public var responseTransfer: Data = SwiftProtobuf.Internal.emptyData
 
-  var responseTransferBlockProof: Data = SwiftProtobuf.Internal.emptyData
+  public var responseTransferBlockProof: Data = SwiftProtobuf.Internal.emptyData
 
-  var previousTransferBlockHeight: UInt64 = 0
+  public var previousTransferBlockHeight: UInt64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_PlumFinalizeExit {
+public struct Iotextypes_PlumFinalizeExit {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var subChainAddress: String = String()
+  public var subChainAddress: String = String()
 
-  var coinID: UInt64 = 0
+  public var coinID: UInt64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 /// plum sub chain APIs
-struct Iotextypes_PlumSettleDeposit {
+public struct Iotextypes_PlumSettleDeposit {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var coinID: UInt64 = 0
+  public var coinID: UInt64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_PlumTransfer {
+public struct Iotextypes_PlumTransfer {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var coinID: UInt64 = 0
+  public var coinID: UInt64 = 0
 
-  var denomination: Data = SwiftProtobuf.Internal.emptyData
+  public var denomination: Data = SwiftProtobuf.Internal.emptyData
 
-  var owner: String = String()
+  public var owner: String = String()
 
-  var recipient: String = String()
+  public var recipient: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_ActionCore {
+public struct Iotextypes_ActionCore {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var version: UInt32 {
+  public var version: UInt32 {
     get {return _storage._version}
     set {_uniqueStorage()._version = newValue}
   }
 
-  var nonce: UInt64 {
+  public var nonce: UInt64 {
     get {return _storage._nonce}
     set {_uniqueStorage()._nonce = newValue}
   }
 
-  var gasLimit: UInt64 {
+  public var gasLimit: UInt64 {
     get {return _storage._gasLimit}
     set {_uniqueStorage()._gasLimit = newValue}
   }
 
-  var gasPrice: String {
+  public var gasPrice: String {
     get {return _storage._gasPrice}
     set {_uniqueStorage()._gasPrice = newValue}
   }
 
-  var action: OneOf_Action? {
+  public var action: OneOf_Action? {
     get {return _storage._action}
     set {_uniqueStorage()._action = newValue}
   }
 
-  var transfer: Iotextypes_Transfer {
+  public var transfer: Iotextypes_Transfer {
     get {
       if case .transfer(let v)? = _storage._action {return v}
       return Iotextypes_Transfer()
@@ -461,7 +461,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .transfer(newValue)}
   }
 
-  var execution: Iotextypes_Execution {
+  public var execution: Iotextypes_Execution {
     get {
       if case .execution(let v)? = _storage._action {return v}
       return Iotextypes_Execution()
@@ -470,7 +470,7 @@ struct Iotextypes_ActionCore {
   }
 
   /// FedChain
-  var startSubChain: Iotextypes_StartSubChain {
+  public var startSubChain: Iotextypes_StartSubChain {
     get {
       if case .startSubChain(let v)? = _storage._action {return v}
       return Iotextypes_StartSubChain()
@@ -478,7 +478,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .startSubChain(newValue)}
   }
 
-  var stopSubChain: Iotextypes_StopSubChain {
+  public var stopSubChain: Iotextypes_StopSubChain {
     get {
       if case .stopSubChain(let v)? = _storage._action {return v}
       return Iotextypes_StopSubChain()
@@ -486,7 +486,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .stopSubChain(newValue)}
   }
 
-  var putBlock: Iotextypes_PutBlock {
+  public var putBlock: Iotextypes_PutBlock {
     get {
       if case .putBlock(let v)? = _storage._action {return v}
       return Iotextypes_PutBlock()
@@ -494,7 +494,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .putBlock(newValue)}
   }
 
-  var createDeposit: Iotextypes_CreateDeposit {
+  public var createDeposit: Iotextypes_CreateDeposit {
     get {
       if case .createDeposit(let v)? = _storage._action {return v}
       return Iotextypes_CreateDeposit()
@@ -502,7 +502,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .createDeposit(newValue)}
   }
 
-  var settleDeposit: Iotextypes_SettleDeposit {
+  public var settleDeposit: Iotextypes_SettleDeposit {
     get {
       if case .settleDeposit(let v)? = _storage._action {return v}
       return Iotextypes_SettleDeposit()
@@ -511,7 +511,7 @@ struct Iotextypes_ActionCore {
   }
 
   /// PlumChain
-  var createPlumChain: Iotextypes_CreatePlumChain {
+  public var createPlumChain: Iotextypes_CreatePlumChain {
     get {
       if case .createPlumChain(let v)? = _storage._action {return v}
       return Iotextypes_CreatePlumChain()
@@ -519,7 +519,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .createPlumChain(newValue)}
   }
 
-  var terminatePlumChain: Iotextypes_TerminatePlumChain {
+  public var terminatePlumChain: Iotextypes_TerminatePlumChain {
     get {
       if case .terminatePlumChain(let v)? = _storage._action {return v}
       return Iotextypes_TerminatePlumChain()
@@ -527,7 +527,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .terminatePlumChain(newValue)}
   }
 
-  var plumPutBlock: Iotextypes_PlumPutBlock {
+  public var plumPutBlock: Iotextypes_PlumPutBlock {
     get {
       if case .plumPutBlock(let v)? = _storage._action {return v}
       return Iotextypes_PlumPutBlock()
@@ -535,7 +535,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .plumPutBlock(newValue)}
   }
 
-  var plumCreateDeposit: Iotextypes_PlumCreateDeposit {
+  public var plumCreateDeposit: Iotextypes_PlumCreateDeposit {
     get {
       if case .plumCreateDeposit(let v)? = _storage._action {return v}
       return Iotextypes_PlumCreateDeposit()
@@ -543,7 +543,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .plumCreateDeposit(newValue)}
   }
 
-  var plumStartExit: Iotextypes_PlumStartExit {
+  public var plumStartExit: Iotextypes_PlumStartExit {
     get {
       if case .plumStartExit(let v)? = _storage._action {return v}
       return Iotextypes_PlumStartExit()
@@ -551,7 +551,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .plumStartExit(newValue)}
   }
 
-  var plumChallengeExit: Iotextypes_PlumChallengeExit {
+  public var plumChallengeExit: Iotextypes_PlumChallengeExit {
     get {
       if case .plumChallengeExit(let v)? = _storage._action {return v}
       return Iotextypes_PlumChallengeExit()
@@ -559,7 +559,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .plumChallengeExit(newValue)}
   }
 
-  var plumResponseChallengeExit: Iotextypes_PlumResponseChallengeExit {
+  public var plumResponseChallengeExit: Iotextypes_PlumResponseChallengeExit {
     get {
       if case .plumResponseChallengeExit(let v)? = _storage._action {return v}
       return Iotextypes_PlumResponseChallengeExit()
@@ -567,7 +567,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .plumResponseChallengeExit(newValue)}
   }
 
-  var plumFinalizeExit: Iotextypes_PlumFinalizeExit {
+  public var plumFinalizeExit: Iotextypes_PlumFinalizeExit {
     get {
       if case .plumFinalizeExit(let v)? = _storage._action {return v}
       return Iotextypes_PlumFinalizeExit()
@@ -575,7 +575,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .plumFinalizeExit(newValue)}
   }
 
-  var plumSettleDeposit: Iotextypes_PlumSettleDeposit {
+  public var plumSettleDeposit: Iotextypes_PlumSettleDeposit {
     get {
       if case .plumSettleDeposit(let v)? = _storage._action {return v}
       return Iotextypes_PlumSettleDeposit()
@@ -583,7 +583,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .plumSettleDeposit(newValue)}
   }
 
-  var plumTransfer: Iotextypes_PlumTransfer {
+  public var plumTransfer: Iotextypes_PlumTransfer {
     get {
       if case .plumTransfer(let v)? = _storage._action {return v}
       return Iotextypes_PlumTransfer()
@@ -592,7 +592,7 @@ struct Iotextypes_ActionCore {
   }
 
   /// Rewarding protocol actions
-  var depositToRewardingFund: Iotextypes_DepositToRewardingFund {
+  public var depositToRewardingFund: Iotextypes_DepositToRewardingFund {
     get {
       if case .depositToRewardingFund(let v)? = _storage._action {return v}
       return Iotextypes_DepositToRewardingFund()
@@ -600,7 +600,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .depositToRewardingFund(newValue)}
   }
 
-  var claimFromRewardingFund: Iotextypes_ClaimFromRewardingFund {
+  public var claimFromRewardingFund: Iotextypes_ClaimFromRewardingFund {
     get {
       if case .claimFromRewardingFund(let v)? = _storage._action {return v}
       return Iotextypes_ClaimFromRewardingFund()
@@ -608,7 +608,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .claimFromRewardingFund(newValue)}
   }
 
-  var grantReward: Iotextypes_GrantReward {
+  public var grantReward: Iotextypes_GrantReward {
     get {
       if case .grantReward(let v)? = _storage._action {return v}
       return Iotextypes_GrantReward()
@@ -616,7 +616,7 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .grantReward(newValue)}
   }
 
-  var putPollResult: Iotextypes_PutPollResult {
+  public var putPollResult: Iotextypes_PutPollResult {
     get {
       if case .putPollResult(let v)? = _storage._action {return v}
       return Iotextypes_PutPollResult()
@@ -624,9 +624,9 @@ struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .putPollResult(newValue)}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Action: Equatable {
+  public enum OneOf_Action: Equatable {
     case transfer(Iotextypes_Transfer)
     case execution(Iotextypes_Execution)
     /// FedChain
@@ -653,7 +653,7 @@ struct Iotextypes_ActionCore {
     case putPollResult(Iotextypes_PutPollResult)
 
   #if !swift(>=4.1)
-    static func ==(lhs: Iotextypes_ActionCore.OneOf_Action, rhs: Iotextypes_ActionCore.OneOf_Action) -> Bool {
+    public static func ==(lhs: Iotextypes_ActionCore.OneOf_Action, rhs: Iotextypes_ActionCore.OneOf_Action) -> Bool {
       switch (lhs, rhs) {
       case (.transfer(let l), .transfer(let r)): return l == r
       case (.execution(let l), .execution(let r)): return l == r
@@ -682,126 +682,126 @@ struct Iotextypes_ActionCore {
   #endif
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Iotextypes_Action {
+public struct Iotextypes_Action {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var core: Iotextypes_ActionCore {
+  public var core: Iotextypes_ActionCore {
     get {return _storage._core ?? Iotextypes_ActionCore()}
     set {_uniqueStorage()._core = newValue}
   }
   /// Returns true if `core` has been explicitly set.
-  var hasCore: Bool {return _storage._core != nil}
+  public var hasCore: Bool {return _storage._core != nil}
   /// Clears the value of `core`. Subsequent reads from it will return its default value.
-  mutating func clearCore() {_uniqueStorage()._core = nil}
+  public mutating func clearCore() {_uniqueStorage()._core = nil}
 
-  var senderPubKey: Data {
+  public var senderPubKey: Data {
     get {return _storage._senderPubKey}
     set {_uniqueStorage()._senderPubKey = newValue}
   }
 
-  var signature: Data {
+  public var signature: Data {
     get {return _storage._signature}
     set {_uniqueStorage()._signature = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Iotextypes_Receipt {
+public struct Iotextypes_Receipt {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var status: UInt64 = 0
+  public var status: UInt64 = 0
 
-  var blkHeight: UInt64 = 0
+  public var blkHeight: UInt64 = 0
 
-  var actHash: Data = SwiftProtobuf.Internal.emptyData
+  public var actHash: Data = SwiftProtobuf.Internal.emptyData
 
-  var gasConsumed: UInt64 = 0
+  public var gasConsumed: UInt64 = 0
 
-  var contractAddress: String = String()
+  public var contractAddress: String = String()
 
-  var logs: [Iotextypes_Log] = []
+  public var logs: [Iotextypes_Log] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_Log {
+public struct Iotextypes_Log {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var contractAddress: String = String()
+  public var contractAddress: String = String()
 
-  var topics: [Data] = []
+  public var topics: [Data] = []
 
-  var data: Data = SwiftProtobuf.Internal.emptyData
+  public var data: Data = SwiftProtobuf.Internal.emptyData
 
-  var blkHeight: UInt64 = 0
+  public var blkHeight: UInt64 = 0
 
-  var actHash: Data = SwiftProtobuf.Internal.emptyData
+  public var actHash: Data = SwiftProtobuf.Internal.emptyData
 
-  var index: UInt32 = 0
+  public var index: UInt32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_DepositToRewardingFund {
+public struct Iotextypes_DepositToRewardingFund {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var amount: String = String()
+  public var amount: String = String()
 
-  var data: Data = SwiftProtobuf.Internal.emptyData
+  public var data: Data = SwiftProtobuf.Internal.emptyData
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_ClaimFromRewardingFund {
+public struct Iotextypes_ClaimFromRewardingFund {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var amount: String = String()
+  public var amount: String = String()
 
-  var data: Data = SwiftProtobuf.Internal.emptyData
+  public var data: Data = SwiftProtobuf.Internal.emptyData
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Iotextypes_GrantReward {
+public struct Iotextypes_GrantReward {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var type: Iotextypes_RewardType = .blockReward
+  public var type: Iotextypes_RewardType = .blockReward
 
-  var height: UInt64 = 0
+  public var height: UInt64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -809,21 +809,21 @@ struct Iotextypes_GrantReward {
 fileprivate let _protobuf_package = "iotextypes"
 
 extension Iotextypes_RewardType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "BlockReward"),
     1: .same(proto: "EpochReward"),
   ]
 }
 
 extension Iotextypes_Transfer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Transfer"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Transfer"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "amount"),
     2: .same(proto: "recipient"),
     3: .same(proto: "payload"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.amount)
@@ -834,7 +834,7 @@ extension Iotextypes_Transfer: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.amount.isEmpty {
       try visitor.visitSingularStringField(value: self.amount, fieldNumber: 1)
     }
@@ -847,7 +847,7 @@ extension Iotextypes_Transfer: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_Transfer, rhs: Iotextypes_Transfer) -> Bool {
+  public static func ==(lhs: Iotextypes_Transfer, rhs: Iotextypes_Transfer) -> Bool {
     if lhs.amount != rhs.amount {return false}
     if lhs.recipient != rhs.recipient {return false}
     if lhs.payload != rhs.payload {return false}
@@ -857,15 +857,15 @@ extension Iotextypes_Transfer: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
 }
 
 extension Iotextypes_Candidate: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Candidate"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Candidate"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "address"),
     2: .same(proto: "votes"),
     3: .same(proto: "pubKey"),
     4: .same(proto: "rewardAddress"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.address)
@@ -877,7 +877,7 @@ extension Iotextypes_Candidate: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.address.isEmpty {
       try visitor.visitSingularStringField(value: self.address, fieldNumber: 1)
     }
@@ -893,7 +893,7 @@ extension Iotextypes_Candidate: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_Candidate, rhs: Iotextypes_Candidate) -> Bool {
+  public static func ==(lhs: Iotextypes_Candidate, rhs: Iotextypes_Candidate) -> Bool {
     if lhs.address != rhs.address {return false}
     if lhs.votes != rhs.votes {return false}
     if lhs.pubKey != rhs.pubKey {return false}
@@ -904,12 +904,12 @@ extension Iotextypes_Candidate: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
 }
 
 extension Iotextypes_CandidateList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CandidateList"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".CandidateList"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "candidates"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.candidates)
@@ -918,14 +918,14 @@ extension Iotextypes_CandidateList: SwiftProtobuf.Message, SwiftProtobuf._Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.candidates.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.candidates, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_CandidateList, rhs: Iotextypes_CandidateList) -> Bool {
+  public static func ==(lhs: Iotextypes_CandidateList, rhs: Iotextypes_CandidateList) -> Bool {
     if lhs.candidates != rhs.candidates {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -933,8 +933,8 @@ extension Iotextypes_CandidateList: SwiftProtobuf.Message, SwiftProtobuf._Messag
 }
 
 extension Iotextypes_PutPollResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PutPollResult"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PutPollResult"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "height"),
     2: .same(proto: "candidates"),
   ]
@@ -960,7 +960,7 @@ extension Iotextypes_PutPollResult: SwiftProtobuf.Message, SwiftProtobuf._Messag
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -973,7 +973,7 @@ extension Iotextypes_PutPollResult: SwiftProtobuf.Message, SwiftProtobuf._Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._height != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._height, fieldNumber: 1)
@@ -985,7 +985,7 @@ extension Iotextypes_PutPollResult: SwiftProtobuf.Message, SwiftProtobuf._Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_PutPollResult, rhs: Iotextypes_PutPollResult) -> Bool {
+  public static func ==(lhs: Iotextypes_PutPollResult, rhs: Iotextypes_PutPollResult) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -1002,14 +1002,14 @@ extension Iotextypes_PutPollResult: SwiftProtobuf.Message, SwiftProtobuf._Messag
 }
 
 extension Iotextypes_Execution: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Execution"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Execution"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "amount"),
     2: .same(proto: "contract"),
     3: .same(proto: "data"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.amount)
@@ -1020,7 +1020,7 @@ extension Iotextypes_Execution: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.amount.isEmpty {
       try visitor.visitSingularStringField(value: self.amount, fieldNumber: 1)
     }
@@ -1033,7 +1033,7 @@ extension Iotextypes_Execution: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_Execution, rhs: Iotextypes_Execution) -> Bool {
+  public static func ==(lhs: Iotextypes_Execution, rhs: Iotextypes_Execution) -> Bool {
     if lhs.amount != rhs.amount {return false}
     if lhs.contract != rhs.contract {return false}
     if lhs.data != rhs.data {return false}
@@ -1043,8 +1043,8 @@ extension Iotextypes_Execution: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
 }
 
 extension Iotextypes_StartSubChain: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".StartSubChain"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".StartSubChain"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "chainID"),
     2: .same(proto: "securityDeposit"),
     3: .same(proto: "operationDeposit"),
@@ -1052,7 +1052,7 @@ extension Iotextypes_StartSubChain: SwiftProtobuf.Message, SwiftProtobuf._Messag
     5: .same(proto: "parentHeightOffset"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt32Field(value: &self.chainID)
@@ -1065,7 +1065,7 @@ extension Iotextypes_StartSubChain: SwiftProtobuf.Message, SwiftProtobuf._Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.chainID != 0 {
       try visitor.visitSingularUInt32Field(value: self.chainID, fieldNumber: 1)
     }
@@ -1084,7 +1084,7 @@ extension Iotextypes_StartSubChain: SwiftProtobuf.Message, SwiftProtobuf._Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_StartSubChain, rhs: Iotextypes_StartSubChain) -> Bool {
+  public static func ==(lhs: Iotextypes_StartSubChain, rhs: Iotextypes_StartSubChain) -> Bool {
     if lhs.chainID != rhs.chainID {return false}
     if lhs.securityDeposit != rhs.securityDeposit {return false}
     if lhs.operationDeposit != rhs.operationDeposit {return false}
@@ -1096,14 +1096,14 @@ extension Iotextypes_StartSubChain: SwiftProtobuf.Message, SwiftProtobuf._Messag
 }
 
 extension Iotextypes_StopSubChain: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".StopSubChain"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".StopSubChain"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "chainID"),
     2: .same(proto: "stopHeight"),
     3: .same(proto: "subChainAddress"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt32Field(value: &self.chainID)
@@ -1114,7 +1114,7 @@ extension Iotextypes_StopSubChain: SwiftProtobuf.Message, SwiftProtobuf._Message
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.chainID != 0 {
       try visitor.visitSingularUInt32Field(value: self.chainID, fieldNumber: 1)
     }
@@ -1127,7 +1127,7 @@ extension Iotextypes_StopSubChain: SwiftProtobuf.Message, SwiftProtobuf._Message
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_StopSubChain, rhs: Iotextypes_StopSubChain) -> Bool {
+  public static func ==(lhs: Iotextypes_StopSubChain, rhs: Iotextypes_StopSubChain) -> Bool {
     if lhs.chainID != rhs.chainID {return false}
     if lhs.stopHeight != rhs.stopHeight {return false}
     if lhs.subChainAddress != rhs.subChainAddress {return false}
@@ -1137,13 +1137,13 @@ extension Iotextypes_StopSubChain: SwiftProtobuf.Message, SwiftProtobuf._Message
 }
 
 extension Iotextypes_MerkleRoot: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".MerkleRoot"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".MerkleRoot"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "value"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.name)
@@ -1153,7 +1153,7 @@ extension Iotextypes_MerkleRoot: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
@@ -1163,7 +1163,7 @@ extension Iotextypes_MerkleRoot: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_MerkleRoot, rhs: Iotextypes_MerkleRoot) -> Bool {
+  public static func ==(lhs: Iotextypes_MerkleRoot, rhs: Iotextypes_MerkleRoot) -> Bool {
     if lhs.name != rhs.name {return false}
     if lhs.value != rhs.value {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -1172,14 +1172,14 @@ extension Iotextypes_MerkleRoot: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
 }
 
 extension Iotextypes_PutBlock: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PutBlock"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PutBlock"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "subChainAddress"),
     2: .same(proto: "height"),
     3: .same(proto: "roots"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.subChainAddress)
@@ -1190,7 +1190,7 @@ extension Iotextypes_PutBlock: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.subChainAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.subChainAddress, fieldNumber: 1)
     }
@@ -1203,7 +1203,7 @@ extension Iotextypes_PutBlock: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_PutBlock, rhs: Iotextypes_PutBlock) -> Bool {
+  public static func ==(lhs: Iotextypes_PutBlock, rhs: Iotextypes_PutBlock) -> Bool {
     if lhs.subChainAddress != rhs.subChainAddress {return false}
     if lhs.height != rhs.height {return false}
     if lhs.roots != rhs.roots {return false}
@@ -1213,14 +1213,14 @@ extension Iotextypes_PutBlock: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
 }
 
 extension Iotextypes_CreateDeposit: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreateDeposit"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".CreateDeposit"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "chainID"),
     2: .same(proto: "amount"),
     3: .same(proto: "recipient"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt32Field(value: &self.chainID)
@@ -1231,7 +1231,7 @@ extension Iotextypes_CreateDeposit: SwiftProtobuf.Message, SwiftProtobuf._Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.chainID != 0 {
       try visitor.visitSingularUInt32Field(value: self.chainID, fieldNumber: 1)
     }
@@ -1244,7 +1244,7 @@ extension Iotextypes_CreateDeposit: SwiftProtobuf.Message, SwiftProtobuf._Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_CreateDeposit, rhs: Iotextypes_CreateDeposit) -> Bool {
+  public static func ==(lhs: Iotextypes_CreateDeposit, rhs: Iotextypes_CreateDeposit) -> Bool {
     if lhs.chainID != rhs.chainID {return false}
     if lhs.amount != rhs.amount {return false}
     if lhs.recipient != rhs.recipient {return false}
@@ -1254,14 +1254,14 @@ extension Iotextypes_CreateDeposit: SwiftProtobuf.Message, SwiftProtobuf._Messag
 }
 
 extension Iotextypes_SettleDeposit: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".SettleDeposit"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".SettleDeposit"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "amount"),
     2: .same(proto: "recipient"),
     3: .same(proto: "index"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.amount)
@@ -1272,7 +1272,7 @@ extension Iotextypes_SettleDeposit: SwiftProtobuf.Message, SwiftProtobuf._Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.amount.isEmpty {
       try visitor.visitSingularStringField(value: self.amount, fieldNumber: 1)
     }
@@ -1285,7 +1285,7 @@ extension Iotextypes_SettleDeposit: SwiftProtobuf.Message, SwiftProtobuf._Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_SettleDeposit, rhs: Iotextypes_SettleDeposit) -> Bool {
+  public static func ==(lhs: Iotextypes_SettleDeposit, rhs: Iotextypes_SettleDeposit) -> Bool {
     if lhs.amount != rhs.amount {return false}
     if lhs.recipient != rhs.recipient {return false}
     if lhs.index != rhs.index {return false}
@@ -1295,31 +1295,31 @@ extension Iotextypes_SettleDeposit: SwiftProtobuf.Message, SwiftProtobuf._Messag
 }
 
 extension Iotextypes_CreatePlumChain: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreatePlumChain"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let protoMessageName: String = _protobuf_package + ".CreatePlumChain"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_CreatePlumChain, rhs: Iotextypes_CreatePlumChain) -> Bool {
+  public static func ==(lhs: Iotextypes_CreatePlumChain, rhs: Iotextypes_CreatePlumChain) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
 extension Iotextypes_TerminatePlumChain: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".TerminatePlumChain"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".TerminatePlumChain"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "subChainAddress"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.subChainAddress)
@@ -1328,14 +1328,14 @@ extension Iotextypes_TerminatePlumChain: SwiftProtobuf.Message, SwiftProtobuf._M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.subChainAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.subChainAddress, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_TerminatePlumChain, rhs: Iotextypes_TerminatePlumChain) -> Bool {
+  public static func ==(lhs: Iotextypes_TerminatePlumChain, rhs: Iotextypes_TerminatePlumChain) -> Bool {
     if lhs.subChainAddress != rhs.subChainAddress {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -1343,14 +1343,14 @@ extension Iotextypes_TerminatePlumChain: SwiftProtobuf.Message, SwiftProtobuf._M
 }
 
 extension Iotextypes_PlumPutBlock: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlumPutBlock"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlumPutBlock"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "subChainAddress"),
     2: .same(proto: "height"),
     3: .same(proto: "roots"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.subChainAddress)
@@ -1361,7 +1361,7 @@ extension Iotextypes_PlumPutBlock: SwiftProtobuf.Message, SwiftProtobuf._Message
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.subChainAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.subChainAddress, fieldNumber: 1)
     }
@@ -1374,7 +1374,7 @@ extension Iotextypes_PlumPutBlock: SwiftProtobuf.Message, SwiftProtobuf._Message
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_PlumPutBlock, rhs: Iotextypes_PlumPutBlock) -> Bool {
+  public static func ==(lhs: Iotextypes_PlumPutBlock, rhs: Iotextypes_PlumPutBlock) -> Bool {
     if lhs.subChainAddress != rhs.subChainAddress {return false}
     if lhs.height != rhs.height {return false}
     if lhs.roots != rhs.roots {return false}
@@ -1384,14 +1384,14 @@ extension Iotextypes_PlumPutBlock: SwiftProtobuf.Message, SwiftProtobuf._Message
 }
 
 extension Iotextypes_PlumCreateDeposit: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlumCreateDeposit"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlumCreateDeposit"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "subChainAddress"),
     2: .same(proto: "amount"),
     3: .same(proto: "recipient"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.subChainAddress)
@@ -1402,7 +1402,7 @@ extension Iotextypes_PlumCreateDeposit: SwiftProtobuf.Message, SwiftProtobuf._Me
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.subChainAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.subChainAddress, fieldNumber: 1)
     }
@@ -1415,7 +1415,7 @@ extension Iotextypes_PlumCreateDeposit: SwiftProtobuf.Message, SwiftProtobuf._Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_PlumCreateDeposit, rhs: Iotextypes_PlumCreateDeposit) -> Bool {
+  public static func ==(lhs: Iotextypes_PlumCreateDeposit, rhs: Iotextypes_PlumCreateDeposit) -> Bool {
     if lhs.subChainAddress != rhs.subChainAddress {return false}
     if lhs.amount != rhs.amount {return false}
     if lhs.recipient != rhs.recipient {return false}
@@ -1425,8 +1425,8 @@ extension Iotextypes_PlumCreateDeposit: SwiftProtobuf.Message, SwiftProtobuf._Me
 }
 
 extension Iotextypes_PlumStartExit: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlumStartExit"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlumStartExit"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "subChainAddress"),
     2: .same(proto: "previousTransfer"),
     3: .same(proto: "previousTransferBlockProof"),
@@ -1436,7 +1436,7 @@ extension Iotextypes_PlumStartExit: SwiftProtobuf.Message, SwiftProtobuf._Messag
     7: .same(proto: "exitTransferBlockHeight"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.subChainAddress)
@@ -1451,7 +1451,7 @@ extension Iotextypes_PlumStartExit: SwiftProtobuf.Message, SwiftProtobuf._Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.subChainAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.subChainAddress, fieldNumber: 1)
     }
@@ -1476,7 +1476,7 @@ extension Iotextypes_PlumStartExit: SwiftProtobuf.Message, SwiftProtobuf._Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_PlumStartExit, rhs: Iotextypes_PlumStartExit) -> Bool {
+  public static func ==(lhs: Iotextypes_PlumStartExit, rhs: Iotextypes_PlumStartExit) -> Bool {
     if lhs.subChainAddress != rhs.subChainAddress {return false}
     if lhs.previousTransfer != rhs.previousTransfer {return false}
     if lhs.previousTransferBlockProof != rhs.previousTransferBlockProof {return false}
@@ -1490,8 +1490,8 @@ extension Iotextypes_PlumStartExit: SwiftProtobuf.Message, SwiftProtobuf._Messag
 }
 
 extension Iotextypes_PlumChallengeExit: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlumChallengeExit"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlumChallengeExit"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "subChainAddress"),
     2: .same(proto: "coinID"),
     3: .same(proto: "challengeTransfer"),
@@ -1499,7 +1499,7 @@ extension Iotextypes_PlumChallengeExit: SwiftProtobuf.Message, SwiftProtobuf._Me
     5: .same(proto: "challengeTransferBlockHeight"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.subChainAddress)
@@ -1512,7 +1512,7 @@ extension Iotextypes_PlumChallengeExit: SwiftProtobuf.Message, SwiftProtobuf._Me
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.subChainAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.subChainAddress, fieldNumber: 1)
     }
@@ -1531,7 +1531,7 @@ extension Iotextypes_PlumChallengeExit: SwiftProtobuf.Message, SwiftProtobuf._Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_PlumChallengeExit, rhs: Iotextypes_PlumChallengeExit) -> Bool {
+  public static func ==(lhs: Iotextypes_PlumChallengeExit, rhs: Iotextypes_PlumChallengeExit) -> Bool {
     if lhs.subChainAddress != rhs.subChainAddress {return false}
     if lhs.coinID != rhs.coinID {return false}
     if lhs.challengeTransfer != rhs.challengeTransfer {return false}
@@ -1543,8 +1543,8 @@ extension Iotextypes_PlumChallengeExit: SwiftProtobuf.Message, SwiftProtobuf._Me
 }
 
 extension Iotextypes_PlumResponseChallengeExit: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlumResponseChallengeExit"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlumResponseChallengeExit"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "subChainAddress"),
     2: .same(proto: "coinID"),
     3: .same(proto: "challengeTransfer"),
@@ -1553,7 +1553,7 @@ extension Iotextypes_PlumResponseChallengeExit: SwiftProtobuf.Message, SwiftProt
     6: .same(proto: "previousTransferBlockHeight"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.subChainAddress)
@@ -1567,7 +1567,7 @@ extension Iotextypes_PlumResponseChallengeExit: SwiftProtobuf.Message, SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.subChainAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.subChainAddress, fieldNumber: 1)
     }
@@ -1589,7 +1589,7 @@ extension Iotextypes_PlumResponseChallengeExit: SwiftProtobuf.Message, SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_PlumResponseChallengeExit, rhs: Iotextypes_PlumResponseChallengeExit) -> Bool {
+  public static func ==(lhs: Iotextypes_PlumResponseChallengeExit, rhs: Iotextypes_PlumResponseChallengeExit) -> Bool {
     if lhs.subChainAddress != rhs.subChainAddress {return false}
     if lhs.coinID != rhs.coinID {return false}
     if lhs.challengeTransfer != rhs.challengeTransfer {return false}
@@ -1602,13 +1602,13 @@ extension Iotextypes_PlumResponseChallengeExit: SwiftProtobuf.Message, SwiftProt
 }
 
 extension Iotextypes_PlumFinalizeExit: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlumFinalizeExit"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlumFinalizeExit"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "subChainAddress"),
     2: .same(proto: "coinID"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.subChainAddress)
@@ -1618,7 +1618,7 @@ extension Iotextypes_PlumFinalizeExit: SwiftProtobuf.Message, SwiftProtobuf._Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.subChainAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.subChainAddress, fieldNumber: 1)
     }
@@ -1628,7 +1628,7 @@ extension Iotextypes_PlumFinalizeExit: SwiftProtobuf.Message, SwiftProtobuf._Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_PlumFinalizeExit, rhs: Iotextypes_PlumFinalizeExit) -> Bool {
+  public static func ==(lhs: Iotextypes_PlumFinalizeExit, rhs: Iotextypes_PlumFinalizeExit) -> Bool {
     if lhs.subChainAddress != rhs.subChainAddress {return false}
     if lhs.coinID != rhs.coinID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -1637,12 +1637,12 @@ extension Iotextypes_PlumFinalizeExit: SwiftProtobuf.Message, SwiftProtobuf._Mes
 }
 
 extension Iotextypes_PlumSettleDeposit: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlumSettleDeposit"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlumSettleDeposit"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "coinID"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt64Field(value: &self.coinID)
@@ -1651,14 +1651,14 @@ extension Iotextypes_PlumSettleDeposit: SwiftProtobuf.Message, SwiftProtobuf._Me
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.coinID != 0 {
       try visitor.visitSingularUInt64Field(value: self.coinID, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_PlumSettleDeposit, rhs: Iotextypes_PlumSettleDeposit) -> Bool {
+  public static func ==(lhs: Iotextypes_PlumSettleDeposit, rhs: Iotextypes_PlumSettleDeposit) -> Bool {
     if lhs.coinID != rhs.coinID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -1666,15 +1666,15 @@ extension Iotextypes_PlumSettleDeposit: SwiftProtobuf.Message, SwiftProtobuf._Me
 }
 
 extension Iotextypes_PlumTransfer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlumTransfer"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlumTransfer"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "coinID"),
     2: .same(proto: "denomination"),
     3: .same(proto: "owner"),
     4: .same(proto: "recipient"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt64Field(value: &self.coinID)
@@ -1686,7 +1686,7 @@ extension Iotextypes_PlumTransfer: SwiftProtobuf.Message, SwiftProtobuf._Message
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.coinID != 0 {
       try visitor.visitSingularUInt64Field(value: self.coinID, fieldNumber: 1)
     }
@@ -1702,7 +1702,7 @@ extension Iotextypes_PlumTransfer: SwiftProtobuf.Message, SwiftProtobuf._Message
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_PlumTransfer, rhs: Iotextypes_PlumTransfer) -> Bool {
+  public static func ==(lhs: Iotextypes_PlumTransfer, rhs: Iotextypes_PlumTransfer) -> Bool {
     if lhs.coinID != rhs.coinID {return false}
     if lhs.denomination != rhs.denomination {return false}
     if lhs.owner != rhs.owner {return false}
@@ -1713,8 +1713,8 @@ extension Iotextypes_PlumTransfer: SwiftProtobuf.Message, SwiftProtobuf._Message
 }
 
 extension Iotextypes_ActionCore: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ActionCore"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ActionCore"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "version"),
     2: .same(proto: "nonce"),
     3: .same(proto: "gasLimit"),
@@ -1769,7 +1769,7 @@ extension Iotextypes_ActionCore: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1952,7 +1952,7 @@ extension Iotextypes_ActionCore: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._version != 0 {
         try visitor.visitSingularUInt32Field(value: _storage._version, fieldNumber: 1)
@@ -2015,7 +2015,7 @@ extension Iotextypes_ActionCore: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_ActionCore, rhs: Iotextypes_ActionCore) -> Bool {
+  public static func ==(lhs: Iotextypes_ActionCore, rhs: Iotextypes_ActionCore) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -2035,8 +2035,8 @@ extension Iotextypes_ActionCore: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
 }
 
 extension Iotextypes_Action: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Action"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Action"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "core"),
     2: .same(proto: "senderPubKey"),
     3: .same(proto: "signature"),
@@ -2065,7 +2065,7 @@ extension Iotextypes_Action: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2079,7 +2079,7 @@ extension Iotextypes_Action: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._core {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -2094,7 +2094,7 @@ extension Iotextypes_Action: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_Action, rhs: Iotextypes_Action) -> Bool {
+  public static func ==(lhs: Iotextypes_Action, rhs: Iotextypes_Action) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -2112,8 +2112,8 @@ extension Iotextypes_Action: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
 }
 
 extension Iotextypes_Receipt: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Receipt"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Receipt"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
     2: .same(proto: "blkHeight"),
     3: .same(proto: "actHash"),
@@ -2122,7 +2122,7 @@ extension Iotextypes_Receipt: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     6: .same(proto: "logs"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt64Field(value: &self.status)
@@ -2136,7 +2136,7 @@ extension Iotextypes_Receipt: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.status != 0 {
       try visitor.visitSingularUInt64Field(value: self.status, fieldNumber: 1)
     }
@@ -2158,7 +2158,7 @@ extension Iotextypes_Receipt: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_Receipt, rhs: Iotextypes_Receipt) -> Bool {
+  public static func ==(lhs: Iotextypes_Receipt, rhs: Iotextypes_Receipt) -> Bool {
     if lhs.status != rhs.status {return false}
     if lhs.blkHeight != rhs.blkHeight {return false}
     if lhs.actHash != rhs.actHash {return false}
@@ -2171,8 +2171,8 @@ extension Iotextypes_Receipt: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
 }
 
 extension Iotextypes_Log: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Log"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Log"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "contractAddress"),
     2: .same(proto: "topics"),
     3: .same(proto: "data"),
@@ -2181,7 +2181,7 @@ extension Iotextypes_Log: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     6: .same(proto: "index"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.contractAddress)
@@ -2195,7 +2195,7 @@ extension Iotextypes_Log: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.contractAddress.isEmpty {
       try visitor.visitSingularStringField(value: self.contractAddress, fieldNumber: 1)
     }
@@ -2217,7 +2217,7 @@ extension Iotextypes_Log: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_Log, rhs: Iotextypes_Log) -> Bool {
+  public static func ==(lhs: Iotextypes_Log, rhs: Iotextypes_Log) -> Bool {
     if lhs.contractAddress != rhs.contractAddress {return false}
     if lhs.topics != rhs.topics {return false}
     if lhs.data != rhs.data {return false}
@@ -2230,13 +2230,13 @@ extension Iotextypes_Log: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
 }
 
 extension Iotextypes_DepositToRewardingFund: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DepositToRewardingFund"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".DepositToRewardingFund"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "amount"),
     2: .same(proto: "data"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.amount)
@@ -2246,7 +2246,7 @@ extension Iotextypes_DepositToRewardingFund: SwiftProtobuf.Message, SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.amount.isEmpty {
       try visitor.visitSingularStringField(value: self.amount, fieldNumber: 1)
     }
@@ -2256,7 +2256,7 @@ extension Iotextypes_DepositToRewardingFund: SwiftProtobuf.Message, SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_DepositToRewardingFund, rhs: Iotextypes_DepositToRewardingFund) -> Bool {
+  public static func ==(lhs: Iotextypes_DepositToRewardingFund, rhs: Iotextypes_DepositToRewardingFund) -> Bool {
     if lhs.amount != rhs.amount {return false}
     if lhs.data != rhs.data {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -2265,13 +2265,13 @@ extension Iotextypes_DepositToRewardingFund: SwiftProtobuf.Message, SwiftProtobu
 }
 
 extension Iotextypes_ClaimFromRewardingFund: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ClaimFromRewardingFund"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ClaimFromRewardingFund"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "amount"),
     2: .same(proto: "data"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.amount)
@@ -2281,7 +2281,7 @@ extension Iotextypes_ClaimFromRewardingFund: SwiftProtobuf.Message, SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.amount.isEmpty {
       try visitor.visitSingularStringField(value: self.amount, fieldNumber: 1)
     }
@@ -2291,7 +2291,7 @@ extension Iotextypes_ClaimFromRewardingFund: SwiftProtobuf.Message, SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_ClaimFromRewardingFund, rhs: Iotextypes_ClaimFromRewardingFund) -> Bool {
+  public static func ==(lhs: Iotextypes_ClaimFromRewardingFund, rhs: Iotextypes_ClaimFromRewardingFund) -> Bool {
     if lhs.amount != rhs.amount {return false}
     if lhs.data != rhs.data {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -2300,13 +2300,13 @@ extension Iotextypes_ClaimFromRewardingFund: SwiftProtobuf.Message, SwiftProtobu
 }
 
 extension Iotextypes_GrantReward: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GrantReward"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GrantReward"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "type"),
     2: .same(proto: "height"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.type)
@@ -2316,7 +2316,7 @@ extension Iotextypes_GrantReward: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.type != .blockReward {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
     }
@@ -2326,7 +2326,7 @@ extension Iotextypes_GrantReward: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Iotextypes_GrantReward, rhs: Iotextypes_GrantReward) -> Bool {
+  public static func ==(lhs: Iotextypes_GrantReward, rhs: Iotextypes_GrantReward) -> Bool {
     if lhs.type != rhs.type {return false}
     if lhs.height != rhs.height {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
