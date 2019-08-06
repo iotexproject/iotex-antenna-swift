@@ -14,7 +14,10 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.10'
 
   s.source_files = 'Sources/**/*.swift'
+  
+  s.resource = 'proto/**/*.proto'
 
   s.dependency 'secp256k1.swift', '~> 0.1'
   s.dependency 'CryptoSwift', '~> 1.0'
+  s.dependency 'SwiftGRPC'
 end
