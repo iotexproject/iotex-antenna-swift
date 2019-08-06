@@ -19,12 +19,11 @@ public class RPCMethod {
         let response = try self.client.getAccount(Iotexapi_GetAccountRequest.with {
             $0.address = request.address
         })
-        return GetAccountResponse(accountMeta: GetAccountResponse.AccountMeta(
-            address: response.accountMeta.address,
-            balance: response.accountMeta.balance,
-            nonce: response.accountMeta.nonce,
-            pendingNonce: response.accountMeta.pendingNonce,
-            numActions: response.accountMeta.numActions
-        ))
+        return GetAccountResponse(accountMeta: response.accountMeta)
+    }
+    
+    public func getActions(_ request: GetActionsRequest) throws -> GetActionsResponse {
+        let response = try self.client.getActions(request.to())
+        return GetActionsResponse(total: response.total, actionInfo: response.actionInfo)
     }
 }
