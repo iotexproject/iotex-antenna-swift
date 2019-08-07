@@ -37,7 +37,7 @@ public class Account {
         var publicKey = Secp256k1.createPublicKey(from: try self.privateKey.hexBytes())
         self.publicKey = publicKey.hexString()
         publicKey.removeFirst()
-        var pubHash = SHA3(variant: .keccak256).calculate(for:publicKey)
+        var pubHash = SHA3(variant: .keccak256).calculate(for: publicKey)
         guard pubHash.count == 32 else {
             throw Error.internalError
         }

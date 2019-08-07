@@ -15,8 +15,12 @@
 		362175DC22F1C39300864BEB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DB22F1C39300864BEB /* Account.swift */; };
 		362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DF22F1C3E700864BEB /* HexEncoding.swift */; };
 		362175E222F1C41C00864BEB /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175E122F1C41C00864BEB /* Secp256k1.swift */; };
-		36462D2322F98FDB003D40B5 /* Antenna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D2222F98FDB003D40B5 /* Antenna.swift */; };
-		36462D2522F98FFC003D40B5 /* Iotx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D2422F98FFC003D40B5 /* Iotx.swift */; };
+		36462D2822FA6185003D40B5 /* IOTX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D2722FA6185003D40B5 /* IOTX.swift */; };
+		36462D2A22FA6248003D40B5 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D2922FA6248003D40B5 /* Requests.swift */; };
+		36462D2D22FA68A9003D40B5 /* Envelop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D2C22FA68A9003D40B5 /* Envelop.swift */; };
+		36462D2F22FA7426003D40B5 /* SealedEnvelop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D2E22FA7426003D40B5 /* SealedEnvelop.swift */; };
+		36462D3122FA7882003D40B5 /* Data+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D3022FA7882003D40B5 /* Data+Bytes.swift */; };
+		36462D3322FA83D4003D40B5 /* AbstractMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D3222FA83D3003D40B5 /* AbstractMethod.swift */; };
 		36486B5422F7C44700FD5567 /* proto in Resources */ = {isa = PBXBuildFile; fileRef = 36486B5322F7C44600FD5567 /* proto */; };
 		364CC8CE22F8144F0017FCCB /* genesis.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364CC8C522F8144F0017FCCB /* genesis.pb.swift */; };
 		364CC8CF22F8144F0017FCCB /* rpc.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364CC8C622F8144F0017FCCB /* rpc.pb.swift */; };
@@ -71,8 +75,12 @@
 		362175DB22F1C39300864BEB /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		362175DF22F1C3E700864BEB /* HexEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexEncoding.swift; sourceTree = "<group>"; };
 		362175E122F1C41C00864BEB /* Secp256k1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1.swift; sourceTree = "<group>"; };
-		36462D2222F98FDB003D40B5 /* Antenna.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Antenna.swift; sourceTree = "<group>"; };
-		36462D2422F98FFC003D40B5 /* Iotx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iotx.swift; sourceTree = "<group>"; };
+		36462D2722FA6185003D40B5 /* IOTX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTX.swift; sourceTree = "<group>"; };
+		36462D2922FA6248003D40B5 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		36462D2C22FA68A9003D40B5 /* Envelop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelop.swift; sourceTree = "<group>"; };
+		36462D2E22FA7426003D40B5 /* SealedEnvelop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SealedEnvelop.swift; sourceTree = "<group>"; };
+		36462D3022FA7882003D40B5 /* Data+Bytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Bytes.swift"; sourceTree = "<group>"; };
+		36462D3222FA83D3003D40B5 /* AbstractMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractMethod.swift; sourceTree = "<group>"; };
 		36486B5322F7C44600FD5567 /* proto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = proto; sourceTree = "<group>"; };
 		364CC8C522F8144F0017FCCB /* genesis.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = genesis.pb.swift; sourceTree = "<group>"; };
 		364CC8C622F8144F0017FCCB /* rpc.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rpc.pb.swift; sourceTree = "<group>"; };
@@ -159,7 +167,8 @@
 		3621756D22F1AACD00864BEB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				36462D2222F98FDB003D40B5 /* Antenna.swift */,
+				36462D2B22FA6572003D40B5 /* Action */,
+				36462D2622FA616E003D40B5 /* Protocol */,
 				364CC8D722F8155F0017FCCB /* Rpc */,
 				364CC8C422F814120017FCCB /* Protogen */,
 				362175DE22F1C3CB00864BEB /* Utils */,
@@ -167,7 +176,6 @@
 				362175DA22F1C38100864BEB /* Account */,
 				3621756F22F1AACD00864BEB /* Info.plist */,
 				3621759D22F1B21600864BEB /* IoTeX.h */,
-				36462D2422F98FFC003D40B5 /* Iotx.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -235,8 +243,28 @@
 				3654182722F1F5A9004382B1 /* Bytes+HexString.swift */,
 				3654182922F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift */,
 				3654182B22F277E5004382B1 /* String+HexBytes.swift */,
+				36462D3022FA7882003D40B5 /* Data+Bytes.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		36462D2622FA616E003D40B5 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				36462D2722FA6185003D40B5 /* IOTX.swift */,
+				36462D2922FA6248003D40B5 /* Requests.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		36462D2B22FA6572003D40B5 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				36462D2C22FA68A9003D40B5 /* Envelop.swift */,
+				36462D2E22FA7426003D40B5 /* SealedEnvelop.swift */,
+				36462D3222FA83D3003D40B5 /* AbstractMethod.swift */,
+			);
+			path = Action;
 			sourceTree = "<group>";
 		};
 		364CC8C422F814120017FCCB /* Protogen */ = {
@@ -464,16 +492,20 @@
 				362175DC22F1C39300864BEB /* Account.swift in Sources */,
 				364CC8D222F8144F0017FCCB /* consensus.pb.swift in Sources */,
 				364CC8D522F8144F0017FCCB /* api.pb.swift in Sources */,
-				36462D2322F98FDB003D40B5 /* Antenna.swift in Sources */,
 				361020D222F2A71300645057 /* Keystore.swift in Sources */,
+				36462D2A22FA6248003D40B5 /* Requests.swift in Sources */,
+				36462D2822FA6185003D40B5 /* IOTX.swift in Sources */,
+				36462D2D22FA68A9003D40B5 /* Envelop.swift in Sources */,
+				36462D3322FA83D4003D40B5 /* AbstractMethod.swift in Sources */,
 				3654182422F1F473004382B1 /* Bytes+SecureRandom.swift in Sources */,
 				3654182A22F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift in Sources */,
+				36462D3122FA7882003D40B5 /* Data+Bytes.swift in Sources */,
 				3654181C22F1D2EA004382B1 /* Bech32.swift in Sources */,
 				364CC8CF22F8144F0017FCCB /* rpc.pb.swift in Sources */,
 				3654182822F1F5A9004382B1 /* Bytes+HexString.swift in Sources */,
+				36462D2F22FA7426003D40B5 /* SealedEnvelop.swift in Sources */,
 				364CC8CE22F8144F0017FCCB /* genesis.pb.swift in Sources */,
 				362175E222F1C41C00864BEB /* Secp256k1.swift in Sources */,
-				36462D2522F98FFC003D40B5 /* Iotx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
