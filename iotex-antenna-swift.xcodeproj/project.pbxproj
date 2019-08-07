@@ -15,6 +15,8 @@
 		362175DC22F1C39300864BEB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DB22F1C39300864BEB /* Account.swift */; };
 		362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DF22F1C3E700864BEB /* HexEncoding.swift */; };
 		362175E222F1C41C00864BEB /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175E122F1C41C00864BEB /* Secp256k1.swift */; };
+		36462D2322F98FDB003D40B5 /* Antenna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D2222F98FDB003D40B5 /* Antenna.swift */; };
+		36462D2522F98FFC003D40B5 /* Iotx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D2422F98FFC003D40B5 /* Iotx.swift */; };
 		36486B5422F7C44700FD5567 /* proto in Resources */ = {isa = PBXBuildFile; fileRef = 36486B5322F7C44600FD5567 /* proto */; };
 		364CC8CE22F8144F0017FCCB /* genesis.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364CC8C522F8144F0017FCCB /* genesis.pb.swift */; };
 		364CC8CF22F8144F0017FCCB /* rpc.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364CC8C622F8144F0017FCCB /* rpc.pb.swift */; };
@@ -69,6 +71,8 @@
 		362175DB22F1C39300864BEB /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		362175DF22F1C3E700864BEB /* HexEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexEncoding.swift; sourceTree = "<group>"; };
 		362175E122F1C41C00864BEB /* Secp256k1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1.swift; sourceTree = "<group>"; };
+		36462D2222F98FDB003D40B5 /* Antenna.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Antenna.swift; sourceTree = "<group>"; };
+		36462D2422F98FFC003D40B5 /* Iotx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iotx.swift; sourceTree = "<group>"; };
 		36486B5322F7C44600FD5567 /* proto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = proto; sourceTree = "<group>"; };
 		364CC8C522F8144F0017FCCB /* genesis.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = genesis.pb.swift; sourceTree = "<group>"; };
 		364CC8C622F8144F0017FCCB /* rpc.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rpc.pb.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		3621756D22F1AACD00864BEB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				36462D2222F98FDB003D40B5 /* Antenna.swift */,
 				364CC8D722F8155F0017FCCB /* Rpc */,
 				364CC8C422F814120017FCCB /* Protogen */,
 				362175DE22F1C3CB00864BEB /* Utils */,
@@ -162,6 +167,7 @@
 				362175DA22F1C38100864BEB /* Account */,
 				3621756F22F1AACD00864BEB /* Info.plist */,
 				3621759D22F1B21600864BEB /* IoTeX.h */,
+				36462D2422F98FFC003D40B5 /* Iotx.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -458,6 +464,7 @@
 				362175DC22F1C39300864BEB /* Account.swift in Sources */,
 				364CC8D222F8144F0017FCCB /* consensus.pb.swift in Sources */,
 				364CC8D522F8144F0017FCCB /* api.pb.swift in Sources */,
+				36462D2322F98FDB003D40B5 /* Antenna.swift in Sources */,
 				361020D222F2A71300645057 /* Keystore.swift in Sources */,
 				3654182422F1F473004382B1 /* Bytes+SecureRandom.swift in Sources */,
 				3654182A22F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift in Sources */,
@@ -466,6 +473,7 @@
 				3654182822F1F5A9004382B1 /* Bytes+HexString.swift in Sources */,
 				364CC8CE22F8144F0017FCCB /* genesis.pb.swift in Sources */,
 				362175E222F1C41C00864BEB /* Secp256k1.swift in Sources */,
+				36462D2522F98FFC003D40B5 /* Iotx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
