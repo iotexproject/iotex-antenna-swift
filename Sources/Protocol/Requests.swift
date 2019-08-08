@@ -8,12 +8,15 @@
 
 import Foundation
 
-public struct TransferRequest {
-    public var nonce: UInt64
-    public var gasLimit: UInt64
-    public var gasPrice: String
-    public var account: Account
-    public var recipient: String
-    public var amount: String
-    public var payload: String
+public class TransferRequest: ActionRequest {
+    var recipient: String
+    var amount: String
+    var payload: String
+    
+    init(nonce: UInt64?, gasLimit: UInt64, gasPrice: String, account: Account, recipient: String, amount: String, payload: String) {
+        self.recipient = recipient
+        self.amount = amount
+        self.payload = payload
+        super.init(nonce: nonce, gasLimit: gasLimit, gasPrice: gasPrice, account: account)
+    }
 }

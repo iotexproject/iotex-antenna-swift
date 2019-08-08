@@ -16,8 +16,9 @@ public struct SealedEnvelop {
     
     public init(privateKey: Bytes, publicKey: Bytes, envelop: Envelop) throws {
         self.act = envelop
-        
+
         let signatureData = try SHA3(variant: .keccak256).calculate(for: envelop.byteStream().makeBytes())
+        
         var (data, rid) = Secp256k1.sign(message: signatureData, seckey: privateKey)
         if (data == nil) {
             throw Error.signatureMalformed
@@ -38,7 +39,6 @@ public struct SealedEnvelop {
         action.core = self.act.core()
         action.senderPubKey = self.senderPubKey
         action.signature = self.signature
-        
         return action
     }
     

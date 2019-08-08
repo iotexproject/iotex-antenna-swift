@@ -39,6 +39,6 @@ class RPCMethodTests: XCTestCase {
                 $0.checkPending = true
             }
         })
-        print(response.total)
+        print(response)
     }
 }

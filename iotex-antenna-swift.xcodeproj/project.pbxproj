@@ -21,6 +21,8 @@
 		36462D2F22FA7426003D40B5 /* SealedEnvelop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D2E22FA7426003D40B5 /* SealedEnvelop.swift */; };
 		36462D3122FA7882003D40B5 /* Data+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D3022FA7882003D40B5 /* Data+Bytes.swift */; };
 		36462D3322FA83D4003D40B5 /* AbstractMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D3222FA83D3003D40B5 /* AbstractMethod.swift */; };
+		36462D3522FA862E003D40B5 /* ActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D3422FA862E003D40B5 /* ActionRequest.swift */; };
+		36462D3722FBABF8003D40B5 /* TransferMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D3622FBABF8003D40B5 /* TransferMethod.swift */; };
 		36486B5422F7C44700FD5567 /* proto in Resources */ = {isa = PBXBuildFile; fileRef = 36486B5322F7C44600FD5567 /* proto */; };
 		364CC8CE22F8144F0017FCCB /* genesis.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364CC8C522F8144F0017FCCB /* genesis.pb.swift */; };
 		364CC8CF22F8144F0017FCCB /* rpc.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364CC8C622F8144F0017FCCB /* rpc.pb.swift */; };
@@ -41,6 +43,7 @@
 		3654182A22F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654182922F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift */; };
 		3654182C22F277E5004382B1 /* String+HexBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654182B22F277E5004382B1 /* String+HexBytes.swift */; };
 		366A345A22F2A5D20076923E /* Scrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A345922F2A5D20076923E /* Scrypt.swift */; };
+		36857A5F22FBB0C30062F990 /* TransferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36857A5E22FBB0C30062F990 /* TransferTests.swift */; };
 		36DF24F522F2A6100065EDF7 /* ScryptParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF24F422F2A6100065EDF7 /* ScryptParams.swift */; };
 		41463CB4C7D3E2DDE7E70875 /* Pods_Shows_iotex_antenna_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2E1782B40A80C8C6CD8AEE /* Pods_Shows_iotex_antenna_swiftTests.framework */; };
 		D4FD7C5CFF5C896444AC23A2 /* Pods_Shows_iotex_antenna_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B048B4B2E57880C6C4150D4F /* Pods_Shows_iotex_antenna_swift.framework */; };
@@ -81,6 +84,8 @@
 		36462D2E22FA7426003D40B5 /* SealedEnvelop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SealedEnvelop.swift; sourceTree = "<group>"; };
 		36462D3022FA7882003D40B5 /* Data+Bytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Bytes.swift"; sourceTree = "<group>"; };
 		36462D3222FA83D3003D40B5 /* AbstractMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractMethod.swift; sourceTree = "<group>"; };
+		36462D3422FA862E003D40B5 /* ActionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequest.swift; sourceTree = "<group>"; };
+		36462D3622FBABF8003D40B5 /* TransferMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferMethod.swift; sourceTree = "<group>"; };
 		36486B5322F7C44600FD5567 /* proto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = proto; sourceTree = "<group>"; };
 		364CC8C522F8144F0017FCCB /* genesis.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = genesis.pb.swift; sourceTree = "<group>"; };
 		364CC8C622F8144F0017FCCB /* rpc.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rpc.pb.swift; sourceTree = "<group>"; };
@@ -101,6 +106,7 @@
 		3654182922F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bytes+TrimLeadingZeros.swift"; sourceTree = "<group>"; };
 		3654182B22F277E5004382B1 /* String+HexBytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HexBytes.swift"; sourceTree = "<group>"; };
 		366A345922F2A5D20076923E /* Scrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scrypt.swift; sourceTree = "<group>"; };
+		36857A5E22FBB0C30062F990 /* TransferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferTests.swift; sourceTree = "<group>"; };
 		36DF24F422F2A6100065EDF7 /* ScryptParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScryptParams.swift; sourceTree = "<group>"; };
 		970A632D22F80F7F00635F3E /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		970A632F22F80F8300635F3E /* secp256k1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = secp256k1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +189,7 @@
 		3621757822F1AACD00864BEB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				36462D3822FBAF8F003D40B5 /* ActionTests */,
 				364CC8DA22F818150017FCCB /* RpcTests */,
 				3621758722F1ADFF00864BEB /* AccountTests */,
 				3621757B22F1AACD00864BEB /* Info.plist */,
@@ -253,6 +260,7 @@
 			children = (
 				36462D2722FA6185003D40B5 /* IOTX.swift */,
 				36462D2922FA6248003D40B5 /* Requests.swift */,
+				36462D3422FA862E003D40B5 /* ActionRequest.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -263,8 +271,17 @@
 				36462D2C22FA68A9003D40B5 /* Envelop.swift */,
 				36462D2E22FA7426003D40B5 /* SealedEnvelop.swift */,
 				36462D3222FA83D3003D40B5 /* AbstractMethod.swift */,
+				36462D3622FBABF8003D40B5 /* TransferMethod.swift */,
 			);
 			path = Action;
+			sourceTree = "<group>";
+		};
+		36462D3822FBAF8F003D40B5 /* ActionTests */ = {
+			isa = PBXGroup;
+			children = (
+				36857A5E22FBB0C30062F990 /* TransferTests.swift */,
+			);
+			path = ActionTests;
 			sourceTree = "<group>";
 		};
 		364CC8C422F814120017FCCB /* Protogen */ = {
@@ -481,6 +498,7 @@
 				36DF24F522F2A6100065EDF7 /* ScryptParams.swift in Sources */,
 				362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */,
 				364CC8D322F8144F0017FCCB /* action.pb.swift in Sources */,
+				36462D3522FA862E003D40B5 /* ActionRequest.swift in Sources */,
 				364CC8D122F8144F0017FCCB /* node.pb.swift in Sources */,
 				364CC8D022F8144F0017FCCB /* endorsement.pb.swift in Sources */,
 				364CC8D622F8144F0017FCCB /* blockchain.pb.swift in Sources */,
@@ -496,6 +514,7 @@
 				36462D2A22FA6248003D40B5 /* Requests.swift in Sources */,
 				36462D2822FA6185003D40B5 /* IOTX.swift in Sources */,
 				36462D2D22FA68A9003D40B5 /* Envelop.swift in Sources */,
+				36462D3722FBABF8003D40B5 /* TransferMethod.swift in Sources */,
 				36462D3322FA83D4003D40B5 /* AbstractMethod.swift in Sources */,
 				3654182422F1F473004382B1 /* Bytes+SecureRandom.swift in Sources */,
 				3654182A22F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift in Sources */,
@@ -515,6 +534,7 @@
 			files = (
 				364CC8DC22F818320017FCCB /* RPCMethodTests.swift in Sources */,
 				3621757A22F1AACD00864BEB /* AccountTests.swift in Sources */,
+				36857A5F22FBB0C30062F990 /* TransferTests.swift in Sources */,
 				361020D622F2AA4F00645057 /* KeystoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

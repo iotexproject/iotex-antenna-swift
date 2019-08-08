@@ -16,4 +16,25 @@ public class AbstractMethod {
         self.client = client
         self.account = account
     }
+    
+    public func baseEnvelop(_ request: ActionRequest) throws -> Envelop {
+        if (request.nonce == nil) {
+            let response = try self.client.getAccount(Iotexapi_GetAccountRequest.with {
+                $0.address = account.address
+            });
+            request.nonce = response.accountMeta.pendingNonce
+        }
+        return Envelop(version: 1, nonce: request.nonce!, gasLimit: request.gasLimit, gasPrice: request.gasPrice)
+    }
+    
+    public func sendAction(envelop: Envelop) throws -> String {
+        let response = try self.client.sendAction(Iotexapi_SendActionRequest.with{
+            $0.action = try self.signAction(envelop: envelop).action()
+        })
+        return response.actionHash
+    }
+
+    public func signAction(envelop: Envelop) throws -> SealedEnvelop {
+        return try SealedEnvelop(privateKey: self.account.privateKey.hexBytes(), publicKey: self.account.publicKey.hexBytes(), envelop: envelop);
+    }
 }
