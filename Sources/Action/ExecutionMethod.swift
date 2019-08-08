@@ -1,18 +1,19 @@
+
 //
-//  TransferMethod.swift
+//  File.swift
 //  iotex-antenna-swift
 //
-//  Created by ququzone on 2019/8/8.
+//  Created by ququzone on 2019/8/9.
 //  Copyright © 2019 IoTeX. All rights reserved.
 //
 
 import Foundation
 
-public class TransferMethod: AbstractMethod {
-    private var request: TransferRequest
+public class ExecutionMethod: AbstractMethod {
+    private var request: ExecutionRequest
     private var envelop: Envelop?
     
-    public init(client: RPCMethod, request: TransferRequest) throws {
+    public init(client: RPCMethod, request: ExecutionRequest) throws {
         self.request = request
         self.envelop = nil
         super.init(client: client, account: request.account)
@@ -20,10 +21,10 @@ public class TransferMethod: AbstractMethod {
     }
     
     public func execute() throws -> String {
-        self.envelop!.transfer = Iotextypes_Transfer.with {
-            $0.recipient = self.request.recipient
+        self.envelop!.execution = Iotextypes_Execution.with {
+            $0.contract = self.request.contract
             $0.amount = self.request.amount
-            $0.payload = self.request.payload
+            $0.data = self.request.data
         }
         return try self.sendAction(envelop: self.envelop!)
     }

@@ -17,7 +17,7 @@ class TransferTests: XCTestCase {
         
         let transfer = try TransferMethod(client: rpc, request: TransferRequest(
             nonce: nil, gasLimit: 100000, gasPrice: "10000000000000", account: account,
-            recipient: "io13zt8sznez2pf0q0hqdz2hyl938wak2fsjgdeml", amount: "1000000000000000000", payload: ""
+            recipient: "io13zt8sznez2pf0q0hqdz2hyl938wak2fsjgdeml", amount: "1000000000000000000", payload: "".data(using: .utf8)!
         ))
         
         do {

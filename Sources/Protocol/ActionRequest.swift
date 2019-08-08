@@ -9,12 +9,12 @@
 import Foundation
 
 public class ActionRequest {
-    var nonce: UInt64?
-    var gasLimit: UInt64
-    var gasPrice: String
-    var account: Account
+    public var nonce: UInt64?
+    public var gasLimit: UInt64
+    public var gasPrice: String
+    public var account: Account
 
-    init(nonce: UInt64?, gasLimit: UInt64, gasPrice: String, account: Account) {
+    public init(nonce: UInt64?, gasLimit: UInt64, gasPrice: String, account: Account) {
         self.nonce = nonce
         self.gasLimit = gasLimit
         self.gasPrice = gasPrice
