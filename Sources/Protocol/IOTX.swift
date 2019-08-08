@@ -20,6 +20,6 @@ public class IOTX {
     }
     
     public func sendTransfer(_ request: TransferRequest) throws -> String {
-        return "TODO"
+        return try TransferMethod(client: self.provider, request: request).execute()
     }
 }
