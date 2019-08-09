@@ -7,6 +7,7 @@ abstract_target 'Shows' do
   pod 'secp256k1.swift', '~> 0.1'
   pod 'CryptoSwift', '~> 1.0'
   pod 'SwiftGRPC'
+  pod 'BigInt', '~> 4.0'
 
   target 'iotex-antenna-swift' do
     # Comment the next line if you don't want to use dynamic frameworks
