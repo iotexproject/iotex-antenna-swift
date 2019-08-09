@@ -45,6 +45,12 @@ public struct ABI {
         return try ABIEncoder.encode(wrappedValues)
     }
     
+    public static func encodeFunctionCall(method: SolidityFunction, parameters: [SolidityWrappedValue]) throws -> String {
+        let encodedInputs = try ABIEncoder.encode(parameters)
+        let signatureString = encodeFunctionSignature(method)
+        return signatureString + encodedInputs
+    }
+    
     // MARK: - Decoding
     
     public static func decodeParameter(type: SolidityType, from hexString: String) throws -> Any {
