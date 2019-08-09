@@ -85,6 +85,25 @@ public class SolidityConstantFunction: SolidityFunction {
     }
 }
 
+/// Represents a function.
+public class SolidityNormalFunction: SolidityFunction {
+    public let name: String
+    public let inputs: [SolidityFunctionParameter]
+    public let outputs: [SolidityFunctionParameter]? = nil
+    
+    public required init?(abiObject: ABIObject) {
+        guard abiObject.type == .function else { return nil }
+        guard let name = abiObject.name else { return nil }
+        self.name = name
+        self.inputs = abiObject.inputs?.compactMap { SolidityFunctionParameter($0) } ?? []
+    }
+    
+    public required init(name: String, inputs: [SolidityFunctionParameter] = [], outputs: [SolidityFunctionParameter]? = nil) {
+        self.name = name
+        self.inputs = inputs
+    }
+}
+
 /// Represents a function that can modify the state of the contract and can accept ETH.
 public class SolidityPayableFunction: SolidityFunction {
     public let name: String

@@ -23,24 +23,21 @@ public class Contract {
         let decoder = JSONDecoder()
         self.abi = try decoder.decode([ABIObject].self, from: abi)
     }
-  
+
     public func execute(nonce: UInt64?, gasLimit: UInt64, gasPrice: String, account: Account,
                         method: String, amount: String, inputs: [ABIEncodable]) throws -> String {
         var methodObject: ABIObject?
         for abiObject in self.abi {
             if (abiObject.name != nil && abiObject.name == method) {
                 methodObject = abiObject
+                break
             }
         }
         if (methodObject == nil) {
             throw Error.methodNotFound
         }
-        var function: SolidityFunction
-        if (methodObject!.payable != nil && methodObject!.payable!) {
-            function = SolidityPayableFunction(abiObject: methodObject!)!
-        } else {
-            function = SolidityNonPayableFunction(abiObject: methodObject!)!
-        }
+
+        let function = SolidityNormalFunction(abiObject: methodObject!)!
         let parameters = zip(inputs, function.inputs).map { SolidityWrappedValue(value: $0, type: $1.type) }
         let data = try ABI.encodeFunctionCall(method: function, parameters: parameters)
         
@@ -49,5 +46,34 @@ public class Contract {
                             nonce: nonce, gasLimit: gasLimit, gasPrice: gasPrice, account: account,
                             contract: self.address, amount: amount,
                             data: Data(data.hexBytes()))).execute();
+    }
+
+    public func read(callerAddress: String, method: String, inputs: [ABIEncodable]) throws -> [Any] {
+        var methodObject: ABIObject?
+        for abiObject in self.abi {
+            if (abiObject.name != nil && abiObject.name == method) {
+                methodObject = abiObject
+                break
+            }
+        }
+        if (methodObject == nil) {
+            throw Error.methodNotFound
+        }
+
+        let function = SolidityConstantFunction(abiObject: methodObject!)!
+        let parameters = zip(inputs, function.inputs).map { SolidityWrappedValue(value: $0, type: $1.type) }
+        let data = try ABI.encodeFunctionCall(method: function, parameters: parameters)
+        
+        let result = try self.provider.readContract(Iotexapi_ReadContractRequest.with {
+            $0.callerAddress = callerAddress
+            $0.execution = try Iotextypes_Execution.with {
+                $0.contract = self.address
+                $0.amount = "0"
+                $0.data = Data(try data.hexBytes())
+            }
+        }).data
+
+        let outputs = function.outputs?.compactMap { i in return i.type }
+        return try ABI.decodeParameters(types: outputs!, from: result)
     }
 }
