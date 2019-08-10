@@ -51,6 +51,24 @@ public extension String {
         let end = index(start, offsetBy: length)
         return String(self[start..<end])
     }
+    
+    subscript (bounds: CountableClosedRange<Int>) -> String {
+        let start = index(self.startIndex, offsetBy: bounds.lowerBound)
+        let end = index(self.startIndex, offsetBy: bounds.upperBound)
+        return String(self[start...end])
+    }
+    
+    subscript (bounds: CountableRange<Int>) -> String {
+        let start = index(self.startIndex, offsetBy: bounds.lowerBound)
+        let end = index(self.startIndex, offsetBy: bounds.upperBound)
+        return String(self[start..<end])
+    }
+    
+    subscript (bounds: CountablePartialRangeFrom<Int>) -> String {
+        let start = index(self.startIndex, offsetBy: bounds.lowerBound)
+        let end = self.endIndex
+        return String(self[start..<end])
+    }
 
     func paddingLeft(toLength length: Int, withPad character: Character) -> String {
         if self.count < length {
