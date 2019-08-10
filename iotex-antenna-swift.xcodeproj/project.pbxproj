@@ -27,6 +27,10 @@
 		3641843422FDAAAC00A368C3 /* ContractTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3641843322FDAAAC00A368C3 /* ContractTests.swift */; };
 		3641843622FE493A00A368C3 /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3641843522FE493A00A368C3 /* Convert.swift */; };
 		3641843922FE6FBB00A368C3 /* ConvertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3641843822FE6FBB00A368C3 /* ConvertTests.swift */; };
+		3641843C22FEF5B500A368C3 /* Abis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3641843B22FEF5B500A368C3 /* Abis.swift */; };
+		3641843E22FEF75800A368C3 /* BaseContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3641843D22FEF75800A368C3 /* BaseContract.swift */; };
+		3641844022FEF89300A368C3 /* XRC20.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3641843F22FEF89300A368C3 /* XRC20.swift */; };
+		3641844322FF01F900A368C3 /* XRC20Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3641844222FF01F900A368C3 /* XRC20Tests.swift */; };
 		36462D2822FA6185003D40B5 /* IOTX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D2722FA6185003D40B5 /* IOTX.swift */; };
 		36462D2A22FA6248003D40B5 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D2922FA6248003D40B5 /* Requests.swift */; };
 		36462D2D22FA68A9003D40B5 /* Envelop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36462D2C22FA68A9003D40B5 /* Envelop.swift */; };
@@ -110,6 +114,10 @@
 		3641843322FDAAAC00A368C3 /* ContractTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractTests.swift; sourceTree = "<group>"; };
 		3641843522FE493A00A368C3 /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
 		3641843822FE6FBB00A368C3 /* ConvertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTests.swift; sourceTree = "<group>"; };
+		3641843B22FEF5B500A368C3 /* Abis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abis.swift; sourceTree = "<group>"; };
+		3641843D22FEF75800A368C3 /* BaseContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseContract.swift; sourceTree = "<group>"; };
+		3641843F22FEF89300A368C3 /* XRC20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XRC20.swift; sourceTree = "<group>"; };
+		3641844222FF01F900A368C3 /* XRC20Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XRC20Tests.swift; sourceTree = "<group>"; };
 		36462D2722FA6185003D40B5 /* IOTX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTX.swift; sourceTree = "<group>"; };
 		36462D2922FA6248003D40B5 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		36462D2C22FA68A9003D40B5 /* Envelop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Envelop.swift; sourceTree = "<group>"; };
@@ -213,6 +221,7 @@
 		3621756D22F1AACD00864BEB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				3641843A22FEF59A00A368C3 /* Contracts */,
 				368F7AAB22FD0854003DB452 /* Solidity */,
 				368F7AAA22FD0059003DB452 /* Contract */,
 				36462D2B22FA6572003D40B5 /* Action */,
@@ -231,6 +240,7 @@
 		3621757822F1AACD00864BEB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				3641844122FF01CC00A368C3 /* ContractsTests */,
 				3641843722FE6F9A00A368C3 /* UtilsTests */,
 				3641843222FDAA8B00A368C3 /* ContractTests */,
 				3641842D22FD717C00A368C3 /* CryptoTests */,
@@ -325,6 +335,24 @@
 				3641843822FE6FBB00A368C3 /* ConvertTests.swift */,
 			);
 			path = UtilsTests;
+			sourceTree = "<group>";
+		};
+		3641843A22FEF59A00A368C3 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				3641843B22FEF5B500A368C3 /* Abis.swift */,
+				3641843D22FEF75800A368C3 /* BaseContract.swift */,
+				3641843F22FEF89300A368C3 /* XRC20.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
+		3641844122FF01CC00A368C3 /* ContractsTests */ = {
+			isa = PBXGroup;
+			children = (
+				3641844222FF01F900A368C3 /* XRC20Tests.swift */,
+			);
+			path = ContractsTests;
 			sourceTree = "<group>";
 		};
 		36462D2622FA616E003D40B5 /* Protocol */ = {
@@ -599,6 +627,7 @@
 				362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */,
 				364CC8D322F8144F0017FCCB /* action.pb.swift in Sources */,
 				3641842C22FD689B00A368C3 /* SolidityType+Codable.swift in Sources */,
+				3641843E22FEF75800A368C3 /* BaseContract.swift in Sources */,
 				36462D3522FA862E003D40B5 /* ActionRequest.swift in Sources */,
 				3641842422FD655800A368C3 /* SolidityFunction.swift in Sources */,
 				364CC8D122F8144F0017FCCB /* node.pb.swift in Sources */,
@@ -620,6 +649,7 @@
 				36B3CC6222FD5FFF00FED146 /* ABIDecoder.swift in Sources */,
 				3641843622FE493A00A368C3 /* Convert.swift in Sources */,
 				36462D2A22FA6248003D40B5 /* Requests.swift in Sources */,
+				3641843C22FEF5B500A368C3 /* Abis.swift in Sources */,
 				36B3CC6022FD479500FED146 /* Address.swift in Sources */,
 				3641842A22FD683700A368C3 /* ABI.swift in Sources */,
 				36462D2822FA6185003D40B5 /* IOTX.swift in Sources */,
@@ -632,6 +662,7 @@
 				3654182A22F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift in Sources */,
 				3641841E22FD60AF00A368C3 /* SolidityWrappedValue.swift in Sources */,
 				36462D3122FA7882003D40B5 /* Data+Bytes.swift in Sources */,
+				3641844022FEF89300A368C3 /* XRC20.swift in Sources */,
 				3654181C22F1D2EA004382B1 /* Bech32.swift in Sources */,
 				364CC8CF22F8144F0017FCCB /* rpc.pb.swift in Sources */,
 				3654182822F1F5A9004382B1 /* Bytes+HexString.swift in Sources */,
@@ -650,6 +681,7 @@
 			files = (
 				3641843422FDAAAC00A368C3 /* ContractTests.swift in Sources */,
 				3641843922FE6FBB00A368C3 /* ConvertTests.swift in Sources */,
+				3641844322FF01F900A368C3 /* XRC20Tests.swift in Sources */,
 				368F7AA922FCFD52003DB452 /* ExecutionTests.swift in Sources */,
 				364CC8DC22F818320017FCCB /* RPCMethodTests.swift in Sources */,
 				3641842F22FD719100A368C3 /* AddressTests.swift in Sources */,

@@ -314,11 +314,13 @@ extension Data: ABIConvertible {
 // Address
 extension Address: ABIConvertible {
     public init?(hexString: String) {
-        self.init(payload: hexString.bytes)
+        let trimmedString = String(hexString.dropFirst(hexString.count - 40))
+        self.init(payload: trimmedString.bytes)
     }
 
     public func abiEncode(dynamic: Bool) -> String? {
-        return self.bytes.hexString()
+        let hex = self.bytes.hexString()
+        return hex.paddingLeft(toLength: 64, withPad: "0")
     }
 }
 

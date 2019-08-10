@@ -9,9 +9,9 @@
 import Foundation
 
 public class Contract {
-    private let provider: RPCMethod
-    private let address: String
-    private let abi: [ABIObject]
+    public let provider: RPCMethod
+    public let address: String
+    public let abi: [ABIObject]
     
     public enum Error: Swift.Error {
         case methodNotFound
