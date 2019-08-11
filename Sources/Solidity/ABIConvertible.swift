@@ -315,7 +315,11 @@ extension Data: ABIConvertible {
 extension Address: ABIConvertible {
     public init?(hexString: String) {
         let trimmedString = String(hexString.dropFirst(hexString.count - 40))
-        self.init(payload: trimmedString.bytes)
+        do {
+            try self.init(payload: trimmedString.hexBytes())
+        } catch {
+            return nil
+        }
     }
 
     public func abiEncode(dynamic: Bool) -> String? {

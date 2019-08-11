@@ -76,4 +76,24 @@ public class Contract {
         let outputs = function.outputs?.compactMap { i in return i.type }
         return try ABI.decodeParameters(types: outputs!, from: result)
     }
+    
+    public func decodeMethod(data: String) throws -> DecodedMethod? {
+        let methodSignature = data.substr(0, 8)!
+        for abiObject in self.abi {
+            if (abiObject.type == ABIObject.ObjectType.function) {
+                let function = SolidityNormalFunction(abiObject: abiObject)!
+                if (methodSignature == ABI.encodeFunctionSignature(function)) {
+                    return try DecodedMethod(
+                        method: function.name, data: ABI.decodeParameters(function.inputs, from: data.substr(8, data.count - 8)!)
+                    )
+                }
+            }
+        }
+        return nil
+    }
+}
+
+public struct DecodedMethod {
+    public let method: String
+    public let data: [String: Any]
 }
