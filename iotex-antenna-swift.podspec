@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version = '0.0.1'
   s.license     = { :type => 'Apache License, Version 2.0',}
 
-  s.summary = 'Swift gRPC code generator plugin and runtime library'
+  s.summary = 'IoTeX antenna swift library'
   s.homepage = 'https://www.iotex.io/'
   s.authors  = { 'iotex' => ''}
   s.source = { :git => 'git@github.com:iotexproject/iotex-antenna-swift.git', :tag => s.version }

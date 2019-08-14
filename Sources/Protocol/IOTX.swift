@@ -15,6 +15,10 @@ public class IOTX {
         self.provider = try RPCMethod(provider: provider, secure: secure)
     }
     
+    public func currentProvider() -> RPCMethod {
+        return self.provider;
+    }
+    
     public func setProvider(provider: String, secure: Bool) throws {
         try self.provider.setProvider(provider: provider, secure: secure)
     }
