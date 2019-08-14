@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3600BAF02303D86D000BD287 /* iotex-antenna-swift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3600BAEF2303D86D000BD287 /* iotex-antenna-swift.podspec */; };
+		3600BAF22303DE47000BD287 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3600BAF12303DE47000BD287 /* LICENSE */; };
 		361020D222F2A71300645057 /* Keystore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361020D122F2A71300645057 /* Keystore.swift */; };
 		361020D422F2A76D00645057 /* KeystoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361020D322F2A76D00645057 /* KeystoreFactory.swift */; };
 		361020D622F2AA4F00645057 /* KeystoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361020D522F2AA4F00645057 /* KeystoreTests.swift */; };
@@ -88,6 +89,7 @@
 		17685FAFD35761A6E56BDA0C /* Pods-Shows-iotex-antenna-swiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shows-iotex-antenna-swiftTests.release.xcconfig"; path = "Target Support Files/Pods-Shows-iotex-antenna-swiftTests/Pods-Shows-iotex-antenna-swiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		257CB428DEE42440A93AA9A7 /* Pods-Shows-iotex-antenna-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shows-iotex-antenna-swift.debug.xcconfig"; path = "Target Support Files/Pods-Shows-iotex-antenna-swift/Pods-Shows-iotex-antenna-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		3600BAEF2303D86D000BD287 /* iotex-antenna-swift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "iotex-antenna-swift.podspec"; sourceTree = "<group>"; };
+		3600BAF12303DE47000BD287 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		361020D122F2A71300645057 /* Keystore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keystore.swift; sourceTree = "<group>"; };
 		361020D322F2A76D00645057 /* KeystoreFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreFactory.swift; sourceTree = "<group>"; };
 		361020D522F2AA4F00645057 /* KeystoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreTests.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		3621756122F1AACD00864BEB = {
 			isa = PBXGroup;
 			children = (
+				3600BAF12303DE47000BD287 /* LICENSE */,
 				3600BAEF2303D86D000BD287 /* iotex-antenna-swift.podspec */,
 				36486B5322F7C44600FD5567 /* proto */,
 				3621758922F1AECF00864BEB /* Cartfile */,
@@ -543,6 +546,7 @@
 			files = (
 				3600BAF02303D86D000BD287 /* iotex-antenna-swift.podspec in Resources */,
 				36486B5422F7C44700FD5567 /* proto in Resources */,
+				3600BAF22303DE47000BD287 /* LICENSE in Resources */,
 				3621758C22F1AECF00864BEB /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

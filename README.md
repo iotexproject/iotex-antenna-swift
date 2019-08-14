@@ -1,5 +1,7 @@
 # iotex-antenna-swift
 
+[![LICENSE](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+
 iotex-antenna-swift is our SDK allowing you to interact with a local or remote iotex blockchain node, using gRPC  connection.
 IoTeX is building the next generation of the decentralized network for IoT powered by scalability- and privacy-centric blockchains.
 Please refer to IoTeX [whitepaper](https://iotex.io/academics) for details.
