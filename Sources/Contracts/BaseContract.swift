@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class BaseContract {
+open class BaseContract {
     public var contract: Contract
     
     public init(address: String, provider: RPCMethod, abi: Data) throws {

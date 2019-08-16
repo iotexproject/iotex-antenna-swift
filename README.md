@@ -23,6 +23,12 @@ find protogen -name "*.swift" -exec mv {} Sources/Protogen \;
 rm -rf protogen
 ```
 
+### Install
+
+```
+pod 'iotex-antenna-swift', '~> 0.1'
+```
+
 ## Sample
 
 ```swift

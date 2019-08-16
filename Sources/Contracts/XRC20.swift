@@ -9,7 +9,7 @@
 import Foundation
 import BigInt
 
-public class XRC20: BaseContract {
+open class XRC20: BaseContract {
     public init(address: String, provider: RPCMethod) throws {
         try super.init(address: address, provider: provider, abi: Abis.XRC20.data(using: .utf8)!)
     }

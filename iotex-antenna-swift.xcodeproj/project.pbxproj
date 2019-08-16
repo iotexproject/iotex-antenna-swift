@@ -98,7 +98,6 @@
 		3621757422F1AACD00864BEB /* iotex-antenna-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iotex-antenna-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3621757922F1AACD00864BEB /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		3621757B22F1AACD00864BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3621758922F1AECF00864BEB /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		3621758A22F1AECF00864BEB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3621758E22F1B01300864BEB /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = secp256k1.framework; path = Carthage/Build/iOS/secp256k1.framework; sourceTree = "<group>"; };
 		3621758F22F1B01300864BEB /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
@@ -205,7 +204,6 @@
 				3600BAF12303DE47000BD287 /* LICENSE */,
 				3600BAEF2303D86D000BD287 /* iotex-antenna-swift.podspec */,
 				36486B5322F7C44600FD5567 /* proto */,
-				3621758922F1AECF00864BEB /* Cartfile */,
 				3621758A22F1AECF00864BEB /* README.md */,
 				3621756D22F1AACD00864BEB /* Sources */,
 				3621757822F1AACD00864BEB /* Tests */,
