@@ -68,6 +68,7 @@
 		368F7AB122FD2234003DB452 /* String+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F7AB022FD2234003DB452 /* String+Conversion.swift */; };
 		3692930F22FCDF1C00C7A5A0 /* ExecutionMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3692930E22FCDF1C00C7A5A0 /* ExecutionMethod.swift */; };
 		369DED8022FD607500775D3B /* ABIEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369DED7F22FD607500775D3B /* ABIEncoder.swift */; };
+		36AAA02F2359BED50044ECCE /* DeserializeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAA02E2359BED50044ECCE /* DeserializeTests.swift */; };
 		36B3CC6022FD479500FED146 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CC5F22FD479500FED146 /* Address.swift */; };
 		36B3CC6222FD5FFF00FED146 /* ABIDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CC6122FD5FFF00FED146 /* ABIDecoder.swift */; };
 		36DF24F522F2A6100065EDF7 /* ScryptParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF24F422F2A6100065EDF7 /* ScryptParams.swift */; };
@@ -156,6 +157,7 @@
 		368F7AB022FD2234003DB452 /* String+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Conversion.swift"; sourceTree = "<group>"; };
 		3692930E22FCDF1C00C7A5A0 /* ExecutionMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionMethod.swift; sourceTree = "<group>"; };
 		369DED7F22FD607500775D3B /* ABIEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABIEncoder.swift; sourceTree = "<group>"; };
+		36AAA02E2359BED50044ECCE /* DeserializeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeserializeTests.swift; sourceTree = "<group>"; };
 		36B3CC5F22FD479500FED146 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		36B3CC6122FD5FFF00FED146 /* ABIDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABIDecoder.swift; sourceTree = "<group>"; };
 		36DF24F422F2A6100065EDF7 /* ScryptParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScryptParams.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 			children = (
 				36857A5E22FBB0C30062F990 /* TransferTests.swift */,
 				368F7AA822FCFD52003DB452 /* ExecutionTests.swift */,
+				36AAA02E2359BED50044ECCE /* DeserializeTests.swift */,
 			);
 			path = ActionTests;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3641843422FDAAAC00A368C3 /* ContractTests.swift in Sources */,
+				36AAA02F2359BED50044ECCE /* DeserializeTests.swift in Sources */,
 				3641843922FE6FBB00A368C3 /* ConvertTests.swift in Sources */,
 				3641844322FF01F900A368C3 /* XRC20Tests.swift in Sources */,
 				368F7AA922FCFD52003DB452 /* ExecutionTests.swift in Sources */,

@@ -44,6 +44,26 @@ public struct Envelop {
         self.gasPrice = gasPrice
     }
     
+    public init(data: Data) throws {
+        let core = try Iotextypes_ActionCore(serializedData: data)
+        self.version = core.version
+        self.nonce = core.nonce
+        self.gasLimit = core.gasLimit
+        self.gasPrice = core.gasPrice
+        
+        if (try core.transfer.serializedData().count > 0) {
+            self.transfer = core.transfer
+        }
+        
+        if (try core.execution.serializedData().count > 0) {
+            self.execution = core.execution
+        }
+        
+        if (try core.claimFromRewardingFund.serializedData().count > 0) {
+            self.claimFromRewardingFund = core.claimFromRewardingFund
+        }
+    }
+    
     public func core() -> Iotextypes_ActionCore {
         var core = Iotextypes_ActionCore()
         core.version = self.version
