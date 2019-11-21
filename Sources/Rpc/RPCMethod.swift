@@ -66,4 +66,8 @@ public class RPCMethod {
     public func getEpochMeta(_ request: Iotexapi_GetEpochMetaRequest) throws -> Iotexapi_GetEpochMetaResponse {
         return try self.client.getEpochMeta(request)
     }
+    
+    public func estimateActionGasConsumption(_ request: Iotexapi_EstimateActionGasConsumptionRequest) throws -> Iotexapi_EstimateActionGasConsumptionResponse {
+        return try self.client.estimateActionGasConsumption(request)
+    }
 }
