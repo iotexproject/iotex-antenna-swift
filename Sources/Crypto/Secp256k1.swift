@@ -58,4 +58,28 @@ public class Secp256k1 {
 
         return data
     }
+    
+    public class func recovery(signature: Bytes, message: Bytes) -> Bytes {
+        let context = secp256k1_context_create(UInt32(SECP256K1_CONTEXT_SIGN | SECP256K1_CONTEXT_VERIFY))!
+        defer {
+            secp256k1_context_destroy(context)
+        }
+        
+        var publicKey = secp256k1_pubkey()
+        var sign = secp256k1_ecdsa_recoverable_signature()
+        let recid = Int32(signature[64])
+        Data(signature).withUnsafeBytes { (input: UnsafePointer<UInt8>) -> Void in
+            secp256k1_ecdsa_recoverable_signature_parse_compact(context, &sign, input, recid)
+        }
+        
+        _ = secp256k1_ecdsa_recover(context, &publicKey, &sign, message)
+        
+        var length = 65
+        var data = [UInt8](repeating: 0, count: length)
+        
+        let flag = UInt32(SECP256K1_EC_UNCOMPRESSED)
+        _ = secp256k1_ec_pubkey_serialize(context, &data, &length, &publicKey, flag)
+        
+        return data
+    }
 }

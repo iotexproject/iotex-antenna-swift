@@ -31,6 +31,19 @@ public class Account {
     public class func create(privateKey: String) throws -> Account {
         return try Account(privateKey: privateKey)
     }
+    
+    public class func publicKeyToAddress(publicKey: String) throws -> String {
+        var publicBytes = publicKey.hexToBytes()
+        publicBytes.removeFirst()
+        var pubHash = SHA3(variant: .keccak256).calculate(for: publicBytes)
+        guard pubHash.count == 32 else {
+            throw Error.internalError
+        }
+        pubHash = Array(pubHash[12...])
+        let bech32 = Bech32()
+        let grouped = try bech32.convertBits(from: 8, to: 5, pad: true, idata: Data(bytes: pubHash, count: 20))
+        return bech32.encode("io", values: grouped)
+    }
 
     public init(privateKey: String) throws {
         self.privateKey = privateKey;
@@ -54,6 +67,17 @@ public class Account {
     }
     
     public func sign(message: Bytes) throws -> Bytes {
+        let hash = try hashMessage(message: message)
+        
+        var (data, rid) = Secp256k1.sign(message: hash, seckey: try self.privateKey.hexBytes())
+        if (data == nil) {
+            throw Error.signatureMalformed
+        }
+        data!.append(UInt8(rid))
+        return data!
+    }
+    
+    public func hashMessage(message: Bytes) throws -> Bytes {
         let preambleTemp = "IoTeX Signed Message:\n%d"
         let preamble = String(format: preambleTemp, message.count)
         
@@ -66,11 +90,23 @@ public class Account {
         guard hash.count == 32 else {
             throw Error.internalError
         }
-        var (data, rid) = Secp256k1.sign(message: hash, seckey: try self.privateKey.hexBytes())
-        if (data == nil) {
-            throw Error.signatureMalformed
+        
+        return hash
+    }
+    
+    public func recover(signature: Bytes, message: Bytes) throws -> String {
+        let hash = try hashMessage(message: message)
+        
+        var publicKey = Secp256k1.recovery(signature: signature, message: hash)
+        
+        publicKey.removeFirst()
+        var pubHash = SHA3(variant: .keccak256).calculate(for: publicKey)
+        guard pubHash.count == 32 else {
+            throw Error.internalError
         }
-        data!.append(UInt8(rid))
-        return data!
+        pubHash = Array(pubHash[12...])
+        let bech32 = Bech32()
+        let grouped = try bech32.convertBits(from: 8, to: 5, pad: true, idata: Data(bytes: pubHash, count: 20))
+        return bech32.encode("io", values: grouped)
     }
 }
