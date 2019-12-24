@@ -27,5 +27,9 @@ class AccountTests: XCTestCase {
         let account = try Account(privateKey: "0806c458b262edd333a191e92f561aff338211ee3e18ab315a074a2d82aa343f")
         let signed = try account.sign(message: "IoTeX is the auto-scalable and privacy-centric blockchain.".bytes)
         XCTAssert(signed.hexString() == "99f4ef1005ae6c43548520e08dd11477e9ea59317087f9c6f33bc79eb701b14b043ff0d177bc419e585c0ecae42420fabb837e602c8a3578ea17dd1a8ed862e301")
+        
+        let address = try account.recover(signature: signed, message: "IoTeX is the auto-scalable and privacy-centric blockchain.".bytes)
+        
+        XCTAssert(address == "io187wzp08vnhjjpkydnr97qlh8kh0dpkkytfam8j")
     }
 }
