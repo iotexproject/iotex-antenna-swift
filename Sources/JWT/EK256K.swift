@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class EK256K {
+public class EK256K: NSObject {
     private static let header = "{\"alg\":\"EK256K\",\"typ\":\"JWT\"}"
     
     public enum Error: Swift.Error {
@@ -16,7 +16,7 @@ public class EK256K {
         case errorAlg
     }
     
-    public static func sign(payloadJson: String, secret: String) throws -> String {
+    @objc public static func sign(payloadJson: String, secret: String) throws -> String {
         let account = try Account.create(privateKey: secret)
         
         let headerBase = header.bytes.toSafeBase64()!
@@ -27,7 +27,7 @@ public class EK256K {
         return headerBase + "." + payloadBase + "." + signatureBase
     }
     
-    public static func verify(token: String) throws -> String {
+    @objc public static func verify(token: String) throws -> String {
         let segments = token.split(separator: ".")
         
         if segments.count != 3 {
