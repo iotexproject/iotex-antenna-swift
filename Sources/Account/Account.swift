@@ -10,11 +10,11 @@ import Foundation
 import CryptoSwift
 
 public class Account: NSObject {
-    public let privateKey: String
-    public let publicKey: String
-    public let address: String
+    @objc public let privateKey: String
+    @objc public let publicKey: String
+    @objc public let address: String
     
-    @objc public static func create() throws -> Account {
+    @objc public class func create() throws -> Account {
         guard var rand = Bytes.secureRandom(count: 2)?.bigEndianUInt else {
             throw Error.internalError
         }
