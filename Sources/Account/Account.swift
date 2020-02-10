@@ -14,7 +14,7 @@ public class Account: NSObject {
     public let publicKey: String
     public let address: String
     
-    @objc open class func create() throws -> Account {
+    @objc public static func create() throws -> Account {
         guard var rand = Bytes.secureRandom(count: 2)?.bigEndianUInt else {
             throw Error.internalError
         }
@@ -27,7 +27,7 @@ public class Account: NSObject {
         
         return try Account(privateKey: bytesHash.hexString())
     }
-    @objc open class func create(privateKey: String) throws -> Account {
+    @objc public class func create(privateKey: String) throws -> Account {
         return try Account(privateKey: privateKey)
     }
     
