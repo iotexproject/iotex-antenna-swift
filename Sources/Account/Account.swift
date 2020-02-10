@@ -9,12 +9,12 @@
 import Foundation
 import CryptoSwift
 
-public class Account {
+public class Account: NSObject {
     public let privateKey: String
     public let publicKey: String
     public let address: String
     
-    public class func create() throws -> Account {
+    @objc public class func create() throws -> Account {
         guard var rand = Bytes.secureRandom(count: 2)?.bigEndianUInt else {
             throw Error.internalError
         }
@@ -28,11 +28,11 @@ public class Account {
         return try Account(privateKey: bytesHash.hexString())
     }
 
-    public class func create(privateKey: String) throws -> Account {
+    @objc public class func create(privateKey: String) throws -> Account {
         return try Account(privateKey: privateKey)
     }
     
-    public class func publicKeyToAddress(publicKey: String) throws -> String {
+    @objc public class func publicKeyToAddress(publicKey: String) throws -> String {
         var publicBytes = publicKey.hexToBytes()
         publicBytes.removeFirst()
         var pubHash = SHA3(variant: .keccak256).calculate(for: publicBytes)
@@ -45,7 +45,7 @@ public class Account {
         return bech32.encode("io", values: grouped)
     }
 
-    public init(privateKey: String) throws {
+    @objc public init(privateKey: String) throws {
         self.privateKey = privateKey;
         var publicKey = Secp256k1.createPublicKey(from: try self.privateKey.hexBytes())
         self.publicKey = publicKey.hexString()
@@ -66,7 +66,7 @@ public class Account {
         case signatureMalformed
     }
     
-    public func sign(message: Bytes) throws -> Bytes {
+    @objc public func sign(message: Bytes) throws -> Bytes {
         let hash = try hashMessage(message: message)
         
         var (data, rid) = Secp256k1.sign(message: hash, seckey: try self.privateKey.hexBytes())
@@ -77,7 +77,7 @@ public class Account {
         return data!
     }
     
-    public func hashMessage(message: Bytes) throws -> Bytes {
+    @objc public func hashMessage(message: Bytes) throws -> Bytes {
         let preambleTemp = "IoTeX Signed Message:\n%d"
         let preamble = String(format: preambleTemp, message.count)
         
@@ -94,7 +94,7 @@ public class Account {
         return hash
     }
     
-    public func recover(signature: Bytes, message: Bytes) throws -> String {
+    @objc public func recover(signature: Bytes, message: Bytes) throws -> String {
         let hash = try hashMessage(message: message)
         
         var publicKey = Secp256k1.recovery(signature: signature, message: hash)
