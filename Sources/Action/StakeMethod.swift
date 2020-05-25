@@ -19,6 +19,15 @@ class StakeMethod: AbstractMethod {
         self.envelop = try self.baseEnvelop(request)
     }
     
+    public func execute() throws -> String {
+        self.envelop!.transfer = Iotextypes_Transfer.with {
+            $0.recipient = self.request.recipient
+            $0.amount = self.request.amount
+            $0.payload = self.request.payload
+        }
+        return try self.sendAction(envelop: self.envelop!)
+    }
+    
     func create(candidateName: String, stakedDuration: UInt32, autoStake: Bool = false, stakedAmount: String) throws -> String {
         self.envelop!.stakeCreate = Iotextypes_StakeCreate.with{
             $0.candidateName = candidateName
