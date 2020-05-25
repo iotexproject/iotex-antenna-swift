@@ -323,6 +323,11 @@ public struct Iotextypes_BlockMeta {
     set {_uniqueStorage()._deltaStateDigest = newValue}
   }
 
+  public var logsBloom: String {
+    get {return _storage._logsBloom}
+    set {_uniqueStorage()._logsBloom = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -899,6 +904,7 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     7: .same(proto: "txRoot"),
     8: .same(proto: "receiptRoot"),
     9: .same(proto: "deltaStateDigest"),
+    10: .same(proto: "logsBloom"),
   ]
 
   fileprivate class _StorageClass {
@@ -911,6 +917,7 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     var _txRoot: String = String()
     var _receiptRoot: String = String()
     var _deltaStateDigest: String = String()
+    var _logsBloom: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -926,6 +933,7 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       _txRoot = source._txRoot
       _receiptRoot = source._receiptRoot
       _deltaStateDigest = source._deltaStateDigest
+      _logsBloom = source._logsBloom
     }
   }
 
@@ -950,6 +958,7 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         case 7: try decoder.decodeSingularStringField(value: &_storage._txRoot)
         case 8: try decoder.decodeSingularStringField(value: &_storage._receiptRoot)
         case 9: try decoder.decodeSingularStringField(value: &_storage._deltaStateDigest)
+        case 10: try decoder.decodeSingularStringField(value: &_storage._logsBloom)
         default: break
         }
       }
@@ -985,6 +994,9 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       if !_storage._deltaStateDigest.isEmpty {
         try visitor.visitSingularStringField(value: _storage._deltaStateDigest, fieldNumber: 9)
       }
+      if !_storage._logsBloom.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._logsBloom, fieldNumber: 10)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1003,6 +1015,7 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         if _storage._txRoot != rhs_storage._txRoot {return false}
         if _storage._receiptRoot != rhs_storage._receiptRoot {return false}
         if _storage._deltaStateDigest != rhs_storage._deltaStateDigest {return false}
+        if _storage._logsBloom != rhs_storage._logsBloom {return false}
         return true
       }
       if !storagesAreEqual {return false}

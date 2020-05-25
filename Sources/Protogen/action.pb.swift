@@ -158,6 +158,174 @@ public struct Iotextypes_Execution {
   public init() {}
 }
 
+/// create stake
+public struct Iotextypes_StakeCreate {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var candidateName: String = String()
+
+  public var stakedAmount: String = String()
+
+  public var stakedDuration: UInt32 = 0
+
+  public var autoStake: Bool = false
+
+  public var payload: Data = SwiftProtobuf.Internal.emptyData
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+/// unstake or withdraw
+public struct Iotextypes_StakeReclaim {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var bucketIndex: UInt64 = 0
+
+  public var payload: Data = SwiftProtobuf.Internal.emptyData
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+/// add the amount of bucket 
+public struct Iotextypes_StakeAddDeposit {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var bucketIndex: UInt64 = 0
+
+  public var amount: String = String()
+
+  public var payload: Data = SwiftProtobuf.Internal.emptyData
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+/// restake the duration and autoStake flag of bucket 
+public struct Iotextypes_StakeRestake {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var bucketIndex: UInt64 = 0
+
+  public var stakedDuration: UInt32 = 0
+
+  public var autoStake: Bool = false
+
+  public var payload: Data = SwiftProtobuf.Internal.emptyData
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+/// move the bucket to vote for another candidate or transfer the ownership of bucket to another voters
+public struct Iotextypes_StakeChangeCandidate {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var bucketIndex: UInt64 = 0
+
+  public var candidateName: String = String()
+
+  public var payload: Data = SwiftProtobuf.Internal.emptyData
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Iotextypes_StakeTransferOwnership {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var bucketIndex: UInt64 = 0
+
+  public var voterAddress: String = String()
+
+  public var payload: Data = SwiftProtobuf.Internal.emptyData
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Iotextypes_CandidateBasicInfo {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var name: String = String()
+
+  public var operatorAddress: String = String()
+
+  public var rewardAddress: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Iotextypes_CandidateRegister {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var candidate: Iotextypes_CandidateBasicInfo {
+    get {return _storage._candidate ?? Iotextypes_CandidateBasicInfo()}
+    set {_uniqueStorage()._candidate = newValue}
+  }
+  /// Returns true if `candidate` has been explicitly set.
+  public var hasCandidate: Bool {return _storage._candidate != nil}
+  /// Clears the value of `candidate`. Subsequent reads from it will return its default value.
+  public mutating func clearCandidate() {_uniqueStorage()._candidate = nil}
+
+  public var stakedAmount: String {
+    get {return _storage._stakedAmount}
+    set {_uniqueStorage()._stakedAmount = newValue}
+  }
+
+  public var stakedDuration: UInt32 {
+    get {return _storage._stakedDuration}
+    set {_uniqueStorage()._stakedDuration = newValue}
+  }
+
+  public var autoStake: Bool {
+    get {return _storage._autoStake}
+    set {_uniqueStorage()._autoStake = newValue}
+  }
+
+  /// if ownerAddress is absent, owner of candidate is the sender
+  public var ownerAddress: String {
+    get {return _storage._ownerAddress}
+    set {_uniqueStorage()._ownerAddress = newValue}
+  }
+
+  public var payload: Data {
+    get {return _storage._payload}
+    set {_uniqueStorage()._payload = newValue}
+  }
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
+}
+
 public struct Iotextypes_StartSubChain {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -616,6 +784,79 @@ public struct Iotextypes_ActionCore {
     set {_uniqueStorage()._action = .grantReward(newValue)}
   }
 
+  /// Native staking
+  public var stakeCreate: Iotextypes_StakeCreate {
+    get {
+      if case .stakeCreate(let v)? = _storage._action {return v}
+      return Iotextypes_StakeCreate()
+    }
+    set {_uniqueStorage()._action = .stakeCreate(newValue)}
+  }
+
+  public var stakeUnstake: Iotextypes_StakeReclaim {
+    get {
+      if case .stakeUnstake(let v)? = _storage._action {return v}
+      return Iotextypes_StakeReclaim()
+    }
+    set {_uniqueStorage()._action = .stakeUnstake(newValue)}
+  }
+
+  public var stakeWithdraw: Iotextypes_StakeReclaim {
+    get {
+      if case .stakeWithdraw(let v)? = _storage._action {return v}
+      return Iotextypes_StakeReclaim()
+    }
+    set {_uniqueStorage()._action = .stakeWithdraw(newValue)}
+  }
+
+  public var stakeAddDeposit: Iotextypes_StakeAddDeposit {
+    get {
+      if case .stakeAddDeposit(let v)? = _storage._action {return v}
+      return Iotextypes_StakeAddDeposit()
+    }
+    set {_uniqueStorage()._action = .stakeAddDeposit(newValue)}
+  }
+
+  public var stakeRestake: Iotextypes_StakeRestake {
+    get {
+      if case .stakeRestake(let v)? = _storage._action {return v}
+      return Iotextypes_StakeRestake()
+    }
+    set {_uniqueStorage()._action = .stakeRestake(newValue)}
+  }
+
+  public var stakeChangeCandidate: Iotextypes_StakeChangeCandidate {
+    get {
+      if case .stakeChangeCandidate(let v)? = _storage._action {return v}
+      return Iotextypes_StakeChangeCandidate()
+    }
+    set {_uniqueStorage()._action = .stakeChangeCandidate(newValue)}
+  }
+
+  public var stakeTransferOwnership: Iotextypes_StakeTransferOwnership {
+    get {
+      if case .stakeTransferOwnership(let v)? = _storage._action {return v}
+      return Iotextypes_StakeTransferOwnership()
+    }
+    set {_uniqueStorage()._action = .stakeTransferOwnership(newValue)}
+  }
+
+  public var candidateRegister: Iotextypes_CandidateRegister {
+    get {
+      if case .candidateRegister(let v)? = _storage._action {return v}
+      return Iotextypes_CandidateRegister()
+    }
+    set {_uniqueStorage()._action = .candidateRegister(newValue)}
+  }
+
+  public var candidateUpdate: Iotextypes_CandidateBasicInfo {
+    get {
+      if case .candidateUpdate(let v)? = _storage._action {return v}
+      return Iotextypes_CandidateBasicInfo()
+    }
+    set {_uniqueStorage()._action = .candidateUpdate(newValue)}
+  }
+
   public var putPollResult: Iotextypes_PutPollResult {
     get {
       if case .putPollResult(let v)? = _storage._action {return v}
@@ -650,6 +891,16 @@ public struct Iotextypes_ActionCore {
     case depositToRewardingFund(Iotextypes_DepositToRewardingFund)
     case claimFromRewardingFund(Iotextypes_ClaimFromRewardingFund)
     case grantReward(Iotextypes_GrantReward)
+    /// Native staking
+    case stakeCreate(Iotextypes_StakeCreate)
+    case stakeUnstake(Iotextypes_StakeReclaim)
+    case stakeWithdraw(Iotextypes_StakeReclaim)
+    case stakeAddDeposit(Iotextypes_StakeAddDeposit)
+    case stakeRestake(Iotextypes_StakeRestake)
+    case stakeChangeCandidate(Iotextypes_StakeChangeCandidate)
+    case stakeTransferOwnership(Iotextypes_StakeTransferOwnership)
+    case candidateRegister(Iotextypes_CandidateRegister)
+    case candidateUpdate(Iotextypes_CandidateBasicInfo)
     case putPollResult(Iotextypes_PutPollResult)
 
   #if !swift(>=4.1)
@@ -675,6 +926,15 @@ public struct Iotextypes_ActionCore {
       case (.depositToRewardingFund(let l), .depositToRewardingFund(let r)): return l == r
       case (.claimFromRewardingFund(let l), .claimFromRewardingFund(let r)): return l == r
       case (.grantReward(let l), .grantReward(let r)): return l == r
+      case (.stakeCreate(let l), .stakeCreate(let r)): return l == r
+      case (.stakeUnstake(let l), .stakeUnstake(let r)): return l == r
+      case (.stakeWithdraw(let l), .stakeWithdraw(let r)): return l == r
+      case (.stakeAddDeposit(let l), .stakeAddDeposit(let r)): return l == r
+      case (.stakeRestake(let l), .stakeRestake(let r)): return l == r
+      case (.stakeChangeCandidate(let l), .stakeChangeCandidate(let r)): return l == r
+      case (.stakeTransferOwnership(let l), .stakeTransferOwnership(let r)): return l == r
+      case (.candidateRegister(let l), .candidateRegister(let r)): return l == r
+      case (.candidateUpdate(let l), .candidateUpdate(let r)): return l == r
       case (.putPollResult(let l), .putPollResult(let r)): return l == r
       default: return false
       }
@@ -756,6 +1016,66 @@ public struct Iotextypes_Log {
   public var actHash: Data = SwiftProtobuf.Internal.emptyData
 
   public var index: UInt32 = 0
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Iotextypes_EvmTransfer {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var amount: Data = SwiftProtobuf.Internal.emptyData
+
+  public var from: String = String()
+
+  public var to: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Iotextypes_EvmTransferList {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var evmTransfers: [Iotextypes_EvmTransfer] = []
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Iotextypes_ActionEvmTransfer {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var actionHash: Data = SwiftProtobuf.Internal.emptyData
+
+  public var numEvmTransfers: UInt64 = 0
+
+  public var evmTransfers: [Iotextypes_EvmTransfer] = []
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Iotextypes_BlockEvmTransfer {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var blockHeight: UInt64 = 0
+
+  public var numEvmTransfers: UInt64 = 0
+
+  public var actionEvmTransfers: [Iotextypes_ActionEvmTransfer] = []
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1037,6 +1357,406 @@ extension Iotextypes_Execution: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.amount != rhs.amount {return false}
     if lhs.contract != rhs.contract {return false}
     if lhs.data != rhs.data {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_StakeCreate: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".StakeCreate"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "candidateName"),
+    2: .same(proto: "stakedAmount"),
+    3: .same(proto: "stakedDuration"),
+    4: .same(proto: "autoStake"),
+    5: .same(proto: "payload"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.candidateName)
+      case 2: try decoder.decodeSingularStringField(value: &self.stakedAmount)
+      case 3: try decoder.decodeSingularUInt32Field(value: &self.stakedDuration)
+      case 4: try decoder.decodeSingularBoolField(value: &self.autoStake)
+      case 5: try decoder.decodeSingularBytesField(value: &self.payload)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.candidateName.isEmpty {
+      try visitor.visitSingularStringField(value: self.candidateName, fieldNumber: 1)
+    }
+    if !self.stakedAmount.isEmpty {
+      try visitor.visitSingularStringField(value: self.stakedAmount, fieldNumber: 2)
+    }
+    if self.stakedDuration != 0 {
+      try visitor.visitSingularUInt32Field(value: self.stakedDuration, fieldNumber: 3)
+    }
+    if self.autoStake != false {
+      try visitor.visitSingularBoolField(value: self.autoStake, fieldNumber: 4)
+    }
+    if !self.payload.isEmpty {
+      try visitor.visitSingularBytesField(value: self.payload, fieldNumber: 5)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_StakeCreate, rhs: Iotextypes_StakeCreate) -> Bool {
+    if lhs.candidateName != rhs.candidateName {return false}
+    if lhs.stakedAmount != rhs.stakedAmount {return false}
+    if lhs.stakedDuration != rhs.stakedDuration {return false}
+    if lhs.autoStake != rhs.autoStake {return false}
+    if lhs.payload != rhs.payload {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_StakeReclaim: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".StakeReclaim"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "bucketIndex"),
+    2: .same(proto: "payload"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt64Field(value: &self.bucketIndex)
+      case 2: try decoder.decodeSingularBytesField(value: &self.payload)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.bucketIndex != 0 {
+      try visitor.visitSingularUInt64Field(value: self.bucketIndex, fieldNumber: 1)
+    }
+    if !self.payload.isEmpty {
+      try visitor.visitSingularBytesField(value: self.payload, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_StakeReclaim, rhs: Iotextypes_StakeReclaim) -> Bool {
+    if lhs.bucketIndex != rhs.bucketIndex {return false}
+    if lhs.payload != rhs.payload {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_StakeAddDeposit: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".StakeAddDeposit"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "bucketIndex"),
+    2: .same(proto: "amount"),
+    3: .same(proto: "payload"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt64Field(value: &self.bucketIndex)
+      case 2: try decoder.decodeSingularStringField(value: &self.amount)
+      case 3: try decoder.decodeSingularBytesField(value: &self.payload)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.bucketIndex != 0 {
+      try visitor.visitSingularUInt64Field(value: self.bucketIndex, fieldNumber: 1)
+    }
+    if !self.amount.isEmpty {
+      try visitor.visitSingularStringField(value: self.amount, fieldNumber: 2)
+    }
+    if !self.payload.isEmpty {
+      try visitor.visitSingularBytesField(value: self.payload, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_StakeAddDeposit, rhs: Iotextypes_StakeAddDeposit) -> Bool {
+    if lhs.bucketIndex != rhs.bucketIndex {return false}
+    if lhs.amount != rhs.amount {return false}
+    if lhs.payload != rhs.payload {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_StakeRestake: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".StakeRestake"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "bucketIndex"),
+    2: .same(proto: "stakedDuration"),
+    3: .same(proto: "autoStake"),
+    4: .same(proto: "payload"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt64Field(value: &self.bucketIndex)
+      case 2: try decoder.decodeSingularUInt32Field(value: &self.stakedDuration)
+      case 3: try decoder.decodeSingularBoolField(value: &self.autoStake)
+      case 4: try decoder.decodeSingularBytesField(value: &self.payload)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.bucketIndex != 0 {
+      try visitor.visitSingularUInt64Field(value: self.bucketIndex, fieldNumber: 1)
+    }
+    if self.stakedDuration != 0 {
+      try visitor.visitSingularUInt32Field(value: self.stakedDuration, fieldNumber: 2)
+    }
+    if self.autoStake != false {
+      try visitor.visitSingularBoolField(value: self.autoStake, fieldNumber: 3)
+    }
+    if !self.payload.isEmpty {
+      try visitor.visitSingularBytesField(value: self.payload, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_StakeRestake, rhs: Iotextypes_StakeRestake) -> Bool {
+    if lhs.bucketIndex != rhs.bucketIndex {return false}
+    if lhs.stakedDuration != rhs.stakedDuration {return false}
+    if lhs.autoStake != rhs.autoStake {return false}
+    if lhs.payload != rhs.payload {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_StakeChangeCandidate: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".StakeChangeCandidate"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "bucketIndex"),
+    2: .same(proto: "candidateName"),
+    3: .same(proto: "payload"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt64Field(value: &self.bucketIndex)
+      case 2: try decoder.decodeSingularStringField(value: &self.candidateName)
+      case 3: try decoder.decodeSingularBytesField(value: &self.payload)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.bucketIndex != 0 {
+      try visitor.visitSingularUInt64Field(value: self.bucketIndex, fieldNumber: 1)
+    }
+    if !self.candidateName.isEmpty {
+      try visitor.visitSingularStringField(value: self.candidateName, fieldNumber: 2)
+    }
+    if !self.payload.isEmpty {
+      try visitor.visitSingularBytesField(value: self.payload, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_StakeChangeCandidate, rhs: Iotextypes_StakeChangeCandidate) -> Bool {
+    if lhs.bucketIndex != rhs.bucketIndex {return false}
+    if lhs.candidateName != rhs.candidateName {return false}
+    if lhs.payload != rhs.payload {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_StakeTransferOwnership: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".StakeTransferOwnership"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "bucketIndex"),
+    2: .same(proto: "voterAddress"),
+    3: .same(proto: "payload"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt64Field(value: &self.bucketIndex)
+      case 2: try decoder.decodeSingularStringField(value: &self.voterAddress)
+      case 3: try decoder.decodeSingularBytesField(value: &self.payload)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.bucketIndex != 0 {
+      try visitor.visitSingularUInt64Field(value: self.bucketIndex, fieldNumber: 1)
+    }
+    if !self.voterAddress.isEmpty {
+      try visitor.visitSingularStringField(value: self.voterAddress, fieldNumber: 2)
+    }
+    if !self.payload.isEmpty {
+      try visitor.visitSingularBytesField(value: self.payload, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_StakeTransferOwnership, rhs: Iotextypes_StakeTransferOwnership) -> Bool {
+    if lhs.bucketIndex != rhs.bucketIndex {return false}
+    if lhs.voterAddress != rhs.voterAddress {return false}
+    if lhs.payload != rhs.payload {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_CandidateBasicInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".CandidateBasicInfo"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "name"),
+    2: .same(proto: "operatorAddress"),
+    3: .same(proto: "rewardAddress"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.name)
+      case 2: try decoder.decodeSingularStringField(value: &self.operatorAddress)
+      case 3: try decoder.decodeSingularStringField(value: &self.rewardAddress)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
+    }
+    if !self.operatorAddress.isEmpty {
+      try visitor.visitSingularStringField(value: self.operatorAddress, fieldNumber: 2)
+    }
+    if !self.rewardAddress.isEmpty {
+      try visitor.visitSingularStringField(value: self.rewardAddress, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_CandidateBasicInfo, rhs: Iotextypes_CandidateBasicInfo) -> Bool {
+    if lhs.name != rhs.name {return false}
+    if lhs.operatorAddress != rhs.operatorAddress {return false}
+    if lhs.rewardAddress != rhs.rewardAddress {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_CandidateRegister: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".CandidateRegister"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "candidate"),
+    2: .same(proto: "stakedAmount"),
+    3: .same(proto: "stakedDuration"),
+    4: .same(proto: "autoStake"),
+    5: .same(proto: "ownerAddress"),
+    6: .same(proto: "payload"),
+  ]
+
+  fileprivate class _StorageClass {
+    var _candidate: Iotextypes_CandidateBasicInfo? = nil
+    var _stakedAmount: String = String()
+    var _stakedDuration: UInt32 = 0
+    var _autoStake: Bool = false
+    var _ownerAddress: String = String()
+    var _payload: Data = SwiftProtobuf.Internal.emptyData
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _candidate = source._candidate
+      _stakedAmount = source._stakedAmount
+      _stakedDuration = source._stakedDuration
+      _autoStake = source._autoStake
+      _ownerAddress = source._ownerAddress
+      _payload = source._payload
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._candidate)
+        case 2: try decoder.decodeSingularStringField(value: &_storage._stakedAmount)
+        case 3: try decoder.decodeSingularUInt32Field(value: &_storage._stakedDuration)
+        case 4: try decoder.decodeSingularBoolField(value: &_storage._autoStake)
+        case 5: try decoder.decodeSingularStringField(value: &_storage._ownerAddress)
+        case 6: try decoder.decodeSingularBytesField(value: &_storage._payload)
+        default: break
+        }
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if let v = _storage._candidate {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if !_storage._stakedAmount.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._stakedAmount, fieldNumber: 2)
+      }
+      if _storage._stakedDuration != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._stakedDuration, fieldNumber: 3)
+      }
+      if _storage._autoStake != false {
+        try visitor.visitSingularBoolField(value: _storage._autoStake, fieldNumber: 4)
+      }
+      if !_storage._ownerAddress.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._ownerAddress, fieldNumber: 5)
+      }
+      if !_storage._payload.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._payload, fieldNumber: 6)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_CandidateRegister, rhs: Iotextypes_CandidateRegister) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._candidate != rhs_storage._candidate {return false}
+        if _storage._stakedAmount != rhs_storage._stakedAmount {return false}
+        if _storage._stakedDuration != rhs_storage._stakedDuration {return false}
+        if _storage._autoStake != rhs_storage._autoStake {return false}
+        if _storage._ownerAddress != rhs_storage._ownerAddress {return false}
+        if _storage._payload != rhs_storage._payload {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1739,6 +2459,15 @@ extension Iotextypes_ActionCore: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     30: .same(proto: "depositToRewardingFund"),
     31: .same(proto: "claimFromRewardingFund"),
     32: .same(proto: "grantReward"),
+    40: .same(proto: "stakeCreate"),
+    41: .same(proto: "stakeUnstake"),
+    42: .same(proto: "stakeWithdraw"),
+    43: .same(proto: "stakeAddDeposit"),
+    44: .same(proto: "stakeRestake"),
+    45: .same(proto: "stakeChangeCandidate"),
+    46: .same(proto: "stakeTransferOwnership"),
+    47: .same(proto: "candidateRegister"),
+    48: .same(proto: "candidateUpdate"),
     50: .same(proto: "putPollResult"),
   ]
 
@@ -1938,6 +2667,78 @@ extension Iotextypes_ActionCore: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._action = .grantReward(v)}
+        case 40:
+          var v: Iotextypes_StakeCreate?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .stakeCreate(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .stakeCreate(v)}
+        case 41:
+          var v: Iotextypes_StakeReclaim?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .stakeUnstake(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .stakeUnstake(v)}
+        case 42:
+          var v: Iotextypes_StakeReclaim?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .stakeWithdraw(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .stakeWithdraw(v)}
+        case 43:
+          var v: Iotextypes_StakeAddDeposit?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .stakeAddDeposit(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .stakeAddDeposit(v)}
+        case 44:
+          var v: Iotextypes_StakeRestake?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .stakeRestake(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .stakeRestake(v)}
+        case 45:
+          var v: Iotextypes_StakeChangeCandidate?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .stakeChangeCandidate(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .stakeChangeCandidate(v)}
+        case 46:
+          var v: Iotextypes_StakeTransferOwnership?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .stakeTransferOwnership(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .stakeTransferOwnership(v)}
+        case 47:
+          var v: Iotextypes_CandidateRegister?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .candidateRegister(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .candidateRegister(v)}
+        case 48:
+          var v: Iotextypes_CandidateBasicInfo?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .candidateUpdate(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .candidateUpdate(v)}
         case 50:
           var v: Iotextypes_PutPollResult?
           if let current = _storage._action {
@@ -2007,6 +2808,24 @@ extension Iotextypes_ActionCore: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
         try visitor.visitSingularMessageField(value: v, fieldNumber: 31)
       case .grantReward(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 32)
+      case .stakeCreate(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 40)
+      case .stakeUnstake(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
+      case .stakeWithdraw(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 42)
+      case .stakeAddDeposit(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 43)
+      case .stakeRestake(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 44)
+      case .stakeChangeCandidate(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 45)
+      case .stakeTransferOwnership(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 46)
+      case .candidateRegister(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 47)
+      case .candidateUpdate(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 48)
       case .putPollResult(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 50)
       case nil: break
@@ -2224,6 +3043,158 @@ extension Iotextypes_Log: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     if lhs.blkHeight != rhs.blkHeight {return false}
     if lhs.actHash != rhs.actHash {return false}
     if lhs.index != rhs.index {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_EvmTransfer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".EvmTransfer"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "amount"),
+    2: .same(proto: "from"),
+    3: .same(proto: "to"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBytesField(value: &self.amount)
+      case 2: try decoder.decodeSingularStringField(value: &self.from)
+      case 3: try decoder.decodeSingularStringField(value: &self.to)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.amount.isEmpty {
+      try visitor.visitSingularBytesField(value: self.amount, fieldNumber: 1)
+    }
+    if !self.from.isEmpty {
+      try visitor.visitSingularStringField(value: self.from, fieldNumber: 2)
+    }
+    if !self.to.isEmpty {
+      try visitor.visitSingularStringField(value: self.to, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_EvmTransfer, rhs: Iotextypes_EvmTransfer) -> Bool {
+    if lhs.amount != rhs.amount {return false}
+    if lhs.from != rhs.from {return false}
+    if lhs.to != rhs.to {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_EvmTransferList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".EvmTransferList"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "evmTransfers"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeRepeatedMessageField(value: &self.evmTransfers)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.evmTransfers.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.evmTransfers, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_EvmTransferList, rhs: Iotextypes_EvmTransferList) -> Bool {
+    if lhs.evmTransfers != rhs.evmTransfers {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_ActionEvmTransfer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".ActionEvmTransfer"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "actionHash"),
+    2: .same(proto: "numEvmTransfers"),
+    3: .same(proto: "evmTransfers"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBytesField(value: &self.actionHash)
+      case 2: try decoder.decodeSingularUInt64Field(value: &self.numEvmTransfers)
+      case 3: try decoder.decodeRepeatedMessageField(value: &self.evmTransfers)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.actionHash.isEmpty {
+      try visitor.visitSingularBytesField(value: self.actionHash, fieldNumber: 1)
+    }
+    if self.numEvmTransfers != 0 {
+      try visitor.visitSingularUInt64Field(value: self.numEvmTransfers, fieldNumber: 2)
+    }
+    if !self.evmTransfers.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.evmTransfers, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_ActionEvmTransfer, rhs: Iotextypes_ActionEvmTransfer) -> Bool {
+    if lhs.actionHash != rhs.actionHash {return false}
+    if lhs.numEvmTransfers != rhs.numEvmTransfers {return false}
+    if lhs.evmTransfers != rhs.evmTransfers {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_BlockEvmTransfer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".BlockEvmTransfer"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "blockHeight"),
+    2: .same(proto: "numEvmTransfers"),
+    3: .same(proto: "actionEvmTransfers"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt64Field(value: &self.blockHeight)
+      case 2: try decoder.decodeSingularUInt64Field(value: &self.numEvmTransfers)
+      case 3: try decoder.decodeRepeatedMessageField(value: &self.actionEvmTransfers)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.blockHeight != 0 {
+      try visitor.visitSingularUInt64Field(value: self.blockHeight, fieldNumber: 1)
+    }
+    if self.numEvmTransfers != 0 {
+      try visitor.visitSingularUInt64Field(value: self.numEvmTransfers, fieldNumber: 2)
+    }
+    if !self.actionEvmTransfers.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.actionEvmTransfers, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_BlockEvmTransfer, rhs: Iotextypes_BlockEvmTransfer) -> Bool {
+    if lhs.blockHeight != rhs.blockHeight {return false}
+    if lhs.numEvmTransfers != rhs.numEvmTransfers {return false}
+    if lhs.actionEvmTransfers != rhs.actionEvmTransfers {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
