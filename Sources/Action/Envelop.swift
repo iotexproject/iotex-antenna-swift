@@ -36,6 +36,16 @@ public struct Envelop {
     public var claimFromRewardingFund: Iotextypes_ClaimFromRewardingFund?
     public var grantReward: Iotextypes_GrantReward?
     public var putPollResult: Iotextypes_PutPollResult?
+    // stake
+    public var stakeCreate: Iotextypes_StakeCreate?
+    public var stakeUnstake: Iotextypes_StakeReclaim?
+    public var stakeWithdraw: Iotextypes_StakeReclaim?
+    public var stakeAddDeposit: Iotextypes_StakeAddDeposit?
+    public var stakeRestake: Iotextypes_StakeRestake?
+    public var stakeChangeCandidate: Iotextypes_StakeChangeCandidate?
+    public var stakeTransferOwnership: Iotextypes_StakeTransferOwnership?
+    public var candidateRegister: Iotextypes_CandidateRegister?
+    public var candidateUpdate: Iotextypes_CandidateBasicInfo?
     
     public init(version: UInt32, nonce: UInt64, gasLimit: UInt64, gasPrice: String) {
         self.version = version
@@ -134,7 +144,33 @@ public struct Envelop {
         if (self.putPollResult != nil) {
             core.putPollResult = self.putPollResult!
         }
-        
+        if  self.stakeCreate != nil {
+            core.stakeCreate = self.stakeCreate!
+        }
+        if self.stakeUnstake != nil {
+            core.stakeUnstake = self.stakeUnstake!
+        }
+        if self.stakeWithdraw != nil {
+            core.stakeWithdraw = self.stakeWithdraw!
+        }
+        if self.stakeAddDeposit != nil {
+            core.stakeAddDeposit = self.stakeAddDeposit!
+        }
+        if self.stakeTransferOwnership != nil {
+            core.stakeTransferOwnership = self.stakeTransferOwnership!
+        }
+        if self.stakeRestake != nil {
+            core.stakeRestake = self.stakeRestake!
+        }
+        if self.stakeChangeCandidate != nil {
+            core.stakeChangeCandidate = self.stakeChangeCandidate!
+        }
+        if self.candidateRegister != nil {
+            core.candidateRegister = self.candidateRegister!
+        }
+        if self.candidateUpdate != nil {
+            core.candidateUpdate = self.candidateUpdate!
+        }
         return core
     }
 

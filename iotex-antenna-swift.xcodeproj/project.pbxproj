@@ -76,6 +76,7 @@
 		36B3CC6222FD5FFF00FED146 /* ABIDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CC6122FD5FFF00FED146 /* ABIDecoder.swift */; };
 		36DF24F522F2A6100065EDF7 /* ScryptParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF24F422F2A6100065EDF7 /* ScryptParams.swift */; };
 		41463CB4C7D3E2DDE7E70875 /* Pods_Shows_iotex_antenna_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2E1782B40A80C8C6CD8AEE /* Pods_Shows_iotex_antenna_swiftTests.framework */; };
+		67E6E569247B60A500A509CA /* election.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6E568247B60A400A509CA /* election.pb.swift */; };
 		D4FD7C5CFF5C896444AC23A2 /* Pods_Shows_iotex_antenna_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B048B4B2E57880C6C4150D4F /* Pods_Shows_iotex_antenna_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +168,7 @@
 		36B3CC5F22FD479500FED146 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		36B3CC6122FD5FFF00FED146 /* ABIDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABIDecoder.swift; sourceTree = "<group>"; };
 		36DF24F422F2A6100065EDF7 /* ScryptParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScryptParams.swift; sourceTree = "<group>"; };
+		67E6E568247B60A400A509CA /* election.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = election.pb.swift; sourceTree = "<group>"; };
 		970A632D22F80F7F00635F3E /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		970A632F22F80F8300635F3E /* secp256k1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = secp256k1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B048B4B2E57880C6C4150D4F /* Pods_Shows_iotex_antenna_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shows_iotex_antenna_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -405,6 +407,7 @@
 		364CC8C422F814120017FCCB /* Protogen */ = {
 			isa = PBXGroup;
 			children = (
+				67E6E568247B60A400A509CA /* election.pb.swift */,
 				364CC8CA22F8144F0017FCCB /* action.pb.swift */,
 				364CC8CB22F8144F0017FCCB /* api.grpc.swift */,
 				364CC8CC22F8144F0017FCCB /* api.pb.swift */,
@@ -662,6 +665,7 @@
 				364CC8D322F8144F0017FCCB /* action.pb.swift in Sources */,
 				3641842C22FD689B00A368C3 /* SolidityType+Codable.swift in Sources */,
 				3641843E22FEF75800A368C3 /* BaseContract.swift in Sources */,
+				67E6E569247B60A500A509CA /* election.pb.swift in Sources */,
 				36462D3522FA862E003D40B5 /* ActionRequest.swift in Sources */,
 				3641842422FD655800A368C3 /* SolidityFunction.swift in Sources */,
 				364CC8D122F8144F0017FCCB /* node.pb.swift in Sources */,
