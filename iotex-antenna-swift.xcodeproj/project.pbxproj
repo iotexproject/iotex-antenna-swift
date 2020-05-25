@@ -78,6 +78,7 @@
 		41463CB4C7D3E2DDE7E70875 /* Pods_Shows_iotex_antenna_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2E1782B40A80C8C6CD8AEE /* Pods_Shows_iotex_antenna_swiftTests.framework */; };
 		67E6E569247B60A500A509CA /* election.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6E568247B60A400A509CA /* election.pb.swift */; };
 		67E6E56B247B688200A509CA /* StakeMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6E56A247B688200A509CA /* StakeMethod.swift */; };
+		67E6E578247B8FF800A509CA /* StakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6E577247B8FF800A509CA /* StakeTests.swift */; };
 		D4FD7C5CFF5C896444AC23A2 /* Pods_Shows_iotex_antenna_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B048B4B2E57880C6C4150D4F /* Pods_Shows_iotex_antenna_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -171,6 +172,7 @@
 		36DF24F422F2A6100065EDF7 /* ScryptParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScryptParams.swift; sourceTree = "<group>"; };
 		67E6E568247B60A400A509CA /* election.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = election.pb.swift; sourceTree = "<group>"; };
 		67E6E56A247B688200A509CA /* StakeMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeMethod.swift; sourceTree = "<group>"; };
+		67E6E577247B8FF800A509CA /* StakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeTests.swift; sourceTree = "<group>"; };
 		970A632D22F80F7F00635F3E /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		970A632F22F80F8300635F3E /* secp256k1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = secp256k1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B048B4B2E57880C6C4150D4F /* Pods_Shows_iotex_antenna_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shows_iotex_antenna_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -403,6 +405,7 @@
 				36857A5E22FBB0C30062F990 /* TransferTests.swift */,
 				368F7AA822FCFD52003DB452 /* ExecutionTests.swift */,
 				36AAA02E2359BED50044ECCE /* DeserializeTests.swift */,
+				67E6E577247B8FF800A509CA /* StakeTests.swift */,
 			);
 			path = ActionTests;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				3641842F22FD719100A368C3 /* AddressTests.swift in Sources */,
 				3621757A22F1AACD00864BEB /* AccountTests.swift in Sources */,
 				36857A5F22FBB0C30062F990 /* TransferTests.swift in Sources */,
+				67E6E578247B8FF800A509CA /* StakeTests.swift in Sources */,
 				361020D622F2AA4F00645057 /* KeystoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
