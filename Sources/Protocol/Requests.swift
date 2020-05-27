@@ -50,5 +50,6 @@ public class StakeCreateRequest: ActionRequest {
         self.payload = payload
         super.init(nonce: nonce, gasLimit: gasLimit, gasPrice: gasPrice, account: account)
     }
-
 }
+
+

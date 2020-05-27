@@ -77,8 +77,15 @@
 		36DF24F522F2A6100065EDF7 /* ScryptParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF24F422F2A6100065EDF7 /* ScryptParams.swift */; };
 		41463CB4C7D3E2DDE7E70875 /* Pods_Shows_iotex_antenna_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2E1782B40A80C8C6CD8AEE /* Pods_Shows_iotex_antenna_swiftTests.framework */; };
 		674BA928247E4F22001E2206 /* StakeCreateMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BA927247E4F22001E2206 /* StakeCreateMethod.swift */; };
+		674BA92A247E67E6001E2206 /* StakeUnstakeMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BA929247E67E6001E2206 /* StakeUnstakeMethod.swift */; };
+		674BA92C247E6E00001E2206 /* StakeWithdrawMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BA92B247E6E00001E2206 /* StakeWithdrawMethod.swift */; };
+		674BA92E247E6F63001E2206 /* StakeAddDepositMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BA92D247E6F63001E2206 /* StakeAddDepositMethod.swift */; };
+		674BA930247E7032001E2206 /* StakeRestakeMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BA92F247E7032001E2206 /* StakeRestakeMethod.swift */; };
+		674BA932247E7111001E2206 /* StakeChangeCandidateMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BA931247E7111001E2206 /* StakeChangeCandidateMethod.swift */; };
+		674BA934247E7446001E2206 /* StakeTransferMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BA933247E7446001E2206 /* StakeTransferMethod.swift */; };
+		674BA936247E74C9001E2206 /* StakeRegisterMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BA935247E74C9001E2206 /* StakeRegisterMethod.swift */; };
+		674BA938247E75E5001E2206 /* StakeUpdateMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BA937247E75E5001E2206 /* StakeUpdateMethod.swift */; };
 		67E6E569247B60A500A509CA /* election.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6E568247B60A400A509CA /* election.pb.swift */; };
-		67E6E56B247B688200A509CA /* StakeMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6E56A247B688200A509CA /* StakeMethod.swift */; };
 		67E6E578247B8FF800A509CA /* StakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6E577247B8FF800A509CA /* StakeTests.swift */; };
 		D4FD7C5CFF5C896444AC23A2 /* Pods_Shows_iotex_antenna_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B048B4B2E57880C6C4150D4F /* Pods_Shows_iotex_antenna_swift.framework */; };
 /* End PBXBuildFile section */
@@ -172,8 +179,15 @@
 		36B3CC6122FD5FFF00FED146 /* ABIDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABIDecoder.swift; sourceTree = "<group>"; };
 		36DF24F422F2A6100065EDF7 /* ScryptParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScryptParams.swift; sourceTree = "<group>"; };
 		674BA927247E4F22001E2206 /* StakeCreateMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeCreateMethod.swift; sourceTree = "<group>"; };
+		674BA929247E67E6001E2206 /* StakeUnstakeMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeUnstakeMethod.swift; sourceTree = "<group>"; };
+		674BA92B247E6E00001E2206 /* StakeWithdrawMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeWithdrawMethod.swift; sourceTree = "<group>"; };
+		674BA92D247E6F63001E2206 /* StakeAddDepositMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeAddDepositMethod.swift; sourceTree = "<group>"; };
+		674BA92F247E7032001E2206 /* StakeRestakeMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeRestakeMethod.swift; sourceTree = "<group>"; };
+		674BA931247E7111001E2206 /* StakeChangeCandidateMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeChangeCandidateMethod.swift; sourceTree = "<group>"; };
+		674BA933247E7446001E2206 /* StakeTransferMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeTransferMethod.swift; sourceTree = "<group>"; };
+		674BA935247E74C9001E2206 /* StakeRegisterMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeRegisterMethod.swift; sourceTree = "<group>"; };
+		674BA937247E75E5001E2206 /* StakeUpdateMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeUpdateMethod.swift; sourceTree = "<group>"; };
 		67E6E568247B60A400A509CA /* election.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = election.pb.swift; sourceTree = "<group>"; };
-		67E6E56A247B688200A509CA /* StakeMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeMethod.swift; sourceTree = "<group>"; };
 		67E6E577247B8FF800A509CA /* StakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeTests.swift; sourceTree = "<group>"; };
 		970A632D22F80F7F00635F3E /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		970A632F22F80F8300635F3E /* secp256k1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = secp256k1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -498,8 +512,15 @@
 		674BA926247E4ED8001E2206 /* stake */ = {
 			isa = PBXGroup;
 			children = (
-				67E6E56A247B688200A509CA /* StakeMethod.swift */,
 				674BA927247E4F22001E2206 /* StakeCreateMethod.swift */,
+				674BA929247E67E6001E2206 /* StakeUnstakeMethod.swift */,
+				674BA92B247E6E00001E2206 /* StakeWithdrawMethod.swift */,
+				674BA92D247E6F63001E2206 /* StakeAddDepositMethod.swift */,
+				674BA92F247E7032001E2206 /* StakeRestakeMethod.swift */,
+				674BA931247E7111001E2206 /* StakeChangeCandidateMethod.swift */,
+				674BA933247E7446001E2206 /* StakeTransferMethod.swift */,
+				674BA935247E74C9001E2206 /* StakeRegisterMethod.swift */,
+				674BA937247E75E5001E2206 /* StakeUpdateMethod.swift */,
 			);
 			path = stake;
 			sourceTree = "<group>";
@@ -687,13 +708,14 @@
 				3654182622F1F4B5004382B1 /* Bytes+UInt.swift in Sources */,
 				36DF24F522F2A6100065EDF7 /* ScryptParams.swift in Sources */,
 				362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */,
+				674BA936247E74C9001E2206 /* StakeRegisterMethod.swift in Sources */,
 				364CC8D322F8144F0017FCCB /* action.pb.swift in Sources */,
 				3641842C22FD689B00A368C3 /* SolidityType+Codable.swift in Sources */,
+				674BA92A247E67E6001E2206 /* StakeUnstakeMethod.swift in Sources */,
 				3641843E22FEF75800A368C3 /* BaseContract.swift in Sources */,
 				67E6E569247B60A500A509CA /* election.pb.swift in Sources */,
 				36462D3522FA862E003D40B5 /* ActionRequest.swift in Sources */,
 				3641842422FD655800A368C3 /* SolidityFunction.swift in Sources */,
-				67E6E56B247B688200A509CA /* StakeMethod.swift in Sources */,
 				364CC8D122F8144F0017FCCB /* node.pb.swift in Sources */,
 				364CC8D022F8144F0017FCCB /* endorsement.pb.swift in Sources */,
 				369A043B23AAFBF6009CCCFF /* EK256K.swift in Sources */,
@@ -705,9 +727,11 @@
 				368F7AAD22FD0A7B003DB452 /* SolidityType.swift in Sources */,
 				364CC8D422F8144F0017FCCB /* api.grpc.swift in Sources */,
 				366A345A22F2A5D20076923E /* Scrypt.swift in Sources */,
+				674BA92C247E6E00001E2206 /* StakeWithdrawMethod.swift in Sources */,
 				362175DC22F1C39300864BEB /* Account.swift in Sources */,
 				364CC8D222F8144F0017FCCB /* consensus.pb.swift in Sources */,
 				369DED8022FD607500775D3B /* ABIEncoder.swift in Sources */,
+				674BA930247E7032001E2206 /* StakeRestakeMethod.swift in Sources */,
 				364CC8D522F8144F0017FCCB /* api.pb.swift in Sources */,
 				3641843122FD771F00A368C3 /* Contract.swift in Sources */,
 				361020D222F2A71300645057 /* Keystore.swift in Sources */,
@@ -722,7 +746,10 @@
 				36462D2D22FA68A9003D40B5 /* Envelop.swift in Sources */,
 				36462D3722FBABF8003D40B5 /* TransferMethod.swift in Sources */,
 				36462D3322FA83D4003D40B5 /* AbstractMethod.swift in Sources */,
+				674BA92E247E6F63001E2206 /* StakeAddDepositMethod.swift in Sources */,
 				3641842822FD65BD00A368C3 /* ABIObject.swift in Sources */,
+				674BA934247E7446001E2206 /* StakeTransferMethod.swift in Sources */,
+				674BA938247E75E5001E2206 /* StakeUpdateMethod.swift in Sources */,
 				368F7AAF22FD0ABB003DB452 /* ABIConvertible.swift in Sources */,
 				3654182422F1F473004382B1 /* Bytes+SecureRandom.swift in Sources */,
 				3654182A22F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift in Sources */,
@@ -735,6 +762,7 @@
 				3654182822F1F5A9004382B1 /* Bytes+HexString.swift in Sources */,
 				36462D2F22FA7426003D40B5 /* SealedEnvelop.swift in Sources */,
 				3641842222FD650F00A368C3 /* SolidityEvent.swift in Sources */,
+				674BA932247E7111001E2206 /* StakeChangeCandidateMethod.swift in Sources */,
 				364CC8CE22F8144F0017FCCB /* genesis.pb.swift in Sources */,
 				3692930F22FCDF1C00C7A5A0 /* ExecutionMethod.swift in Sources */,
 				368F7AB122FD2234003DB452 /* String+Conversion.swift in Sources */,

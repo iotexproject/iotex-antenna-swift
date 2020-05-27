@@ -76,6 +76,10 @@ public struct Envelop {
         if (try core.stakeCreate.serializedData().count > 0){
             self.stakeCreate = core.stakeCreate
         }
+        
+        if (try core.stakeUnstake.serializedData().count > 0) {
+            self.stakeUnstake = core.stakeUnstake
+        }
     }
     
     public func core() -> Iotextypes_ActionCore {
