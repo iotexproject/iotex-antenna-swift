@@ -72,6 +72,10 @@ public struct Envelop {
         if (try core.claimFromRewardingFund.serializedData().count > 0) {
             self.claimFromRewardingFund = core.claimFromRewardingFund
         }
+        
+        if (try core.stakeCreate.serializedData().count > 0){
+            self.stakeCreate = core.stakeCreate
+        }
     }
     
     public func core() -> Iotextypes_ActionCore {
