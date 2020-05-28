@@ -6,7 +6,6 @@
 //  Copyright © 2020 IoTeX. All rights reserved.
 //
 
-import UIKit
 
 class StakeAddDepositMethod: AbstractMethod {
     private var request: StakeStakeAddDepositRequest

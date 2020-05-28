@@ -6,7 +6,6 @@
 //  Copyright © 2020 IoTeX. All rights reserved.
 //
 
-import UIKit
 
 class StakeUpdateMethod: AbstractMethod {
     private var request: StakeUpdateRequest

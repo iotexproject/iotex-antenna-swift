@@ -6,7 +6,7 @@
 //  Copyright © 2020 IoTeX. All rights reserved.
 //
 
-import UIKit
+
 
 class StakeCreateMethod: AbstractMethod {
     private var request: StakeCreateRequest

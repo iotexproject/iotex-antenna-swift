@@ -6,8 +6,6 @@
 //  Copyright © 2020 IoTeX. All rights reserved.
 //
 
-import UIKit
-
 class StakeTransferMethod: AbstractMethod {
     private var request: StakeTransferRequest
     private var envelop: Envelop?

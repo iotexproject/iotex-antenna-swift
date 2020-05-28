@@ -6,7 +6,6 @@
 //  Copyright © 2020 IoTeX. All rights reserved.
 //
 
-import UIKit
 
 class StakeWithdrawMethod: AbstractMethod {
     private var request: StakeWithdrawRequest

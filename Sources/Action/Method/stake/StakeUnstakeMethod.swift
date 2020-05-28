@@ -6,8 +6,6 @@
 //  Copyright © 2020 IoTeX. All rights reserved.
 //
 
-import UIKit
-
 class StakeUnstakeMethod: AbstractMethod {
     private var request: StakeUnstakeRequest
     private var envelop: Envelop?
