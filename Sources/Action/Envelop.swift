@@ -73,12 +73,41 @@ public struct Envelop {
             self.claimFromRewardingFund = core.claimFromRewardingFund
         }
         
+        // stake
         if (try core.stakeCreate.serializedData().count > 0){
             self.stakeCreate = core.stakeCreate
         }
         
         if (try core.stakeUnstake.serializedData().count > 0) {
             self.stakeUnstake = core.stakeUnstake
+        }
+        
+        if (try core.stakeWithdraw.serializedData().count > 0) {
+            self.stakeWithdraw = core.stakeWithdraw
+        }
+        
+        if (try core.stakeAddDeposit.serializedData().count > 0) {
+            self.stakeAddDeposit = core.stakeAddDeposit
+        }
+        
+        if (try core.stakeRestake.serializedData().count > 0) {
+            self.stakeRestake = core.stakeRestake
+        }
+        
+        if (try core.stakeChangeCandidate.serializedData().count > 0) {
+            self.stakeChangeCandidate = core.stakeChangeCandidate
+        }
+        
+        if (try core.stakeTransferOwnership.serializedData().count > 0) {
+            self.stakeTransferOwnership = core.stakeTransferOwnership
+        }
+        
+        if (try core.candidateRegister.serializedData().count > 0) {
+            self.candidateRegister = core.candidateRegister
+        }
+        
+        if (try core.candidateUpdate.serializedData().count > 0) {
+            self.candidateUpdate = core.candidateUpdate
         }
     }
     
