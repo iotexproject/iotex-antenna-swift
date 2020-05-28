@@ -115,6 +115,24 @@ fileprivate final class Iotexapi_APIServiceGetLogsCallBase: ClientCallUnaryBase<
   override class var method: String { return "/iotexapi.APIService/GetLogs" }
 }
 
+public protocol Iotexapi_APIServiceGetVotesCall: ClientCallUnary {}
+
+fileprivate final class Iotexapi_APIServiceGetVotesCallBase: ClientCallUnaryBase<Iotexapi_GetVotesRequest, Iotexapi_GetVotesResponse>, Iotexapi_APIServiceGetVotesCall {
+  override class var method: String { return "/iotexapi.APIService/GetVotes" }
+}
+
+public protocol Iotexapi_APIServiceGetEvmTransfersByActionHashCall: ClientCallUnary {}
+
+fileprivate final class Iotexapi_APIServiceGetEvmTransfersByActionHashCallBase: ClientCallUnaryBase<Iotexapi_GetEvmTransfersByActionHashRequest, Iotexapi_GetEvmTransfersByActionHashResponse>, Iotexapi_APIServiceGetEvmTransfersByActionHashCall {
+  override class var method: String { return "/iotexapi.APIService/GetEvmTransfersByActionHash" }
+}
+
+public protocol Iotexapi_APIServiceGetEvmTransfersByBlockHeightCall: ClientCallUnary {}
+
+fileprivate final class Iotexapi_APIServiceGetEvmTransfersByBlockHeightCallBase: ClientCallUnaryBase<Iotexapi_GetEvmTransfersByBlockHeightRequest, Iotexapi_GetEvmTransfersByBlockHeightResponse>, Iotexapi_APIServiceGetEvmTransfersByBlockHeightCall {
+  override class var method: String { return "/iotexapi.APIService/GetEvmTransfersByBlockHeight" }
+}
+
 public protocol Iotexapi_APIServiceStreamBlocksCall: ClientCallServerStreaming {
   /// Do not call this directly, call `receive()` in the protocol extension below instead.
   func _receive(timeout: DispatchTime) throws -> Iotexapi_StreamBlocksResponse?
@@ -145,6 +163,12 @@ public extension Iotexapi_APIServiceStreamLogsCall {
 
 fileprivate final class Iotexapi_APIServiceStreamLogsCallBase: ClientCallServerStreamingBase<Iotexapi_StreamLogsRequest, Iotexapi_StreamLogsResponse>, Iotexapi_APIServiceStreamLogsCall {
   override class var method: String { return "/iotexapi.APIService/StreamLogs" }
+}
+
+public protocol Iotexapi_APIServiceGetElectionBucketsCall: ClientCallUnary {}
+
+fileprivate final class Iotexapi_APIServiceGetElectionBucketsCallBase: ClientCallUnaryBase<Iotexapi_GetElectionBucketsRequest, Iotexapi_GetElectionBucketsResponse>, Iotexapi_APIServiceGetElectionBucketsCall {
+  override class var method: String { return "/iotexapi.APIService/GetElectionBuckets" }
 }
 
 
@@ -240,6 +264,24 @@ public protocol Iotexapi_APIServiceService: ServiceClient {
   @discardableResult
   func getLogs(_ request: Iotexapi_GetLogsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetLogsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetLogsCall
 
+  /// Synchronous. Unary.
+  func getVotes(_ request: Iotexapi_GetVotesRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetVotesResponse
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getVotes(_ request: Iotexapi_GetVotesRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetVotesResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetVotesCall
+
+  /// Synchronous. Unary.
+  func getEvmTransfersByActionHash(_ request: Iotexapi_GetEvmTransfersByActionHashRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetEvmTransfersByActionHashResponse
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getEvmTransfersByActionHash(_ request: Iotexapi_GetEvmTransfersByActionHashRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetEvmTransfersByActionHashResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetEvmTransfersByActionHashCall
+
+  /// Synchronous. Unary.
+  func getEvmTransfersByBlockHeight(_ request: Iotexapi_GetEvmTransfersByBlockHeightRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetEvmTransfersByBlockHeightResponse
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getEvmTransfersByBlockHeight(_ request: Iotexapi_GetEvmTransfersByBlockHeightRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetEvmTransfersByBlockHeightResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetEvmTransfersByBlockHeightCall
+
   /// Asynchronous. Server-streaming.
   /// Send the initial message.
   /// Use methods on the returned object to get streamed responses.
@@ -249,6 +291,12 @@ public protocol Iotexapi_APIServiceService: ServiceClient {
   /// Send the initial message.
   /// Use methods on the returned object to get streamed responses.
   func streamLogs(_ request: Iotexapi_StreamLogsRequest, metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamLogsCall
+
+  /// Synchronous. Unary.
+  func getElectionBuckets(_ request: Iotexapi_GetElectionBucketsRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetElectionBucketsResponse
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getElectionBuckets(_ request: Iotexapi_GetElectionBucketsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetElectionBucketsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetElectionBucketsCall
 
 }
 
@@ -403,6 +451,36 @@ public extension Iotexapi_APIServiceService {
     return try self.getLogs(request, metadata: self.metadata, completion: completion)
   }
 
+  /// Synchronous. Unary.
+  func getVotes(_ request: Iotexapi_GetVotesRequest) throws -> Iotexapi_GetVotesResponse {
+    return try self.getVotes(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getVotes(_ request: Iotexapi_GetVotesRequest, completion: @escaping (Iotexapi_GetVotesResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetVotesCall {
+    return try self.getVotes(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func getEvmTransfersByActionHash(_ request: Iotexapi_GetEvmTransfersByActionHashRequest) throws -> Iotexapi_GetEvmTransfersByActionHashResponse {
+    return try self.getEvmTransfersByActionHash(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getEvmTransfersByActionHash(_ request: Iotexapi_GetEvmTransfersByActionHashRequest, completion: @escaping (Iotexapi_GetEvmTransfersByActionHashResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetEvmTransfersByActionHashCall {
+    return try self.getEvmTransfersByActionHash(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func getEvmTransfersByBlockHeight(_ request: Iotexapi_GetEvmTransfersByBlockHeightRequest) throws -> Iotexapi_GetEvmTransfersByBlockHeightResponse {
+    return try self.getEvmTransfersByBlockHeight(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getEvmTransfersByBlockHeight(_ request: Iotexapi_GetEvmTransfersByBlockHeightRequest, completion: @escaping (Iotexapi_GetEvmTransfersByBlockHeightResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetEvmTransfersByBlockHeightCall {
+    return try self.getEvmTransfersByBlockHeight(request, metadata: self.metadata, completion: completion)
+  }
+
   /// Asynchronous. Server-streaming.
   func streamBlocks(_ request: Iotexapi_StreamBlocksRequest, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamBlocksCall {
     return try self.streamBlocks(request, metadata: self.metadata, completion: completion)
@@ -411,6 +489,16 @@ public extension Iotexapi_APIServiceService {
   /// Asynchronous. Server-streaming.
   func streamLogs(_ request: Iotexapi_StreamLogsRequest, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamLogsCall {
     return try self.streamLogs(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func getElectionBuckets(_ request: Iotexapi_GetElectionBucketsRequest) throws -> Iotexapi_GetElectionBucketsResponse {
+    return try self.getElectionBuckets(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getElectionBuckets(_ request: Iotexapi_GetElectionBucketsRequest, completion: @escaping (Iotexapi_GetElectionBucketsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetElectionBucketsCall {
+    return try self.getElectionBuckets(request, metadata: self.metadata, completion: completion)
   }
 
 }
@@ -596,6 +684,42 @@ public final class Iotexapi_APIServiceServiceClient: ServiceClientBase, Iotexapi
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
+  /// Synchronous. Unary.
+  public func getVotes(_ request: Iotexapi_GetVotesRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetVotesResponse {
+    return try Iotexapi_APIServiceGetVotesCallBase(channel)
+      .run(request: request, metadata: customMetadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  public func getVotes(_ request: Iotexapi_GetVotesRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetVotesResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetVotesCall {
+    return try Iotexapi_APIServiceGetVotesCallBase(channel)
+      .start(request: request, metadata: customMetadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  public func getEvmTransfersByActionHash(_ request: Iotexapi_GetEvmTransfersByActionHashRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetEvmTransfersByActionHashResponse {
+    return try Iotexapi_APIServiceGetEvmTransfersByActionHashCallBase(channel)
+      .run(request: request, metadata: customMetadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  public func getEvmTransfersByActionHash(_ request: Iotexapi_GetEvmTransfersByActionHashRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetEvmTransfersByActionHashResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetEvmTransfersByActionHashCall {
+    return try Iotexapi_APIServiceGetEvmTransfersByActionHashCallBase(channel)
+      .start(request: request, metadata: customMetadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  public func getEvmTransfersByBlockHeight(_ request: Iotexapi_GetEvmTransfersByBlockHeightRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetEvmTransfersByBlockHeightResponse {
+    return try Iotexapi_APIServiceGetEvmTransfersByBlockHeightCallBase(channel)
+      .run(request: request, metadata: customMetadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  public func getEvmTransfersByBlockHeight(_ request: Iotexapi_GetEvmTransfersByBlockHeightRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetEvmTransfersByBlockHeightResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetEvmTransfersByBlockHeightCall {
+    return try Iotexapi_APIServiceGetEvmTransfersByBlockHeightCallBase(channel)
+      .start(request: request, metadata: customMetadata, completion: completion)
+  }
+
   /// Asynchronous. Server-streaming.
   /// Send the initial message.
   /// Use methods on the returned object to get streamed responses.
@@ -609,6 +733,18 @@ public final class Iotexapi_APIServiceServiceClient: ServiceClientBase, Iotexapi
   /// Use methods on the returned object to get streamed responses.
   public func streamLogs(_ request: Iotexapi_StreamLogsRequest, metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamLogsCall {
     return try Iotexapi_APIServiceStreamLogsCallBase(channel)
+      .start(request: request, metadata: customMetadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  public func getElectionBuckets(_ request: Iotexapi_GetElectionBucketsRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetElectionBucketsResponse {
+    return try Iotexapi_APIServiceGetElectionBucketsCallBase(channel)
+      .run(request: request, metadata: customMetadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  public func getElectionBuckets(_ request: Iotexapi_GetElectionBucketsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetElectionBucketsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetElectionBucketsCall {
+    return try Iotexapi_APIServiceGetElectionBucketsCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 

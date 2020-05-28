@@ -33,3 +33,23 @@ public class ExecutionRequest: ActionRequest {
         super.init(nonce: nonce, gasLimit: gasLimit, gasPrice: gasPrice, account: account)
     }
 }
+
+
+public class StakeCreateRequest: ActionRequest {
+    public var candidateName: String
+    public var stakedAmount: String
+    public var stakedDuration: UInt32
+    public var autoStake: Bool
+    public var payload: Data
+    
+    public init(nonce: UInt64?, gasLimit: UInt64, gasPrice: String, account: Account, candidateName: String, stakedAmount: String, stakedDuration: UInt32, autoStake: Bool, payload: Data ) {
+        self.candidateName = candidateName
+        self.stakedAmount = stakedAmount
+        self.stakedDuration = stakedDuration
+        self.autoStake = autoStake
+        self.payload = payload
+        super.init(nonce: nonce, gasLimit: gasLimit, gasPrice: gasPrice, account: account)
+    }
+}
+
+

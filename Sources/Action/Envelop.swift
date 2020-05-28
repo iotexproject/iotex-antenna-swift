@@ -36,6 +36,16 @@ public struct Envelop {
     public var claimFromRewardingFund: Iotextypes_ClaimFromRewardingFund?
     public var grantReward: Iotextypes_GrantReward?
     public var putPollResult: Iotextypes_PutPollResult?
+    // stake
+    public var stakeCreate: Iotextypes_StakeCreate?
+    public var stakeUnstake: Iotextypes_StakeReclaim?
+    public var stakeWithdraw: Iotextypes_StakeReclaim?
+    public var stakeAddDeposit: Iotextypes_StakeAddDeposit?
+    public var stakeRestake: Iotextypes_StakeRestake?
+    public var stakeChangeCandidate: Iotextypes_StakeChangeCandidate?
+    public var stakeTransferOwnership: Iotextypes_StakeTransferOwnership?
+    public var candidateRegister: Iotextypes_CandidateRegister?
+    public var candidateUpdate: Iotextypes_CandidateBasicInfo?
     
     public init(version: UInt32, nonce: UInt64, gasLimit: UInt64, gasPrice: String) {
         self.version = version
@@ -61,6 +71,43 @@ public struct Envelop {
         
         if (try core.claimFromRewardingFund.serializedData().count > 0) {
             self.claimFromRewardingFund = core.claimFromRewardingFund
+        }
+        
+        // stake
+        if (try core.stakeCreate.serializedData().count > 0){
+            self.stakeCreate = core.stakeCreate
+        }
+        
+        if (try core.stakeUnstake.serializedData().count > 0) {
+            self.stakeUnstake = core.stakeUnstake
+        }
+        
+        if (try core.stakeWithdraw.serializedData().count > 0) {
+            self.stakeWithdraw = core.stakeWithdraw
+        }
+        
+        if (try core.stakeAddDeposit.serializedData().count > 0) {
+            self.stakeAddDeposit = core.stakeAddDeposit
+        }
+        
+        if (try core.stakeRestake.serializedData().count > 0) {
+            self.stakeRestake = core.stakeRestake
+        }
+        
+        if (try core.stakeChangeCandidate.serializedData().count > 0) {
+            self.stakeChangeCandidate = core.stakeChangeCandidate
+        }
+        
+        if (try core.stakeTransferOwnership.serializedData().count > 0) {
+            self.stakeTransferOwnership = core.stakeTransferOwnership
+        }
+        
+        if (try core.candidateRegister.serializedData().count > 0) {
+            self.candidateRegister = core.candidateRegister
+        }
+        
+        if (try core.candidateUpdate.serializedData().count > 0) {
+            self.candidateUpdate = core.candidateUpdate
         }
     }
     
@@ -134,7 +181,33 @@ public struct Envelop {
         if (self.putPollResult != nil) {
             core.putPollResult = self.putPollResult!
         }
-        
+        if  self.stakeCreate != nil {
+            core.stakeCreate = self.stakeCreate!
+        }
+        if self.stakeUnstake != nil {
+            core.stakeUnstake = self.stakeUnstake!
+        }
+        if self.stakeWithdraw != nil {
+            core.stakeWithdraw = self.stakeWithdraw!
+        }
+        if self.stakeAddDeposit != nil {
+            core.stakeAddDeposit = self.stakeAddDeposit!
+        }
+        if self.stakeTransferOwnership != nil {
+            core.stakeTransferOwnership = self.stakeTransferOwnership!
+        }
+        if self.stakeRestake != nil {
+            core.stakeRestake = self.stakeRestake!
+        }
+        if self.stakeChangeCandidate != nil {
+            core.stakeChangeCandidate = self.stakeChangeCandidate!
+        }
+        if self.candidateRegister != nil {
+            core.candidateRegister = self.candidateRegister!
+        }
+        if self.candidateUpdate != nil {
+            core.candidateUpdate = self.candidateUpdate!
+        }
         return core
     }
 
