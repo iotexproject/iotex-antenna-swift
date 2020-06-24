@@ -115,12 +115,6 @@ fileprivate final class Iotexapi_APIServiceGetLogsCallBase: ClientCallUnaryBase<
   override class var method: String { return "/iotexapi.APIService/GetLogs" }
 }
 
-public protocol Iotexapi_APIServiceGetVotesCall: ClientCallUnary {}
-
-fileprivate final class Iotexapi_APIServiceGetVotesCallBase: ClientCallUnaryBase<Iotexapi_GetVotesRequest, Iotexapi_GetVotesResponse>, Iotexapi_APIServiceGetVotesCall {
-  override class var method: String { return "/iotexapi.APIService/GetVotes" }
-}
-
 public protocol Iotexapi_APIServiceGetEvmTransfersByActionHashCall: ClientCallUnary {}
 
 fileprivate final class Iotexapi_APIServiceGetEvmTransfersByActionHashCallBase: ClientCallUnaryBase<Iotexapi_GetEvmTransfersByActionHashRequest, Iotexapi_GetEvmTransfersByActionHashResponse>, Iotexapi_APIServiceGetEvmTransfersByActionHashCall {
@@ -263,12 +257,6 @@ public protocol Iotexapi_APIServiceService: ServiceClient {
   /// Asynchronous. Unary.
   @discardableResult
   func getLogs(_ request: Iotexapi_GetLogsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetLogsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetLogsCall
-
-  /// Synchronous. Unary.
-  func getVotes(_ request: Iotexapi_GetVotesRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetVotesResponse
-  /// Asynchronous. Unary.
-  @discardableResult
-  func getVotes(_ request: Iotexapi_GetVotesRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetVotesResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetVotesCall
 
   /// Synchronous. Unary.
   func getEvmTransfersByActionHash(_ request: Iotexapi_GetEvmTransfersByActionHashRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetEvmTransfersByActionHashResponse
@@ -449,16 +437,6 @@ public extension Iotexapi_APIServiceService {
   @discardableResult
   func getLogs(_ request: Iotexapi_GetLogsRequest, completion: @escaping (Iotexapi_GetLogsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetLogsCall {
     return try self.getLogs(request, metadata: self.metadata, completion: completion)
-  }
-
-  /// Synchronous. Unary.
-  func getVotes(_ request: Iotexapi_GetVotesRequest) throws -> Iotexapi_GetVotesResponse {
-    return try self.getVotes(request, metadata: self.metadata)
-  }
-  /// Asynchronous. Unary.
-  @discardableResult
-  func getVotes(_ request: Iotexapi_GetVotesRequest, completion: @escaping (Iotexapi_GetVotesResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetVotesCall {
-    return try self.getVotes(request, metadata: self.metadata, completion: completion)
   }
 
   /// Synchronous. Unary.
@@ -681,18 +659,6 @@ public final class Iotexapi_APIServiceServiceClient: ServiceClientBase, Iotexapi
   @discardableResult
   public func getLogs(_ request: Iotexapi_GetLogsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetLogsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetLogsCall {
     return try Iotexapi_APIServiceGetLogsCallBase(channel)
-      .start(request: request, metadata: customMetadata, completion: completion)
-  }
-
-  /// Synchronous. Unary.
-  public func getVotes(_ request: Iotexapi_GetVotesRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetVotesResponse {
-    return try Iotexapi_APIServiceGetVotesCallBase(channel)
-      .run(request: request, metadata: customMetadata)
-  }
-  /// Asynchronous. Unary.
-  @discardableResult
-  public func getVotes(_ request: Iotexapi_GetVotesRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetVotesResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetVotesCall {
-    return try Iotexapi_APIServiceGetVotesCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 

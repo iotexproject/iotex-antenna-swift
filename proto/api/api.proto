@@ -9,6 +9,8 @@
 syntax = "proto3";
 package iotexapi;
 option go_package = "github.com/iotexproject/iotex-proto/golang/iotexapi";
+option java_multiple_files = true;
+option java_package = "com.github.iotexproject.grpc.api";
 
 import "proto/types/action.proto";
 import "proto/types/blockchain.proto";
@@ -69,9 +71,6 @@ service APIService {
   // get logs filtered by contract address and topics
   rpc GetLogs(GetLogsRequest) returns (GetLogsResponse) {}
 
-  // GetVotes get a single address' votes
-  rpc GetVotes(GetVotesRequest) returns (GetVotesResponse) {}
-
   /*
    * evm transfers APIs
    */
@@ -96,17 +95,6 @@ service APIService {
    * election APIs
    */
   rpc GetElectionBuckets(GetElectionBucketsRequest) returns (GetElectionBucketsResponse) {}
-}
-
-message GetVotesRequest {
-  string votee = 1;
-  string height = 2;
-  uint32 offset = 3;
-  uint32 limit = 4;
-}
-
-message GetVotesResponse {
-  repeated Bucket buckets = 1;
 }
 
 message Bucket {
@@ -274,6 +262,16 @@ message EstimateActionGasConsumptionRequest {
   oneof action {
     iotextypes.Transfer transfer = 1;
     iotextypes.Execution execution = 2;
+    // Native staking
+    iotextypes.StakeCreate stakeCreate = 40;
+    iotextypes.StakeReclaim stakeUnstake = 41;
+    iotextypes.StakeReclaim stakeWithdraw = 42;
+    iotextypes.StakeAddDeposit stakeAddDeposit = 43;
+    iotextypes.StakeRestake stakeRestake = 44;
+    iotextypes.StakeChangeCandidate stakeChangeCandidate = 45;
+    iotextypes.StakeTransferOwnership stakeTransferOwnership = 46;
+    iotextypes.CandidateRegister candidateRegister = 47;
+    iotextypes.CandidateBasicInfo candidateUpdate = 48;
   }
   string callerAddress = 100;
 }

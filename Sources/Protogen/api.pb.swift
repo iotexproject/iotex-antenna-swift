@@ -28,36 +28,6 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-public struct Iotexapi_GetVotesRequest {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  public var votee: String = String()
-
-  public var height: String = String()
-
-  public var offset: UInt32 = 0
-
-  public var limit: UInt32 = 0
-
-  public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  public init() {}
-}
-
-public struct Iotexapi_GetVotesResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  public var buckets: [Iotexapi_Bucket] = []
-
-  public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  public init() {}
-}
-
 public struct Iotexapi_Bucket {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -754,6 +724,79 @@ public struct Iotexapi_EstimateActionGasConsumptionRequest {
     set {_uniqueStorage()._action = .execution(newValue)}
   }
 
+  /// Native staking
+  public var stakeCreate: Iotextypes_StakeCreate {
+    get {
+      if case .stakeCreate(let v)? = _storage._action {return v}
+      return Iotextypes_StakeCreate()
+    }
+    set {_uniqueStorage()._action = .stakeCreate(newValue)}
+  }
+
+  public var stakeUnstake: Iotextypes_StakeReclaim {
+    get {
+      if case .stakeUnstake(let v)? = _storage._action {return v}
+      return Iotextypes_StakeReclaim()
+    }
+    set {_uniqueStorage()._action = .stakeUnstake(newValue)}
+  }
+
+  public var stakeWithdraw: Iotextypes_StakeReclaim {
+    get {
+      if case .stakeWithdraw(let v)? = _storage._action {return v}
+      return Iotextypes_StakeReclaim()
+    }
+    set {_uniqueStorage()._action = .stakeWithdraw(newValue)}
+  }
+
+  public var stakeAddDeposit: Iotextypes_StakeAddDeposit {
+    get {
+      if case .stakeAddDeposit(let v)? = _storage._action {return v}
+      return Iotextypes_StakeAddDeposit()
+    }
+    set {_uniqueStorage()._action = .stakeAddDeposit(newValue)}
+  }
+
+  public var stakeRestake: Iotextypes_StakeRestake {
+    get {
+      if case .stakeRestake(let v)? = _storage._action {return v}
+      return Iotextypes_StakeRestake()
+    }
+    set {_uniqueStorage()._action = .stakeRestake(newValue)}
+  }
+
+  public var stakeChangeCandidate: Iotextypes_StakeChangeCandidate {
+    get {
+      if case .stakeChangeCandidate(let v)? = _storage._action {return v}
+      return Iotextypes_StakeChangeCandidate()
+    }
+    set {_uniqueStorage()._action = .stakeChangeCandidate(newValue)}
+  }
+
+  public var stakeTransferOwnership: Iotextypes_StakeTransferOwnership {
+    get {
+      if case .stakeTransferOwnership(let v)? = _storage._action {return v}
+      return Iotextypes_StakeTransferOwnership()
+    }
+    set {_uniqueStorage()._action = .stakeTransferOwnership(newValue)}
+  }
+
+  public var candidateRegister: Iotextypes_CandidateRegister {
+    get {
+      if case .candidateRegister(let v)? = _storage._action {return v}
+      return Iotextypes_CandidateRegister()
+    }
+    set {_uniqueStorage()._action = .candidateRegister(newValue)}
+  }
+
+  public var candidateUpdate: Iotextypes_CandidateBasicInfo {
+    get {
+      if case .candidateUpdate(let v)? = _storage._action {return v}
+      return Iotextypes_CandidateBasicInfo()
+    }
+    set {_uniqueStorage()._action = .candidateUpdate(newValue)}
+  }
+
   public var callerAddress: String {
     get {return _storage._callerAddress}
     set {_uniqueStorage()._callerAddress = newValue}
@@ -764,12 +807,31 @@ public struct Iotexapi_EstimateActionGasConsumptionRequest {
   public enum OneOf_Action: Equatable {
     case transfer(Iotextypes_Transfer)
     case execution(Iotextypes_Execution)
+    /// Native staking
+    case stakeCreate(Iotextypes_StakeCreate)
+    case stakeUnstake(Iotextypes_StakeReclaim)
+    case stakeWithdraw(Iotextypes_StakeReclaim)
+    case stakeAddDeposit(Iotextypes_StakeAddDeposit)
+    case stakeRestake(Iotextypes_StakeRestake)
+    case stakeChangeCandidate(Iotextypes_StakeChangeCandidate)
+    case stakeTransferOwnership(Iotextypes_StakeTransferOwnership)
+    case candidateRegister(Iotextypes_CandidateRegister)
+    case candidateUpdate(Iotextypes_CandidateBasicInfo)
 
   #if !swift(>=4.1)
     public static func ==(lhs: Iotexapi_EstimateActionGasConsumptionRequest.OneOf_Action, rhs: Iotexapi_EstimateActionGasConsumptionRequest.OneOf_Action) -> Bool {
       switch (lhs, rhs) {
       case (.transfer(let l), .transfer(let r)): return l == r
       case (.execution(let l), .execution(let r)): return l == r
+      case (.stakeCreate(let l), .stakeCreate(let r)): return l == r
+      case (.stakeUnstake(let l), .stakeUnstake(let r)): return l == r
+      case (.stakeWithdraw(let l), .stakeWithdraw(let r)): return l == r
+      case (.stakeAddDeposit(let l), .stakeAddDeposit(let r)): return l == r
+      case (.stakeRestake(let l), .stakeRestake(let r)): return l == r
+      case (.stakeChangeCandidate(let l), .stakeChangeCandidate(let r)): return l == r
+      case (.stakeTransferOwnership(let l), .stakeTransferOwnership(let r)): return l == r
+      case (.candidateRegister(let l), .candidateRegister(let r)): return l == r
+      case (.candidateUpdate(let l), .candidateUpdate(let r)): return l == r
       default: return false
       }
     }
@@ -1198,82 +1260,6 @@ public struct Iotexapi_GetElectionBucketsResponse {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "iotexapi"
-
-extension Iotexapi_GetVotesRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = _protobuf_package + ".GetVotesRequest"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "votee"),
-    2: .same(proto: "height"),
-    3: .same(proto: "offset"),
-    4: .same(proto: "limit"),
-  ]
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularStringField(value: &self.votee)
-      case 2: try decoder.decodeSingularStringField(value: &self.height)
-      case 3: try decoder.decodeSingularUInt32Field(value: &self.offset)
-      case 4: try decoder.decodeSingularUInt32Field(value: &self.limit)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.votee.isEmpty {
-      try visitor.visitSingularStringField(value: self.votee, fieldNumber: 1)
-    }
-    if !self.height.isEmpty {
-      try visitor.visitSingularStringField(value: self.height, fieldNumber: 2)
-    }
-    if self.offset != 0 {
-      try visitor.visitSingularUInt32Field(value: self.offset, fieldNumber: 3)
-    }
-    if self.limit != 0 {
-      try visitor.visitSingularUInt32Field(value: self.limit, fieldNumber: 4)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: Iotexapi_GetVotesRequest, rhs: Iotexapi_GetVotesRequest) -> Bool {
-    if lhs.votee != rhs.votee {return false}
-    if lhs.height != rhs.height {return false}
-    if lhs.offset != rhs.offset {return false}
-    if lhs.limit != rhs.limit {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension Iotexapi_GetVotesResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = _protobuf_package + ".GetVotesResponse"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "buckets"),
-  ]
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeRepeatedMessageField(value: &self.buckets)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.buckets.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.buckets, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: Iotexapi_GetVotesResponse, rhs: Iotexapi_GetVotesResponse) -> Bool {
-    if lhs.buckets != rhs.buckets {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
 
 extension Iotexapi_Bucket: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Bucket"
@@ -2849,6 +2835,15 @@ extension Iotexapi_EstimateActionGasConsumptionRequest: SwiftProtobuf.Message, S
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "transfer"),
     2: .same(proto: "execution"),
+    40: .same(proto: "stakeCreate"),
+    41: .same(proto: "stakeUnstake"),
+    42: .same(proto: "stakeWithdraw"),
+    43: .same(proto: "stakeAddDeposit"),
+    44: .same(proto: "stakeRestake"),
+    45: .same(proto: "stakeChangeCandidate"),
+    46: .same(proto: "stakeTransferOwnership"),
+    47: .same(proto: "candidateRegister"),
+    48: .same(proto: "candidateUpdate"),
     100: .same(proto: "callerAddress"),
   ]
 
@@ -2894,6 +2889,78 @@ extension Iotexapi_EstimateActionGasConsumptionRequest: SwiftProtobuf.Message, S
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._action = .execution(v)}
+        case 40:
+          var v: Iotextypes_StakeCreate?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .stakeCreate(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .stakeCreate(v)}
+        case 41:
+          var v: Iotextypes_StakeReclaim?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .stakeUnstake(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .stakeUnstake(v)}
+        case 42:
+          var v: Iotextypes_StakeReclaim?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .stakeWithdraw(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .stakeWithdraw(v)}
+        case 43:
+          var v: Iotextypes_StakeAddDeposit?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .stakeAddDeposit(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .stakeAddDeposit(v)}
+        case 44:
+          var v: Iotextypes_StakeRestake?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .stakeRestake(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .stakeRestake(v)}
+        case 45:
+          var v: Iotextypes_StakeChangeCandidate?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .stakeChangeCandidate(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .stakeChangeCandidate(v)}
+        case 46:
+          var v: Iotextypes_StakeTransferOwnership?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .stakeTransferOwnership(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .stakeTransferOwnership(v)}
+        case 47:
+          var v: Iotextypes_CandidateRegister?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .candidateRegister(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .candidateRegister(v)}
+        case 48:
+          var v: Iotextypes_CandidateBasicInfo?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .candidateUpdate(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .candidateUpdate(v)}
         case 100: try decoder.decodeSingularStringField(value: &_storage._callerAddress)
         default: break
         }
@@ -2908,6 +2975,24 @@ extension Iotexapi_EstimateActionGasConsumptionRequest: SwiftProtobuf.Message, S
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
       case .execution(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      case .stakeCreate(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 40)
+      case .stakeUnstake(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
+      case .stakeWithdraw(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 42)
+      case .stakeAddDeposit(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 43)
+      case .stakeRestake(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 44)
+      case .stakeChangeCandidate(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 45)
+      case .stakeTransferOwnership(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 46)
+      case .candidateRegister(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 47)
+      case .candidateUpdate(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 48)
       case nil: break
       }
       if !_storage._callerAddress.isEmpty {
