@@ -76,6 +76,9 @@
 		36B3CC6222FD5FFF00FED146 /* ABIDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CC6122FD5FFF00FED146 /* ABIDecoder.swift */; };
 		36DF24F522F2A6100065EDF7 /* ScryptParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF24F422F2A6100065EDF7 /* ScryptParams.swift */; };
 		41463CB4C7D3E2DDE7E70875 /* Pods_Shows_iotex_antenna_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2E1782B40A80C8C6CD8AEE /* Pods_Shows_iotex_antenna_swiftTests.framework */; };
+		6738B01624AECDF800101DA0 /* read_state.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6738B01324AECDF800101DA0 /* read_state.pb.swift */; };
+		6738B01724AECDF800101DA0 /* state_data.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6738B01424AECDF800101DA0 /* state_data.pb.swift */; };
+		6738B01824AECDF800101DA0 /* receiptstatus.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6738B01524AECDF800101DA0 /* receiptstatus.pb.swift */; };
 		674BA928247E4F22001E2206 /* StakeCreateMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BA927247E4F22001E2206 /* StakeCreateMethod.swift */; };
 		674BA92A247E67E6001E2206 /* StakeUnstakeMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BA929247E67E6001E2206 /* StakeUnstakeMethod.swift */; };
 		674BA92C247E6E00001E2206 /* StakeWithdrawMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BA92B247E6E00001E2206 /* StakeWithdrawMethod.swift */; };
@@ -178,6 +181,9 @@
 		36B3CC5F22FD479500FED146 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		36B3CC6122FD5FFF00FED146 /* ABIDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABIDecoder.swift; sourceTree = "<group>"; };
 		36DF24F422F2A6100065EDF7 /* ScryptParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScryptParams.swift; sourceTree = "<group>"; };
+		6738B01324AECDF800101DA0 /* read_state.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = read_state.pb.swift; sourceTree = "<group>"; };
+		6738B01424AECDF800101DA0 /* state_data.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = state_data.pb.swift; sourceTree = "<group>"; };
+		6738B01524AECDF800101DA0 /* receiptstatus.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = receiptstatus.pb.swift; sourceTree = "<group>"; };
 		674BA927247E4F22001E2206 /* StakeCreateMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeCreateMethod.swift; sourceTree = "<group>"; };
 		674BA929247E67E6001E2206 /* StakeUnstakeMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeUnstakeMethod.swift; sourceTree = "<group>"; };
 		674BA92B247E6E00001E2206 /* StakeWithdrawMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StakeWithdrawMethod.swift; sourceTree = "<group>"; };
@@ -426,6 +432,9 @@
 		364CC8C422F814120017FCCB /* Protogen */ = {
 			isa = PBXGroup;
 			children = (
+				6738B01324AECDF800101DA0 /* read_state.pb.swift */,
+				6738B01524AECDF800101DA0 /* receiptstatus.pb.swift */,
+				6738B01424AECDF800101DA0 /* state_data.pb.swift */,
 				67E6E568247B60A400A509CA /* election.pb.swift */,
 				364CC8CA22F8144F0017FCCB /* action.pb.swift */,
 				364CC8CB22F8144F0017FCCB /* api.grpc.swift */,
@@ -713,7 +722,9 @@
 				3641842C22FD689B00A368C3 /* SolidityType+Codable.swift in Sources */,
 				674BA92A247E67E6001E2206 /* StakeUnstakeMethod.swift in Sources */,
 				3641843E22FEF75800A368C3 /* BaseContract.swift in Sources */,
+				6738B01824AECDF800101DA0 /* receiptstatus.pb.swift in Sources */,
 				67E6E569247B60A500A509CA /* election.pb.swift in Sources */,
+				6738B01624AECDF800101DA0 /* read_state.pb.swift in Sources */,
 				36462D3522FA862E003D40B5 /* ActionRequest.swift in Sources */,
 				3641842422FD655800A368C3 /* SolidityFunction.swift in Sources */,
 				364CC8D122F8144F0017FCCB /* node.pb.swift in Sources */,
@@ -753,6 +764,7 @@
 				368F7AAF22FD0ABB003DB452 /* ABIConvertible.swift in Sources */,
 				3654182422F1F473004382B1 /* Bytes+SecureRandom.swift in Sources */,
 				3654182A22F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift in Sources */,
+				6738B01724AECDF800101DA0 /* state_data.pb.swift in Sources */,
 				3641841E22FD60AF00A368C3 /* SolidityWrappedValue.swift in Sources */,
 				36462D3122FA7882003D40B5 /* Data+Bytes.swift in Sources */,
 				3641844022FEF89300A368C3 /* XRC20.swift in Sources */,
