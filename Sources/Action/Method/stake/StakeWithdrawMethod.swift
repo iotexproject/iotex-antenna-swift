@@ -7,7 +7,7 @@
 //
 
 
-class StakeWithdrawMethod: AbstractMethod {
+public class StakeWithdrawMethod: AbstractMethod {
     private var request: StakeWithdrawRequest
     private var envelop: Envelop?
     

@@ -8,7 +8,7 @@
 
 
 
-class StakeCreateMethod: AbstractMethod {
+public class StakeCreateMethod: AbstractMethod {
     private var request: StakeCreateRequest
     private var envelop: Envelop?
     
