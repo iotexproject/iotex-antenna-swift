@@ -87,4 +87,8 @@ public extension String {
         let newLength = Int(ceil(Double(count) / Double(base))) * base
         return self.padding(toLength: newLength, withPad: String(character), startingAt: 0)
     }
+    
+    func interpretAsBinaryData() -> Data? {
+        return Data(self.binaryToHex().hexToBytes())
+    }
 }
