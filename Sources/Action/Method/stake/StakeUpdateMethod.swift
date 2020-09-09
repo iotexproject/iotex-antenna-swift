@@ -7,7 +7,7 @@
 //
 
 
-class StakeUpdateMethod: AbstractMethod {
+public class StakeUpdateMethod: AbstractMethod {
     private var request: StakeUpdateRequest
     private var envelop: Envelop?
     

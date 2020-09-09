@@ -6,7 +6,7 @@
 //  Copyright © 2020 IoTeX. All rights reserved.
 //
 
-class StakeTransferMethod: AbstractMethod {
+public class StakeTransferMethod: AbstractMethod {
     private var request: StakeTransferRequest
     private var envelop: Envelop?
     

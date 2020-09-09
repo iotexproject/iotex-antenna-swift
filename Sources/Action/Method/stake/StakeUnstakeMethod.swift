@@ -6,7 +6,7 @@
 //  Copyright © 2020 IoTeX. All rights reserved.
 //
 
-class StakeUnstakeMethod: AbstractMethod {
+public class StakeUnstakeMethod: AbstractMethod {
     private var request: StakeUnstakeRequest
     private var envelop: Envelop?
     

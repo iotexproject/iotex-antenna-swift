@@ -7,7 +7,7 @@
 //
 
 
-class StakeChangeCandidateMethod: AbstractMethod {
+public class StakeChangeCandidateMethod: AbstractMethod {
     private var request: StakeChangeCandidateRequest
     private var envelop: Envelop?
     

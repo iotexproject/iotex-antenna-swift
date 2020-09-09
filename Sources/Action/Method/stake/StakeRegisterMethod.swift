@@ -7,7 +7,7 @@
 //
 
 
-class StakeRegisterMethod: AbstractMethod {
+public class StakeRegisterMethod: AbstractMethod {
     private var request: StakeRegisterRequest
     private var envelop: Envelop?
     
