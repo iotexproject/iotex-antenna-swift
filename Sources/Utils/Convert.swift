@@ -25,7 +25,10 @@ public class Convert {
     }
     
     public static func fromRau(number: String, unit: Unit) -> String {
-        return fromRau(number: BigUInt(number)!, unit: unit)
+        guard let numberValue =  BigUInt(number.removeDecimal()) else {
+            return "0"
+        }
+        return fromRau(number: numberValue, unit: unit)
     }
     
     public static func fromRau(number: BigUInt, unit: Unit) -> String {

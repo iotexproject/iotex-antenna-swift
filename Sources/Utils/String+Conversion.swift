@@ -91,4 +91,11 @@ public extension String {
     func interpretAsBinaryData() -> Data? {
         return Data(self.binaryToHex().hexToBytes())
     }
+    
+    func removeDecimal() -> String {
+        if self.contains(".") {
+            return self.components(separatedBy: ".").first!
+        }
+        return self
+    }
 }
