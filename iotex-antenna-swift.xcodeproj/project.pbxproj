@@ -17,6 +17,9 @@
 		362175DC22F1C39300864BEB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DB22F1C39300864BEB /* Account.swift */; };
 		362175E022F1C3E700864BEB /* HexEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175DF22F1C3E700864BEB /* HexEncoding.swift */; };
 		362175E222F1C41C00864BEB /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362175E122F1C41C00864BEB /* Secp256k1.swift */; };
+		3623B3C0255C998C00971726 /* BIP44.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623B3BF255C998C00971726 /* BIP44.swift */; };
+		3623B3C2255CA05300971726 /* Base58.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623B3C1255CA05300971726 /* Base58.swift */; };
+		3623B3C4255CCC6B00971726 /* BIP44Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3623B3C3255CCC6B00971726 /* BIP44Tests.swift */; };
 		3641841E22FD60AF00A368C3 /* SolidityWrappedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3641841D22FD60AF00A368C3 /* SolidityWrappedValue.swift */; };
 		3641842022FD60D700A368C3 /* SolidityTuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3641841F22FD60D700A368C3 /* SolidityTuple.swift */; };
 		3641842222FD650F00A368C3 /* SolidityEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3641842122FD650F00A368C3 /* SolidityEvent.swift */; };
@@ -71,6 +74,8 @@
 		369A043D23AC7C2E009CCCFF /* Bytes+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369A043C23AC7C2E009CCCFF /* Bytes+Base64.swift */; };
 		369A044023AC7C8A009CCCFF /* EK256KTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369A043F23AC7C8A009CCCFF /* EK256KTests.swift */; };
 		369DED8022FD607500775D3B /* ABIEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369DED7F22FD607500775D3B /* ABIEncoder.swift */; };
+		36A2BFCB254FAEC600A322EB /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A2BFCA254FAEC600A322EB /* Test.swift */; };
+		36A2BFCD254FAFCD00A322EB /* BucketTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A2BFCC254FAFCD00A322EB /* BucketTest.swift */; };
 		36AAA02F2359BED50044ECCE /* DeserializeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAA02E2359BED50044ECCE /* DeserializeTests.swift */; };
 		36B3CC6022FD479500FED146 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CC5F22FD479500FED146 /* Address.swift */; };
 		36B3CC6222FD5FFF00FED146 /* ABIDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CC6122FD5FFF00FED146 /* ABIDecoder.swift */; };
@@ -126,6 +131,9 @@
 		362175DB22F1C39300864BEB /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		362175DF22F1C3E700864BEB /* HexEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexEncoding.swift; sourceTree = "<group>"; };
 		362175E122F1C41C00864BEB /* Secp256k1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1.swift; sourceTree = "<group>"; };
+		3623B3BF255C998C00971726 /* BIP44.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BIP44.swift; sourceTree = "<group>"; };
+		3623B3C1255CA05300971726 /* Base58.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base58.swift; sourceTree = "<group>"; };
+		3623B3C3255CCC6B00971726 /* BIP44Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BIP44Tests.swift; sourceTree = "<group>"; };
 		3641841D22FD60AF00A368C3 /* SolidityWrappedValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolidityWrappedValue.swift; sourceTree = "<group>"; };
 		3641841F22FD60D700A368C3 /* SolidityTuple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidityTuple.swift; sourceTree = "<group>"; };
 		3641842122FD650F00A368C3 /* SolidityEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidityEvent.swift; sourceTree = "<group>"; };
@@ -180,6 +188,8 @@
 		369A043C23AC7C2E009CCCFF /* Bytes+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bytes+Base64.swift"; sourceTree = "<group>"; };
 		369A043F23AC7C8A009CCCFF /* EK256KTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EK256KTests.swift; sourceTree = "<group>"; };
 		369DED7F22FD607500775D3B /* ABIEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABIEncoder.swift; sourceTree = "<group>"; };
+		36A2BFCA254FAEC600A322EB /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		36A2BFCC254FAFCD00A322EB /* BucketTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketTest.swift; sourceTree = "<group>"; };
 		36AAA02E2359BED50044ECCE /* DeserializeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeserializeTests.swift; sourceTree = "<group>"; };
 		36B3CC5F22FD479500FED146 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		36B3CC6122FD5FFF00FED146 /* ABIDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABIDecoder.swift; sourceTree = "<group>"; };
@@ -343,6 +353,8 @@
 				36C7FADC250643CE00E3E592 /* BIP39.swift */,
 				36C7FADE2506576A00E3E592 /* BIP39+WordLists.swift */,
 				36C7FAE2250717E400E3E592 /* Bip32.swift */,
+				3623B3BF255C998C00971726 /* BIP44.swift */,
+				3623B3C1255CA05300971726 /* Base58.swift */,
 			);
 			path = Crypto;
 			sourceTree = "<group>";
@@ -370,6 +382,7 @@
 			children = (
 				3641842E22FD719100A368C3 /* AddressTests.swift */,
 				36C7FAE0250711BF00E3E592 /* BIP39Tests.swift */,
+				3623B3C3255CCC6B00971726 /* BIP44Tests.swift */,
 			);
 			path = CryptoTests;
 			sourceTree = "<group>";
@@ -396,6 +409,7 @@
 				3641843B22FEF5B500A368C3 /* Abis.swift */,
 				3641843D22FEF75800A368C3 /* BaseContract.swift */,
 				3641843F22FEF89300A368C3 /* XRC20.swift */,
+				36A2BFCA254FAEC600A322EB /* Test.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -404,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				3641844222FF01F900A368C3 /* XRC20Tests.swift */,
+				36A2BFCC254FAFCD00A322EB /* BucketTest.swift */,
 			);
 			path = ContractsTests;
 			sourceTree = "<group>";
@@ -729,6 +744,7 @@
 				674BA936247E74C9001E2206 /* StakeRegisterMethod.swift in Sources */,
 				364CC8D322F8144F0017FCCB /* action.pb.swift in Sources */,
 				3641842C22FD689B00A368C3 /* SolidityType+Codable.swift in Sources */,
+				3623B3C0255C998C00971726 /* BIP44.swift in Sources */,
 				674BA92A247E67E6001E2206 /* StakeUnstakeMethod.swift in Sources */,
 				3641843E22FEF75800A368C3 /* BaseContract.swift in Sources */,
 				6738B01824AECDF800101DA0 /* receiptstatus.pb.swift in Sources */,
@@ -739,6 +755,7 @@
 				3641842422FD655800A368C3 /* SolidityFunction.swift in Sources */,
 				364CC8D122F8144F0017FCCB /* node.pb.swift in Sources */,
 				364CC8D022F8144F0017FCCB /* endorsement.pb.swift in Sources */,
+				36A2BFCB254FAEC600A322EB /* Test.swift in Sources */,
 				369A043B23AAFBF6009CCCFF /* EK256K.swift in Sources */,
 				364CC8D622F8144F0017FCCB /* blockchain.pb.swift in Sources */,
 				364CC8D922F815AA0017FCCB /* RPCMethod.swift in Sources */,
@@ -751,6 +768,7 @@
 				366A345A22F2A5D20076923E /* Scrypt.swift in Sources */,
 				674BA92C247E6E00001E2206 /* StakeWithdrawMethod.swift in Sources */,
 				362175DC22F1C39300864BEB /* Account.swift in Sources */,
+				3623B3C2255CA05300971726 /* Base58.swift in Sources */,
 				364CC8D222F8144F0017FCCB /* consensus.pb.swift in Sources */,
 				36C7FAE3250717E400E3E592 /* Bip32.swift in Sources */,
 				369DED8022FD607500775D3B /* ABIEncoder.swift in Sources */,
@@ -807,9 +825,11 @@
 				368F7AA922FCFD52003DB452 /* ExecutionTests.swift in Sources */,
 				364CC8DC22F818320017FCCB /* RPCMethodTests.swift in Sources */,
 				3641842F22FD719100A368C3 /* AddressTests.swift in Sources */,
+				36A2BFCD254FAFCD00A322EB /* BucketTest.swift in Sources */,
 				3621757A22F1AACD00864BEB /* AccountTests.swift in Sources */,
 				36857A5F22FBB0C30062F990 /* TransferTests.swift in Sources */,
 				361020D622F2AA4F00645057 /* KeystoreTests.swift in Sources */,
+				3623B3C4255CCC6B00971726 /* BIP44Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
