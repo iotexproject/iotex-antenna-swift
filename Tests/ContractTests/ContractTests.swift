@@ -43,4 +43,18 @@ class ContractTests: XCTestCase {
             XCTFail()
         }
     }
+    
+    func testGetLogs() throws {
+        let account = try Account(privateKey: "0806c458b262edd333a191e92f561aff338211ee3e18ab315a074a2d82aa343f")
+        let rpc = try RPCMethod(provider: "34.82.6.156:14014", secure: true)
+        do {
+            let contract = try Contract(provider: rpc, address: "io186s45j3rgvhxh25ec6xk9wap0drtthk3jq4du7", abi: abi.data(using: .utf8)!)
+            
+            let result = try contract.read(callerAddress: account.address, method: "GetLogs", inputs: [])
+            print(result)
+        } catch {
+            print("Unexpected error: \(error).")
+            XCTFail()
+        }
+    }
 }
