@@ -174,10 +174,9 @@ extension Contract {
         return Data(try data.hexBytes())
     }
     
-    public func generateNormalFunction(method: String, inputs: [ABIEncodable]) throws -> Data {
+    public static func generateNormalFunction(abi: [ABIObject], method: String, inputs: [ABIEncodable]) throws -> Data {
         var methodObject: ABIObject?
-        
-        for abiObject in self.abi {
+        for abiObject in abi {
             if (abiObject.name != nil && abiObject.name == method) {
                 methodObject = abiObject
                 break
