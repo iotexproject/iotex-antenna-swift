@@ -94,7 +94,7 @@ public class Contract {
     
     public static func generateData(abi: [ABIObject], method: String, inputs: [ABIEncodable]) throws -> Data {
         var methodObject: ABIObject?
-        for abiObject in self.abi {
+        for abiObject in abi {
             if (abiObject.name != nil && abiObject.name == method) {
                 methodObject = abiObject
                 break
