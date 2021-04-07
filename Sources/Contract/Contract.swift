@@ -130,24 +130,7 @@ public class Contract {
         return Data(try data.hexBytes())
     }
     
-    public func generateData3(method: String, inputs: [ABIEncodable]) throws -> Data {
-        var methodObject: ABIObject?
-        
-        for abiObject in self.abi {
-            if (abiObject.name != nil && abiObject.name == method) {
-                methodObject = abiObject
-                break
-            }
-        }
-        if (methodObject == nil) {
-            throw Error.methodNotFound
-        }
-
-        let function = SolidityNormalFunction(abiObject: methodObject!)!
-        let parameters = zip(inputs, function.inputs).map { SolidityWrappedValue(value: $0, type: $1.type) }
-        let data = try ABI.encodeFunctionCall(method: function, parameters: parameters)
-        return Data(try data.hexBytes())
-    }
+ 
 }
 
 extension Contract {
@@ -191,6 +174,24 @@ extension Contract {
         return Data(try data.hexBytes())
     }
     
+    public func generateNormalFunction(method: String, inputs: [ABIEncodable]) throws -> Data {
+        var methodObject: ABIObject?
+        
+        for abiObject in self.abi {
+            if (abiObject.name != nil && abiObject.name == method) {
+                methodObject = abiObject
+                break
+            }
+        }
+        if (methodObject == nil) {
+            throw Error.methodNotFound
+        }
+
+        let function = SolidityNormalFunction(abiObject: methodObject!)!
+        let parameters = zip(inputs, function.inputs).map { SolidityWrappedValue(value: $0, type: $1.type) }
+        let data = try ABI.encodeFunctionCall(method: function, parameters: parameters)
+        return Data(try data.hexBytes())
+    }
 }
 
 public struct DecodedMethod {
