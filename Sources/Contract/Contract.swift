@@ -92,7 +92,7 @@ public class Contract {
         return nil
     }
     
-    public func generateData(callerAddress: String, method: String, inputs: [ABIEncodable]) throws -> Data {
+    public static func generateData(abi: [ABIObject], method: String, inputs: [ABIEncodable]) throws -> Data {
         var methodObject: ABIObject?
         for abiObject in self.abi {
             if (abiObject.name != nil && abiObject.name == method) {
