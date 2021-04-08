@@ -77,6 +77,8 @@ public class Contract {
         return try ABI.decodeParameters(types: outputs!, from: result)
     }
     
+    
+    
     public func decodeMethod(data: String) throws -> DecodedMethod? {
         let methodSignature = data.substr(0, 8)!
         for abiObject in self.abi {
@@ -191,6 +193,24 @@ extension Contract {
         let data = try ABI.encodeFunctionCall(method: function, parameters: parameters)
         return Data(try data.hexBytes())
     }
+    
+    public static func decodeData(abi: [ABIObject], method: String, result: String) throws -> [Any] {
+        var methodObject: ABIObject?
+        for abiObject in abi {
+            if (abiObject.name != nil && abiObject.name == method) {
+                methodObject = abiObject
+                break
+            }
+        }
+        if (methodObject == nil) {
+            throw Error.methodNotFound
+        }
+
+        let function = SolidityConstantFunction(abiObject: methodObject!)!
+        let outputs = function.outputs?.compactMap { i in return i.type }
+        return try ABI.decodeParameters(types: outputs!, from: result)
+    }
+    
 }
 
 public struct DecodedMethod {
