@@ -127,18 +127,20 @@ public class SolidityPayableFunction: SolidityFunction {
 public class SolidityNonPayableFunction: SolidityFunction {
     public let name: String
     public let inputs: [SolidityFunctionParameter]
-    public let outputs: [SolidityFunctionParameter]? = nil
+    public var outputs: [SolidityFunctionParameter]? = nil
     
     public required init?(abiObject: ABIObject) {
         guard abiObject.type == .function, abiObject.stateMutability == .nonpayable else { return nil }
         guard let name = abiObject.name else { return nil }
         self.name = name
         self.inputs = abiObject.inputs?.compactMap { SolidityFunctionParameter($0) } ?? []
+        self.outputs = abiObject.outputs?.compactMap { SolidityFunctionParameter($0) }
     }
     
     public required init(name: String, inputs: [SolidityFunctionParameter] = [], outputs: [SolidityFunctionParameter]? = nil) {
         self.name = name
         self.inputs = inputs
+        self.outputs = outputs
     }
 }
 
