@@ -190,6 +190,24 @@ class ABIDecoder {
     
     private class func decodeFixedArray(elementType: SolidityType, length: Int, from hexString: String) throws -> [Any] {
         guard length > 0 else { return [] }
+        switch elementType {
+        case .type(let valueType):
+            switch valueType {
+            case .bytes:
+                return try (0..<length).compactMap { i in
+                    if let offsetStr = hexString.substr(i * 64, 64) {
+                        if let offset = Int(offsetStr, radix: 16) {
+                            return try decodeType(type: elementType, hexString: String(hexString.suffix(from: hexString.index(hexString.startIndex, offsetBy: offset * 2))))
+                        }
+                    }
+                    return nil
+                }
+            default:
+                break
+            }
+        default:
+            break
+        }
         let elementSize = hexString.count / length
         return try (0..<length).compactMap { n in
             if let elementString = hexString.substr(n * elementSize, elementSize) {

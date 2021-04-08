@@ -93,6 +93,84 @@ public class Contract {
     }
 }
 
+extension Contract {
+    public static func generateNonPayableFunction(abi: [ABIObject],
+                                           method: String,
+                                           inputs: [ABIEncodable]) throws -> Data {
+        var methodObject: ABIObject?
+        for abiObject in abi {
+            if (abiObject.name != nil && abiObject.name == method) {
+                methodObject = abiObject
+                break
+            }
+        }
+        if (methodObject == nil) {
+            throw Error.methodNotFound
+        }
+
+        let function = SolidityNonPayableFunction(abiObject: methodObject!)!
+        let parameters = zip(inputs, function.inputs).map { SolidityWrappedValue(value: $0, type: $1.type) }
+        let data = try ABI.encodeFunctionCall(method: function, parameters: parameters)
+        return Data(try data.hexBytes())
+    }
+    
+    public static func generateConstatFunction(abi: [ABIObject],
+                                           method: String,
+                                           inputs: [ABIEncodable]) throws -> Data {
+        var methodObject: ABIObject?
+        for abiObject in abi {
+            if (abiObject.name != nil && abiObject.name == method) {
+                methodObject = abiObject
+                break
+            }
+        }
+        if (methodObject == nil) {
+            throw Error.methodNotFound
+        }
+
+        let function = SolidityConstantFunction(abiObject: methodObject!)!
+        let parameters = zip(inputs, function.inputs).map { SolidityWrappedValue(value: $0, type: $1.type) }
+        let data = try ABI.encodeFunctionCall(method: function, parameters: parameters)
+        return Data(try data.hexBytes())
+    }
+    
+    public static func generateNormalFunction(abi: [ABIObject], method: String, inputs: [ABIEncodable]) throws -> Data {
+        var methodObject: ABIObject?
+        for abiObject in abi {
+            if (abiObject.name != nil && abiObject.name == method) {
+                methodObject = abiObject
+                break
+            }
+        }
+        if (methodObject == nil) {
+            throw Error.methodNotFound
+        }
+
+        let function = SolidityNormalFunction(abiObject: methodObject!)!
+        let parameters = zip(inputs, function.inputs).map { SolidityWrappedValue(value: $0, type: $1.type) }
+        let data = try ABI.encodeFunctionCall(method: function, parameters: parameters)
+        return Data(try data.hexBytes())
+    }
+    
+    public static func decodeData(abi: [ABIObject], method: String, result: String) throws -> [Any] {
+        var methodObject: ABIObject?
+        for abiObject in abi {
+            if (abiObject.name != nil && abiObject.name == method) {
+                methodObject = abiObject
+                break
+            }
+        }
+        if (methodObject == nil) {
+            throw Error.methodNotFound
+        }
+
+        let function = SolidityNonPayableFunction(abiObject: methodObject!)!
+        let outputs = function.outputs?.compactMap { i in return i.type }
+        return try ABI.decodeParameters(types: outputs!, from: result)
+    }
+    
+}
+
 public struct DecodedMethod {
     public let method: String
     public let data: [String: Any]

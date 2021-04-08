@@ -231,15 +231,32 @@ extension Array: ABIEncodable where Element: ABIEncodable {
     }
     
     public func abiEncodeDynamic() -> String? {
-        // get values
-        let values = self.compactMap { value -> String? in
-            return value.abiEncode(dynamic: true)
+            // get values
+            var dynamicOffsetStart = 0
+            let values = self.compactMap { element -> String? in
+                let value = element.abiEncode(dynamic: true)
+                // TODO: support all dynamic element types
+                if (element as? Data) != nil {
+                    dynamicOffsetStart += 32
+                }
+                return value
+            }
+            // number of elements in the array, padded left
+            let length = String(values.count, radix: 16).paddingLeft(toLength: 64, withPad: "0")
+            let (staticValues, dynamicValues) = values.reduce(("", ""), { result, value in
+                var (staticParts, dynamicParts) = result
+                if dynamicOffsetStart == 0 {
+                    staticParts += value
+                } else {
+                    let offset = dynamicOffsetStart + (result.1.count / 2)
+                    staticParts += String(offset, radix: 16).paddingLeft(toLength: 64, withPad: "0")
+                    dynamicParts += value
+                }
+                return (staticParts, dynamicParts)
+            })
+            // values, joined with no separator
+            return length + staticValues + dynamicValues
         }
-        // number of elements in the array, padded left
-        let length = String(values.count, radix: 16).paddingLeft(toLength: 64, withPad: "0")
-        // values, joined with no separator
-        return length + values.joined()
-    }
 }
 
 extension Array: ABIDecodable where Element: ABIDecodable {
