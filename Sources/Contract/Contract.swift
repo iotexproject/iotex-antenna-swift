@@ -206,7 +206,7 @@ extension Contract {
             throw Error.methodNotFound
         }
 
-        let function = SolidityConstantFunction(abiObject: methodObject!)!
+        let function = SolidityNonPayableFunction(abiObject: methodObject!)!
         let outputs = function.outputs?.compactMap { i in return i.type }
         return try ABI.decodeParameters(types: outputs!, from: result)
     }
