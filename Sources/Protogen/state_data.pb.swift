@@ -174,6 +174,20 @@ public struct Iotextypes_CandidateListV2 {
   public init() {}
 }
 
+public struct Iotextypes_BucketsCount {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var total: UInt64 = 0
+
+  public var active: UInt64 = 0
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "iotextypes"
@@ -491,6 +505,41 @@ extension Iotextypes_CandidateListV2: SwiftProtobuf.Message, SwiftProtobuf._Mess
 
   public static func ==(lhs: Iotextypes_CandidateListV2, rhs: Iotextypes_CandidateListV2) -> Bool {
     if lhs.candidates != rhs.candidates {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_BucketsCount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".BucketsCount"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "total"),
+    2: .same(proto: "active"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt64Field(value: &self.total)
+      case 2: try decoder.decodeSingularUInt64Field(value: &self.active)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.total != 0 {
+      try visitor.visitSingularUInt64Field(value: self.total, fieldNumber: 1)
+    }
+    if self.active != 0 {
+      try visitor.visitSingularUInt64Field(value: self.active, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_BucketsCount, rhs: Iotextypes_BucketsCount) -> Bool {
+    if lhs.total != rhs.total {return false}
+    if lhs.active != rhs.active {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

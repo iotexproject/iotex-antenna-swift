@@ -61,6 +61,8 @@ public struct Iotexapi_ReadStakingDataMethod {
     case candidateByName // = 5
     case bucketsByIndexes // = 6
     case candidateByAddress // = 7
+    case totalStakingAmount // = 8
+    case bucketsCount // = 9
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -77,6 +79,8 @@ public struct Iotexapi_ReadStakingDataMethod {
       case 5: self = .candidateByName
       case 6: self = .bucketsByIndexes
       case 7: self = .candidateByAddress
+      case 8: self = .totalStakingAmount
+      case 9: self = .bucketsCount
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -91,6 +95,8 @@ public struct Iotexapi_ReadStakingDataMethod {
       case .candidateByName: return 5
       case .bucketsByIndexes: return 6
       case .candidateByAddress: return 7
+      case .totalStakingAmount: return 8
+      case .bucketsCount: return 9
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -113,6 +119,8 @@ extension Iotexapi_ReadStakingDataMethod.Name: CaseIterable {
     .candidateByName,
     .bucketsByIndexes,
     .candidateByAddress,
+    .totalStakingAmount,
+    .bucketsCount,
   ]
 }
 
@@ -184,6 +192,22 @@ public struct Iotexapi_ReadStakingDataRequest {
     set {_uniqueStorage()._request = .candidateByAddress(newValue)}
   }
 
+  public var totalStakingAmount: Iotexapi_ReadStakingDataRequest.TotalStakingAmount {
+    get {
+      if case .totalStakingAmount(let v)? = _storage._request {return v}
+      return Iotexapi_ReadStakingDataRequest.TotalStakingAmount()
+    }
+    set {_uniqueStorage()._request = .totalStakingAmount(newValue)}
+  }
+
+  public var bucketsCount: Iotexapi_ReadStakingDataRequest.BucketsCount {
+    get {
+      if case .bucketsCount(let v)? = _storage._request {return v}
+      return Iotexapi_ReadStakingDataRequest.BucketsCount()
+    }
+    set {_uniqueStorage()._request = .bucketsCount(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Request: Equatable {
@@ -194,6 +218,8 @@ public struct Iotexapi_ReadStakingDataRequest {
     case candidateByName(Iotexapi_ReadStakingDataRequest.CandidateByName)
     case bucketsByIndexes(Iotexapi_ReadStakingDataRequest.VoteBucketsByIndexes)
     case candidateByAddress(Iotexapi_ReadStakingDataRequest.CandidateByAddress)
+    case totalStakingAmount(Iotexapi_ReadStakingDataRequest.TotalStakingAmount)
+    case bucketsCount(Iotexapi_ReadStakingDataRequest.BucketsCount)
 
   #if !swift(>=4.1)
     public static func ==(lhs: Iotexapi_ReadStakingDataRequest.OneOf_Request, rhs: Iotexapi_ReadStakingDataRequest.OneOf_Request) -> Bool {
@@ -205,6 +231,8 @@ public struct Iotexapi_ReadStakingDataRequest {
       case (.candidateByName(let l), .candidateByName(let r)): return l == r
       case (.bucketsByIndexes(let l), .bucketsByIndexes(let r)): return l == r
       case (.candidateByAddress(let l), .candidateByAddress(let r)): return l == r
+      case (.totalStakingAmount(let l), .totalStakingAmount(let r)): return l == r
+      case (.bucketsCount(let l), .bucketsCount(let r)): return l == r
       default: return false
       }
     }
@@ -341,6 +369,26 @@ public struct Iotexapi_ReadStakingDataRequest {
     public init() {}
   }
 
+  public struct TotalStakingAmount {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct BucketsCount {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
   public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
@@ -424,6 +472,8 @@ extension Iotexapi_ReadStakingDataMethod.Name: SwiftProtobuf._ProtoNameProviding
     5: .same(proto: "CANDIDATE_BY_NAME"),
     6: .same(proto: "BUCKETS_BY_INDEXES"),
     7: .same(proto: "CANDIDATE_BY_ADDRESS"),
+    8: .same(proto: "TOTAL_STAKING_AMOUNT"),
+    9: .same(proto: "BUCKETS_COUNT"),
   ]
 }
 
@@ -437,6 +487,8 @@ extension Iotexapi_ReadStakingDataRequest: SwiftProtobuf.Message, SwiftProtobuf.
     5: .same(proto: "candidateByName"),
     6: .same(proto: "bucketsByIndexes"),
     7: .same(proto: "candidateByAddress"),
+    8: .same(proto: "totalStakingAmount"),
+    9: .same(proto: "bucketsCount"),
   ]
 
   fileprivate class _StorageClass {
@@ -519,6 +571,22 @@ extension Iotexapi_ReadStakingDataRequest: SwiftProtobuf.Message, SwiftProtobuf.
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._request = .candidateByAddress(v)}
+        case 8:
+          var v: Iotexapi_ReadStakingDataRequest.TotalStakingAmount?
+          if let current = _storage._request {
+            try decoder.handleConflictingOneOf()
+            if case .totalStakingAmount(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._request = .totalStakingAmount(v)}
+        case 9:
+          var v: Iotexapi_ReadStakingDataRequest.BucketsCount?
+          if let current = _storage._request {
+            try decoder.handleConflictingOneOf()
+            if case .bucketsCount(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._request = .bucketsCount(v)}
         default: break
         }
       }
@@ -542,6 +610,10 @@ extension Iotexapi_ReadStakingDataRequest: SwiftProtobuf.Message, SwiftProtobuf.
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
       case .candidateByAddress(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+      case .totalStakingAmount(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+      case .bucketsCount(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
       case nil: break
       }
     }
@@ -905,6 +977,44 @@ extension Iotexapi_ReadStakingDataRequest.CandidateByAddress: SwiftProtobuf.Mess
 
   public static func ==(lhs: Iotexapi_ReadStakingDataRequest.CandidateByAddress, rhs: Iotexapi_ReadStakingDataRequest.CandidateByAddress) -> Bool {
     if lhs.ownerAddr != rhs.ownerAddr {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotexapi_ReadStakingDataRequest.TotalStakingAmount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = Iotexapi_ReadStakingDataRequest.protoMessageName + ".TotalStakingAmount"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotexapi_ReadStakingDataRequest.TotalStakingAmount, rhs: Iotexapi_ReadStakingDataRequest.TotalStakingAmount) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotexapi_ReadStakingDataRequest.BucketsCount: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = Iotexapi_ReadStakingDataRequest.protoMessageName + ".BucketsCount"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotexapi_ReadStakingDataRequest.BucketsCount, rhs: Iotexapi_ReadStakingDataRequest.BucketsCount) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
