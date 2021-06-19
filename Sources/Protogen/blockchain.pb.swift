@@ -261,6 +261,11 @@ public struct Iotextypes_ChainMeta {
     set {_uniqueStorage()._tpsFloat = newValue}
   }
 
+  public var chainID: UInt32 {
+    get {return _storage._chainID}
+    set {_uniqueStorage()._chainID = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -328,11 +333,41 @@ public struct Iotextypes_BlockMeta {
     set {_uniqueStorage()._logsBloom = newValue}
   }
 
+  public var previousBlockHash: String {
+    get {return _storage._previousBlockHash}
+    set {_uniqueStorage()._previousBlockHash = newValue}
+  }
+
+  public var gasLimit: UInt64 {
+    get {return _storage._gasLimit}
+    set {_uniqueStorage()._gasLimit = newValue}
+  }
+
+  public var gasUsed: UInt64 {
+    get {return _storage._gasUsed}
+    set {_uniqueStorage()._gasUsed = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
+}
+
+/// BlockIdentifier Metadata
+public struct Iotextypes_BlockIdentifier {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var hash: String = String()
+
+  public var height: UInt64 = 0
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
 }
 
 /// Account Metadata
@@ -350,6 +385,48 @@ public struct Iotextypes_AccountMeta {
   public var pendingNonce: UInt64 = 0
 
   public var numActions: UInt64 = 0
+
+  public var isContract: Bool = false
+
+  public var contractByteCode: Data = SwiftProtobuf.Internal.emptyData
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Iotextypes_BlockStore {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var block: Iotextypes_Block {
+    get {return _storage._block ?? Iotextypes_Block()}
+    set {_uniqueStorage()._block = newValue}
+  }
+  /// Returns true if `block` has been explicitly set.
+  public var hasBlock: Bool {return _storage._block != nil}
+  /// Clears the value of `block`. Subsequent reads from it will return its default value.
+  public mutating func clearBlock() {_uniqueStorage()._block = nil}
+
+  public var receipts: [Iotextypes_Receipt] {
+    get {return _storage._receipts}
+    set {_uniqueStorage()._receipts = newValue}
+  }
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
+}
+
+public struct Iotextypes_BlockStores {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var blockStores: [Iotextypes_BlockStore] = []
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -807,6 +884,7 @@ extension Iotextypes_ChainMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     3: .same(proto: "tps"),
     4: .same(proto: "epoch"),
     5: .same(proto: "tpsFloat"),
+    6: .same(proto: "chainID"),
   ]
 
   fileprivate class _StorageClass {
@@ -815,6 +893,7 @@ extension Iotextypes_ChainMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     var _tps: Int64 = 0
     var _epoch: Iotextypes_EpochData? = nil
     var _tpsFloat: Float = 0
+    var _chainID: UInt32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -826,6 +905,7 @@ extension Iotextypes_ChainMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       _tps = source._tps
       _epoch = source._epoch
       _tpsFloat = source._tpsFloat
+      _chainID = source._chainID
     }
   }
 
@@ -846,6 +926,7 @@ extension Iotextypes_ChainMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         case 3: try decoder.decodeSingularInt64Field(value: &_storage._tps)
         case 4: try decoder.decodeSingularMessageField(value: &_storage._epoch)
         case 5: try decoder.decodeSingularFloatField(value: &_storage._tpsFloat)
+        case 6: try decoder.decodeSingularUInt32Field(value: &_storage._chainID)
         default: break
         }
       }
@@ -869,6 +950,9 @@ extension Iotextypes_ChainMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       if _storage._tpsFloat != 0 {
         try visitor.visitSingularFloatField(value: _storage._tpsFloat, fieldNumber: 5)
       }
+      if _storage._chainID != 0 {
+        try visitor.visitSingularUInt32Field(value: _storage._chainID, fieldNumber: 6)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -883,6 +967,7 @@ extension Iotextypes_ChainMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         if _storage._tps != rhs_storage._tps {return false}
         if _storage._epoch != rhs_storage._epoch {return false}
         if _storage._tpsFloat != rhs_storage._tpsFloat {return false}
+        if _storage._chainID != rhs_storage._chainID {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -905,6 +990,9 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     8: .same(proto: "receiptRoot"),
     9: .same(proto: "deltaStateDigest"),
     10: .same(proto: "logsBloom"),
+    11: .same(proto: "previousBlockHash"),
+    12: .same(proto: "gasLimit"),
+    13: .same(proto: "gasUsed"),
   ]
 
   fileprivate class _StorageClass {
@@ -918,6 +1006,9 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     var _receiptRoot: String = String()
     var _deltaStateDigest: String = String()
     var _logsBloom: String = String()
+    var _previousBlockHash: String = String()
+    var _gasLimit: UInt64 = 0
+    var _gasUsed: UInt64 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -934,6 +1025,9 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       _receiptRoot = source._receiptRoot
       _deltaStateDigest = source._deltaStateDigest
       _logsBloom = source._logsBloom
+      _previousBlockHash = source._previousBlockHash
+      _gasLimit = source._gasLimit
+      _gasUsed = source._gasUsed
     }
   }
 
@@ -959,6 +1053,9 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         case 8: try decoder.decodeSingularStringField(value: &_storage._receiptRoot)
         case 9: try decoder.decodeSingularStringField(value: &_storage._deltaStateDigest)
         case 10: try decoder.decodeSingularStringField(value: &_storage._logsBloom)
+        case 11: try decoder.decodeSingularStringField(value: &_storage._previousBlockHash)
+        case 12: try decoder.decodeSingularUInt64Field(value: &_storage._gasLimit)
+        case 13: try decoder.decodeSingularUInt64Field(value: &_storage._gasUsed)
         default: break
         }
       }
@@ -997,6 +1094,15 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       if !_storage._logsBloom.isEmpty {
         try visitor.visitSingularStringField(value: _storage._logsBloom, fieldNumber: 10)
       }
+      if !_storage._previousBlockHash.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._previousBlockHash, fieldNumber: 11)
+      }
+      if _storage._gasLimit != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._gasLimit, fieldNumber: 12)
+      }
+      if _storage._gasUsed != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._gasUsed, fieldNumber: 13)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1016,10 +1122,48 @@ extension Iotextypes_BlockMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
         if _storage._receiptRoot != rhs_storage._receiptRoot {return false}
         if _storage._deltaStateDigest != rhs_storage._deltaStateDigest {return false}
         if _storage._logsBloom != rhs_storage._logsBloom {return false}
+        if _storage._previousBlockHash != rhs_storage._previousBlockHash {return false}
+        if _storage._gasLimit != rhs_storage._gasLimit {return false}
+        if _storage._gasUsed != rhs_storage._gasUsed {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_BlockIdentifier: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".BlockIdentifier"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "hash"),
+    2: .same(proto: "height"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.hash)
+      case 2: try decoder.decodeSingularUInt64Field(value: &self.height)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.hash.isEmpty {
+      try visitor.visitSingularStringField(value: self.hash, fieldNumber: 1)
+    }
+    if self.height != 0 {
+      try visitor.visitSingularUInt64Field(value: self.height, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_BlockIdentifier, rhs: Iotextypes_BlockIdentifier) -> Bool {
+    if lhs.hash != rhs.hash {return false}
+    if lhs.height != rhs.height {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1033,6 +1177,8 @@ extension Iotextypes_AccountMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     3: .same(proto: "nonce"),
     4: .same(proto: "pendingNonce"),
     5: .same(proto: "numActions"),
+    6: .same(proto: "isContract"),
+    7: .same(proto: "contractByteCode"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1043,6 +1189,8 @@ extension Iotextypes_AccountMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageI
       case 3: try decoder.decodeSingularUInt64Field(value: &self.nonce)
       case 4: try decoder.decodeSingularUInt64Field(value: &self.pendingNonce)
       case 5: try decoder.decodeSingularUInt64Field(value: &self.numActions)
+      case 6: try decoder.decodeSingularBoolField(value: &self.isContract)
+      case 7: try decoder.decodeSingularBytesField(value: &self.contractByteCode)
       default: break
       }
     }
@@ -1064,6 +1212,12 @@ extension Iotextypes_AccountMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if self.numActions != 0 {
       try visitor.visitSingularUInt64Field(value: self.numActions, fieldNumber: 5)
     }
+    if self.isContract != false {
+      try visitor.visitSingularBoolField(value: self.isContract, fieldNumber: 6)
+    }
+    if !self.contractByteCode.isEmpty {
+      try visitor.visitSingularBytesField(value: self.contractByteCode, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1073,6 +1227,106 @@ extension Iotextypes_AccountMeta: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if lhs.nonce != rhs.nonce {return false}
     if lhs.pendingNonce != rhs.pendingNonce {return false}
     if lhs.numActions != rhs.numActions {return false}
+    if lhs.isContract != rhs.isContract {return false}
+    if lhs.contractByteCode != rhs.contractByteCode {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_BlockStore: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".BlockStore"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "block"),
+    2: .same(proto: "receipts"),
+  ]
+
+  fileprivate class _StorageClass {
+    var _block: Iotextypes_Block? = nil
+    var _receipts: [Iotextypes_Receipt] = []
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _block = source._block
+      _receipts = source._receipts
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._block)
+        case 2: try decoder.decodeRepeatedMessageField(value: &_storage._receipts)
+        default: break
+        }
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if let v = _storage._block {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if !_storage._receipts.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._receipts, fieldNumber: 2)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_BlockStore, rhs: Iotextypes_BlockStore) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._block != rhs_storage._block {return false}
+        if _storage._receipts != rhs_storage._receipts {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_BlockStores: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".BlockStores"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "blockStores"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeRepeatedMessageField(value: &self.blockStores)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.blockStores.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.blockStores, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_BlockStores, rhs: Iotextypes_BlockStores) -> Bool {
+    if lhs.blockStores != rhs.blockStores {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

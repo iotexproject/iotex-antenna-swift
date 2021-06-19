@@ -115,16 +115,16 @@ fileprivate final class Iotexapi_APIServiceGetLogsCallBase: ClientCallUnaryBase<
   override class var method: String { return "/iotexapi.APIService/GetLogs" }
 }
 
-public protocol Iotexapi_APIServiceGetEvmTransfersByActionHashCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceGetTransactionLogByActionHashCall: ClientCallUnary {}
 
-fileprivate final class Iotexapi_APIServiceGetEvmTransfersByActionHashCallBase: ClientCallUnaryBase<Iotexapi_GetEvmTransfersByActionHashRequest, Iotexapi_GetEvmTransfersByActionHashResponse>, Iotexapi_APIServiceGetEvmTransfersByActionHashCall {
-  override class var method: String { return "/iotexapi.APIService/GetEvmTransfersByActionHash" }
+fileprivate final class Iotexapi_APIServiceGetTransactionLogByActionHashCallBase: ClientCallUnaryBase<Iotexapi_GetTransactionLogByActionHashRequest, Iotexapi_GetTransactionLogByActionHashResponse>, Iotexapi_APIServiceGetTransactionLogByActionHashCall {
+  override class var method: String { return "/iotexapi.APIService/GetTransactionLogByActionHash" }
 }
 
-public protocol Iotexapi_APIServiceGetEvmTransfersByBlockHeightCall: ClientCallUnary {}
+public protocol Iotexapi_APIServiceGetTransactionLogByBlockHeightCall: ClientCallUnary {}
 
-fileprivate final class Iotexapi_APIServiceGetEvmTransfersByBlockHeightCallBase: ClientCallUnaryBase<Iotexapi_GetEvmTransfersByBlockHeightRequest, Iotexapi_GetEvmTransfersByBlockHeightResponse>, Iotexapi_APIServiceGetEvmTransfersByBlockHeightCall {
-  override class var method: String { return "/iotexapi.APIService/GetEvmTransfersByBlockHeight" }
+fileprivate final class Iotexapi_APIServiceGetTransactionLogByBlockHeightCallBase: ClientCallUnaryBase<Iotexapi_GetTransactionLogByBlockHeightRequest, Iotexapi_GetTransactionLogByBlockHeightResponse>, Iotexapi_APIServiceGetTransactionLogByBlockHeightCall {
+  override class var method: String { return "/iotexapi.APIService/GetTransactionLogByBlockHeight" }
 }
 
 public protocol Iotexapi_APIServiceStreamBlocksCall: ClientCallServerStreaming {
@@ -157,6 +157,24 @@ public extension Iotexapi_APIServiceStreamLogsCall {
 
 fileprivate final class Iotexapi_APIServiceStreamLogsCallBase: ClientCallServerStreamingBase<Iotexapi_StreamLogsRequest, Iotexapi_StreamLogsResponse>, Iotexapi_APIServiceStreamLogsCall {
   override class var method: String { return "/iotexapi.APIService/StreamLogs" }
+}
+
+public protocol Iotexapi_APIServiceGetActPoolActionsCall: ClientCallUnary {}
+
+fileprivate final class Iotexapi_APIServiceGetActPoolActionsCallBase: ClientCallUnaryBase<Iotexapi_GetActPoolActionsRequest, Iotexapi_GetActPoolActionsResponse>, Iotexapi_APIServiceGetActPoolActionsCall {
+  override class var method: String { return "/iotexapi.APIService/GetActPoolActions" }
+}
+
+public protocol Iotexapi_APIServiceGetEvmTransfersByActionHashCall: ClientCallUnary {}
+
+fileprivate final class Iotexapi_APIServiceGetEvmTransfersByActionHashCallBase: ClientCallUnaryBase<Iotexapi_GetEvmTransfersByActionHashRequest, Iotexapi_GetEvmTransfersByActionHashResponse>, Iotexapi_APIServiceGetEvmTransfersByActionHashCall {
+  override class var method: String { return "/iotexapi.APIService/GetEvmTransfersByActionHash" }
+}
+
+public protocol Iotexapi_APIServiceGetEvmTransfersByBlockHeightCall: ClientCallUnary {}
+
+fileprivate final class Iotexapi_APIServiceGetEvmTransfersByBlockHeightCallBase: ClientCallUnaryBase<Iotexapi_GetEvmTransfersByBlockHeightRequest, Iotexapi_GetEvmTransfersByBlockHeightResponse>, Iotexapi_APIServiceGetEvmTransfersByBlockHeightCall {
+  override class var method: String { return "/iotexapi.APIService/GetEvmTransfersByBlockHeight" }
 }
 
 public protocol Iotexapi_APIServiceGetElectionBucketsCall: ClientCallUnary {}
@@ -259,16 +277,16 @@ public protocol Iotexapi_APIServiceService: ServiceClient {
   func getLogs(_ request: Iotexapi_GetLogsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetLogsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetLogsCall
 
   /// Synchronous. Unary.
-  func getEvmTransfersByActionHash(_ request: Iotexapi_GetEvmTransfersByActionHashRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetEvmTransfersByActionHashResponse
+  func getTransactionLogByActionHash(_ request: Iotexapi_GetTransactionLogByActionHashRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetTransactionLogByActionHashResponse
   /// Asynchronous. Unary.
   @discardableResult
-  func getEvmTransfersByActionHash(_ request: Iotexapi_GetEvmTransfersByActionHashRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetEvmTransfersByActionHashResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetEvmTransfersByActionHashCall
+  func getTransactionLogByActionHash(_ request: Iotexapi_GetTransactionLogByActionHashRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetTransactionLogByActionHashResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetTransactionLogByActionHashCall
 
   /// Synchronous. Unary.
-  func getEvmTransfersByBlockHeight(_ request: Iotexapi_GetEvmTransfersByBlockHeightRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetEvmTransfersByBlockHeightResponse
+  func getTransactionLogByBlockHeight(_ request: Iotexapi_GetTransactionLogByBlockHeightRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetTransactionLogByBlockHeightResponse
   /// Asynchronous. Unary.
   @discardableResult
-  func getEvmTransfersByBlockHeight(_ request: Iotexapi_GetEvmTransfersByBlockHeightRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetEvmTransfersByBlockHeightResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetEvmTransfersByBlockHeightCall
+  func getTransactionLogByBlockHeight(_ request: Iotexapi_GetTransactionLogByBlockHeightRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetTransactionLogByBlockHeightResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetTransactionLogByBlockHeightCall
 
   /// Asynchronous. Server-streaming.
   /// Send the initial message.
@@ -279,6 +297,24 @@ public protocol Iotexapi_APIServiceService: ServiceClient {
   /// Send the initial message.
   /// Use methods on the returned object to get streamed responses.
   func streamLogs(_ request: Iotexapi_StreamLogsRequest, metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamLogsCall
+
+  /// Synchronous. Unary.
+  func getActPoolActions(_ request: Iotexapi_GetActPoolActionsRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetActPoolActionsResponse
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getActPoolActions(_ request: Iotexapi_GetActPoolActionsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetActPoolActionsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetActPoolActionsCall
+
+  /// Synchronous. Unary.
+  func getEvmTransfersByActionHash(_ request: Iotexapi_GetEvmTransfersByActionHashRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetEvmTransfersByActionHashResponse
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getEvmTransfersByActionHash(_ request: Iotexapi_GetEvmTransfersByActionHashRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetEvmTransfersByActionHashResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetEvmTransfersByActionHashCall
+
+  /// Synchronous. Unary.
+  func getEvmTransfersByBlockHeight(_ request: Iotexapi_GetEvmTransfersByBlockHeightRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetEvmTransfersByBlockHeightResponse
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getEvmTransfersByBlockHeight(_ request: Iotexapi_GetEvmTransfersByBlockHeightRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetEvmTransfersByBlockHeightResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetEvmTransfersByBlockHeightCall
 
   /// Synchronous. Unary.
   func getElectionBuckets(_ request: Iotexapi_GetElectionBucketsRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetElectionBucketsResponse
@@ -440,6 +476,46 @@ public extension Iotexapi_APIServiceService {
   }
 
   /// Synchronous. Unary.
+  func getTransactionLogByActionHash(_ request: Iotexapi_GetTransactionLogByActionHashRequest) throws -> Iotexapi_GetTransactionLogByActionHashResponse {
+    return try self.getTransactionLogByActionHash(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getTransactionLogByActionHash(_ request: Iotexapi_GetTransactionLogByActionHashRequest, completion: @escaping (Iotexapi_GetTransactionLogByActionHashResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetTransactionLogByActionHashCall {
+    return try self.getTransactionLogByActionHash(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func getTransactionLogByBlockHeight(_ request: Iotexapi_GetTransactionLogByBlockHeightRequest) throws -> Iotexapi_GetTransactionLogByBlockHeightResponse {
+    return try self.getTransactionLogByBlockHeight(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getTransactionLogByBlockHeight(_ request: Iotexapi_GetTransactionLogByBlockHeightRequest, completion: @escaping (Iotexapi_GetTransactionLogByBlockHeightResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetTransactionLogByBlockHeightCall {
+    return try self.getTransactionLogByBlockHeight(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Asynchronous. Server-streaming.
+  func streamBlocks(_ request: Iotexapi_StreamBlocksRequest, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamBlocksCall {
+    return try self.streamBlocks(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Asynchronous. Server-streaming.
+  func streamLogs(_ request: Iotexapi_StreamLogsRequest, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamLogsCall {
+    return try self.streamLogs(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func getActPoolActions(_ request: Iotexapi_GetActPoolActionsRequest) throws -> Iotexapi_GetActPoolActionsResponse {
+    return try self.getActPoolActions(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getActPoolActions(_ request: Iotexapi_GetActPoolActionsRequest, completion: @escaping (Iotexapi_GetActPoolActionsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetActPoolActionsCall {
+    return try self.getActPoolActions(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
   func getEvmTransfersByActionHash(_ request: Iotexapi_GetEvmTransfersByActionHashRequest) throws -> Iotexapi_GetEvmTransfersByActionHashResponse {
     return try self.getEvmTransfersByActionHash(request, metadata: self.metadata)
   }
@@ -457,16 +533,6 @@ public extension Iotexapi_APIServiceService {
   @discardableResult
   func getEvmTransfersByBlockHeight(_ request: Iotexapi_GetEvmTransfersByBlockHeightRequest, completion: @escaping (Iotexapi_GetEvmTransfersByBlockHeightResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetEvmTransfersByBlockHeightCall {
     return try self.getEvmTransfersByBlockHeight(request, metadata: self.metadata, completion: completion)
-  }
-
-  /// Asynchronous. Server-streaming.
-  func streamBlocks(_ request: Iotexapi_StreamBlocksRequest, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamBlocksCall {
-    return try self.streamBlocks(request, metadata: self.metadata, completion: completion)
-  }
-
-  /// Asynchronous. Server-streaming.
-  func streamLogs(_ request: Iotexapi_StreamLogsRequest, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamLogsCall {
-    return try self.streamLogs(request, metadata: self.metadata, completion: completion)
   }
 
   /// Synchronous. Unary.
@@ -663,6 +729,58 @@ public final class Iotexapi_APIServiceServiceClient: ServiceClientBase, Iotexapi
   }
 
   /// Synchronous. Unary.
+  public func getTransactionLogByActionHash(_ request: Iotexapi_GetTransactionLogByActionHashRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetTransactionLogByActionHashResponse {
+    return try Iotexapi_APIServiceGetTransactionLogByActionHashCallBase(channel)
+      .run(request: request, metadata: customMetadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  public func getTransactionLogByActionHash(_ request: Iotexapi_GetTransactionLogByActionHashRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetTransactionLogByActionHashResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetTransactionLogByActionHashCall {
+    return try Iotexapi_APIServiceGetTransactionLogByActionHashCallBase(channel)
+      .start(request: request, metadata: customMetadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  public func getTransactionLogByBlockHeight(_ request: Iotexapi_GetTransactionLogByBlockHeightRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetTransactionLogByBlockHeightResponse {
+    return try Iotexapi_APIServiceGetTransactionLogByBlockHeightCallBase(channel)
+      .run(request: request, metadata: customMetadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  public func getTransactionLogByBlockHeight(_ request: Iotexapi_GetTransactionLogByBlockHeightRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetTransactionLogByBlockHeightResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetTransactionLogByBlockHeightCall {
+    return try Iotexapi_APIServiceGetTransactionLogByBlockHeightCallBase(channel)
+      .start(request: request, metadata: customMetadata, completion: completion)
+  }
+
+  /// Asynchronous. Server-streaming.
+  /// Send the initial message.
+  /// Use methods on the returned object to get streamed responses.
+  public func streamBlocks(_ request: Iotexapi_StreamBlocksRequest, metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamBlocksCall {
+    return try Iotexapi_APIServiceStreamBlocksCallBase(channel)
+      .start(request: request, metadata: customMetadata, completion: completion)
+  }
+
+  /// Asynchronous. Server-streaming.
+  /// Send the initial message.
+  /// Use methods on the returned object to get streamed responses.
+  public func streamLogs(_ request: Iotexapi_StreamLogsRequest, metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamLogsCall {
+    return try Iotexapi_APIServiceStreamLogsCallBase(channel)
+      .start(request: request, metadata: customMetadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  public func getActPoolActions(_ request: Iotexapi_GetActPoolActionsRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetActPoolActionsResponse {
+    return try Iotexapi_APIServiceGetActPoolActionsCallBase(channel)
+      .run(request: request, metadata: customMetadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  public func getActPoolActions(_ request: Iotexapi_GetActPoolActionsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetActPoolActionsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetActPoolActionsCall {
+    return try Iotexapi_APIServiceGetActPoolActionsCallBase(channel)
+      .start(request: request, metadata: customMetadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
   public func getEvmTransfersByActionHash(_ request: Iotexapi_GetEvmTransfersByActionHashRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetEvmTransfersByActionHashResponse {
     return try Iotexapi_APIServiceGetEvmTransfersByActionHashCallBase(channel)
       .run(request: request, metadata: customMetadata)
@@ -686,22 +804,6 @@ public final class Iotexapi_APIServiceServiceClient: ServiceClientBase, Iotexapi
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 
-  /// Asynchronous. Server-streaming.
-  /// Send the initial message.
-  /// Use methods on the returned object to get streamed responses.
-  public func streamBlocks(_ request: Iotexapi_StreamBlocksRequest, metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamBlocksCall {
-    return try Iotexapi_APIServiceStreamBlocksCallBase(channel)
-      .start(request: request, metadata: customMetadata, completion: completion)
-  }
-
-  /// Asynchronous. Server-streaming.
-  /// Send the initial message.
-  /// Use methods on the returned object to get streamed responses.
-  public func streamLogs(_ request: Iotexapi_StreamLogsRequest, metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Iotexapi_APIServiceStreamLogsCall {
-    return try Iotexapi_APIServiceStreamLogsCallBase(channel)
-      .start(request: request, metadata: customMetadata, completion: completion)
-  }
-
   /// Synchronous. Unary.
   public func getElectionBuckets(_ request: Iotexapi_GetElectionBucketsRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetElectionBucketsResponse {
     return try Iotexapi_APIServiceGetElectionBucketsCallBase(channel)
@@ -711,6 +813,84 @@ public final class Iotexapi_APIServiceServiceClient: ServiceClientBase, Iotexapi
   @discardableResult
   public func getElectionBuckets(_ request: Iotexapi_GetElectionBucketsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetElectionBucketsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetElectionBucketsCall {
     return try Iotexapi_APIServiceGetElectionBucketsCallBase(channel)
+      .start(request: request, metadata: customMetadata, completion: completion)
+  }
+
+}
+public protocol Iotexapi_TransactionLogServiceGetTransactionLogByActionHashCall: ClientCallUnary {}
+
+fileprivate final class Iotexapi_TransactionLogServiceGetTransactionLogByActionHashCallBase: ClientCallUnaryBase<Iotexapi_GetTransactionLogByActionHashRequest, Iotexapi_GetTransactionLogByActionHashResponse>, Iotexapi_TransactionLogServiceGetTransactionLogByActionHashCall {
+  override class var method: String { return "/iotexapi.TransactionLogService/GetTransactionLogByActionHash" }
+}
+
+public protocol Iotexapi_TransactionLogServiceGetTransactionLogByBlockHeightCall: ClientCallUnary {}
+
+fileprivate final class Iotexapi_TransactionLogServiceGetTransactionLogByBlockHeightCallBase: ClientCallUnaryBase<Iotexapi_GetTransactionLogByBlockHeightRequest, Iotexapi_GetTransactionLogByBlockHeightResponse>, Iotexapi_TransactionLogServiceGetTransactionLogByBlockHeightCall {
+  override class var method: String { return "/iotexapi.TransactionLogService/GetTransactionLogByBlockHeight" }
+}
+
+
+/// Instantiate Iotexapi_TransactionLogServiceServiceClient, then call methods of this protocol to make API calls.
+public protocol Iotexapi_TransactionLogServiceService: ServiceClient {
+  /// Synchronous. Unary.
+  func getTransactionLogByActionHash(_ request: Iotexapi_GetTransactionLogByActionHashRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetTransactionLogByActionHashResponse
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getTransactionLogByActionHash(_ request: Iotexapi_GetTransactionLogByActionHashRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetTransactionLogByActionHashResponse?, CallResult) -> Void) throws -> Iotexapi_TransactionLogServiceGetTransactionLogByActionHashCall
+
+  /// Synchronous. Unary.
+  func getTransactionLogByBlockHeight(_ request: Iotexapi_GetTransactionLogByBlockHeightRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetTransactionLogByBlockHeightResponse
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getTransactionLogByBlockHeight(_ request: Iotexapi_GetTransactionLogByBlockHeightRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetTransactionLogByBlockHeightResponse?, CallResult) -> Void) throws -> Iotexapi_TransactionLogServiceGetTransactionLogByBlockHeightCall
+
+}
+
+public extension Iotexapi_TransactionLogServiceService {
+  /// Synchronous. Unary.
+  func getTransactionLogByActionHash(_ request: Iotexapi_GetTransactionLogByActionHashRequest) throws -> Iotexapi_GetTransactionLogByActionHashResponse {
+    return try self.getTransactionLogByActionHash(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getTransactionLogByActionHash(_ request: Iotexapi_GetTransactionLogByActionHashRequest, completion: @escaping (Iotexapi_GetTransactionLogByActionHashResponse?, CallResult) -> Void) throws -> Iotexapi_TransactionLogServiceGetTransactionLogByActionHashCall {
+    return try self.getTransactionLogByActionHash(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func getTransactionLogByBlockHeight(_ request: Iotexapi_GetTransactionLogByBlockHeightRequest) throws -> Iotexapi_GetTransactionLogByBlockHeightResponse {
+    return try self.getTransactionLogByBlockHeight(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func getTransactionLogByBlockHeight(_ request: Iotexapi_GetTransactionLogByBlockHeightRequest, completion: @escaping (Iotexapi_GetTransactionLogByBlockHeightResponse?, CallResult) -> Void) throws -> Iotexapi_TransactionLogServiceGetTransactionLogByBlockHeightCall {
+    return try self.getTransactionLogByBlockHeight(request, metadata: self.metadata, completion: completion)
+  }
+
+}
+
+public final class Iotexapi_TransactionLogServiceServiceClient: ServiceClientBase, Iotexapi_TransactionLogServiceService {
+  /// Synchronous. Unary.
+  public func getTransactionLogByActionHash(_ request: Iotexapi_GetTransactionLogByActionHashRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetTransactionLogByActionHashResponse {
+    return try Iotexapi_TransactionLogServiceGetTransactionLogByActionHashCallBase(channel)
+      .run(request: request, metadata: customMetadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  public func getTransactionLogByActionHash(_ request: Iotexapi_GetTransactionLogByActionHashRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetTransactionLogByActionHashResponse?, CallResult) -> Void) throws -> Iotexapi_TransactionLogServiceGetTransactionLogByActionHashCall {
+    return try Iotexapi_TransactionLogServiceGetTransactionLogByActionHashCallBase(channel)
+      .start(request: request, metadata: customMetadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  public func getTransactionLogByBlockHeight(_ request: Iotexapi_GetTransactionLogByBlockHeightRequest, metadata customMetadata: Metadata) throws -> Iotexapi_GetTransactionLogByBlockHeightResponse {
+    return try Iotexapi_TransactionLogServiceGetTransactionLogByBlockHeightCallBase(channel)
+      .run(request: request, metadata: customMetadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  public func getTransactionLogByBlockHeight(_ request: Iotexapi_GetTransactionLogByBlockHeightRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetTransactionLogByBlockHeightResponse?, CallResult) -> Void) throws -> Iotexapi_TransactionLogServiceGetTransactionLogByBlockHeightCall {
+    return try Iotexapi_TransactionLogServiceGetTransactionLogByBlockHeightCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 

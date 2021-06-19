@@ -16,6 +16,7 @@ import "proto/types/action.proto";
 import "proto/types/blockchain.proto";
 import "proto/types/node.proto";
 import "proto/types/election.proto";
+import "proto/types/transaction_log.proto";
 import "google/protobuf/timestamp.proto";
 
 service APIService {
@@ -71,15 +72,10 @@ service APIService {
   // get logs filtered by contract address and topics
   rpc GetLogs(GetLogsRequest) returns (GetLogsResponse) {}
 
-  /*
-   * evm transfers APIs
-   */
 
-  // get evm transfers by action hash
-  rpc GetEvmTransfersByActionHash(GetEvmTransfersByActionHashRequest) returns (GetEvmTransfersByActionHashResponse) {}
+  rpc GetTransactionLogByActionHash(GetTransactionLogByActionHashRequest) returns (GetTransactionLogByActionHashResponse) {}
 
-  // get evm transfers by block height
-  rpc GetEvmTransfersByBlockHeight(GetEvmTransfersByBlockHeightRequest) returns (GetEvmTransfersByBlockHeightResponse) {}
+  rpc GetTransactionLogByBlockHeight(GetTransactionLogByBlockHeightRequest) returns (GetTransactionLogByBlockHeightResponse) {}
 
   /*
    * below are streaming APIs
@@ -91,10 +87,29 @@ service APIService {
   // get logs filtered by contract address and topics in stream
   rpc StreamLogs(StreamLogsRequest) returns (stream StreamLogsResponse) {}
 
+  // get actions from act pool
+  rpc GetActPoolActions(GetActPoolActionsRequest) returns (GetActPoolActionsResponse) {}
+
   /*
-   * election APIs
+   * evm transfers APIs
+   */
+  // Deprecated
+  rpc GetEvmTransfersByActionHash(GetEvmTransfersByActionHashRequest) returns (GetEvmTransfersByActionHashResponse) {}
+
+  // Deprecated
+  rpc GetEvmTransfersByBlockHeight(GetEvmTransfersByBlockHeightRequest) returns (GetEvmTransfersByBlockHeightResponse) {}
+
+  /*
+   * election APIs, Deprecated
    */
   rpc GetElectionBuckets(GetElectionBucketsRequest) returns (GetElectionBucketsResponse) {}
+}
+
+// experiment
+service TransactionLogService {
+  rpc GetTransactionLogByActionHash(GetTransactionLogByActionHashRequest) returns (GetTransactionLogByActionHashResponse) {}
+
+  rpc GetTransactionLogByBlockHeight(GetTransactionLogByBlockHeightRequest) returns (GetTransactionLogByBlockHeightResponse) {}
 }
 
 message Bucket {
@@ -112,6 +127,7 @@ message GetAccountRequest {
 
 message GetAccountResponse {
   iotextypes.AccountMeta accountMeta = 1;
+  iotextypes.BlockIdentifier blockIdentifier = 2;
 }
 
 message GetActionsRequest {
@@ -156,10 +172,11 @@ message ActionInfo {
   iotextypes.Action action = 1;
   string actHash = 2;
   string blkHash = 3;
+  google.protobuf.Timestamp timestamp = 4;
   uint64 blkHeight = 5;
   string sender = 6;
   string gasFee = 7;
-  google.protobuf.Timestamp timestamp = 4;
+  uint32 index = 8;
 }
 
 message ReceiptInfo {
@@ -177,6 +194,7 @@ message BlockProducerInfo {
 message BlockInfo {
   iotextypes.Block block = 1;
   repeated iotextypes.Receipt receipts = 2;
+  iotextypes.TransactionLogs transactionLogs = 3;
 }
 
 message GetActionsResponse {
@@ -209,6 +227,7 @@ message GetChainMetaRequest {}
 
 message GetChainMetaResponse {
   iotextypes.ChainMeta chainMeta = 1;
+  string syncStage = 2; // sync stage
 }
 
 message GetServerMetaRequest  {}
@@ -293,6 +312,7 @@ message ReadStateRequest {
 
 message ReadStateResponse {
   bytes data = 1;
+  iotextypes.BlockIdentifier blockIdentifier = 2;
 }
 
 message GetEpochMetaRequest {
@@ -309,6 +329,7 @@ message GetRawBlocksRequest {
   uint64 startHeight = 1;
   uint64 count = 2;
   bool withReceipts = 3;
+  bool withTransactionLogs = 4;
 }
 
 message GetRawBlocksResponse {
@@ -321,7 +342,8 @@ message GetLogsByBlock {
 
 message GetLogsByRange {
   uint64 fromBlock = 1;
-  uint64 count = 2;
+  uint64 toBlock = 2;
+  uint64 paginationSize = 3;
 }
 
 message Topics {
@@ -345,20 +367,21 @@ message GetLogsResponse {
   repeated iotextypes.Log logs = 1;
 }
 
-message GetEvmTransfersByActionHashRequest {
+message GetTransactionLogByActionHashRequest {
   string actionHash = 1;
 }
 
-message GetEvmTransfersByActionHashResponse {
-  iotextypes.ActionEvmTransfer actionEvmTransfers = 1;
+message GetTransactionLogByActionHashResponse {
+  iotextypes.TransactionLog transactionLog = 1;
 }
 
-message GetEvmTransfersByBlockHeightRequest {
+message GetTransactionLogByBlockHeightRequest {
   uint64 blockHeight = 1;
 }
 
-message GetEvmTransfersByBlockHeightResponse {
-  iotextypes.BlockEvmTransfer blockEvmTransfers = 1;
+message GetTransactionLogByBlockHeightResponse {
+  iotextypes.TransactionLogs transactionLogs = 1;
+  iotextypes.BlockIdentifier blockIdentifier = 2;
 }
 
 /*
@@ -378,6 +401,14 @@ message StreamLogsResponse {
     iotextypes.Log log = 1;
 }
 
+message GetActPoolActionsRequest {
+  repeated string actionHashes = 1;  // if this field is absent, get all actions from actpool
+}
+
+message GetActPoolActionsResponse {
+  repeated iotextypes.Action actions = 1;
+}
+
  /*
   * election APIs
   */
@@ -387,4 +418,24 @@ message GetElectionBucketsRequest{
 
 message GetElectionBucketsResponse{
   repeated iotextypes.ElectionBucket buckets = 1;
+}
+
+// Deprecated
+message GetEvmTransfersByActionHashRequest {
+  string actionHash = 1;
+}
+
+// Deprecated
+message GetEvmTransfersByActionHashResponse {
+  iotextypes.ActionEvmTransfer actionEvmTransfers = 1;
+}
+
+// Deprecated
+message GetEvmTransfersByBlockHeightRequest {
+  uint64 blockHeight = 1;
+}
+
+// Deprecated
+message GetEvmTransfersByBlockHeightResponse {
+  iotextypes.BlockEvmTransfer blockEvmTransfers = 1;
 }

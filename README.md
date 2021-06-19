@@ -17,6 +17,7 @@ proto/api/api.proto proto/api/read_state.proto proto/rpc/rpc.proto \
 proto/types/action.proto proto/types/blockchain.proto proto/types/consensus.proto \
 proto/types/election.proto proto/types/endorsement.proto proto/types/genesis.proto \
 proto/types/node.proto proto/types/receiptstatus.proto proto/types/state_data.proto \
+proto/types/transaction_log.proto \
 --swift_opt=Visibility=Public \
 --swift_out=protogen \
 --swiftgrpc_out=Visibility=Public,Client=true,Server=false:./protogen
