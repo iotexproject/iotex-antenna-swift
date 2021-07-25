@@ -31,18 +31,19 @@ public extension String {
     }
 
     func hexToBytes() -> [UInt8] {
-        var value = self
-        if self.count % 2 > 0 {
-            value = "0" + value
-        }
-        let bytesCount = value.count / 2
-        return (0..<bytesCount).compactMap({ i in
-            let offset = i * 2
-            if let str = value.substr(offset, 2) {
-                return UInt8(str, radix: 16)
-            }
-            return nil
-        })
+        let value = self
+        return Array(value.utf8)
+//        if self.count % 2 > 0 {
+//            value = "0" + value
+//        }
+//        let bytesCount = value.count / 2
+//        return (0..<bytesCount).compactMap({ i in
+//            let offset = i * 2
+//            if let str = value.substr(offset, 2) {
+//                return UInt8(str, radix: 16)
+//            }
+//            return nil
+//        })
     }
 
     func substr(_ offset: Int,  _ length: Int) -> String? {
