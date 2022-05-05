@@ -37,7 +37,7 @@ public extension String {
 */
 
 public extension Array where Element == UInt8 {
-    func toSafeBase64() -> String? {
+    func toSafeBase64() -> String {
         var data = Data(self).base64EncodedString()
         data = data.replacingOccurrences(of: "+", with: "-")
         data = data.replacingOccurrences(of: "/", with: "_")
