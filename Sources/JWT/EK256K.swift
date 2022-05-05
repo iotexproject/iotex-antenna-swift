@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CryptoSwift
 
 public class EK256K: NSObject {
     private static let header = "{\"alg\":\"EK256K\",\"typ\":\"JWT\"}"
@@ -19,10 +20,10 @@ public class EK256K: NSObject {
     @objc public static func sign(payloadJson: String, secret: String) throws -> String {
         let account = try Account.create(privateKey: secret)
         
-        let headerBase = header.bytes.toSafeBase64()!
-        let payloadBase = payloadJson.bytes.toBase64()!
+        let headerBase = header.bytes.toSafeBase64()
+        let payloadBase = payloadJson.bytes.toBase64()
         let signature = try account.sign(message: (headerBase + "." + payloadBase).bytes)
-        let signatureBase = signature.toSafeBase64()!
+        let signatureBase = signature.toSafeBase64()
         
         return headerBase + "." + payloadBase + "." + signatureBase
     }

@@ -98,6 +98,7 @@
 		674BA936247E74C9001E2206 /* StakeRegisterMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BA935247E74C9001E2206 /* StakeRegisterMethod.swift */; };
 		674BA938247E75E5001E2206 /* StakeUpdateMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674BA937247E75E5001E2206 /* StakeUpdateMethod.swift */; };
 		67E6E569247B60A500A509CA /* election.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6E568247B60A400A509CA /* election.pb.swift */; };
+		9767D246281673090063B0FD /* transaction_log.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9767D245281673090063B0FD /* transaction_log.pb.swift */; };
 		D4FD7C5CFF5C896444AC23A2 /* Pods_Shows_iotex_antenna_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B048B4B2E57880C6C4150D4F /* Pods_Shows_iotex_antenna_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -213,6 +214,7 @@
 		67E6E568247B60A400A509CA /* election.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = election.pb.swift; sourceTree = "<group>"; };
 		970A632D22F80F7F00635F3E /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		970A632F22F80F8300635F3E /* secp256k1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = secp256k1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9767D245281673090063B0FD /* transaction_log.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = transaction_log.pb.swift; sourceTree = "<group>"; };
 		B048B4B2E57880C6C4150D4F /* Pods_Shows_iotex_antenna_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shows_iotex_antenna_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E804B13314AD4B8074B9A6 /* Pods-Shows-iotex-antenna-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shows-iotex-antenna-swift.release.xcconfig"; path = "Target Support Files/Pods-Shows-iotex-antenna-swift/Pods-Shows-iotex-antenna-swift.release.xcconfig"; sourceTree = "<group>"; };
 		F7625C34EFB9EEC013EC978C /* Pods-Shows-iotex-antenna-swiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shows-iotex-antenna-swiftTests.debug.xcconfig"; path = "Target Support Files/Pods-Shows-iotex-antenna-swiftTests/Pods-Shows-iotex-antenna-swiftTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 		364CC8C422F814120017FCCB /* Protogen */ = {
 			isa = PBXGroup;
 			children = (
+				9767D245281673090063B0FD /* transaction_log.pb.swift */,
 				6738B01324AECDF800101DA0 /* read_state.pb.swift */,
 				6738B01524AECDF800101DA0 /* receiptstatus.pb.swift */,
 				6738B01424AECDF800101DA0 /* state_data.pb.swift */,
@@ -791,6 +794,7 @@
 				3641842822FD65BD00A368C3 /* ABIObject.swift in Sources */,
 				674BA934247E7446001E2206 /* StakeTransferMethod.swift in Sources */,
 				674BA938247E75E5001E2206 /* StakeUpdateMethod.swift in Sources */,
+				9767D246281673090063B0FD /* transaction_log.pb.swift in Sources */,
 				368F7AAF22FD0ABB003DB452 /* ABIConvertible.swift in Sources */,
 				3654182422F1F473004382B1 /* Bytes+SecureRandom.swift in Sources */,
 				3654182A22F1F5E1004382B1 /* Bytes+TrimLeadingZeros.swift in Sources */,
