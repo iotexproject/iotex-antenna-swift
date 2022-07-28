@@ -19,8 +19,8 @@ public class IOTX {
         return self.provider;
     }
     
-    public func setProvider(provider: String, secure: Bool) throws {
-        try self.provider.setProvider(provider: provider, secure: secure)
+    public func setProvider(provider: String, secure: Bool, chainID: UInt32) throws {
+        try self.provider.setProvider(provider: provider, secure: secure, chainID: chainID)
     }
     
     public func sendTransfer(_ request: TransferRequest) throws -> String {
