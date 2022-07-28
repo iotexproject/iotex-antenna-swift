@@ -24,7 +24,7 @@ public class AbstractMethod {
             });
             request.nonce = response.accountMeta.pendingNonce
         }
-        return Envelop(version: 1, nonce: request.nonce!, gasLimit: request.gasLimit, gasPrice: request.gasPrice)
+        return Envelop(version: 1, nonce: request.nonce!, gasLimit: request.gasLimit, gasPrice: request.gasPrice, chainID: client.chainID)
     }
     
     public func sendAction(envelop: Envelop) throws -> String {
