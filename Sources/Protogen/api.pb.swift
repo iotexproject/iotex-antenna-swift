@@ -650,6 +650,16 @@ public struct Iotexapi_ReadContractRequest {
     set {_uniqueStorage()._callerAddress = newValue}
   }
 
+  public var gasLimit: UInt64 {
+    get {return _storage._gasLimit}
+    set {_uniqueStorage()._gasLimit = newValue}
+  }
+
+  public var gasPrice: String {
+    get {return _storage._gasPrice}
+    set {_uniqueStorage()._gasPrice = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -1238,6 +1248,15 @@ public struct Iotexapi_StreamBlocksResponse {
   /// Clears the value of `block`. Subsequent reads from it will return its default value.
   public mutating func clearBlock() {_uniqueStorage()._block = nil}
 
+  public var blockIdentifier: Iotextypes_BlockIdentifier {
+    get {return _storage._blockIdentifier ?? Iotextypes_BlockIdentifier()}
+    set {_uniqueStorage()._blockIdentifier = newValue}
+  }
+  /// Returns true if `blockIdentifier` has been explicitly set.
+  public var hasBlockIdentifier: Bool {return _storage._blockIdentifier != nil}
+  /// Clears the value of `blockIdentifier`. Subsequent reads from it will return its default value.
+  public mutating func clearBlockIdentifier() {_uniqueStorage()._blockIdentifier = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -1406,6 +1425,56 @@ public struct Iotexapi_GetEvmTransfersByBlockHeightResponse {
   public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
+}
+
+public struct Iotexapi_ReadContractStorageRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var contract: String = String()
+
+  public var key: Data = SwiftProtobuf.Internal.emptyData
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Iotexapi_ReadContractStorageResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var data: Data = SwiftProtobuf.Internal.emptyData
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Iotexapi_TraceTransactionStructLogsRequest {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var actionHash: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Iotexapi_TraceTransactionStructLogsResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var structLogs: [Iotextypes_TransactionStructLog] = []
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -2771,11 +2840,15 @@ extension Iotexapi_ReadContractRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "execution"),
     2: .same(proto: "callerAddress"),
+    3: .same(proto: "gasLimit"),
+    4: .same(proto: "gasPrice"),
   ]
 
   fileprivate class _StorageClass {
     var _execution: Iotextypes_Execution? = nil
     var _callerAddress: String = String()
+    var _gasLimit: UInt64 = 0
+    var _gasPrice: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -2784,6 +2857,8 @@ extension Iotexapi_ReadContractRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
     init(copying source: _StorageClass) {
       _execution = source._execution
       _callerAddress = source._callerAddress
+      _gasLimit = source._gasLimit
+      _gasPrice = source._gasPrice
     }
   }
 
@@ -2801,6 +2876,8 @@ extension Iotexapi_ReadContractRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
         switch fieldNumber {
         case 1: try decoder.decodeSingularMessageField(value: &_storage._execution)
         case 2: try decoder.decodeSingularStringField(value: &_storage._callerAddress)
+        case 3: try decoder.decodeSingularUInt64Field(value: &_storage._gasLimit)
+        case 4: try decoder.decodeSingularStringField(value: &_storage._gasPrice)
         default: break
         }
       }
@@ -2815,6 +2892,12 @@ extension Iotexapi_ReadContractRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
       if !_storage._callerAddress.isEmpty {
         try visitor.visitSingularStringField(value: _storage._callerAddress, fieldNumber: 2)
       }
+      if _storage._gasLimit != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._gasLimit, fieldNumber: 3)
+      }
+      if !_storage._gasPrice.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._gasPrice, fieldNumber: 4)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2826,6 +2909,8 @@ extension Iotexapi_ReadContractRequest: SwiftProtobuf.Message, SwiftProtobuf._Me
         let rhs_storage = _args.1
         if _storage._execution != rhs_storage._execution {return false}
         if _storage._callerAddress != rhs_storage._callerAddress {return false}
+        if _storage._gasLimit != rhs_storage._gasLimit {return false}
+        if _storage._gasPrice != rhs_storage._gasPrice {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -4020,10 +4105,12 @@ extension Iotexapi_StreamBlocksResponse: SwiftProtobuf.Message, SwiftProtobuf._M
   public static let protoMessageName: String = _protobuf_package + ".StreamBlocksResponse"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "block"),
+    2: .same(proto: "blockIdentifier"),
   ]
 
   fileprivate class _StorageClass {
     var _block: Iotexapi_BlockInfo? = nil
+    var _blockIdentifier: Iotextypes_BlockIdentifier? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -4031,6 +4118,7 @@ extension Iotexapi_StreamBlocksResponse: SwiftProtobuf.Message, SwiftProtobuf._M
 
     init(copying source: _StorageClass) {
       _block = source._block
+      _blockIdentifier = source._blockIdentifier
     }
   }
 
@@ -4047,6 +4135,7 @@ extension Iotexapi_StreamBlocksResponse: SwiftProtobuf.Message, SwiftProtobuf._M
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularMessageField(value: &_storage._block)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._blockIdentifier)
         default: break
         }
       }
@@ -4058,6 +4147,9 @@ extension Iotexapi_StreamBlocksResponse: SwiftProtobuf.Message, SwiftProtobuf._M
       if let v = _storage._block {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
       }
+      if let v = _storage._blockIdentifier {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -4068,6 +4160,7 @@ extension Iotexapi_StreamBlocksResponse: SwiftProtobuf.Message, SwiftProtobuf._M
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._block != rhs_storage._block {return false}
+        if _storage._blockIdentifier != rhs_storage._blockIdentifier {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -4490,6 +4583,128 @@ extension Iotexapi_GetEvmTransfersByBlockHeightResponse: SwiftProtobuf.Message, 
       }
       if !storagesAreEqual {return false}
     }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotexapi_ReadContractStorageRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".ReadContractStorageRequest"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "contract"),
+    2: .same(proto: "key"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.contract)
+      case 2: try decoder.decodeSingularBytesField(value: &self.key)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.contract.isEmpty {
+      try visitor.visitSingularStringField(value: self.contract, fieldNumber: 1)
+    }
+    if !self.key.isEmpty {
+      try visitor.visitSingularBytesField(value: self.key, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotexapi_ReadContractStorageRequest, rhs: Iotexapi_ReadContractStorageRequest) -> Bool {
+    if lhs.contract != rhs.contract {return false}
+    if lhs.key != rhs.key {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotexapi_ReadContractStorageResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".ReadContractStorageResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "data"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBytesField(value: &self.data)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.data.isEmpty {
+      try visitor.visitSingularBytesField(value: self.data, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotexapi_ReadContractStorageResponse, rhs: Iotexapi_ReadContractStorageResponse) -> Bool {
+    if lhs.data != rhs.data {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotexapi_TraceTransactionStructLogsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".TraceTransactionStructLogsRequest"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "actionHash"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.actionHash)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.actionHash.isEmpty {
+      try visitor.visitSingularStringField(value: self.actionHash, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotexapi_TraceTransactionStructLogsRequest, rhs: Iotexapi_TraceTransactionStructLogsRequest) -> Bool {
+    if lhs.actionHash != rhs.actionHash {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotexapi_TraceTransactionStructLogsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".TraceTransactionStructLogsResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "structLogs"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeRepeatedMessageField(value: &self.structLogs)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.structLogs.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.structLogs, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotexapi_TraceTransactionStructLogsResponse, rhs: Iotexapi_TraceTransactionStructLogsResponse) -> Bool {
+    if lhs.structLogs != rhs.structLogs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
