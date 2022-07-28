@@ -36,7 +36,7 @@ pod 'iotex-antenna-swift', '~> 0.1'
 ```swift
 // create account from private key
 let account = try Account(privateKey: "0806c458b262edd333a191e92f561aff338211ee3e18ab315a074a2d82aa343f")
-let iotx = try IOTX(provider: "api.testnet.iotex.one:443", secure: true)
+let iotx = try IOTX(provider: "api.testnet.iotex.one:443", secure: true, chainID: 2)
 
 // query account meta
 let response = try iotx.currentProvider().getAccount(Iotexapi_GetAccountRequest.with {
