@@ -148,6 +148,40 @@ public struct Iotextypes_TransactionLogs {
   public init() {}
 }
 
+public struct Iotextypes_TransactionStructLog {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var pc: UInt64 = 0
+
+  public var op: UInt64 = 0
+
+  public var gas: UInt64 = 0
+
+  public var gasCost: UInt64 = 0
+
+  public var memory: String = String()
+
+  public var memSize: Int32 = 0
+
+  public var stack: [String] = []
+
+  public var returnData: String = String()
+
+  public var depth: Int32 = 0
+
+  public var refund: UInt64 = 0
+
+  public var opName: String = String()
+
+  public var error: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "iotextypes"
@@ -285,6 +319,101 @@ extension Iotextypes_TransactionLogs: SwiftProtobuf.Message, SwiftProtobuf._Mess
 
   public static func ==(lhs: Iotextypes_TransactionLogs, rhs: Iotextypes_TransactionLogs) -> Bool {
     if lhs.logs != rhs.logs {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_TransactionStructLog: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".TransactionStructLog"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "pc"),
+    2: .same(proto: "op"),
+    3: .same(proto: "gas"),
+    4: .same(proto: "gasCost"),
+    5: .same(proto: "memory"),
+    6: .same(proto: "memSize"),
+    7: .same(proto: "stack"),
+    8: .same(proto: "returnData"),
+    9: .same(proto: "depth"),
+    10: .same(proto: "refund"),
+    11: .same(proto: "opName"),
+    12: .same(proto: "error"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularUInt64Field(value: &self.pc)
+      case 2: try decoder.decodeSingularUInt64Field(value: &self.op)
+      case 3: try decoder.decodeSingularUInt64Field(value: &self.gas)
+      case 4: try decoder.decodeSingularUInt64Field(value: &self.gasCost)
+      case 5: try decoder.decodeSingularStringField(value: &self.memory)
+      case 6: try decoder.decodeSingularInt32Field(value: &self.memSize)
+      case 7: try decoder.decodeRepeatedStringField(value: &self.stack)
+      case 8: try decoder.decodeSingularStringField(value: &self.returnData)
+      case 9: try decoder.decodeSingularInt32Field(value: &self.depth)
+      case 10: try decoder.decodeSingularUInt64Field(value: &self.refund)
+      case 11: try decoder.decodeSingularStringField(value: &self.opName)
+      case 12: try decoder.decodeSingularStringField(value: &self.error)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.pc != 0 {
+      try visitor.visitSingularUInt64Field(value: self.pc, fieldNumber: 1)
+    }
+    if self.op != 0 {
+      try visitor.visitSingularUInt64Field(value: self.op, fieldNumber: 2)
+    }
+    if self.gas != 0 {
+      try visitor.visitSingularUInt64Field(value: self.gas, fieldNumber: 3)
+    }
+    if self.gasCost != 0 {
+      try visitor.visitSingularUInt64Field(value: self.gasCost, fieldNumber: 4)
+    }
+    if !self.memory.isEmpty {
+      try visitor.visitSingularStringField(value: self.memory, fieldNumber: 5)
+    }
+    if self.memSize != 0 {
+      try visitor.visitSingularInt32Field(value: self.memSize, fieldNumber: 6)
+    }
+    if !self.stack.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.stack, fieldNumber: 7)
+    }
+    if !self.returnData.isEmpty {
+      try visitor.visitSingularStringField(value: self.returnData, fieldNumber: 8)
+    }
+    if self.depth != 0 {
+      try visitor.visitSingularInt32Field(value: self.depth, fieldNumber: 9)
+    }
+    if self.refund != 0 {
+      try visitor.visitSingularUInt64Field(value: self.refund, fieldNumber: 10)
+    }
+    if !self.opName.isEmpty {
+      try visitor.visitSingularStringField(value: self.opName, fieldNumber: 11)
+    }
+    if !self.error.isEmpty {
+      try visitor.visitSingularStringField(value: self.error, fieldNumber: 12)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_TransactionStructLog, rhs: Iotextypes_TransactionStructLog) -> Bool {
+    if lhs.pc != rhs.pc {return false}
+    if lhs.op != rhs.op {return false}
+    if lhs.gas != rhs.gas {return false}
+    if lhs.gasCost != rhs.gasCost {return false}
+    if lhs.memory != rhs.memory {return false}
+    if lhs.memSize != rhs.memSize {return false}
+    if lhs.stack != rhs.stack {return false}
+    if lhs.returnData != rhs.returnData {return false}
+    if lhs.depth != rhs.depth {return false}
+    if lhs.refund != rhs.refund {return false}
+    if lhs.opName != rhs.opName {return false}
+    if lhs.error != rhs.error {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

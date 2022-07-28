@@ -44,6 +44,14 @@ public enum Iotextypes_ReceiptStatus: SwiftProtobuf.Enum {
   case errExecutionReverted // = 106
   case errMaxCodeSizeExceeded // = 107
   case errWriteProtection // = 108
+  case errInvalidSubroutineEntry // = 109
+  case errInsufficientBalance // = 110
+  case errInvalidJump // = 111
+  case errReturnDataOutOfBounds // = 112
+  case errGasUintOverflow // = 113
+  case errInvalidRetsub // = 114
+  case errReturnStackExceeded // = 115
+  case errInvalidCode // = 116
 
   ///2xx for Staking ErrorCode
   case errLoadAccount // = 200
@@ -81,6 +89,14 @@ public enum Iotextypes_ReceiptStatus: SwiftProtobuf.Enum {
     case 106: self = .errExecutionReverted
     case 107: self = .errMaxCodeSizeExceeded
     case 108: self = .errWriteProtection
+    case 109: self = .errInvalidSubroutineEntry
+    case 110: self = .errInsufficientBalance
+    case 111: self = .errInvalidJump
+    case 112: self = .errReturnDataOutOfBounds
+    case 113: self = .errGasUintOverflow
+    case 114: self = .errInvalidRetsub
+    case 115: self = .errReturnStackExceeded
+    case 116: self = .errInvalidCode
     case 200: self = .errLoadAccount
     case 201: self = .errNotEnoughBalance
     case 202: self = .errInvalidBucketIndex
@@ -114,6 +130,14 @@ public enum Iotextypes_ReceiptStatus: SwiftProtobuf.Enum {
     case .errExecutionReverted: return 106
     case .errMaxCodeSizeExceeded: return 107
     case .errWriteProtection: return 108
+    case .errInvalidSubroutineEntry: return 109
+    case .errInsufficientBalance: return 110
+    case .errInvalidJump: return 111
+    case .errReturnDataOutOfBounds: return 112
+    case .errGasUintOverflow: return 113
+    case .errInvalidRetsub: return 114
+    case .errReturnStackExceeded: return 115
+    case .errInvalidCode: return 116
     case .errLoadAccount: return 200
     case .errNotEnoughBalance: return 201
     case .errInvalidBucketIndex: return 202
@@ -152,6 +176,14 @@ extension Iotextypes_ReceiptStatus: CaseIterable {
     .errExecutionReverted,
     .errMaxCodeSizeExceeded,
     .errWriteProtection,
+    .errInvalidSubroutineEntry,
+    .errInsufficientBalance,
+    .errInvalidJump,
+    .errReturnDataOutOfBounds,
+    .errGasUintOverflow,
+    .errInvalidRetsub,
+    .errReturnStackExceeded,
+    .errInvalidCode,
     .errLoadAccount,
     .errNotEnoughBalance,
     .errInvalidBucketIndex,
@@ -188,6 +220,14 @@ extension Iotextypes_ReceiptStatus: SwiftProtobuf._ProtoNameProviding {
     106: .same(proto: "ErrExecutionReverted"),
     107: .same(proto: "ErrMaxCodeSizeExceeded"),
     108: .same(proto: "ErrWriteProtection"),
+    109: .same(proto: "ErrInvalidSubroutineEntry"),
+    110: .same(proto: "ErrInsufficientBalance"),
+    111: .same(proto: "ErrInvalidJump"),
+    112: .same(proto: "ErrReturnDataOutOfBounds"),
+    113: .same(proto: "ErrGasUintOverflow"),
+    114: .same(proto: "ErrInvalidRetsub"),
+    115: .same(proto: "ErrReturnStackExceeded"),
+    116: .same(proto: "ErrInvalidCode"),
     200: .same(proto: "ErrLoadAccount"),
     201: .same(proto: "ErrNotEnoughBalance"),
     202: .same(proto: "ErrInvalidBucketIndex"),
