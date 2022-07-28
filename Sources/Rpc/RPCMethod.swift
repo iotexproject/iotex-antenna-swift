@@ -17,8 +17,9 @@ public class RPCMethod {
         self.chainID = chainID
     }
     
-    public func setProvider(provider: String, secure: Bool) throws {
+    public func setProvider(provider: String, secure: Bool, chainID: UInt32) throws {
         self.client = Iotexapi_APIServiceServiceClient(address: provider, secure: secure)
+        self.chainID = chainID
     }
 
     public func getAccount(_ request: Iotexapi_GetAccountRequest) throws -> Iotexapi_GetAccountResponse {

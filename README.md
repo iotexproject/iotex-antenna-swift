@@ -28,7 +28,8 @@ rm -rf protogen
 ### Install
 
 ```
-pod 'iotex-antenna-swift', '~> 0.1'
+pod 'iotex-antenna-swift', '~> 0.2.1'
+pod 'iotex-antenna-swift', :git => 'https://github.com/iotexproject/iotex-antenna-swift.git', :tag => '0.2.1'
 ```
 
 ## Sample
