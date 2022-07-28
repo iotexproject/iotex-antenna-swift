@@ -13,6 +13,7 @@ public struct Envelop {
     public var nonce: UInt64
     public var gasLimit: UInt64
     public var gasPrice: String
+    public var chainID: UInt32
     
     // optional fields
     public var transfer: Iotextypes_Transfer?
@@ -47,11 +48,12 @@ public struct Envelop {
     public var candidateRegister: Iotextypes_CandidateRegister?
     public var candidateUpdate: Iotextypes_CandidateBasicInfo?
     
-    public init(version: UInt32, nonce: UInt64, gasLimit: UInt64, gasPrice: String) {
+    public init(version: UInt32, nonce: UInt64, gasLimit: UInt64, gasPrice: String, chainID: UInt32) {
         self.version = version
         self.nonce = nonce
         self.gasLimit = gasLimit
         self.gasPrice = gasPrice
+        self.chainID = chainID
     }
     
     public init(data: Data) throws {
@@ -60,6 +62,7 @@ public struct Envelop {
         self.nonce = core.nonce
         self.gasLimit = core.gasLimit
         self.gasPrice = core.gasPrice
+        self.chainID = core.chainID
         
         if (try core.transfer.serializedData().count > 0) {
             self.transfer = core.transfer
@@ -117,6 +120,7 @@ public struct Envelop {
         core.nonce = self.nonce
         core.gasLimit = self.gasLimit
         core.gasPrice = self.gasPrice
+        core.chainID = self.chainID
         
         if (self.transfer != nil) {
             core.transfer = self.transfer!

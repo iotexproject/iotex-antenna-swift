@@ -11,8 +11,8 @@ import Foundation
 public class IOTX {
     private var provider: RPCMethod
     
-    public init(provider: String, secure: Bool) throws {
-        self.provider = try RPCMethod(provider: provider, secure: secure)
+    public init(provider: String, secure: Bool, chainID: UInt32) throws {
+        self.provider = try RPCMethod(provider: provider, secure: secure, chainID: chainID)
     }
     
     public func currentProvider() -> RPCMethod {

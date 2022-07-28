@@ -17,7 +17,7 @@ class ContractTests: XCTestCase {
 
     func testExecute() throws {
         let account = try Account(privateKey: "0806c458b262edd333a191e92f561aff338211ee3e18ab315a074a2d82aa343f")
-        let rpc = try RPCMethod(provider: "api.testnet.iotex.one:443", secure: true)
+        let rpc = try RPCMethod(provider: "api.testnet.iotex.one:443", secure: true, chainID: 2)
         do {
             let contract = try Contract(provider: rpc, address: "io186s45j3rgvhxh25ec6xk9wap0drtthk3jq4du7", abi: abi.data(using: .utf8)!)
             
@@ -32,7 +32,7 @@ class ContractTests: XCTestCase {
     
     func testRead() throws {
         let account = try Account(privateKey: "0806c458b262edd333a191e92f561aff338211ee3e18ab315a074a2d82aa343f")
-        let rpc = try RPCMethod(provider: "api.testnet.iotex.one:443", secure: true)
+        let rpc = try RPCMethod(provider: "api.testnet.iotex.one:443", secure: true, chainID: 2)
         do {
             let contract = try Contract(provider: rpc, address: "io186s45j3rgvhxh25ec6xk9wap0drtthk3jq4du7", abi: abi.data(using: .utf8)!)
             

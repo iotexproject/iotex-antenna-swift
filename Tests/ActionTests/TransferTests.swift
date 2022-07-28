@@ -13,7 +13,7 @@ class TransferTests: XCTestCase {
 
     func testTransfer() throws {
         let account = try Account(privateKey: "0806c458b262edd333a191e92f561aff338211ee3e18ab315a074a2d82aa343f")
-        let rpc = try RPCMethod(provider: "api.testnet.iotex.one:443", secure: true)
+        let rpc = try RPCMethod(provider: "api.testnet.iotex.one:443", secure: true, chainID: 2)
         
         let transfer = try TransferMethod(client: rpc, request: TransferRequest(
             nonce: nil, gasLimit: 100000, gasPrice: "10000000000000", account: account,

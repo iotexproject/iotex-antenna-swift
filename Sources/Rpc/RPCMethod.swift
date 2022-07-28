@@ -10,9 +10,11 @@ import Foundation
 
 public class RPCMethod {
     private var client: Iotexapi_APIServiceServiceClient
+    public var chainID: UInt32
     
-    public init(provider: String, secure: Bool) throws {
+    public init(provider: String, secure: Bool, chainID: UInt32) throws {
         self.client = Iotexapi_APIServiceServiceClient(address: provider, secure: secure)
+        self.chainID = chainID
     }
     
     public func setProvider(provider: String, secure: Bool) throws {

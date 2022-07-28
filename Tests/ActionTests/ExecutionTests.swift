@@ -13,7 +13,7 @@ class ExecutionTests: XCTestCase {
 
     func testExecution() throws {
         let account = try Account(privateKey: "0806c458b262edd333a191e92f561aff338211ee3e18ab315a074a2d82aa343f")
-        let rpc = try RPCMethod(provider: "api.testnet.iotex.one:443", secure: true)
+        let rpc = try RPCMethod(provider: "api.testnet.iotex.one:443", secure: true, chainID: 2)
         
         let execution = try ExecutionMethod(client: rpc,
                                             request: ExecutionRequest(
