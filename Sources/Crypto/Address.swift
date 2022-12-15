@@ -12,17 +12,17 @@ public struct Address {
     public let bytes: Bytes
     public let string: String
     
-    public init(payload: Bytes) {
+    public init(payload: Bytes) throws {
         self.bytes = payload
         let bech32 = Bech32()
-        let grouped = try! bech32.convertBits(from: 8, to: 5, pad: true, idata: Data(bytes: bytes, count: 20))
+        let grouped = try bech32.convertBits(from: 8, to: 5, pad: true, idata: Data(bytes: bytes, count: 20))
         self.string = bech32.encode("io", values: grouped)
     }
     
-    public init(address: String) {
+    public init(address: String) throws {
         self.string = address
         let bech32 = Bech32()
-        let (_, checksum) = try! bech32.decode(address)
-        self.bytes = try! bech32.convertBits(from: 5, to: 8, pad: false, idata: checksum).makeBytes()
+        let (_, checksum) = try bech32.decode(address)
+        self.bytes = try bech32.convertBits(from: 5, to: 8, pad: false, idata: checksum).makeBytes()
     }
 }

@@ -20,7 +20,7 @@ class XRC20Tests: XCTestCase {
         try XCTAssert(18 == xrc20.decimals())
         let total = try xrc20.totalSupply()
         print(total)
-        let address = Address.init(address: "io1lkg0gxx4a79khszeawsshtng5tcax6v9dx8hna")
+        let address = try Address.init(address: "io1lkg0gxx4a79khszeawsshtng5tcax6v9dx8hna")
         let balance = try xrc20.balanceOf(owner: address)
         print(balance)
     }

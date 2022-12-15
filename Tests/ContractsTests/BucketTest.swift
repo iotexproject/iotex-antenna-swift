@@ -16,7 +16,7 @@ class BucketTest: XCTestCase {
         let rpc = try RPCMethod(provider: "api.iotex.one:443", secure: true, chainID: 2)
         let test = try AutoDepositContract(address: "io108ckwzlzpkhva7cnfceajlu7wu6ql5kq95uat9", provider: rpc)
         
-        let address = Address.init(address: "io163l2vyqhmvwfa70lfjucenrp8ctac0sfevg59y")
+        let address = try Address.init(address: "io163l2vyqhmvwfa70lfjucenrp8ctac0sfevg59y")
         let bucket = try test.bucket(owner: address)
         print(bucket)
     }
