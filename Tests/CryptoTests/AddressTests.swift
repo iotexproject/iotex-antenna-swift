@@ -11,14 +11,19 @@ import XCTest
 
 class AddressTests: XCTestCase {
 
-    func testFromAddress()  {
+    func testFromAddress() throws {
         let addrStr = "io1c9f8zsnmtmjycadje92l8ncsat0a2ke707jkfa"
-        let addr = Address(address: addrStr)
+        let addr = try Address(address: addrStr)
         XCTAssert("c15271427b5ee44c75b2c955f3cf10eadfd55b3e" == addr.bytes.hexString())
     }
     
     func testFromBytes() throws {
         let addr = try Address(payload: "c15271427b5ee44c75b2c955f3cf10eadfd55b3e".hexBytes())
         XCTAssert("io1c9f8zsnmtmjycadje92l8ncsat0a2ke707jkfa" == addr.string)
+    }
+
+    func testBadAddress() {
+        let addrStr = "io1c9f8zsnmtmjycadje92l8ncsat0a2ke707jkfA"
+        XCTAssertThrowsError(try Address(address: addrStr))
     }
 }
