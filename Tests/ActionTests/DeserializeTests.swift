@@ -12,7 +12,7 @@ import XCTest
 class DeserializeTests: XCTestCase {
 
     func testDeserialize() throws {
-        var envelop = Envelop(version: 1, nonce: 2, gasLimit: 10000, gasPrice: "1000000000000")
+        var envelop = Envelop(version: 1, nonce: 2, gasLimit: 10000, gasPrice: "1000000000000", chainID: 2)
         
         envelop.transfer = Iotextypes_Transfer.with {
             $0.recipient = "io13zt8sznez2pf0q0hqdz2hyl938wak2fsjgdeml"

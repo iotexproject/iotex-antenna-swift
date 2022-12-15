@@ -13,7 +13,7 @@ import BigInt
 class BucketTest: XCTestCase {
 
     func testBaseInfo() throws {
-        let rpc = try RPCMethod(provider: "api.iotex.one:443", secure: true)
+        let rpc = try RPCMethod(provider: "api.iotex.one:443", secure: true, chainID: 2)
         let test = try AutoDepositContract(address: "io108ckwzlzpkhva7cnfceajlu7wu6ql5kq95uat9", provider: rpc)
         
         let address = Address.init(address: "io163l2vyqhmvwfa70lfjucenrp8ctac0sfevg59y")

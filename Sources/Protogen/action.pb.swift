@@ -193,6 +193,22 @@ public struct Iotextypes_Execution {
 
   public var data: Data = SwiftProtobuf.Internal.emptyData
 
+  public var accessList: [Iotextypes_AccessTuple] = []
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Iotextypes_AccessTuple {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var address: String = String()
+
+  public var storageKeys: [String] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -1047,6 +1063,8 @@ public struct Iotextypes_Receipt {
 
   public var executionRevertMsg: String = String()
 
+  public var txIndex: UInt32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -1070,6 +1088,8 @@ public struct Iotextypes_Log {
   public var index: UInt32 = 0
 
   public var blkHash: Data = SwiftProtobuf.Internal.emptyData
+
+  public var txIndex: UInt32 = 0
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1404,6 +1424,7 @@ extension Iotextypes_Execution: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     1: .same(proto: "amount"),
     2: .same(proto: "contract"),
     3: .same(proto: "data"),
+    4: .same(proto: "accessList"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1412,6 +1433,7 @@ extension Iotextypes_Execution: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 1: try decoder.decodeSingularStringField(value: &self.amount)
       case 2: try decoder.decodeSingularStringField(value: &self.contract)
       case 3: try decoder.decodeSingularBytesField(value: &self.data)
+      case 4: try decoder.decodeRepeatedMessageField(value: &self.accessList)
       default: break
       }
     }
@@ -1427,6 +1449,9 @@ extension Iotextypes_Execution: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.data.isEmpty {
       try visitor.visitSingularBytesField(value: self.data, fieldNumber: 3)
     }
+    if !self.accessList.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.accessList, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1434,6 +1459,42 @@ extension Iotextypes_Execution: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs.amount != rhs.amount {return false}
     if lhs.contract != rhs.contract {return false}
     if lhs.data != rhs.data {return false}
+    if lhs.accessList != rhs.accessList {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Iotextypes_AccessTuple: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".AccessTuple"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "address"),
+    2: .same(proto: "storageKeys"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.address)
+      case 2: try decoder.decodeRepeatedStringField(value: &self.storageKeys)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.address.isEmpty {
+      try visitor.visitSingularStringField(value: self.address, fieldNumber: 1)
+    }
+    if !self.storageKeys.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.storageKeys, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Iotextypes_AccessTuple, rhs: Iotextypes_AccessTuple) -> Bool {
+    if lhs.address != rhs.address {return false}
+    if lhs.storageKeys != rhs.storageKeys {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -3033,6 +3094,7 @@ extension Iotextypes_Receipt: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     5: .same(proto: "contractAddress"),
     6: .same(proto: "logs"),
     7: .same(proto: "executionRevertMsg"),
+    8: .same(proto: "txIndex"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3045,6 +3107,7 @@ extension Iotextypes_Receipt: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       case 5: try decoder.decodeSingularStringField(value: &self.contractAddress)
       case 6: try decoder.decodeRepeatedMessageField(value: &self.logs)
       case 7: try decoder.decodeSingularStringField(value: &self.executionRevertMsg)
+      case 8: try decoder.decodeSingularUInt32Field(value: &self.txIndex)
       default: break
       }
     }
@@ -3072,6 +3135,9 @@ extension Iotextypes_Receipt: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.executionRevertMsg.isEmpty {
       try visitor.visitSingularStringField(value: self.executionRevertMsg, fieldNumber: 7)
     }
+    if self.txIndex != 0 {
+      try visitor.visitSingularUInt32Field(value: self.txIndex, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3083,6 +3149,7 @@ extension Iotextypes_Receipt: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if lhs.contractAddress != rhs.contractAddress {return false}
     if lhs.logs != rhs.logs {return false}
     if lhs.executionRevertMsg != rhs.executionRevertMsg {return false}
+    if lhs.txIndex != rhs.txIndex {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -3098,6 +3165,7 @@ extension Iotextypes_Log: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     5: .same(proto: "actHash"),
     6: .same(proto: "index"),
     7: .same(proto: "blkHash"),
+    8: .same(proto: "txIndex"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3110,6 +3178,7 @@ extension Iotextypes_Log: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
       case 5: try decoder.decodeSingularBytesField(value: &self.actHash)
       case 6: try decoder.decodeSingularUInt32Field(value: &self.index)
       case 7: try decoder.decodeSingularBytesField(value: &self.blkHash)
+      case 8: try decoder.decodeSingularUInt32Field(value: &self.txIndex)
       default: break
       }
     }
@@ -3137,6 +3206,9 @@ extension Iotextypes_Log: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     if !self.blkHash.isEmpty {
       try visitor.visitSingularBytesField(value: self.blkHash, fieldNumber: 7)
     }
+    if self.txIndex != 0 {
+      try visitor.visitSingularUInt32Field(value: self.txIndex, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3148,6 +3220,7 @@ extension Iotextypes_Log: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     if lhs.actHash != rhs.actHash {return false}
     if lhs.index != rhs.index {return false}
     if lhs.blkHash != rhs.blkHash {return false}
+    if lhs.txIndex != rhs.txIndex {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

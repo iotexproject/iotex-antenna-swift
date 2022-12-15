@@ -183,6 +183,18 @@ fileprivate final class Iotexapi_APIServiceGetElectionBucketsCallBase: ClientCal
   override class var method: String { return "/iotexapi.APIService/GetElectionBuckets" }
 }
 
+public protocol Iotexapi_APIServiceReadContractStorageCall: ClientCallUnary {}
+
+fileprivate final class Iotexapi_APIServiceReadContractStorageCallBase: ClientCallUnaryBase<Iotexapi_ReadContractStorageRequest, Iotexapi_ReadContractStorageResponse>, Iotexapi_APIServiceReadContractStorageCall {
+  override class var method: String { return "/iotexapi.APIService/ReadContractStorage" }
+}
+
+public protocol Iotexapi_APIServiceTraceTransactionStructLogsCall: ClientCallUnary {}
+
+fileprivate final class Iotexapi_APIServiceTraceTransactionStructLogsCallBase: ClientCallUnaryBase<Iotexapi_TraceTransactionStructLogsRequest, Iotexapi_TraceTransactionStructLogsResponse>, Iotexapi_APIServiceTraceTransactionStructLogsCall {
+  override class var method: String { return "/iotexapi.APIService/TraceTransactionStructLogs" }
+}
+
 
 /// Instantiate Iotexapi_APIServiceServiceClient, then call methods of this protocol to make API calls.
 public protocol Iotexapi_APIServiceService: ServiceClient {
@@ -321,6 +333,18 @@ public protocol Iotexapi_APIServiceService: ServiceClient {
   /// Asynchronous. Unary.
   @discardableResult
   func getElectionBuckets(_ request: Iotexapi_GetElectionBucketsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetElectionBucketsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetElectionBucketsCall
+
+  /// Synchronous. Unary.
+  func readContractStorage(_ request: Iotexapi_ReadContractStorageRequest, metadata customMetadata: Metadata) throws -> Iotexapi_ReadContractStorageResponse
+  /// Asynchronous. Unary.
+  @discardableResult
+  func readContractStorage(_ request: Iotexapi_ReadContractStorageRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_ReadContractStorageResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceReadContractStorageCall
+
+  /// Synchronous. Unary.
+  func traceTransactionStructLogs(_ request: Iotexapi_TraceTransactionStructLogsRequest, metadata customMetadata: Metadata) throws -> Iotexapi_TraceTransactionStructLogsResponse
+  /// Asynchronous. Unary.
+  @discardableResult
+  func traceTransactionStructLogs(_ request: Iotexapi_TraceTransactionStructLogsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_TraceTransactionStructLogsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceTraceTransactionStructLogsCall
 
 }
 
@@ -543,6 +567,26 @@ public extension Iotexapi_APIServiceService {
   @discardableResult
   func getElectionBuckets(_ request: Iotexapi_GetElectionBucketsRequest, completion: @escaping (Iotexapi_GetElectionBucketsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetElectionBucketsCall {
     return try self.getElectionBuckets(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func readContractStorage(_ request: Iotexapi_ReadContractStorageRequest) throws -> Iotexapi_ReadContractStorageResponse {
+    return try self.readContractStorage(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func readContractStorage(_ request: Iotexapi_ReadContractStorageRequest, completion: @escaping (Iotexapi_ReadContractStorageResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceReadContractStorageCall {
+    return try self.readContractStorage(request, metadata: self.metadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  func traceTransactionStructLogs(_ request: Iotexapi_TraceTransactionStructLogsRequest) throws -> Iotexapi_TraceTransactionStructLogsResponse {
+    return try self.traceTransactionStructLogs(request, metadata: self.metadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  func traceTransactionStructLogs(_ request: Iotexapi_TraceTransactionStructLogsRequest, completion: @escaping (Iotexapi_TraceTransactionStructLogsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceTraceTransactionStructLogsCall {
+    return try self.traceTransactionStructLogs(request, metadata: self.metadata, completion: completion)
   }
 
 }
@@ -813,6 +857,30 @@ public final class Iotexapi_APIServiceServiceClient: ServiceClientBase, Iotexapi
   @discardableResult
   public func getElectionBuckets(_ request: Iotexapi_GetElectionBucketsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_GetElectionBucketsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceGetElectionBucketsCall {
     return try Iotexapi_APIServiceGetElectionBucketsCallBase(channel)
+      .start(request: request, metadata: customMetadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  public func readContractStorage(_ request: Iotexapi_ReadContractStorageRequest, metadata customMetadata: Metadata) throws -> Iotexapi_ReadContractStorageResponse {
+    return try Iotexapi_APIServiceReadContractStorageCallBase(channel)
+      .run(request: request, metadata: customMetadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  public func readContractStorage(_ request: Iotexapi_ReadContractStorageRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_ReadContractStorageResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceReadContractStorageCall {
+    return try Iotexapi_APIServiceReadContractStorageCallBase(channel)
+      .start(request: request, metadata: customMetadata, completion: completion)
+  }
+
+  /// Synchronous. Unary.
+  public func traceTransactionStructLogs(_ request: Iotexapi_TraceTransactionStructLogsRequest, metadata customMetadata: Metadata) throws -> Iotexapi_TraceTransactionStructLogsResponse {
+    return try Iotexapi_APIServiceTraceTransactionStructLogsCallBase(channel)
+      .run(request: request, metadata: customMetadata)
+  }
+  /// Asynchronous. Unary.
+  @discardableResult
+  public func traceTransactionStructLogs(_ request: Iotexapi_TraceTransactionStructLogsRequest, metadata customMetadata: Metadata, completion: @escaping (Iotexapi_TraceTransactionStructLogsResponse?, CallResult) -> Void) throws -> Iotexapi_APIServiceTraceTransactionStructLogsCall {
+    return try Iotexapi_APIServiceTraceTransactionStructLogsCallBase(channel)
       .start(request: request, metadata: customMetadata, completion: completion)
   }
 

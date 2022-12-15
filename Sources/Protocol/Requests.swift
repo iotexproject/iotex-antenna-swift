@@ -13,7 +13,8 @@ public class TransferRequest: ActionRequest {
     public var amount: String
     public var payload: Data
     
-    public init(nonce: UInt64?, gasLimit: UInt64, gasPrice: String, account: Account, recipient: String, amount: String, payload: Data) {
+    public init(nonce: UInt64?, gasLimit: UInt64, gasPrice: String,
+                account: Account, recipient: String, amount: String, payload: Data) {
         self.recipient = recipient
         self.amount = amount
         self.payload = payload
@@ -26,7 +27,8 @@ public class ExecutionRequest: ActionRequest {
     public var amount: String
     public var data: Data
     
-    public init(nonce: UInt64?, gasLimit: UInt64, gasPrice: String, account: Account, contract: String, amount: String, data: Data) {
+    public init(nonce: UInt64?, gasLimit: UInt64, gasPrice: String,
+                account: Account, contract: String, amount: String, data: Data) {
         self.contract = contract
         self.amount = amount
         self.data = data
@@ -42,7 +44,9 @@ public class StakeCreateRequest: ActionRequest {
     public var autoStake: Bool
     public var payload: Data
     
-    public init(nonce: UInt64?, gasLimit: UInt64, gasPrice: String, account: Account, candidateName: String, stakedAmount: String, stakedDuration: UInt32, autoStake: Bool, payload: Data ) {
+    public init(nonce: UInt64?, gasLimit: UInt64, gasPrice: String,
+                account: Account, candidateName: String, stakedAmount: String,
+                stakedDuration: UInt32, autoStake: Bool, payload: Data ) {
         self.candidateName = candidateName
         self.stakedAmount = stakedAmount
         self.stakedDuration = stakedDuration
@@ -51,5 +55,3 @@ public class StakeCreateRequest: ActionRequest {
         super.init(nonce: nonce, gasLimit: gasLimit, gasPrice: gasPrice, account: account)
     }
 }
-
-

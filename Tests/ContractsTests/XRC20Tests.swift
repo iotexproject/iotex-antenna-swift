@@ -12,7 +12,7 @@ import BigInt
 
 class XRC20Tests: XCTestCase {
     func testBaseInfo() throws {
-        let rpc = try RPCMethod(provider: "api.testnet.iotex.one:443", secure: true)
+        let rpc = try RPCMethod(provider: "api.testnet.iotex.one:443", secure: true, chainID: 2)
         let xrc20 = try XRC20(address: "io14j96vg9pkx28htpgt2jx0tf3v9etpg4j9h384m", provider: rpc)
         
         try XCTAssert("Vitality" == xrc20.name())
@@ -26,7 +26,7 @@ class XRC20Tests: XCTestCase {
     }
     
     func testDecodeMethod() throws {
-        let rpc = try RPCMethod(provider: "api.testnet.iotex.one:443", secure: true)
+        let rpc = try RPCMethod(provider: "api.testnet.iotex.one:443", secure: true, chainID: 2)
         let xrc20 = try XRC20(address: "io14j96vg9pkx28htpgt2jx0tf3v9etpg4j9h384m", provider: rpc)
         
         let data = try xrc20.contract.decodeMethod(data: "a9059cbb000000000000000000000000fd90f418d5ef8b6bc059eba10bae68a2f1d369850000000000000000000000000000000000000000000000000de0b6b3a7640000")!
