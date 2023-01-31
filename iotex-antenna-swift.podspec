@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'iotex-antenna-swift'
-  s.version = '0.2.2'
+  s.version = '0.3.0'
   s.license     = { :type => 'Apache License, Version 2.0', :file => 'LICENSE' }
 
   s.summary = 'IoTeX antenna swift library'
@@ -20,5 +20,5 @@ Pod::Spec.new do |s|
   s.dependency 'secp256k1.swift', '~> 0.1'
   s.dependency 'CryptoSwift', '~> 1.4'
   s.dependency 'SwiftGRPC'
-  s.dependency 'BigInt', '~> 4.0'
+  s.dependency 'BigInt', '~> 5.0'
 end
