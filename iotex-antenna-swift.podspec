@@ -20,5 +20,5 @@ Pod::Spec.new do |s|
   s.dependency 'secp256k1.swift', '~> 0.1'
   s.dependency 'CryptoSwift', '~> 1.4'
   s.dependency 'SwiftGRPC'
-  s.dependency 'BigInt', '~> 4.0'
+  s.dependency 'BigInt', '~> 5.0'
 end
